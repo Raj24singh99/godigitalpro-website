@@ -120,7 +120,7 @@ export default function Footer() {
             <h4 className="font-semibold text-slate-900">Company</h4>
             <ul className="mt-3 space-y-2 text-slate-700">
               <li>
-                <Link className="hover:text-slate-900" to="/about">
+                <Link className="hover:text-slate-900" to="/about_us">
                   About Us
                 </Link>
               </li>
@@ -135,14 +135,15 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-slate-900" to="/contact">
-                  Contact
+                {/* ✅ Open onboarding form */}
+                <Link className="hover:text-slate-900" to="/onboarding">
+                  Contact Us
                 </Link>
               </li>
             </ul>
           </nav>
 
-          {/* Column: Services (all 6) */}
+          {/* Column: Services */}
           <nav aria-label="Services" className="text-sm">
             <h4 className="font-semibold text-slate-900">Services</h4>
             <ul className="mt-3 space-y-2 text-slate-700">
@@ -187,17 +188,26 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                {/* match App.jsx route */}
                 <Link
                   className="hover:text-slate-900"
-                  to="/services/marketplaces-quick-commerce"
+                  to="/services/marketplaces"
                 >
                   Marketplaces &amp; Quick Commerce
                 </Link>
               </li>
             </ul>
+
+            {/* Primary CTA */}
+            <Link
+              to="/onboarding"
+              className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-primary px-4 py-2 font-medium text-slate-900 ring-1 ring-black/10 hover:opacity-90"
+            >
+              Get a Free Audit <ArrowUpRight size={16} />
+            </Link>
           </nav>
 
-          {/* Column: Industries (all 6) */}
+          {/* Column: Industries */}
           <nav aria-label="Industries" className="text-sm">
             <h4 className="font-semibold text-slate-900">Industries</h4>
             <ul className="mt-3 space-y-2 text-slate-700">
@@ -247,14 +257,6 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-
-            {/* Primary CTA */}
-            <Link
-              to="/onboarding"
-              className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-primary px-4 py-2 font-medium text-slate-900 ring-1 ring-black/10 hover:opacity-90"
-            >
-              Get a Free Audit <ArrowUpRight size={16} />
-            </Link>
           </nav>
         </div>
       </div>
