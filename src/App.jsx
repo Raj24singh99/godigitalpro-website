@@ -8,10 +8,13 @@ import Footer from "./components/Footer";
 // Pages
 import LandingPage from "./pages/LandingPage";
 import OnboardingPage from "./pages/OnboardingPage";
-// If you don't have this file, delete the next import + route:
 // import SignInPage from "./pages/SignInPage";
 import ThankYou from "./pages/ThankYou";
-import AboutUs from "./pages/AboutUs"; // ✅ NEW: About page
+import AboutUs from "./pages/AboutUs";
+
+// NEW pages
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Blogs from "./pages/Blogs";
 
 // Services
 import WebsiteDevelopmentPage from "./pages/services/WebsiteDevelopmentPage";
@@ -49,13 +52,16 @@ export default function App() {
           {/* Public */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/onboarding" element={<OnboardingPage />} />
-          {/* If SignInPage.jsx doesn't exist, remove this route too */}
           {/* <Route path="/signin" element={<SignInPage />} /> */}
           <Route path="/thank-you" element={<ThankYou />} />
 
           {/* About */}
-          <Route path="/about_us" element={<AboutUs />} />     {/* ✅ NEW canonical route */}
-          <Route path="/about" element={<Navigate to="/about_us" replace />} /> {/* ✅ Redirect */}
+          <Route path="/about_us" element={<AboutUs />} />
+          <Route path="/about" element={<Navigate to="/about_us" replace />} />
+
+          {/* Company */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/blogs" element={<Blogs />} />
 
           {/* Services */}
           <Route path="/services/website-development" element={<WebsiteDevelopmentPage />} />
