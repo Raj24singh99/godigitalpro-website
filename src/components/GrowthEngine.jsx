@@ -1,5 +1,5 @@
 // src/components/GrowthEngine.jsx
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
 import { motion, useAnimationControls, useReducedMotion } from "framer-motion";
 import { Target, Sparkles, BarChart3, Workflow, CheckCircle2 } from "lucide-react";
 
@@ -40,7 +40,6 @@ function PillarCard({ icon: Icon, title, desc, active }) {
         <div className="text-2xl font-serif font-semibold text-dark">{title}</div>
       </div>
       <p className="mt-2 text-slate-700">{desc}</p>
-      {/* subtle progress underline when active (desktop anim only) */}
       {typeof active === "boolean" && (
         <motion.div
           className="mt-4 h-1 rounded bg-blue-600/90"
@@ -70,7 +69,6 @@ function MobileDiagram() {
         </p>
       </div>
 
-      {/* Cards grid — no SVG, no lines */}
       <div className="relative max-w-xl mx-auto mt-8">
         <div className="grid grid-cols-2 gap-3">
           <div className="rounded-3xl bg-white border border-blue-200/70 p-4">
@@ -134,7 +132,6 @@ function MobileDiagram() {
           </div>
         </div>
 
-        {/* Center card */}
         <div className="relative -mt-1 px-1">
           <div className="mx-auto mt-3 w-full rounded-3xl border border-blue-200 bg-blue-50/70 p-5 text-center shadow-sm">
             <div className="mx-auto mb-2 w-10 h-10 grid place-items-center rounded-xl bg-white shadow">
@@ -153,12 +150,13 @@ function MobileDiagram() {
   );
 }
 
-/* ---------- Desktop: animated version (unchanged) ---------- */
+/* ---------- Desktop: animated version (fixed) ---------- */
 function DesktopAnimated() {
   const dotControls = useAnimationControls();
   const [active, setActive] = useState(-1);
   const [spark, setSpark] = useState(-1);
   const reduceMotion = useReducedMotion();
+  const mountedRef = useRef(false);
 
   const path = useMemo(
     () => [
@@ -172,14 +170,26 @@ function DesktopAnimated() {
 
   useEffect(() => {
     if (reduceMotion) return;
-    let mounted = true;
+
+    mountedRef.current = true;
+
+    const raf = () =>
+      new Promise((res) => {
+        // wait until the animated element is definitely mounted
+        requestAnimationFrame(() => requestAnimationFrame(res));
+      });
+
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
     (async () => {
+      await raf();
+      if (!mountedRef.current) return;
+
       await dotControls.set({ left: "50%", top: "53%" });
-      while (mounted) {
+
+      while (mountedRef.current) {
         for (const p of path) {
-          if (!mounted) break;
+          if (!mountedRef.current) break;
           setActive(p.hit);
           setSpark(p.chip);
           await dotControls.start({
@@ -187,14 +197,15 @@ function DesktopAnimated() {
             top: p.y,
             transition: { duration: 0.9, ease: "easeInOut" },
           });
-          if (!mounted) break;
+          if (!mountedRef.current) break;
           await delay(220);
         }
       }
     })();
 
     return () => {
-      mounted = false;
+      mountedRef.current = false;
+      dotControls.stop();
     };
   }, [dotControls, path, reduceMotion]);
 
@@ -242,9 +253,14 @@ function DesktopAnimated() {
                   >{s}</motion.div>
                 ))}
               </div>
+
+              {/* The animated dot + frames only render when not reduced-motion, matching the effect above */}
               {!reduceMotion && (
                 <>
-                  <motion.div className="pointer-events-none absolute left-1/2 top-1/2 -ml-1 -mt-1 w-2 h-2 rounded-full bg-blue-600 shadow" animate={dotControls}/>
+                  <motion.div
+                    className="pointer-events-none absolute left-1/2 top-1/2 -ml-1 -mt-1 w-2 h-2 rounded-full bg-blue-600 shadow"
+                    animate={dotControls}
+                  />
                   <div className="pointer-events-none absolute inset-2 rounded-[28px] border-2 border-blue-300/60" />
                   <div className="pointer-events-none absolute inset-6 rounded-[28px] border-2 border-dashed border-blue-400/70" />
                 </>
