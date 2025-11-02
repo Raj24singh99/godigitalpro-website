@@ -10,10 +10,23 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#000000" />
-    <meta name="color-scheme" content="light dark" />
 
-    <!-- (Optional) Organization schema helps brand consistency -->
+    <!-- ✅ Force light UI + white theme -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- ✅ Root-level background & text reset (guarantees white) -->
+    <style id="force-light">
+      html, body, #root {
+        background: #ffffff !important;
+        color: #0f172a; /* slate-900 */
+        min-height: 100%;
+      }
+      /* Prevent any fixed/absolute full-screen overlays from leaking across sections */
+      body { position: relative; }
+    </style>
+
+    <!-- (Optional) Organization schema -->
     <script type="application/ld+json">
     {
       "@context":"https://schema.org",
@@ -24,7 +37,7 @@
     }
     </script>
 
-    <!-- ✅ Google Tag Manager -->
+    <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -40,8 +53,9 @@
     <!-- End Google Tag Manager -->
   </head>
 
-  <body>
-    <!-- ✅ Google Tag Manager (noscript) -->
+  <!-- ✅ Tailwind-friendly defaults -->
+  <body class="bg-white text-slate-900 antialiased">
+    <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-N4MNCDGW"
