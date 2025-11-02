@@ -1,10 +1,10 @@
 // src/components/GrowthJourney.jsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion, useAnimationControls, useReducedMotion } from "framer-motion";
 import { Compass, Wrench, Rocket, Repeat, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
-/* ---------- content (plain English) ---------- */
+/* ---------- content ---------- */
 const STEPS = [
   { title: "Discover",    sub: "Define target customers and offers people want.", Icon: Compass },
   { title: "Foundations", sub: "Set up fast site, pixels, and a basic CRM.",      Icon: Wrench   },
@@ -13,7 +13,7 @@ const STEPS = [
   { title: "Scale",       sub: "Increase spend and expand to new channels.",      Icon: TrendingUp },
 ];
 
-const LOOP_SECONDS = 10; // entire cycle per loop
+const LOOP_SECONDS = 10; // full cycle duration
 
 /* ---------- helpers ---------- */
 function useIsMobile() {
@@ -65,13 +65,20 @@ function DesktopRail() {
   const reduce = useReducedMotion();
   const [activeIdx, setActiveIdx] = useState(0);
   const fillCtl = useAnimationControls();
+  const alive = useRef(false);
 
   useEffect(() => {
     if (reduce) return;
-    let mounted = true;
+
+    alive.current = true;
+
+    const raf = () =>
+      new Promise((res) => {
+        requestAnimationFrame(() => requestAnimationFrame(res));
+      });
 
     const loop = async () => {
-      while (mounted) {
+      while (alive.current) {
         await fillCtl.set({ scaleX: 0, originX: 0 });
         await fillCtl.start({
           scaleX: 1,
@@ -81,12 +88,21 @@ function DesktopRail() {
     };
 
     const stepMs = (LOOP_SECONDS / STEPS.length) * 1000;
-    const t = setInterval(() => setActiveIdx((i) => (i + 1) % STEPS.length), stepMs);
 
-    loop();
+    (async () => {
+      await raf(); // ensure the motion.div that uses fillCtl is mounted
+      if (!alive.current) return;
+      loop();
+    })();
+
+    const t = setInterval(() => {
+      setActiveIdx((i) => (i + 1) % STEPS.length);
+    }, stepMs);
+
     return () => {
-      mounted = false;
+      alive.current = false;
       clearInterval(t);
+      fillCtl.stop();
     };
   }, [reduce, fillCtl]);
 
@@ -96,7 +112,7 @@ function DesktopRail() {
       <div className="pointer-events-none absolute left-6 right-6 top-[58px] h-[4px] bg-slate-200 rounded-full" />
 
       {/* animated fill rail */}
-      {!useReducedMotion() && (
+      {!reduce && (
         <motion.div
           className="pointer-events-none absolute left-6 top-[58px] h-[4px] rounded-full origin-left"
           style={{
@@ -130,18 +146,25 @@ function DesktopRail() {
   );
 }
 
-/* ---------- Mobile: vertical rail, top→bottom ---------- */
+/* ---------- Mobile: vertical rail ---------- */
 function MobileVertical() {
   const reduce = useReducedMotion();
   const [activeIdx, setActiveIdx] = useState(0);
   const fillCtl = useAnimationControls();
+  const alive = useRef(false);
 
   useEffect(() => {
     if (reduce) return;
-    let mounted = true;
+
+    alive.current = true;
+
+    const raf = () =>
+      new Promise((res) => {
+        requestAnimationFrame(() => requestAnimationFrame(res));
+      });
 
     const loop = async () => {
-      while (mounted) {
+      while (alive.current) {
         await fillCtl.set({ scaleY: 0, originY: 0 });
         await fillCtl.start({
           scaleY: 1,
@@ -151,12 +174,21 @@ function MobileVertical() {
     };
 
     const stepMs = (LOOP_SECONDS / STEPS.length) * 1000;
-    const t = setInterval(() => setActiveIdx((i) => (i + 1) % STEPS.length), stepMs);
 
-    loop();
+    (async () => {
+      await raf(); // ensure the motion.div using fillCtl is mounted
+      if (!alive.current) return;
+      loop();
+    })();
+
+    const t = setInterval(() => {
+      setActiveIdx((i) => (i + 1) % STEPS.length);
+    }, stepMs);
+
     return () => {
-      mounted = false;
+      alive.current = false;
       clearInterval(t);
+      fillCtl.stop();
     };
   }, [reduce, fillCtl]);
 
@@ -165,7 +197,7 @@ function MobileVertical() {
       {/* vertical rail */}
       <div className="pointer-events-none absolute left-6 top-2 bottom-2 w-[4px] bg-slate-200 rounded-full" />
 
-      {!useReducedMotion() && (
+      {!reduce && (
         <motion.div
           className="pointer-events-none absolute left-6 top-2 w-[4px] rounded-full origin-top"
           style={{
