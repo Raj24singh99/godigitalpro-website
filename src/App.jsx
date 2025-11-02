@@ -11,6 +11,7 @@ import OnboardingPage from "./pages/OnboardingPage";
 // If you don't have this file, delete the next import + route:
 // import SignInPage from "./pages/SignInPage";
 import ThankYou from "./pages/ThankYou";
+import AboutUs from "./pages/AboutUs"; // ✅ NEW: About page
 
 // Services
 import WebsiteDevelopmentPage from "./pages/services/WebsiteDevelopmentPage";
@@ -51,6 +52,10 @@ export default function App() {
           {/* If SignInPage.jsx doesn't exist, remove this route too */}
           {/* <Route path="/signin" element={<SignInPage />} /> */}
           <Route path="/thank-you" element={<ThankYou />} />
+
+          {/* About */}
+          <Route path="/about_us" element={<AboutUs />} />     {/* ✅ NEW canonical route */}
+          <Route path="/about" element={<Navigate to="/about_us" replace />} /> {/* ✅ Redirect */}
 
           {/* Services */}
           <Route path="/services/website-development" element={<WebsiteDevelopmentPage />} />
