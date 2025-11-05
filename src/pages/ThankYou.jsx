@@ -1,6 +1,7 @@
 // src/pages/ThankYou.jsx
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const CALENDLY_SRC = "https://assets.calendly.com/assets/external/widget.js";
 const CALENDLY_URL =
@@ -8,6 +9,43 @@ const CALENDLY_URL =
 
 export default function ThankYou() {
   const calRef = useRef(null);
+
+  // ---- SEO constants (no UI changes) ----
+  const seo = {
+    title: "Thank You | GoDigitalPro — Book Your Discovery Call",
+    desc:
+      "Thanks for submitting your details. Book a free discovery call with GoDigitalPro, a full-funnel digital marketing agency helping brands scale with Paid Ads, SEO, and Web.",
+    url: "https://www.godigitalpro.in/thank-you",
+    image: "https://www.godigitalpro.in/public/assets/logo.jpg",
+  };
+
+  // Structured data: WebPage + potential ScheduleAction (Calendly)
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Thank You",
+    url: seo.url,
+    description: seo.desc,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "GoDigitalPro",
+      url: "https://www.godigitalpro.in/",
+    },
+    potentialAction: {
+      "@type": "ScheduleAction",
+      target: CALENDLY_URL,
+      name: "Book a Discovery Call",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "GoDigitalPro",
+      url: "https://www.godigitalpro.in/",
+      logo: {
+        "@type": "ImageObject",
+        url: seo.image,
+      },
+    },
+  };
 
   // Load Calendly script once
   useEffect(() => {
@@ -22,6 +60,39 @@ export default function ThankYou() {
 
   return (
     <main className="relative bg-white">
+      <Helmet>
+        {/* Primary */}
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.desc} />
+        <link rel="canonical" href={seo.url} />
+
+        {/* Thank-you pages shouldn't be indexed */}
+        <meta name="robots" content="noindex, nofollow, max-image-preview:large" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={seo.url} />
+        <meta property="og:image" content={seo.image} />
+        <meta property="og:site_name" content="GoDigitalPro" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.desc} />
+        <meta name="twitter:image" content={seo.image} />
+
+        {/* Perf hints for Calendly */}
+        <link rel="preconnect" href="https://assets.calendly.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://assets.calendly.com" />
+        <link rel="preconnect" href="https://calendly.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://calendly.com" />
+
+        {/* JSON-LD */}
+        <script type="application/ld+json">{JSON.stringify(webPageJsonLd)}</script>
+      </Helmet>
+
       {/* Soft glow */}
       <div
         aria-hidden

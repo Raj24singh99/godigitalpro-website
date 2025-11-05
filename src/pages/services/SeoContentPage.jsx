@@ -1,15 +1,17 @@
+// src/pages/services/SeoContentPage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   Search,
   FileText,
   Link2,
   ServerCog,
   BarChart3,
-  Network,   // used for "Site Structure" (Sitemap-like)
-  Globe2,    // used in GEO section
-  BookOpen,  // used for Topic Clusters
-  Sparkles,  // used for GEO optimization
+  Network,
+  Globe2,
+  BookOpen,
+  Sparkles,
 } from "lucide-react";
 
 const Section = ({ id, className = "", children }) => (
@@ -42,8 +44,45 @@ export default function SeoContentPage() {
     []
   );
 
+  // ---- SEO constants ----
+  const site = "https://www.godigitalpro.in";
+  const path = "/services/seo-content";
+  const pageUrl = `${site}${path}`;
+  const ogImage = `${site}/og-seo-content.jpg`;
+
+  const title = "SEO & Content | Technical SEO, Topic Clusters, Links & GEO";
+  const desc =
+    "Full-stack SEO: technical fixes, on-page structure, topic clusters, helpful content, digital PR, and GA4/GSC measurement. Includes Generative Search Optimization (GEO).";
+  const keywords =
+    "SEO agency, technical SEO, topic clusters, schema, entity SEO, link building, content writing, GA4, Search Console, Local SEO, GEO, AI Overviews";
+
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
+      <Helmet>
+        {/* Basic SEO */}
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta name="keywords" content={keywords} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={pageUrl} />
+        <meta name="author" content="GoDigitalPro" />
+        <meta name="publisher" content="GoDigitalPro" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="GoDigitalPro" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={ogImage} />
+      </Helmet>
+
       <style>{`
         @keyframes fadeSwap { 0%{opacity:0; transform:translateY(8px) scale(.98)} 20%{opacity:1; transform:translateY(0) scale(1)} 80%{opacity:1} 100%{opacity:0; transform:translateY(-8px) scale(.98)} }
         @keyframes glow { 0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,0)} 50%{box-shadow:0 0 0 10px rgba(59,130,246,.12)} }
@@ -163,73 +202,73 @@ export default function SeoContentPage() {
         <Container>
           <h2 className="text-2xl md:text-3xl font-semibold">The three parts of SEO</h2>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {/* On-Page */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex rounded-xl bg-emerald-500/90 p-2 text-white">
-                <Search className="size-5" />
-              </span>
-              <h3 className="font-semibold">On-Page SEO</h3>
-            </div>
-            <ul className="mt-3 space-y-2 text-sm text-slate-700">
-              {[
-                "Titles, meta, headers, and readable HTML.",
-                "Answer-first sections and clear CTAs.",
-                "Internal links that pass context and equity.",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-2">
-                  <span className="mt-1 size-1.5 rounded-full bg-emerald-500" />
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {/* On-Page */}
+            <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex rounded-xl bg-emerald-500/90 p-2 text-white">
+                  <Search className="size-5" />
+                </span>
+                <h3 className="font-semibold">On-Page SEO</h3>
+              </div>
+              <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                {[
+                  "Titles, meta, headers, and readable HTML.",
+                  "Answer-first sections and clear CTAs.",
+                  "Internal links that pass context and equity.",
+                ].map((p) => (
+                  <li key={p} className="flex items-start gap-2">
+                    <span className="mt-1 size-1.5 rounded-full bg-emerald-500" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
 
-          {/* Off-Page */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex rounded-xl bg-amber-500/90 p-2 text-white">
-                <Link2 className="size-5" />
-              </span>
-              <h3 className="font-semibold">Off-Page SEO</h3>
-            </div>
-            <ul className="mt-3 space-y-2 text-sm text-slate-700">
-              {[
-                "Digital PR and editorial mentions.",
-                "Topical backlinks and unlinked brand mentions.",
-                "E-E-A-T signals and author profiles.",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-2">
-                  <span className="mt-1 size-1.5 rounded-full bg-amber-500" />
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
+            {/* Off-Page */}
+            <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex rounded-xl bg-amber-500/90 p-2 text-white">
+                  <Link2 className="size-5" />
+                </span>
+                <h3 className="font-semibold">Off-Page SEO</h3>
+              </div>
+              <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                {[
+                  "Digital PR and editorial mentions.",
+                  "Topical backlinks and unlinked brand mentions.",
+                  "E-E-A-T signals and author profiles.",
+                ].map((p) => (
+                  <li key={p} className="flex items-start gap-2">
+                    <span className="mt-1 size-1.5 rounded-full bg-amber-500" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
 
-          {/* Technical */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex rounded-xl bg-indigo-500/90 p-2 text-white">
-                <ServerCog className="size-5" />
-              </span>
-              <h3 className="font-semibold">Technical SEO</h3>
-            </div>
-            <ul className="mt-3 space-y-2 text-sm text-slate-700">
-              {[
-                "Core Web Vitals and image optimization.",
-                "Sitemaps, robots, canonicals, and redirects.",
-                "Schema (FAQ, HowTo, Product, Article, Local).",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-2">
-                  <span className="mt-1 size-1.5 rounded-full bg-indigo-500" />
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </div>
+            {/* Technical */}
+            <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex rounded-xl bg-indigo-500/90 p-2 text-white">
+                  <ServerCog className="size-5" />
+                </span>
+                <h3 className="font-semibold">Technical SEO</h3>
+              </div>
+              <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                {[
+                  "Core Web Vitals and image optimization.",
+                  "Sitemaps, robots, canonicals, and redirects.",
+                  "Schema (FAQ, HowTo, Product, Article, Local).",
+                ].map((p) => (
+                  <li key={p} className="flex items-start gap-2">
+                    <span className="mt-1 size-1.5 rounded-full bg-indigo-500" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
         </Container>
       </Section>
 
@@ -327,7 +366,7 @@ export default function SeoContentPage() {
               { q: "How long does SEO take?", a: "Early gains often show in 4–8 weeks; durable growth compounds over months as content and links build." },
               { q: "Do you write content?", a: "Yes. We create briefs and write pages/blogs with clear structure, schema, and internal links." },
               { q: "Will you fix technical issues?", a: "Yes. We audit, prioritize, and implement fixes for speed, crawling, indexing, and structured data." },
-              { q: "Do you support Local SEO?", a: "Yes. GMB optimization, NAP consistency, local pages, and review strategy." },
+              { q: "Do you support Local SEO?", a: "Yes. GBP optimization, NAP consistency, local pages, and review strategy." },
               { q: "How do you report progress?", a: "Shared dashboards with keywords, pages, impressions, clicks, traffic, and next steps." },
             ].map((f) => (
               <details key={f.q} className="group p-4">
@@ -353,8 +392,8 @@ export default function SeoContentPage() {
             provider: { "@type": "Organization", name: "GoDigitalPro" },
             serviceType: "Search Engine Optimization",
             areaServed: "Global",
-            description:
-              "Technical, on-page, and off-page SEO with content strategy, topic clusters, schema, link earning, and measurement. Includes generative search optimization practices.",
+            url: pageUrl,
+            description: desc,
             offers: { "@type": "Offer", category: "Service" },
           }),
         }}

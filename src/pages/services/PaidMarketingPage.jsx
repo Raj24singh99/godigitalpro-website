@@ -1,5 +1,7 @@
+// src/pages/services/PaidMarketingPage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   Search,
   PlayCircle,
@@ -48,8 +50,45 @@ export default function PaidMarketingPage() {
     []
   );
 
+  // ---- SEO constants ----
+  const site = "https://www.godigitalpro.in";
+  const path = "/services/paid-marketing";
+  const pageUrl = `${site}${path}`;
+  const ogImage = `${site}/og-paid-marketing.jpg`;
+
+  const title = "Paid Marketing | Google, Meta, LinkedIn, YouTube & Programmatic";
+  const desc =
+    "Full-funnel performance marketing: creative systems, clean account structures, budget/bid guardrails, and end-to-end measurement with GA4, CAPI & offline conversions.";
+  const keywords =
+    "performance marketing, Google Ads, Meta Ads, LinkedIn Ads, YouTube Ads, Programmatic, PMax, CAPI, GA4, offline conversions, PPC agency, GoDigitalPro";
+
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
+      <Helmet>
+        {/* Basic SEO */}
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta name="keywords" content={keywords} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={pageUrl} />
+        <meta name="author" content="GoDigitalPro" />
+        <meta name="publisher" content="GoDigitalPro" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="GoDigitalPro" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={ogImage} />
+      </Helmet>
+
       <style>{`
         @keyframes fadeSwap { 0%{opacity:0; transform:translateY(8px) scale(.98)} 20%{opacity:1; transform:translateY(0) scale(1)} 80%{opacity:1} 100%{opacity:0; transform:translateY(-8px) scale(.98)} }
         @keyframes glow { 0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,0)} 50%{box-shadow:0 0 0 10px rgba(59,130,246,.12)} }
@@ -427,8 +466,8 @@ export default function PaidMarketingPage() {
             provider: { "@type": "Organization", name: "GoDigitalPro" },
             serviceType: "Performance Marketing",
             areaServed: "Global",
-            description:
-              "ROI-first paid marketing across Google, Meta, LinkedIn, YouTube, X, Snapchat, and Programmatic with full-funnel strategy, creative testing, and end-to-end measurement.",
+            url: pageUrl,
+            description: desc,
             offers: { "@type": "Offer", category: "Service" },
           }),
         }}

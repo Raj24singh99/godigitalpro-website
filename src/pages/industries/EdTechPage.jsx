@@ -53,15 +53,44 @@ export default function EdTechPage() {
     []
   );
 
+  /* ---------- SEO constants (absolute URLs) ---------- */
+  const site = "https://www.godigitalpro.in";
+  const path = "/industries/edtech";
+  const pageUrl = `${site}${path}`;
+  const ogImage = `${site}/og-edtech.jpg`; // ← Add a 1200x630 image at public/og-edtech.jpg
+
+  const title = "EdTech Marketing | Local SEO, SEO, Paid Ads & Admissions Funnels";
+  const desc =
+    "Stronger online visibility and higher enrollments for EdTech. Local SEO, SEO, Paid Ads, conversion-focused websites, and counselor workflows—aligned to your brand.";
+  const keywords =
+    "EdTech marketing, education marketing agency, local SEO for institutes, admissions funnels, counselor SLAs, education paid ads, EdTech SEO, GoDigitalPro";
+
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
       <Helmet>
-        <title>EdTech Marketing | Local SEO, SEO, Paid Ads & Admissions Funnels</title>
-        <meta
-          name="description"
-          content="Stronger online visibility and higher enrollments for EdTech. Local SEO, SEO, Paid Ads, conversion-focused websites, and counselor workflows—aligned to your brand."
-        />
-        <link rel="canonical" href="/industries/edtech" />
+        {/* Basic */}
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta name="keywords" content={keywords} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={pageUrl} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="GoDigitalPro" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={ogImage} />
+
+        <meta name="author" content="GoDigitalPro" />
+        <meta name="publisher" content="GoDigitalPro" />
       </Helmet>
 
       <style>{`

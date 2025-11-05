@@ -14,7 +14,6 @@ import {
   LayoutDashboard,
   Link2,
   FileText,
-  Settings2,
   Webhook,
   Gauge,
 } from "lucide-react";
@@ -50,15 +49,44 @@ export default function SaaSStartupsPage() {
     []
   );
 
+  /* ---------- SEO constants (absolute URLs) ---------- */
+  const site = "https://www.godigitalpro.in";
+  const path = "/industries/saas-startups";
+  const pageUrl = `${site}${path}`;
+  const ogImage = `${site}/og-saas-startups.jpg`; // ← place a 1200x630 image at public/og-saas-startups.jpg
+
+  const title = "SaaS & Tech Startups Marketing | Demand Gen & Activation";
+  const desc =
+    "SaaS growth with product-led content, SEM, LinkedIn, and analytics. Acquire qualified trials, drive activation with in-product nudges, and prove ROI with clear attribution.";
+  const keywords =
+    "SaaS marketing, PLG, demand generation, ICP messaging, LinkedIn ads, B2B SaaS SEO, product-led growth, PQL, SQL, activation, payback, GoDigitalPro";
+
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
       <Helmet>
-        <title>SaaS & Tech Startups Marketing | Demand Gen & Activation</title>
-        <meta
-          name="description"
-          content="SaaS growth with product-led content, SEM, LinkedIn, and analytics. Acquire qualified trials, drive activation with in-product nudges, and prove ROI with clear attribution."
-        />
-        <link rel="canonical" href="/industries/saas-startups" />
+        {/* Basic */}
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta name="keywords" content={keywords} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={pageUrl} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="GoDigitalPro" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={ogImage} />
+
+        <meta name="author" content="GoDigitalPro" />
+        <meta name="publisher" content="GoDigitalPro" />
       </Helmet>
 
       <style>{`

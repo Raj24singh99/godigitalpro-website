@@ -1,18 +1,17 @@
+// src/pages/services/SocialMediaMarketingPage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   Calendar,
-  Sparkles,
   Users,
   MessageCircle,
   Megaphone,
   BarChart3,
   Camera,
   Video,
-  Palette,
   ThumbsUp,
   HeartHandshake,
-  TrendingUp,
 } from "lucide-react";
 
 const Section = ({ id, className = "", children }) => (
@@ -45,8 +44,45 @@ export default function SocialMediaMarketingPage() {
     []
   );
 
+  // ---- SEO constants ----
+  const site = "https://www.godigitalpro.in";
+  const path = "/services/social-media-marketing";
+  const pageUrl = `${site}${path}`;
+  const ogImage = `${site}/og-social-media.jpg`;
+
+  const title = "Social Media Marketing | Calendars, Reels, Carousels & Community";
+  const desc =
+    "Strategy, monthly content calendars, reels/shorts, carousels, creator collabs, community management, and weekly analytics. Built for reach, saves, and conversations.";
+  const keywords =
+    "social media marketing, SMM agency, content calendar, reels, shorts, carousels, community management, creator collaborations, social SEO";
+
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
+      <Helmet>
+        {/* Basic SEO */}
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta name="keywords" content={keywords} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={pageUrl} />
+        <meta name="author" content="GoDigitalPro" />
+        <meta name="publisher" content="GoDigitalPro" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="GoDigitalPro" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={ogImage} />
+      </Helmet>
+
       <style>{`
         @keyframes fadeSwap { 0%{opacity:0; transform:translateY(8px) scale(.98)} 20%{opacity:1; transform:translateY(0) scale(1)} 80%{opacity:1} 100%{opacity:0; transform:translateY(-8px) scale(.98)} }
         @keyframes glow { 0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,0)} 50%{box-shadow:0 0 0 10px rgba(59,130,246,.12)} }
@@ -274,9 +310,11 @@ export default function SocialMediaMarketingPage() {
                 <ul className="mt-3 space-y-2 text-sm text-slate-700">
                   {b.points.map((p) => (
                     <li key={p} className="flex items-start gap-2">
-                      <span className="mt-1 size-1.5 rounded-full" style={{ backgroundColor: "currentColor" }}>
-                        {/* decorative dot */}
-                      </span>
+                      <span
+                        className="mt-1 size-1.5 rounded-full"
+                        style={{ backgroundColor: "currentColor" }}
+                        aria-hidden
+                      />
                       <span>{p}</span>
                     </li>
                   ))}
@@ -329,7 +367,7 @@ export default function SocialMediaMarketingPage() {
               <details key={f.q} className="group p-4">
                 <summary className="flex cursor-pointer list-none items-center justify-between">
                   <span className="font-medium">{f.q}</span>
-                  <span className="text-slate-500 transition group-open:rotate-45">+</span>
+                  <span className="text-slate-500 transition group-open:rotate-45" aria-hidden>+</span>
                 </summary>
                 <p className="mt-2 text-sm leading-relaxed text-slate-700">{f.a}</p>
               </details>
@@ -349,8 +387,8 @@ export default function SocialMediaMarketingPage() {
             provider: { "@type": "Organization", name: "GoDigitalPro" },
             serviceType: "Social Media Management",
             areaServed: "Global",
-            description:
-              "Strategy, content calendars, reels/shorts, carousels, creator collaborations, community management, and analytics for reach and trust.",
+            url: pageUrl,
+            description: desc,
             offers: { "@type": "Offer", category: "Service" },
           }),
         }}
