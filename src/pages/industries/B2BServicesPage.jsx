@@ -51,15 +51,45 @@ export default function B2BServicesPage() {
     []
   );
 
+  /* ---------- SEO constants (absolute URLs) ---------- */
+  const site = "https://www.godigitalpro.in";
+  const path = "/industries/b2b-services";
+  const pageUrl = `${site}${path}`;
+  const ogImage = `${site}/og-b2b-services.jpg`; // ← place a 1200x630 image at /public/og-b2b-services.jpg
+
+  const title = "B2B Services Marketing | ABM, Comparison SEO, RevOps & Attribution";
+  const desc =
+    "B2B pipeline you can measure. We align ICP & offer, LinkedIn ABM, problem/solution & comparison SEO, and RevOps (lead scoring, routing, SLAs) to generate qualified SQLs with clear attribution.";
+  const keywords =
+    "B2B marketing agency, ABM, LinkedIn ABM, comparison SEO, problem solution SEO, RevOps, lead scoring, lead routing, attribution, pipeline growth, GoDigitalPro";
+
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
       <Helmet>
-        <title>B2B Services Marketing | ABM, Comparison SEO, RevOps & Attribution</title>
-        <meta
-          name="description"
-          content="B2B pipeline you can measure. We align ICP & offer, LinkedIn ABM, problem/solution & comparison SEO, and RevOps (lead scoring, routing, SLAs) to generate qualified SQLs with clear attribution."
-        />
-        <link rel="canonical" href="/industries/b2b-services" />
+        {/* Basic */}
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta name="keywords" content={keywords} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={pageUrl} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="GoDigitalPro" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={ogImage} />
+
+        {/* Optional author/publisher hints (non-rendering) */}
+        <meta name="author" content="GoDigitalPro" />
+        <meta name="publisher" content="GoDigitalPro" />
       </Helmet>
 
       <style>{`

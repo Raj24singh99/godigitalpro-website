@@ -48,15 +48,44 @@ export default function LocalServicesPage() {
     []
   );
 
+  /* ---------- SEO constants (absolute URLs) ---------- */
+  const site = "https://www.godigitalpro.in";
+  const path = "/industries/local-services";
+  const pageUrl = `${site}${path}`;
+  const ogImage = `${site}/og-local-services.jpg`; // ← add 1200x630 at public/og-local-services.jpg
+
+  const title = "Local Services Marketing | Leads from Nearby Customers";
+  const desc =
+    "Local SEO, GBP optimization, geo-targeted PPC, review ops, and call/directions tracking for SMBs. Get more calls, bookings, and walk-ins.";
+  const keywords =
+    "local services marketing, Google Business Profile, local SEO, maps ranking, SMB PPC, call tracking, directions clicks, reviews, GoDigitalPro";
+
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
       <Helmet>
-        <title>Local Services Marketing | Leads from Nearby Customers</title>
-        <meta
-          name="description"
-          content="Local SEO, GBP optimization, geo-targeted PPC, review ops, and call/directions tracking for SMBs. Get more calls, bookings, and walk-ins."
-        />
-        <link rel="canonical" href="/industries/local-services" />
+        {/* Basic */}
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta name="keywords" content={keywords} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={pageUrl} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="GoDigitalPro" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={ogImage} />
+
+        <meta name="author" content="GoDigitalPro" />
+        <meta name="publisher" content="GoDigitalPro" />
       </Helmet>
 
       <style>{`
@@ -173,7 +202,7 @@ export default function LocalServicesPage() {
                 grad: "from-amber-500 to-yellow-400",
               },
             ].map((c) => (
-              <Card key={c.title} {...c} />
+                <Card key={c.title} {...c} />
             ))}
           </div>
         </Container>

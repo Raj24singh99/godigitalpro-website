@@ -1,5 +1,7 @@
+// src/pages/industries/MarketplacesQuickCommercePage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   PackageCheck,
   FileSpreadsheet,
@@ -28,7 +30,7 @@ const PLATFORMS = [
   { name: "Flipkart", color: "#2874F0" },
   { name: "Blinkit", color: "#00C15B" },
   { name: "Zepto", color: "#7F3FFC" },
-  { name: "Instamart", color: "#FF5A5F" }, // Swiggy Instamart-ish
+  { name: "Instamart", color: "#FF5A5F" },
   { name: "Nykaa", color: "#FF4E8A" },
   { name: "Myntra", color: "#FF3F6C" },
 ];
@@ -46,8 +48,45 @@ export default function MarketplacesQuickCommercePage() {
     []
   );
 
+  // ---- SEO constants ----
+  const site = "https://www.godigitalpro.in";
+  const path = "/industries/marketplaces-quick-commerce";
+  const pageUrl = `${site}${path}`;
+  const ogImage = `${site}/og-marketplaces.jpg`;
+
+  const title = "Marketplaces & Quick Commerce | Amazon, Flipkart, Blinkit";
+  const desc =
+    "End-to-end marketplace growth: catalog & compliance, listing SEO, retail media, price/stock intelligence, reviews, and fulfilment governance.";
+  const keywords =
+    "marketplace management, retail media, Amazon ads, Flipkart ads, Blinkit, Instamart, Zepto, listing SEO, A+ content, buy box, eCommerce ops, GoDigitalPro";
+
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
+      <Helmet>
+        {/* Basic SEO */}
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta name="keywords" content={keywords} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={pageUrl} />
+        <meta name="author" content="GoDigitalPro" />
+        <meta name="publisher" content="GoDigitalPro" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="GoDigitalPro" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={ogImage} />
+      </Helmet>
+
       <style>{`
         @keyframes fadeSwap { 0%{opacity:0; transform:translateY(8px) scale(.98)} 20%{opacity:1; transform:translateY(0) scale(1)} 80%{opacity:1} 100%{opacity:0; transform:translateY(-8px) scale(.98)} }
         @keyframes glow { 0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,0)} 50%{box-shadow:0 0 0 10px rgba(59,130,246,.12)} }
@@ -339,8 +378,8 @@ export default function MarketplacesQuickCommercePage() {
             provider: { "@type": "Organization", name: "GoDigitalPro" },
             serviceType: "Marketplace Management and Retail Media",
             areaServed: "India",
-            description:
-              "End-to-end marketplace growth: catalog compliance, listing SEO, retail media, price/stock intelligence, review mining, and fulfilment governance across Amazon, Flipkart, Blinkit, Zepto, Instamart, Nykaa, and Myntra.",
+            url: pageUrl,
+            description: desc,
             offers: { "@type": "Offer", category: "Service" },
           }),
         }}

@@ -1,20 +1,19 @@
+// src/pages/AboutUs.jsx
 import React from "react";
 import { Helmet } from "react-helmet-async";
-
-/**
- * AboutUs.jsx — GoDigitalPro
- * Highlights trimmed: no hero chip, no right-side trust pill.
- * Only two mentions: hero paragraph + founder chip (IIT Kanpur • 7+ yrs).
- */
+import { Link } from "react-router-dom";
 
 export default function AboutUs() {
   const linkedInUrl = "https://www.linkedin.com/in/raj24singh99/";
+
+  // If your live route is /about_us keep as-is; if you use /about, update both places.
+  const CANONICAL_URL = "https://www.godigitalpro.in/about_us/";
 
   const pageSEO = {
     title: "About Us | GoDigitalPro — Growth Marketing Partner",
     description:
       "GoDigitalPro is a growth-focused marketing agency led by Raj Singh (IIT Kanpur alumnus). 7+ years, 50+ brands. Full-funnel strategy across Paid Ads, SEO, CRO, and Analytics.",
-    url: "https://www.godigitalpro.in/about_us/",
+    url: CANONICAL_URL,
     image: "https://www.godigitalpro.in/public/assets/logo.jpg",
   };
 
@@ -46,6 +45,25 @@ export default function AboutUs() {
     },
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.godigitalpro.in/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About Us",
+        item: pageSEO.url,
+      },
+    ],
+  };
+
   return (
     <main className="relative isolate bg-white text-gray-900">
       <Helmet>
@@ -63,6 +81,7 @@ export default function AboutUs() {
         <meta name="twitter:image" content={pageSEO.image} />
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(founderJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       </Helmet>
 
       {/* Soft gradient top glow */}
@@ -75,20 +94,23 @@ export default function AboutUs() {
         }}
       />
 
-      {/* Hero (chip & right trust pill removed) */}
-      <section className="mx-auto max-w-6xl px-4 pt-16 pb-8 sm:pt-24 sm:pb-12">
+      {/* Hero */}
+      <section
+        className="mx-auto max-w-6xl px-4 pt-16 pb-8 sm:pt-24 sm:pb-12"
+        aria-labelledby="about-hero-heading"
+      >
         <div className="grid gap-8 sm:grid-cols-2 sm:items-end">
           <div>
             <p className="mb-3 text-xs font-semibold tracking-widest text-amber-600 uppercase">
               About GoDigitalPro
             </p>
-            <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl">
+            <h1 id="about-hero-heading" className="text-3xl font-extrabold leading-tight sm:text-4xl">
               Turning{" "}
               <span className="bg-gradient-to-r from-amber-500 to-yellow-400 bg-clip-text text-transparent">
-                Ambition
+                ambition
               </span>{" "}
               into
-              <br className="hidden sm:block" /> Measurable Growth
+              <br className="hidden sm:block" /> measurable growth
             </h1>
             <p className="mt-4 max-w-prose text-base text-gray-700">
               We’re a growth partner for brands ready to scale with clarity, creativity, and confidence.
@@ -96,8 +118,9 @@ export default function AboutUs() {
               <a
                 href={linkedInUrl}
                 target="_blank"
-                rel="noreferrer"
-                className="underline decoration-amber-400 underline-offset-4 hover:text-gray-900"
+                rel="noreferrer noopener"
+                className="underline decoration-amber-400 underline-offset-4 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded"
+                aria-label="Open Raj Singh LinkedIn profile (opens in a new tab)"
               >
                 Raj Singh
               </a>{" "}
@@ -105,15 +128,20 @@ export default function AboutUs() {
             </p>
           </div>
 
-          {/* removed right-side trust card */}
+          {/* spacer to keep previous layout balance */}
           <div className="hidden sm:block" />
         </div>
       </section>
 
       {/* Differentiators */}
-      <section className="mx-auto max-w-6xl px-4 py-8 sm:py-12">
+      <section
+        className="mx-auto max-w-6xl px-4 py-8 sm:py-12"
+        aria-labelledby="diff-heading"
+      >
         <div className="rounded-3xl border border-gray-100 bg-white/70 p-6 shadow-sm sm:p-10">
-          <h2 className="text-xl font-bold sm:text-2xl">What Makes Us Different</h2>
+          <h2 id="diff-heading" className="text-xl font-bold sm:text-2xl">
+            What Makes Us Different
+          </h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
@@ -135,7 +163,7 @@ export default function AboutUs() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:shadow-md"
+                className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:shadow-md focus-within:shadow-md"
               >
                 <h3 className="text-base font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm text-gray-600">{item.body}</p>
@@ -146,7 +174,13 @@ export default function AboutUs() {
       </section>
 
       {/* Expertise */}
-      <section className="mx-auto max-w-6xl px-4 py-8 sm:py-12">
+      <section
+        className="mx-auto max-w-6xl px-4 py-8 sm:py-12"
+        aria-labelledby="expertise-heading"
+      >
+        <h2 id="expertise-heading" className="sr-only">
+          Expertise
+        </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
@@ -180,19 +214,27 @@ export default function AboutUs() {
                 "Budgets, naming conventions, checklists, and QA so scale never breaks your systems.",
             },
           ].map((item) => (
-            <div key={item.title} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+            <article
+              key={item.title}
+              className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+            >
               <h3 className="text-lg font-semibold">{item.title}</h3>
               <p className="mt-2 text-sm text-gray-600">{item.body}</p>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* Founder (only chip with IIT Kanpur • 7+ yrs) */}
-      <section className="mx-auto max-w-6xl px-4 py-8 sm:py-12">
+      {/* Founder */}
+      <section
+        className="mx-auto max-w-6xl px-4 py-8 sm:py-12"
+        aria-labelledby="founder-heading"
+      >
         <div className="grid gap-6 sm:grid-cols-[1fr_1.3fr] sm:items-center">
-          <div className="rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-bold sm:text-2xl">Meet the Founder</h2>
+          <article className="rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
+            <h2 id="founder-heading" className="text-xl font-bold sm:text-2xl">
+              Meet the Founder
+            </h2>
             <p className="mt-3 text-sm leading-6 text-gray-700">
               <span className="font-semibold">Raj Singh</span> — Founder & CEO of GoDigitalPro — is a performance marketing strategist and{" "}
               <span className="font-medium">IIT Kanpur alumnus</span> who has contributed to growth across eCommerce, SaaS, education, and healthcare.
@@ -203,23 +245,32 @@ export default function AboutUs() {
             <a
               href={linkedInUrl}
               target="_blank"
-              rel="noreferrer"
-              className="mt-4 inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm hover:border-gray-300 hover:shadow"
+              rel="noreferrer noopener"
+              className="mt-4 inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm hover:border-gray-300 hover:shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              aria-label="Connect with Raj Singh on LinkedIn (opens in a new tab)"
             >
               Connect on LinkedIn
-              <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <svg
+                className="ml-2 h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
                 <path d="M7 17L17 7" />
                 <path d="M7 7h10v10" />
               </svg>
             </a>
 
-            {/* Single compact chip (the only extra visual badge) */}
             <div className="mt-3 inline-flex items-center gap-2 rounded-lg bg-gray-50 px-3 py-1 text-xs font-medium text-gray-700 ring-1 ring-gray-200">
               🎓 IIT Kanpur • 7+ yrs
             </div>
-          </div>
+          </article>
 
-          <div className="rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
+          <article className="rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
             <h3 className="text-base font-semibold">Our Philosophy</h3>
             <p className="mt-2 text-sm text-gray-700">
               Marketing isn’t a trend-chase — it’s momentum. We architect systems where data, psychology, and storytelling work together
@@ -231,31 +282,46 @@ export default function AboutUs() {
               <li className="rounded-xl bg-gray-50 p-3">Insight before spend</li>
               <li className="rounded-xl bg-gray-50 p-3">Compounding growth loops</li>
             </ul>
-          </div>
+          </article>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="relative mx-auto max-w-6xl px-4 pb-16 sm:pb-24">
+      <section
+        className="relative mx-auto max-w-6xl px-4 pb-16 sm:pb-24"
+        aria-labelledby="cta-heading"
+      >
         <div className="overflow-hidden rounded-3xl border border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50 p-6 shadow sm:p-10">
           <div className="grid gap-6 sm:grid-cols-[1.3fr_1fr] sm:items-center">
             <div>
-              <h2 className="text-xl font-extrabold sm:text-2xl">Let’s build your growth engine</h2>
+              <h2 id="cta-heading" className="text-xl font-extrabold sm:text-2xl">
+                Let’s build your growth engine
+              </h2>
               <p className="mt-2 max-w-prose text-sm text-gray-700">
                 Tell us your goals. We’ll bring the blueprint — full funnel strategy, creative, and performance execution.
               </p>
             </div>
             <div className="sm:text-right">
-              <a
-                href="/onboarding"
-                className="inline-flex items-center justify-center rounded-2xl bg-amber-500 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-amber-600"
+              <Link
+                to="/onboarding"
+                className="inline-flex items-center justify-center rounded-2xl bg-amber-500 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                aria-label="Go to onboarding to get a free growth plan"
               >
                 Get a Free Growth Plan
-                <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <svg
+                  className="ml-2 h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                >
                   <path d="M5 12h14" />
                   <path d="M12 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

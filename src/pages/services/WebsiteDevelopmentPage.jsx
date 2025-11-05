@@ -1,5 +1,7 @@
+// src/pages/services/WebsiteDevelopmentPage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   LayoutDashboard,
   MonitorSmartphone,
@@ -62,6 +64,21 @@ export default function WebsiteDevelopmentPage() {
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
+      <Helmet>
+        <title>Website Development | Fast, SEO-Ready & Scalable</title>
+        <meta
+          name="description"
+          content="We design and build fast, SEO-ready websites & web apps with React/Vite, clean UX, secure APIs, headless CMS, schema, analytics, and reliable hosting."
+        />
+        <link rel="canonical" href="/services/web-development" />
+        <meta property="og:title" content="Website Development | Fast, SEO-Ready & Scalable" />
+        <meta
+          property="og:description"
+          content="Fast React/Vite frontends, secure APIs, headless CMS, analytics & schema — built to convert and scale."
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       <style>{`
         @keyframes fadeSwap { 0%{opacity:0; transform:translateY(8px) scale(.98)} 20%{opacity:1; transform:translateY(0) scale(1)} 80%{opacity:1} 100%{opacity:0; transform:translateY(-8px) scale(.98)} }
         @keyframes glow { 0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,0)} 50%{box-shadow:0 0 0 10px rgba(59,130,246,.12)} }
@@ -88,7 +105,7 @@ export default function WebsiteDevelopmentPage() {
           </h1>
 
           {/* Animated line — only colored text changes */}
-          <div className="mt-4 h-[2.8lh] overflow-hidden">
+          <div className="mt-4 h-[2.8lh] overflow-hidden" aria-live="polite">
             <div
               key={idx}
               className="inline-block animate-[fadeSwap_1.5s_ease]"
@@ -103,22 +120,26 @@ export default function WebsiteDevelopmentPage() {
 
           {/* Tech chips */}
           <div className="mt-6 flex flex-wrap items-center gap-2">
-            {TECH.map((t) => (
-              <span
-                key={t.label}
-                className="inline-flex items-center rounded-xl border border-black/10 bg-white px-3 py-1.5 text-xs font-semibold shadow-sm"
-                style={{
-                  color: t.color === "#000000" ? "#fff" : t.color,
-                  backgroundColor: t.color === "#000000" ? "#111827" : `${t.color}1A`, // ~10% tint
-                  borderColor: t.color === "#000000" ? "#111827" : `${t.color}55`,
-                }}
-                aria-label={`Tech: ${t.label}`}
-              >
-                {t.label}
-              </span>
-            ))}
+            {TECH.map((t) => {
+              const isBlack = t.color.toLowerCase() === "#000000";
+              return (
+                <span
+                  key={t.label}
+                  className="inline-flex items-center rounded-xl border border-black/10 bg-white px-3 py-1.5 text-xs font-semibold shadow-sm"
+                  style={{
+                    color: isBlack ? "#fff" : t.color,
+                    backgroundColor: isBlack ? "#111827" : `${t.color}1A`,
+                    borderColor: isBlack ? "#111827" : `${t.color}55`,
+                  }}
+                  aria-label={`Technology: ${t.label}`}
+                >
+                  {t.label}
+                </span>
+              );
+            })}
           </div>
 
+          {/* crawler SEO */}
           <p className="sr-only">{seoIntro}</p>
 
           {/* Single CTA */}
@@ -358,6 +379,25 @@ export default function WebsiteDevelopmentPage() {
           </div>
         </Container>
       </Section>
+
+      {/* ---------- JSON-LD (Service) ---------- */}
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Website Development",
+            provider: { "@type": "Organization", name: "GoDigitalPro" },
+            serviceType: "Website & Web App Development",
+            areaServed: "Global",
+            description:
+              "Fast, SEO-ready websites and web apps with React/Vite, secure APIs, headless CMS, schema, analytics, and reliable hosting.",
+            offers: { "@type": "Offer", category: "Service" },
+          }),
+        }}
+      />
     </main>
   );
 }
