@@ -2,18 +2,31 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Mail, Phone, Building2, CheckCircle2, Rocket, Search,
-  Megaphone, ShoppingCart, MapPin
+  Mail,
+  Phone,
+  Building2,
+  CheckCircle2,
+  ShoppingCart,
+  TrendingUp,
+  Target,
+  Users2,
+  Rocket,
+  BarChart3,
+  MoreHorizontal,
 } from "lucide-react";
 import { Helmet } from "react-helmet-async"; // ✅ SEO
 
-const SERVICES = [
-  { id: "website", label: "Launch Website", icon: Rocket },
-  { id: "seo", label: "SEO (Organic)", icon: Search },
-  { id: "local_seo", label: "Local SEO (Maps)", icon: MapPin },
-  { id: "meta_ads", label: "Meta Ads", icon: Megaphone },
-  { id: "google_ads", label: "Google Ads", icon: Rocket },
-  { id: "ecommerce", label: "E-commerce Setup", icon: ShoppingCart },
+/** ─────────────────────────────────────────────────────────
+ * Outcome-first choices (kept same data shape: `services`)
+ * ───────────────────────────────────────────────────────── */
+const GOALS = [
+  { id: "increase_sales", label: "Increase online sales", icon: ShoppingCart },
+  { id: "improve_roas", label: "Improve ROAS / reduce CAC", icon: TrendingUp },
+  { id: "qualified_leads", label: "Get more qualified leads", icon: Users2 },
+  { id: "scale_ads", label: "Scale ads profitably", icon: BarChart3 },
+  { id: "new_launch", label: "Launch a new product/campaign", icon: Rocket },
+  { id: "bookings", label: "Increase calls/appointments", icon: Target },
+  { id: "other", label: "Other", icon: MoreHorizontal }, // ✅ new
 ];
 
 const pill =
@@ -28,11 +41,12 @@ export default function OnboardingPage() {
 
   // ---------- SEO ONLY ----------
   const pageSEO = {
-    title: "Start Your Growth Plan | Onboarding | GoDigitalPro — Digital Marketing Agency",
+    title:
+      "Get Your Tailored Growth Plan | Onboarding | GoDigitalPro — Digital Marketing Agency",
     description:
-      "Kick off your project with GoDigitalPro — a full-funnel digital marketing agency for SEO, Google & Meta Ads, web development, and e-commerce growth. Share your business goals and get a tailored plan.",
+      "Tell us your goals (increase sales, better ROAS, more qualified leads). Get a tailored plan and action steps from GoDigitalPro within 24 hours.",
     url: "https://www.godigitalpro.in/onboarding/",
-    image: "https://www.godigitalpro.in/public/assets/logo.jpg", // safe generic image
+    image: "https://www.godigitalpro.in/public/assets/logo.jpg",
   };
 
   const orgJsonLd = {
@@ -66,11 +80,12 @@ export default function OnboardingPage() {
   const [business, setBusiness] = useState("");
   const [details, setDetails] = useState("");
   const [selected, setSelected] = useState(new Set());
+  const [otherText, setOtherText] = useState(""); // ✅ capture “Other”
   const [sending, setSending] = useState(false);
   const [err, setErr] = useState("");
   const [notice, setNotice] = useState("");
 
-  // ✅ Your Apps Script endpoint (kept as-is)
+  // ✅ Your Apps Script endpoint (unchanged)
   const APPS_URL =
     import.meta.env.VITE_APPS_SCRIPT_URL?.trim() ||
     "https://script.google.com/macros/s/AKfycbwtgDOD7COD7PALqtcm0pTitSXAV1eT4b_v7HN3yHJSfXvAMLaPv4SDDVJj0STS76e5ZQ/exec";
@@ -87,16 +102,25 @@ export default function OnboardingPage() {
     setNotice("");
 
     if (!email || !phone || !business || selected.size === 0) {
-      setErr("Please fill email, phone, business and pick at least one service.");
+      setErr(
+        "Please add email, phone, business name/website and pick at least one goal."
+      );
       return;
     }
+
+    // Don’t break existing automations:
+    // keep `services` as ids; append Other note into details.
+    const mergedDetails =
+      selected.has("other") && otherText.trim()
+        ? `${details ? `${details}\n\n` : ""}[Other goal]: ${otherText.trim()}`
+        : details;
 
     const payload = {
       email,
       phone,
       business,
-      details,
-      services: Array.from(selected),
+      details: mergedDetails,
+      services: Array.from(selected), // unchanged
       source: "godigitalpro.in",
       created_at: new Date().toISOString(),
     };
@@ -104,7 +128,7 @@ export default function OnboardingPage() {
     try {
       setSending(true);
 
-      // 1) Fire-and-forget to Apps Script (CORS-less, we don't read response)
+      // 1) Fire-and-forget to Apps Script
       fetch(APPS_URL, {
         method: "POST",
         mode: "no-cors",
@@ -121,7 +145,7 @@ export default function OnboardingPage() {
           phone,
           company: business,
           source: "Website",
-          message: details,
+          message: mergedDetails,
           serviceInterest: Array.from(selected).join(", "),
         }),
       });
@@ -130,12 +154,14 @@ export default function OnboardingPage() {
       console.log("HubSpot response:", hubspotResp.status, text);
 
       if (!hubspotResp.ok) {
-        setNotice("We received your form. HubSpot sync will retry on our side if needed.");
+        setNotice(
+          "We received your form. HubSpot sync will retry on our side if needed."
+        );
       }
 
       navigate("/thank-you", { replace: true, state: { ok: true } });
-    } catch (e) {
-      console.error(e);
+    } catch (e2) {
+      console.error(e2);
       setErr("Submit failed. Please try again.");
     } finally {
       setSending(false);
@@ -164,25 +190,30 @@ export default function OnboardingPage() {
         <meta name="twitter:description" content={pageSEO.description} />
         <meta name="twitter:image" content={pageSEO.image} />
 
-        {/* Extra topical tags for relevance */}
+        {/* Extra topical tags */}
         <meta name="author" content="GoDigitalPro — Digital Marketing Agency" />
         <meta
           name="keywords"
-          content="GoDigitalPro, digital marketing agency, onboarding, SEO, Google Ads, Meta Ads, website development, growth marketing, India"
+          content="growth plan, ROAS, increase sales, qualified leads, digital marketing onboarding, GoDigitalPro"
         />
 
         {/* JSON-LD */}
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
-        <script type="application/ld+json">{JSON.stringify(contactPageJsonLd)}</script>
+        <script type="application/ld+json">
+          {JSON.stringify(contactPageJsonLd)}
+        </script>
       </Helmet>
       {/* ---------- /SEO HEAD ---------- */}
 
       <main className="max-w-3xl mx-auto px-5 py-10">
+        {/* ✅ New headline & description */}
         <h1 className="font-serif text-3xl md:text-4xl font-bold text-dark">
-          Tell us what you need
+          Every Brand Deserves a Smarter Growth Plan
         </h1>
         <p className="text-slate-700 mt-2">
-          No login. One simple form—straight to our team.
+          Tell us what drives your business — we’ll translate your vision into a
+          focused, insight-led marketing strategy that builds visibility, trust,
+          and long-term impact.
         </p>
 
         <form className={`${card} mt-6`} onSubmit={handleSubmit}>
@@ -220,13 +251,13 @@ export default function OnboardingPage() {
             </label>
 
             <label className="text-sm font-medium">
-              Business name
+              Business name / website
               <div className="flex items-center gap-2">
                 <Building2 size={16} />
                 <input
                   type="text"
                   className={input}
-                  placeholder="Your brand / company"
+                  placeholder="Your brand or site (e.g., acmestore.com)"
                   value={business}
                   onChange={(e) => setBusiness(e.target.value)}
                   required
@@ -235,37 +266,50 @@ export default function OnboardingPage() {
             </label>
 
             <label className="text-sm font-medium">
-              What do you want us to do?
+              What&apos;s your primary goal?{" "}
+              <span className="text-slate-500">(pick 1–3)</span>
               <div className="mt-2 flex flex-wrap gap-2">
-                {SERVICES.map((s) => {
-                  const SelIcon = s.icon;
-                  const isOn = selected.has(s.id);
+                {GOALS.map((g) => {
+                  const Icon = g.icon;
+                  const isOn = selected.has(g.id);
                   return (
-                    <button
-                      type="button"
-                      key={s.id}
-                      className={`${pill} ${
-                        isOn
-                          ? "bg-dark text-white border-dark"
-                          : "bg-white border-slate-300 hover:bg-slate-50"
-                      }`}
-                      onClick={() => toggle(s.id)}
-                      aria-pressed={isOn}
-                    >
-                      <SelIcon size={16} />
-                      {s.label}
-                      {isOn && <CheckCircle2 size={16} />}
-                    </button>
+                    <div key={g.id} className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        className={`${pill} ${
+                          isOn
+                            ? "bg-dark text-white border-dark"
+                            : "bg-white border-slate-300 hover:bg-slate-50"
+                        }`}
+                        onClick={() => toggle(g.id)}
+                        aria-pressed={isOn}
+                      >
+                        <Icon size={16} />
+                        {g.label}
+                        {isOn && <CheckCircle2 size={16} />}
+                      </button>
+
+                      {/* Inline text field only when "Other" is selected */}
+                      {g.id === "other" && isOn && (
+                        <input
+                          type="text"
+                          className="ml-1 px-3 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-900/10"
+                          placeholder="Describe your goal"
+                          value={otherText}
+                          onChange={(e) => setOtherText(e.target.value)}
+                        />
+                      )}
+                    </div>
                   );
                 })}
               </div>
             </label>
 
             <label className="text-sm font-medium">
-              Anything else?
+              Anything else we should know?
               <textarea
                 className={`${input} min-h-[110px]`}
-                placeholder="Share context, website, deadlines, cities, etc."
+                placeholder="Traffic sources, monthly budget range, target cities, deadlines, competitors, etc."
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
               />
@@ -280,14 +324,15 @@ export default function OnboardingPage() {
                 className="btn-primary inline-flex items-center gap-2"
                 disabled={sending}
               >
-                {sending ? "Sending..." : "Submit"}
+                {sending ? "Sending..." : "Get my plan"}
               </button>
             </div>
           </div>
         </form>
 
         <p className="text-xs text-slate-500 mt-3">
-          By submitting, you agree to be contacted by email/phone. We’ll never spam.
+          By submitting, you agree to be contacted by email/phone. We’ll never
+          spam.
         </p>
       </main>
     </>
