@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Omnichannel Strategy Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#EEF2FF' offset='0%'/>
+        <stop stop-color='#C7D2FE' offset='50%'/>
+        <stop stop-color='#A5B4FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 218.74945451505482 C 200 78.74945451505482, 500 338.7494545150548, 1200 158.74945451505482 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 424.1048283688724 C 200 284.1048283688724, 500 544.1048283688724, 1200 364.1048283688724 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 578.884427039884 C 200 438.88442703988403, 500 698.884427039884, 1200 518.884427039884 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M706.6553113143891 298.05395878851414 Q 820.8565908507444 217.50326986424625 935.0578703870997 393.92613783478737" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M935.0578703870997 393.92613783478737 Q 770.5070262192748 206.68107733130455 605.95618205145 291.6054632514715" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="706.6553113143891" cy="298.05395878851414" r="52.83897644281387" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="706.6553113143891" cy="298.05395878851414" r="34.83897644281387" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="706.6553113143891" cy="298.05395878851414" r="11.612992147604624" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="935.0578703870997" cy="393.92613783478737" r="66.50833255192265" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="935.0578703870997" cy="393.92613783478737" r="48.50833255192265" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="935.0578703870997" cy="393.92613783478737" r="16.169444183974218" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="605.95618205145" cy="291.6054632514715" r="58.19915297720581" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="605.95618205145" cy="291.6054632514715" r="40.19915297720581" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="605.95618205145" cy="291.6054632514715" r="13.399717659068605" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Omnichannel Strategy Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>E-COMMERCE & MARKETPLACE MARKETING • OMNICHANNEL STRATEGY • DIGITAL MARKETING</text>
+  </svg>

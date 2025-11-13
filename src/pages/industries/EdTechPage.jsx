@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SeoHelmet from "../../components/SeoHelmet";
+import { buildCanonical, serviceJsonLd } from "../../utils/seo";
 import {
   GraduationCap,
   MapPin,
@@ -54,10 +55,8 @@ export default function EdTechPage() {
   );
 
   /* ---------- SEO constants (absolute URLs) ---------- */
-  const site = "https://www.godigitalpro.in";
   const path = "/industries/edtech";
-  const pageUrl = `${site}${path}`;
-  const ogImage = `${site}/og-edtech.jpg`; // ← Add a 1200x630 image at public/og-edtech.jpg
+  const pageUrl = buildCanonical(path);
 
   const title = "EdTech Marketing | Local SEO, SEO, Paid Ads & Admissions Funnels";
   const desc =
@@ -67,31 +66,24 @@ export default function EdTechPage() {
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
-      <Helmet>
-        {/* Basic */}
-        <title>{title}</title>
-        <meta name="description" content={desc} />
-        <meta name="keywords" content={keywords} />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={pageUrl} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={desc} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:site_name" content="GoDigitalPro" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={desc} />
-        <meta name="twitter:image" content={ogImage} />
-
-        <meta name="author" content="GoDigitalPro" />
-        <meta name="publisher" content="GoDigitalPro" />
-      </Helmet>
+      <SeoHelmet
+        title={title}
+        description={desc}
+        canonical={pageUrl}
+        keywords={keywords}
+        schema={[
+          serviceJsonLd({
+            name: "EdTech Marketing",
+            description: desc,
+            url: pageUrl,
+          }),
+        ]}
+        breadcrumbs={[
+          { name: "Home", url: buildCanonical("/") },
+          { name: "Industries", url: `${buildCanonical("/")}#industries` },
+          { name: "EdTech", url: pageUrl },
+        ]}
+      />
 
       <style>{`
         @keyframes fadeSwap { 0%{opacity:0; transform:translateY(8px) scale(.98)} 20%{opacity:1; transform:translateY(0) scale(1)} 80%{opacity:1} 100%{opacity:0; transform:translateY(-8px) scale(.98)} }

@@ -20,6 +20,7 @@ const PrivacyPolicy                   = lazy(() => import("./pages/PrivacyPolicy
 /** ✅ Blog hub + category + post (correct folder) */
 const Blogs                           = lazy(() => import("./pages/blog/Blogs.jsx"));
 const BlogCategory                    = lazy(() => import("./pages/blog/BlogCategory.jsx"));
+const BlogSubCategory                 = lazy(() => import("./pages/blog/BlogSubCategory.jsx"));
 const BlogPost                        = lazy(() => import("./pages/blog/BlogPost.jsx"));
 
 /** Services */
@@ -86,6 +87,7 @@ export default function App() {
             {/* ✅ Blog */}
             <Route path="/blog" element={<Blogs />} />
             <Route path="/blog/:category" element={<BlogCategory />} />
+            <Route path="/blog/:category/sub/:subCategory" element={<BlogSubCategory />} />
             <Route path="/blog/:category/:slug" element={<BlogPost />} />
             {/* Backward-compat for old /blogs link */}
             <Route path="/blogs" element={<Navigate to="/blog" replace />} />

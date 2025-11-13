@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Display & Programmatic Ads Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#F0F9FF' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 207.24757270887494 C 200 67.24757270887494, 500 327.24757270887494, 1200 147.24757270887494 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 414.2913968022913 C 200 274.2913968022913, 500 534.2913968022913, 1200 354.2913968022913 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 547.7952453121543 C 200 407.7952453121543, 500 667.7952453121543, 1200 487.7952453121543 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M194.63479405734688 386.41403764486313 Q 471.81532059563324 139.05431676656008 748.9958471339196 219.96862687170506" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M748.9958471339196 219.96862687170506 Q 806.2572356895544 56.47898984141648 863.5186242451891 157.94947519898415" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="194.63479405734688" cy="386.41403764486313" r="61.10673898877576" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="194.63479405734688" cy="386.41403764486313" r="43.10673898877576" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="194.63479405734688" cy="386.41403764486313" r="14.368912996258587" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="748.9958471339196" cy="219.96862687170506" r="56.475244611501694" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="748.9958471339196" cy="219.96862687170506" r="38.475244611501694" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="748.9958471339196" cy="219.96862687170506" r="12.82508153716723" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="863.5186242451891" cy="157.94947519898415" r="71.0201296522282" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="863.5186242451891" cy="157.94947519898415" r="53.020129652228206" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="863.5186242451891" cy="157.94947519898415" r="17.673376550742734" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Display & Programmatic Ads Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>PAY-PER-CLICK & PAID ADVERTISING (PPC) • DISPLAY & PROGRAMMATIC ADS • DIGITAL MARKETING</text>
+  </svg>

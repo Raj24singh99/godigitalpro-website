@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='White-Label & Partnerships Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FFF7ED' offset='0%'/>
+        <stop stop-color='#FED7AA' offset='50%'/>
+        <stop stop-color='#FDBA74' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 283.86897440068424 C 200 143.86897440068424, 500 403.86897440068424, 1200 223.86897440068424 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 372.94245567172766 C 200 232.94245567172766, 500 492.94245567172766, 1200 312.94245567172766 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 554.6775696100667 C 200 414.6775696100667, 500 674.6775696100667, 1200 494.6775696100667 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M823.05030670017 397.50089816749096 Q 818.6147062596865 300.7538011018187 814.179105819203 420.3821811079979" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M814.179105819203 420.3821811079979 Q 728.9280704106204 94.73331144079566 643.6770350020379 185.91926850378513" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="823.05030670017" cy="397.50089816749096" r="58.11689960118383" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="823.05030670017" cy="397.50089816749096" r="40.11689960118383" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="823.05030670017" cy="397.50089816749096" r="13.372299867061278" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="814.179105819203" cy="420.3821811079979" r="62.75659972848371" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="814.179105819203" cy="420.3821811079979" r="44.75659972848371" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="814.179105819203" cy="420.3821811079979" r="14.918866576161236" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="643.6770350020379" cy="185.91926850378513" r="66.90892598032951" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="643.6770350020379" cy="185.91926850378513" r="48.90892598032951" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="643.6770350020379" cy="185.91926850378513" r="16.302975326776505" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>White-Label & Partnerships Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>AGENCY GROWTH & OPERATIONS • WHITE-LABEL & PARTNERSHIPS • DIGITAL MARKETING</text>
+  </svg>

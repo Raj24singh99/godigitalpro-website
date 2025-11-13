@@ -58,14 +58,14 @@ function MobileDiagram() {
     <section className="relative py-12 bg-white">
       <div className="max-w-xl mx-auto px-5 text-center">
         <h2 className="font-serif text-3xl font-semibold text-dark">
-          Ad Platforms Keep Evolving.
+          Channels, signals, and buyer expectations keep shifting.
         </h2>
         <p className="text-2xl font-semibold text-blue-700 mt-1">
-          Do Your Performance Strategies Keep Up?
+          Does your digital marketing engine adapt fast enough?
         </p>
         <p className="mt-4 text-slate-800">
-          Our relationships with Google, Meta, Amazon and more give us early
-          insights, so we can pre-plan changes instead of reacting late.
+          Our relationships with Google, Meta, Amazon, and product communities give us early
+          insights, so we can pre-plan changes across organic, paid, and lifecycle instead of reacting late.
         </p>
       </div>
 
@@ -79,7 +79,7 @@ function MobileDiagram() {
               <div className="font-serif font-semibold text-dark">Strategy</div>
             </div>
             <p className="text-sm text-slate-700 mt-2">
-              Cross-channel plan, ICP, offers, budgets.
+              Cross-channel plan, ICP, offers, budgets with SEO + SEM baked in.
             </p>
             <div className="mt-2">
               <MicroChip>#MarketingStrategy</MicroChip>
@@ -94,7 +94,7 @@ function MobileDiagram() {
               <div className="font-serif font-semibold text-dark">Deep Analytics</div>
             </div>
             <p className="text-sm text-slate-700 mt-2">
-              Attribution models, dashboards, payback.
+              Attribution models, dashboards, payback for every Google Ads & organic rupee.
             </p>
             <div className="mt-2">
               <MicroChip>#ROI</MicroChip>
@@ -109,7 +109,7 @@ function MobileDiagram() {
               <div className="font-serif font-semibold text-dark">Creatives</div>
             </div>
             <p className="text-sm text-slate-700 mt-2">
-              Video-led ads & landing copy that convert.
+              Video-led ads & landing copy that convert and improve Quality Scores + SEO engagement.
             </p>
             <div className="mt-2">
               <MicroChip>#HyperGrowth</MicroChip>
@@ -124,7 +124,7 @@ function MobileDiagram() {
               <div className="font-serif font-semibold text-dark">Data Flows</div>
             </div>
             <p className="text-sm text-slate-700 mt-2">
-              Pixels, CRM & offline conversions synced.
+              Pixels, CRM & offline conversions synced for search, social, and marketplace signals.
             </p>
             <div className="mt-2">
               <MicroChip>#GrowthMarketing</MicroChip>
@@ -141,7 +141,7 @@ function MobileDiagram() {
               Performance at the Core
             </div>
             <p className="text-sm text-slate-700 mt-1">
-              Plan → Launch → Learn → Scale. Keep what works. Cut what doesn’t.
+              Plan → Launch → Learn → Scale across SEO, Google Ads, Meta, marketplaces. Keep what works. Cut what doesn’t.
             </p>
           </div>
         </div>

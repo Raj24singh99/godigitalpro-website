@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Platform Setup & Selection Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FDF2F8' offset='0%'/>
+        <stop stop-color='#FBCFE8' offset='50%'/>
+        <stop stop-color='#F9A8D4' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 224.8149615805596 C 200 84.81496158055961, 500 344.8149615805596, 1200 164.8149615805596 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 412.25303772836924 C 200 272.25303772836924, 500 532.2530377283692, 1200 352.25303772836924 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 537.9764852719381 C 200 397.97648527193815, 500 657.9764852719381, 1200 477.97648527193815 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M767.7085680514574 394.82560984790325 Q 676.402343113441 124.83900466002524 585.0961181754246 221.26831084489822" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M585.0961181754246 221.26831084489822 Q 811.5371861378662 140.9482162259519 1037.9782541003078 234.530663266778" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="767.7085680514574" cy="394.82560984790325" r="60.57195098232478" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="767.7085680514574" cy="394.82560984790325" r="42.57195098232478" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="767.7085680514574" cy="394.82560984790325" r="14.190650327441594" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="585.0961181754246" cy="221.26831084489822" r="67.23224631743506" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="585.0961181754246" cy="221.26831084489822" r="49.232246317435056" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="585.0961181754246" cy="221.26831084489822" r="16.410748772478353" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="1037.9782541003078" cy="234.530663266778" r="67.03734209015965" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="1037.9782541003078" cy="234.530663266778" r="49.037342090159655" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="1037.9782541003078" cy="234.530663266778" r="16.345780696719885" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Platform Setup & Selection Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>E-COMMERCE & MARKETPLACE MARKETING • PLATFORM SETUP & SELECTION • DIGITAL MARKETING</text>
+  </svg>

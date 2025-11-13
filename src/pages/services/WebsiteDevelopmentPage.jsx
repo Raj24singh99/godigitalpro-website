@@ -1,7 +1,8 @@
 // src/pages/services/WebsiteDevelopmentPage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SeoHelmet from "../../components/SeoHelmet";
+import { buildCanonical, faqJsonLd, serviceJsonLd } from "../../utils/seo";
 import {
   LayoutDashboard,
   MonitorSmartphone,
@@ -49,6 +50,29 @@ const TECH = [
   { label: "GA4 & Pixels", color: "#FBBC05" },
 ];
 
+const WEBSITE_FAQ = [
+  {
+    question: "How fast can we go live?",
+    answer: "Simple landing pages ship in days. Full sites usually take 3–6 weeks depending on pages and integrations.",
+  },
+  {
+    question: "Can you work with our content or CMS?",
+    answer: "Yes. We can connect to headless WordPress, Firebase, or your existing APIs for content and forms.",
+  },
+  {
+    question: "Will it be SEO-ready?",
+    answer: "Yes. We set titles, meta, schema, sitemaps, robots, clean URLs, and fast loading for Core Web Vitals.",
+  },
+  {
+    question: "Do you handle analytics and pixels?",
+    answer: "Yes. GA4, Meta, LinkedIn, Google Ads, and event tracking—mapped to your funnel and goals.",
+  },
+  {
+    question: "What about maintenance?",
+    answer: "We document deploy steps, keep dependencies healthy, and can support updates and new pages.",
+  },
+];
+
 export default function WebsiteDevelopmentPage() {
   const [idx, setIdx] = useState(0);
   useEffect(() => {
@@ -62,22 +86,40 @@ export default function WebsiteDevelopmentPage() {
     []
   );
 
+  const title = "Website Development | Fast, SEO-Ready & Scalable";
+  const desc =
+    "We design and build fast, SEO-ready websites & web apps with React/Vite, clean UX, secure APIs, headless CMS, schema, analytics, and reliable hosting.";
+  const keywords =
+    "website development, landing pages, web apps, headless CMS, React agency, Vite, CRO websites, GoDigitalPro";
+  const canonical = buildCanonical("/services/website-development");
+
+  const schemaBlocks = useMemo(
+    () =>
+      [
+        serviceJsonLd({
+          name: "Website Development",
+          description: desc,
+          url: canonical,
+        }),
+        faqJsonLd(WEBSITE_FAQ),
+      ].filter(Boolean),
+    [canonical, desc]
+  );
+
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
-      <Helmet>
-        <title>Website Development | Fast, SEO-Ready & Scalable</title>
-        <meta
-          name="description"
-          content="We design and build fast, SEO-ready websites & web apps with React/Vite, clean UX, secure APIs, headless CMS, schema, analytics, and reliable hosting."
-        />
-        <link rel="canonical" href="/services/web-development" />
-        <meta property="og:title" content="Website Development | Fast, SEO-Ready & Scalable" />
-        <meta
-          property="og:description"
-          content="Fast React/Vite frontends, secure APIs, headless CMS, analytics & schema — built to convert and scale."
-        />
-        <meta property="og:type" content="website" />
-      </Helmet>
+      <SeoHelmet
+        title={title}
+        description={desc}
+        canonical={canonical}
+        keywords={keywords}
+        schema={schemaBlocks}
+        breadcrumbs={[
+          { name: "Home", url: buildCanonical("/") },
+          { name: "Services", url: `${buildCanonical("/")}#services` },
+          { name: "Website Development", url: canonical },
+        ]}
+      />
 
       <style>{`
         @keyframes fadeSwap { 0%{opacity:0; transform:translateY(8px) scale(.98)} 20%{opacity:1; transform:translateY(0) scale(1)} 80%{opacity:1} 100%{opacity:0; transform:translateY(-8px) scale(.98)} }
@@ -346,58 +388,18 @@ export default function WebsiteDevelopmentPage() {
         </Container>
         <Container className="mt-6">
           <div className="divide-y divide-black/10 rounded-2xl border border-black/10 bg-white">
-            {[
-              {
-                q: "How fast can we go live?",
-                a: "Simple landing pages ship in days. Full sites usually take 3–6 weeks depending on pages and integrations.",
-              },
-              {
-                q: "Can you work with our content or CMS?",
-                a: "Yes. We can connect to headless WordPress, Firebase, or your existing APIs for content and forms.",
-              },
-              {
-                q: "Will it be SEO-ready?",
-                a: "Yes. We set titles, meta, schema, sitemaps, robots, clean URLs, and fast loading for Core Web Vitals.",
-              },
-              {
-                q: "Do you handle analytics and pixels?",
-                a: "Yes. GA4, Meta, LinkedIn, Google Ads, and event tracking—mapped to your funnel and goals.",
-              },
-              {
-                q: "What about maintenance?",
-                a: "We document deploy steps, keep dependencies healthy, and can support updates and new pages.",
-              },
-            ].map((f) => (
-              <details key={f.q} className="group p-4">
+            {WEBSITE_FAQ.map(({ question, answer }) => (
+              <details key={question} className="group p-4">
                 <summary className="flex cursor-pointer list-none items-center justify-between">
-                  <span className="font-medium">{f.q}</span>
+                  <span className="font-medium">{question}</span>
                   <span className="text-slate-500 transition group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-2 text-sm leading-relaxed text-slate-700">{f.a}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-700">{answer}</p>
               </details>
             ))}
           </div>
         </Container>
       </Section>
-
-      {/* ---------- JSON-LD (Service) ---------- */}
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Website Development",
-            provider: { "@type": "Organization", name: "GoDigitalPro" },
-            serviceType: "Website & Web App Development",
-            areaServed: "Global",
-            description:
-              "Fast, SEO-ready websites and web apps with React/Vite, secure APIs, headless CMS, schema, analytics, and reliable hosting.",
-            offers: { "@type": "Offer", category: "Service" },
-          }),
-        }}
-      />
     </main>
   );
 }

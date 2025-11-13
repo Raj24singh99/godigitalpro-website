@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Education / EdTech Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#EEF2FF' offset='0%'/>
+        <stop stop-color='#C7D2FE' offset='50%'/>
+        <stop stop-color='#A5B4FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 262.59748625569046 C 200 122.59748625569046, 500 382.59748625569046, 1200 202.59748625569046 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 409.1379098966718 C 200 269.1379098966718, 500 529.1379098966718, 1200 349.1379098966718 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 533.8994571613148 C 200 393.8994571613148, 500 653.8994571613148, 1200 473.8994571613148 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M810.3375898301601 456.1504792422056 Q 583.9539040368982 174.49002944864333 357.5702182436362 275.1051250100136" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M357.5702182436362 275.1051250100136 Q 434.0233449707739 157.1563528291881 510.4764716979116 268.5383615642786" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="810.3375898301601" cy="456.1504792422056" r="59.07516387384385" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="810.3375898301601" cy="456.1504792422056" r="41.07516387384385" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="810.3375898301601" cy="456.1504792422056" r="13.691721291281283" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="357.5702182436362" cy="275.1051250100136" r="61.945246786344796" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="357.5702182436362" cy="275.1051250100136" r="43.945246786344796" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="357.5702182436362" cy="275.1051250100136" r="14.648415595448265" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="510.4764716979116" cy="268.5383615642786" r="63.18793658539653" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="510.4764716979116" cy="268.5383615642786" r="45.18793658539653" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="510.4764716979116" cy="268.5383615642786" r="15.06264552846551" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Education / EdTech Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>INDUSTRY VERTICALS & CASE STUDIES • EDUCATION / EDTECH • DIGITAL MARKETING</text>
+  </svg>

@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Performance Optimization Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#F0F9FF' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 192.40778021514416 C 200 52.40778021514416, 500 312.40778021514416, 1200 132.40778021514416 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 368.6907695699483 C 200 228.69076956994832, 500 488.6907695699483, 1200 308.6907695699483 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 535.773287480697 C 200 395.77328748069704, 500 655.773287480697, 1200 475.77328748069704 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M657.0365963829681 158.86419042944908 Q 516.6825816757046 62.19724813476205 376.328566968441 289.4735359400511" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M376.328566968441 289.4735359400511 Q 453.715231094975 177.90775309316814 531.101895221509 315.85946947336197" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="657.0365963829681" cy="158.86419042944908" r="71.4579976904206" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="657.0365963829681" cy="158.86419042944908" r="53.4579976904206" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="657.0365963829681" cy="158.86419042944908" r="17.819332563473534" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="376.328566968441" cy="289.4735359400511" r="68.7654750822112" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="376.328566968441" cy="289.4735359400511" r="50.765475082211196" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="376.328566968441" cy="289.4735359400511" r="16.92182502740373" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="531.101895221509" cy="315.85946947336197" r="71.92897431598976" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="531.101895221509" cy="315.85946947336197" r="53.92897431598976" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="531.101895221509" cy="315.85946947336197" r="17.976324771996588" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Performance Optimization Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>PAY-PER-CLICK & PAID ADVERTISING (PPC) • PERFORMANCE OPTIMIZATION • DIGITAL MARKETING</text>
+  </svg>

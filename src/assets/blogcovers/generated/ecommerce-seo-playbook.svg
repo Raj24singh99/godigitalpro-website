@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='E-commerce SEO Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FDFDEA' offset='0%'/>
+        <stop stop-color='#FEF08A' offset='50%'/>
+        <stop stop-color='#FACC15' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 291.7277883645147 C 200 151.7277883645147, 500 411.7277883645147, 1200 231.7277883645147 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 365.25560058653355 C 200 225.25560058653355, 500 485.25560058653355, 1200 305.25560058653355 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 573.4472282463685 C 200 433.44722824636847, 500 693.4472282463685, 1200 513.4472282463685 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M614.4420914910734 365.70679269731045 Q 533.245915316511 259.83481210656464 452.0497391419485 354.9356186389923" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M452.0497391419485 354.9356186389923 Q 612.1085127699189 114.73371313884854 772.1672863978893 234.16982121765614" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="614.4420914910734" cy="365.70679269731045" r="68.8826166363433" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="614.4420914910734" cy="365.70679269731045" r="50.8826166363433" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="614.4420914910734" cy="365.70679269731045" r="16.960872212114435" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="452.0497391419485" cy="354.9356186389923" r="51.79828137392178" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="452.0497391419485" cy="354.9356186389923" r="33.79828137392178" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="452.0497391419485" cy="354.9356186389923" r="11.266093791307261" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="772.1672863978893" cy="234.16982121765614" r="67.68277983926237" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="772.1672863978893" cy="234.16982121765614" r="49.682779839262366" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="772.1672863978893" cy="234.16982121765614" r="16.560926613087457" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>E-commerce SEO Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>E-COMMERCE & MARKETPLACE MARKETING • E-COMMERCE SEO • DIGITAL MARKETING</text>
+  </svg>

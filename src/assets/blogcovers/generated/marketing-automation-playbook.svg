@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Automation Workflows Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FFF7ED' offset='0%'/>
+        <stop stop-color='#FED7AA' offset='50%'/>
+        <stop stop-color='#FDBA74' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 220.6836422905326 C 200 80.68364229053259, 500 340.6836422905326, 1200 160.6836422905326 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 448.01180549897254 C 200 308.01180549897254, 500 568.0118054989725, 1200 388.01180549897254 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 559.4381670001894 C 200 419.4381670001894, 500 679.4381670001894, 1200 499.4381670001894 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M394.9981523072347 215.35302236676216 Q 376.6825338616036 114.88107411190867 358.36691541597247 425.27784787118435" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M358.36691541597247 425.27784787118435 Q 412.02442339854315 66.85933074913919 465.6819313811138 185.9709596633911" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="394.9981523072347" cy="215.35302236676216" r="62.72540404414758" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="394.9981523072347" cy="215.35302236676216" r="44.72540404414758" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="394.9981523072347" cy="215.35302236676216" r="14.90846801471586" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="358.36691541597247" cy="425.27784787118435" r="51.737280492670834" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="358.36691541597247" cy="425.27784787118435" r="33.737280492670834" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="358.36691541597247" cy="425.27784787118435" r="11.245760164223611" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="465.6819313811138" cy="185.9709596633911" r="64.24331269646063" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="465.6819313811138" cy="185.9709596633911" r="46.243312696460634" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="465.6819313811138" cy="185.9709596633911" r="15.414437565486878" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Automation Workflows Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>EMAIL MARKETING & AUTOMATION • AUTOMATION WORKFLOWS • DIGITAL MARKETING</text>
+  </svg>

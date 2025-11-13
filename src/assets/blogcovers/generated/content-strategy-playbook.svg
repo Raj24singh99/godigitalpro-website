@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Content Strategy & Planning Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FFE4E6' offset='0%'/>
+        <stop stop-color='#FECDD3' offset='50%'/>
+        <stop stop-color='#FDA4AF' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 250.72941586375237 C 200 110.72941586375237, 500 370.72941586375237, 1200 190.72941586375237 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 469.26876914687455 C 200 329.26876914687455, 500 589.2687691468745, 1200 409.26876914687455 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 573.1461790483445 C 200 433.1461790483445, 500 693.1461790483445, 1200 513.1461790483445 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M784.2558101145551 287.48163744807243 Q 710.930322741624 182.50893713906407 637.6048353686929 353.7078218907118" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M637.6048353686929 353.7078218907118 Q 568.4409935143776 229.09210125915706 499.2771516600624 322.51667231321335" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="784.2558101145551" cy="287.48163744807243" r="65.68290653033182" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="784.2558101145551" cy="287.48163744807243" r="47.68290653033182" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="784.2558101145551" cy="287.48163744807243" r="15.894302176777273" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="637.6048353686929" cy="353.7078218907118" r="61.534489198587835" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="637.6048353686929" cy="353.7078218907118" r="43.534489198587835" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="637.6048353686929" cy="353.7078218907118" r="14.511496399529278" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="499.2771516600624" cy="322.51667231321335" r="58.21726831467822" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="499.2771516600624" cy="322.51667231321335" r="40.21726831467822" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="499.2771516600624" cy="322.51667231321335" r="13.40575610489274" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Content Strategy & Planning Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>CONTENT MARKETING • CONTENT STRATEGY & PLANNING • DIGITAL MARKETING</text>
+  </svg>

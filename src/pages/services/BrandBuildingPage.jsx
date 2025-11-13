@@ -1,7 +1,8 @@
 // src/pages/services/BrandBuildingPage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SeoHelmet from "../../components/SeoHelmet";
+import { buildCanonical, faqJsonLd, serviceJsonLd } from "../../utils/seo";
 import { Target, Palette, Layers, ShieldCheck, Megaphone, Sparkles } from "lucide-react";
 
 const Section = ({ id, className = "", children }) => (
@@ -19,6 +20,17 @@ const WORDS = [
   { text: "Visual Identity", color: "text-amber-600" },
 ];
 
+const BRAND_FAQ = [
+  { question: "What do you need from us to start?", answer: "A decision-maker, a short briefing call, and quick feedback on drafts." },
+  { question: "How long does this take?", answer: "Most projects finish in 4–8 weeks depending on scope and assets." },
+  { question: "Do you refresh existing brands?", answer: "Yes. If your logo works, we refine and document; if not, we propose simple options." },
+  { question: "Can you work with our internal team?", answer: "Yes. We create guidelines and templates they can adopt right away." },
+  { question: "Do you handle video?", answer: "We script, storyboard, and edit. For shoots, we can work with your crew or ours." },
+  { question: "How do we keep it consistent later?", answer: "You get a compact brand guide and reusable templates so every asset matches." },
+  { question: "What happens after handover?", answer: "We can support roll-out, review new assets, and add formats when needed." },
+  { question: "Do you work with global teams?", answer: "Yes. We consider markets, languages, and channels during guidelines." },
+];
+
 export default function BrandBuildingPage() {
   const [idx, setIdx] = useState(0);
   useEffect(() => {
@@ -33,11 +45,8 @@ export default function BrandBuildingPage() {
   );
 
   // ---- SEO constants (absolute URLs) ----
-  const site = "https://www.godigitalpro.in";
   const path = "/services/branding";
-  const pageUrl = `${site}${path}`;
-  const ogImage = `${site}/og-brand-building.jpg`; // place at public/og-brand-building.jpg
-
+  const pageUrl = buildCanonical(path);
   const title = "Brand Building Services | Positioning, Messaging, Identity";
   const desc =
     "Positioning, messaging, visual identity, and reusable templates. Define your ICP, align your story, and ship consistent creative across channels.";
@@ -46,31 +55,25 @@ export default function BrandBuildingPage() {
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
-      <Helmet>
-        {/* Basic SEO */}
-        <title>{title}</title>
-        <meta name="description" content={desc} />
-        <meta name="keywords" content={keywords} />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={pageUrl} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={desc} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:site_name" content="GoDigitalPro" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={desc} />
-        <meta name="twitter:image" content={ogImage} />
-
-        <meta name="author" content="GoDigitalPro" />
-        <meta name="publisher" content="GoDigitalPro" />
-      </Helmet>
+      <SeoHelmet
+        title={title}
+        description={desc}
+        canonical={pageUrl}
+        keywords={keywords}
+        schema={[
+          serviceJsonLd({
+            name: "Brand Building",
+            description: desc,
+            url: pageUrl,
+          }),
+          faqJsonLd(BRAND_FAQ),
+        ]}
+        breadcrumbs={[
+          { name: "Home", url: buildCanonical("/") },
+          { name: "Services", url: `${buildCanonical("/")}#services` },
+          { name: "Brand Building", url: pageUrl },
+        ]}
+      />
 
       <style>{`
         @keyframes fadeSwap { 0%{opacity:0; transform:translateY(8px) scale(.98)} 20%{opacity:1; transform:translateY(0) scale(1)} 80%{opacity:1} 100%{opacity:0; transform:translateY(-8px) scale(.98)} }
@@ -252,47 +255,18 @@ export default function BrandBuildingPage() {
         </Container>
         <Container className="mt-6">
           <div className="divide-y divide-black/10 rounded-2xl border border-black/10 bg-white">
-            {[
-              { q: "What do you need from us to start?", a: "A decision-maker, a short briefing call, and quick feedback on drafts." },
-              { q: "How long does this take?", a: "Most projects finish in 4–8 weeks depending on scope and assets." },
-              { q: "Do you refresh existing brands?", a: "Yes. If your logo works, we refine and document; if not, we propose simple options." },
-              { q: "Can you work with our internal team?", a: "Yes. We create guidelines and templates they can adopt right away." },
-              { q: "Do you handle video?", a: "We script, storyboard, and edit. For shoots, we can work with your crew or ours." },
-              { q: "How do we keep it consistent later?", a: "You get a compact brand guide and reusable templates so every asset matches." },
-              { q: "What happens after handover?", a: "We can support roll-out, review new assets, and add formats when needed." },
-              { q: "Do you work with global teams?", a: "Yes. We consider markets, languages, and channels during guidelines." },
-            ].map((f) => (
-              <details key={f.q} className="group p-4">
+            {BRAND_FAQ.map(({ question, answer }) => (
+              <details key={question} className="group p-4">
                 <summary className="flex cursor-pointer list-none items-center justify-between">
-                  <span className="font-medium">{f.q}</span>
+                  <span className="font-medium">{question}</span>
                   <span className="text-slate-500 transition group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-2 text-sm leading-relaxed text-slate-700">{f.a}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-700">{answer}</p>
               </details>
             ))}
           </div>
         </Container>
       </Section>
-
-      {/* ---------- JSON-LD (Service) ---------- */}
-      <script
-        type="application/ld+json"
-        // note: do not format with trailing commas inside JSON.stringify
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Brand Building",
-            provider: { "@type": "Organization", name: "GoDigitalPro" },
-            serviceType: "Brand Strategy & Identity",
-            areaServed: "Global",
-            description: desc,
-            offers: { "@type": "Offer", category: "Service" },
-            audience: { "@type": "Organization" },
-            url: pageUrl,
-          }),
-        }}
-      />
     </main>
   );
 }

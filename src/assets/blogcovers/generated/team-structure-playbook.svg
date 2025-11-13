@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Team Building & Training Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#F5F3FF' offset='0%'/>
+        <stop stop-color='#DDD6FE' offset='50%'/>
+        <stop stop-color='#C4B5FD' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 243.21797247044742 C 200 103.21797247044742, 500 363.2179724704474, 1200 183.21797247044742 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 403.95452823489904 C 200 263.95452823489904, 500 523.954528234899, 1200 343.95452823489904 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 539.7191760363057 C 200 399.7191760363057, 500 659.7191760363057, 1200 479.7191760363057 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M686.941395662725 189.44948367774487 Q 514.8683755216189 85.60197138227522 342.7953553805128 371.6003283858299" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M342.7953553805128 371.6003283858299 Q 304.336850985419 261.75399286672473 265.87834659032524 448.3802441507578" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="686.941395662725" cy="189.44948367774487" r="64.94353090878576" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="686.941395662725" cy="189.44948367774487" r="46.94353090878576" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="686.941395662725" cy="189.44948367774487" r="15.64784363626192" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="342.7953553805128" cy="371.6003283858299" r="70.08518702210858" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="342.7953553805128" cy="371.6003283858299" r="52.085187022108585" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="342.7953553805128" cy="371.6003283858299" r="17.36172900736953" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="265.87834659032524" cy="448.3802441507578" r="59.723779410123825" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="265.87834659032524" cy="448.3802441507578" r="41.723779410123825" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="265.87834659032524" cy="448.3802441507578" r="13.907926470041275" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Team Building & Training Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>AGENCY GROWTH & OPERATIONS • TEAM BUILDING & TRAINING • DIGITAL MARKETING</text>
+  </svg>

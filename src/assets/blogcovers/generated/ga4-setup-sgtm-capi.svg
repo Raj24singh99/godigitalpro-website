@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='GA4 Setup OS: GA4 Event Setup, Server-Side GTM & Meta CAPI illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#ECFDF5' offset='0%'/>
+        <stop stop-color='#A7F3D0' offset='50%'/>
+        <stop stop-color='#6EE7B7' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 197.23384064622223 C 200 57.233840646222234, 500 317.23384064622223, 1200 137.23384064622223 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 426.9298098050058 C 200 286.9298098050058, 500 546.9298098050058, 1200 366.9298098050058 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 544.9969170009717 C 200 404.99691700097173, 500 664.9969170009717, 1200 484.99691700097173 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M417.9017528053373 398.684259429574 Q 303.5409146011807 223.2745438348502 189.1800763970241 310.35588696599007" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M189.1800763970241 310.35588696599007 Q 541.3805934949778 228.23780745267868 893.5811105929315 392.64742217957973" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="417.9017528053373" cy="398.684259429574" r="67.35722745582461" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="417.9017528053373" cy="398.684259429574" r="49.357227455824614" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="417.9017528053373" cy="398.684259429574" r="16.452409151941538" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="189.1800763970241" cy="310.35588696599007" r="57.44519984489307" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="189.1800763970241" cy="310.35588696599007" r="39.44519984489307" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="189.1800763970241" cy="310.35588696599007" r="13.148399948297689" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="893.5811105929315" cy="392.64742217957973" r="57.283733618445694" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="893.5811105929315" cy="392.64742217957973" r="39.283733618445694" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="893.5811105929315" cy="392.64742217957973" r="13.094577872815231" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>GA4 Setup OS: GA4 Event Setup, Server-Side GTM & Meta CAPI</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>GA4 SETUP • GA4 EVENT SETUP • SERVER-SIDE TAGGING</text>
+  </svg>

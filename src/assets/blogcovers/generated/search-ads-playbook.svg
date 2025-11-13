@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Google Search Ads Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#EEF2FF' offset='0%'/>
+        <stop stop-color='#C7D2FE' offset='50%'/>
+        <stop stop-color='#A5B4FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 180.09367179125547 C 200 40.093671791255474, 500 300.0936717912555, 1200 120.09367179125547 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 427.3664962593466 C 200 287.3664962593466, 500 547.3664962593466, 1200 367.3664962593466 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 562.7571228239685 C 200 422.75712282396853, 500 682.7571228239685, 1200 502.75712282396853 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M777.8994516795501 316.80642798542976 Q 818.5999216302298 194.16259428486228 859.3003915809095 281.0692938417196" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M859.3003915809095 281.0692938417196 Q 645.9886307944544 100.30362195335329 432.67687000799924 203.82621884346008" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="777.8994516795501" cy="316.80642798542976" r="66.16203866666183" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="777.8994516795501" cy="316.80642798542976" r="48.16203866666183" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="777.8994516795501" cy="316.80642798542976" r="16.054012888887275" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="859.3003915809095" cy="281.0692938417196" r="50.12881272751838" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="859.3003915809095" cy="281.0692938417196" r="32.12881272751838" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="859.3003915809095" cy="281.0692938417196" r="10.709604242506126" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="432.67687000799924" cy="203.82621884346008" r="56.35677361721173" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="432.67687000799924" cy="203.82621884346008" r="38.35677361721173" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="432.67687000799924" cy="203.82621884346008" r="12.785591205737243" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Google Search Ads Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>PAY-PER-CLICK & PAID ADVERTISING (PPC) • GOOGLE SEARCH ADS • DIGITAL MARKETING</text>
+  </svg>

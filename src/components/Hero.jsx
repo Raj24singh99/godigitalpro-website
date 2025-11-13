@@ -223,7 +223,7 @@ export default function Hero() {
         {/* Tagline */}
         <div className="inline-flex items-center gap-2 bg-primary/15 text-dark px-4 py-2 rounded-full text-sm font-medium ring-1 ring-black/5">
           <Sparkles size={16} className="text-yellow-500" />
-          <span>Transform Your Business Today</span>
+          <span>Global Digital Marketing Partner on Speed Dial</span>
         </div>
 
         {/* Heading */}
@@ -233,13 +233,12 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Grow Your Business <span className="whitespace-nowrap">Online—Simply</span>
+          A Digital Marketing Agency that stitches strategy, media, and product growth together
         </motion.h1>
 
         {/* Description */}
         <p className="mt-4 text-base md:text-lg text-slate-800 max-w-2xl">
-          We build fast, conversion-ready websites, consistent social presence,
-          and clear, data-driven marketing—minus the jargon.
+          Growth leaders plug us in when they need one accountable digital marketing team across brand, SEO, paid media, lifecycle, CRO, and analytics—without hiring six agencies or juggling five dashboards.
         </p>
 
         {/* CTAs */}
@@ -249,7 +248,9 @@ export default function Hero() {
           </Link>
         </div>
 
-        <p className="mt-2 text-sm text-slate-600">A clear focused plan from day one.</p>
+        <p className="mt-2 text-sm text-slate-600">
+          A clear plan from day one, grounded in research and battle-tested playbooks.
+        </p>
 
         {/* Single marquee band */}
         <div className="mt-6">
@@ -278,6 +279,9 @@ export default function Hero() {
               <div className="text-sm text-slate-700">Revenue Generated</div>
             </li>
           </ul>
+          <p className="mt-4 text-sm text-slate-700">
+            Trusted by SaaS, D2C, marketplaces, and B2B teams worldwide as their always-on digital marketing pod.
+          </p>
         </div>
       </div>
     </section>

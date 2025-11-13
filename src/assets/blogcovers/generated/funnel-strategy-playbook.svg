@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Funnel Strategy Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FDFDEA' offset='0%'/>
+        <stop stop-color='#FEF08A' offset='50%'/>
+        <stop stop-color='#FACC15' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 254.17057139799 C 200 114.17057139798999, 500 374.17057139799, 1200 194.17057139799 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 398.68439602665603 C 200 258.68439602665603, 500 518.684396026656, 1200 338.68439602665603 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 526.3122131861746 C 200 386.31221318617463, 500 646.3122131861746, 1200 466.31221318617463 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M1027.870019231923 195.5460238456726 Q 902.9361792164855 106.07115738093853 778.002339201048 444.398151114583" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M778.002339201048 444.398151114583 Q 641.5878001251258 141.9427500013262 505.1732610492036 223.48768040537834" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="1027.870019231923" cy="195.5460238456726" r="65.185738528613" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="1027.870019231923" cy="195.5460238456726" r="47.185738528613" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="1027.870019231923" cy="195.5460238456726" r="15.728579509537667" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="778.002339201048" cy="444.398151114583" r="50.55177049152553" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="778.002339201048" cy="444.398151114583" r="32.55177049152553" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="778.002339201048" cy="444.398151114583" r="10.850590163841844" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="505.1732610492036" cy="223.48768040537834" r="53.21533531649038" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="505.1732610492036" cy="223.48768040537834" r="35.21533531649038" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="505.1732610492036" cy="223.48768040537834" r="11.738445105496794" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Funnel Strategy Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>DIGITAL MARKETING STRATEGY • FUNNEL STRATEGY • DIGITAL MARKETING</text>
+  </svg>

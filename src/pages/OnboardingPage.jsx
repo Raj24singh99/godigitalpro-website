@@ -1,20 +1,9 @@
 // app/frontend/src/pages/OnboardingPage.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Mail,
-  Phone,
-  Building2,
-  CheckCircle2,
-  ShoppingCart,
-  TrendingUp,
-  Target,
-  Users2,
-  Rocket,
-  BarChart3,
-  MoreHorizontal,
-} from "lucide-react";
-import { Helmet } from "react-helmet-async"; // ✅ SEO
+import { Mail, Phone, Building2, CheckCircle2, ShoppingCart, TrendingUp, Target, Users2, Rocket, BarChart3, MoreHorizontal } from "lucide-react";
+import SeoHelmet from "../components/SeoHelmet"; // ✅ SEO
+import { buildCanonical, contactPageJsonLd, organizationJsonLd } from "../utils/seo";
 
 /** ─────────────────────────────────────────────────────────
  * Outcome-first choices (kept same data shape: `services`)
@@ -45,34 +34,18 @@ export default function OnboardingPage() {
       "Get Your Tailored Growth Plan | Onboarding | GoDigitalPro — Digital Marketing Agency",
     description:
       "Tell us your goals (increase sales, better ROAS, more qualified leads). Get a tailored plan and action steps from GoDigitalPro within 24 hours.",
-    url: "https://www.godigitalpro.in/onboarding/",
+    url: buildCanonical("/onboarding/"),
     image: "https://www.godigitalpro.in/public/assets/logo.jpg",
   };
 
-  const orgJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "GoDigitalPro",
-    url: "https://www.godigitalpro.in/",
-    logo: pageSEO.image,
-    sameAs: ["https://www.linkedin.com/company/godigitalpro/"],
-    description:
-      "GoDigitalPro is a growth-focused digital marketing agency offering Paid Ads, SEO, Web Development, and Analytics.",
-  };
-
-  const contactPageJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    name: "Onboarding — GoDigitalPro",
-    url: pageSEO.url,
-    description:
-      "Onboarding form for brands to start a growth plan with GoDigitalPro — a digital marketing agency.",
-    about: {
-      "@type": "Organization",
-      name: "GoDigitalPro",
-      url: "https://www.godigitalpro.in/",
-    },
-  };
+  const schemaBlocks = [
+    organizationJsonLd(),
+    contactPageJsonLd({
+      url: pageSEO.url,
+      description:
+        "Onboarding form for brands to start a growth plan with GoDigitalPro — a digital marketing agency.",
+    }),
+  ];
   // ---------- /SEO ONLY ----------
 
   const [email, setEmail] = useState("");
@@ -170,40 +143,19 @@ export default function OnboardingPage() {
 
   return (
     <>
-      {/* ---------- SEO HEAD ---------- */}
-      <Helmet>
-        <title>{pageSEO.title}</title>
-        <meta name="description" content={pageSEO.description} />
-        <link rel="canonical" href={pageSEO.url} />
-        <meta name="robots" content="index,follow,max-image-preview:large" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={pageSEO.title} />
-        <meta property="og:description" content={pageSEO.description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={pageSEO.url} />
-        <meta property="og:image" content={pageSEO.image} />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageSEO.title} />
-        <meta name="twitter:description" content={pageSEO.description} />
-        <meta name="twitter:image" content={pageSEO.image} />
-
-        {/* Extra topical tags */}
-        <meta name="author" content="GoDigitalPro — Digital Marketing Agency" />
-        <meta
-          name="keywords"
-          content="growth plan, ROAS, increase sales, qualified leads, digital marketing onboarding, GoDigitalPro"
-        />
-
-        {/* JSON-LD */}
-        <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
-        <script type="application/ld+json">
-          {JSON.stringify(contactPageJsonLd)}
-        </script>
-      </Helmet>
-      {/* ---------- /SEO HEAD ---------- */}
+      <SeoHelmet
+        title={pageSEO.title}
+        description={pageSEO.description}
+        canonical={pageSEO.url}
+        image={pageSEO.image}
+        robots="index,follow,max-image-preview:large"
+        keywords="growth plan, ROAS, increase sales, qualified leads, digital marketing onboarding, GoDigitalPro"
+        schema={schemaBlocks}
+        breadcrumbs={[
+          { name: "Home", url: buildCanonical("/") },
+          { name: "Onboarding", url: pageSEO.url },
+        ]}
+      />
 
       <main className="max-w-3xl mx-auto px-5 py-10">
         {/* ✅ New headline & description */}

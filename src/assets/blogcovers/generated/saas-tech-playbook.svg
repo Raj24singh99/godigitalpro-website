@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='SaaS / Tech Startups Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#ECFDF5' offset='0%'/>
+        <stop stop-color='#A7F3D0' offset='50%'/>
+        <stop stop-color='#6EE7B7' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 198.02724924869835 C 200 58.027249248698354, 500 318.02724924869835, 1200 138.02724924869835 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 475.38384636864066 C 200 335.38384636864066, 500 595.3838463686407, 1200 415.38384636864066 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 542.6024591689929 C 200 402.60245916899294, 500 662.6024591689929, 1200 482.60245916899294 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M865.0344881322235 262.24692083895206 Q 547.1692551882006 163.81920876912773 229.30402224417776 349.8087699711323" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M229.30402224417776 349.8087699711323 Q 552.601142169442 232.93302670121193 875.8982620947063 412.7731081098318" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="865.0344881322235" cy="262.24692083895206" r="67.28727054968476" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="865.0344881322235" cy="262.24692083895206" r="49.28727054968476" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="865.0344881322235" cy="262.24692083895206" r="16.429090183228254" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="229.30402224417776" cy="349.8087699711323" r="51.26348408078775" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="229.30402224417776" cy="349.8087699711323" r="33.26348408078775" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="229.30402224417776" cy="349.8087699711323" r="11.08782802692925" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="875.8982620947063" cy="412.7731081098318" r="70.16563100088388" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="875.8982620947063" cy="412.7731081098318" r="52.16563100088388" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="875.8982620947063" cy="412.7731081098318" r="17.388543666961294" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>SaaS / Tech Startups Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>INDUSTRY VERTICALS & CASE STUDIES • SAAS / TECH STARTUPS • DIGITAL MARKETING</text>
+  </svg>

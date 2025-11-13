@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='CRO for D2C Brands: Conversion Rate Optimization Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#EEF2FF' offset='0%'/>
+        <stop stop-color='#C7D2FE' offset='50%'/>
+        <stop stop-color='#A5B4FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 223.36902525275946 C 200 83.36902525275946, 500 343.36902525275946, 1200 163.36902525275946 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 455.08700617589056 C 200 315.08700617589056, 500 575.0870061758906, 1200 395.08700617589056 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 523.6415404919535 C 200 383.6415404919535, 500 643.6415404919535, 1200 463.6415404919535 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M731.4474103366956 393.5651071369648 Q 785.8861481561325 275.32025491818786 840.3248859755695 386.5029903501272" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M840.3248859755695 386.5029903501272 Q 588.463203527499 211.18186733685434 336.6015210794285 303.3194351196289" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="731.4474103366956" cy="393.5651071369648" r="67.56554990028962" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="731.4474103366956" cy="393.5651071369648" r="49.565549900289625" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="731.4474103366956" cy="393.5651071369648" r="16.52184996676321" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="840.3248859755695" cy="386.5029903501272" r="54.50685790646821" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="840.3248859755695" cy="386.5029903501272" r="36.50685790646821" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="840.3248859755695" cy="386.5029903501272" r="12.168952635489404" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="336.6015210794285" cy="303.3194351196289" r="55.3820422985591" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="336.6015210794285" cy="303.3194351196289" r="37.3820422985591" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="336.6015210794285" cy="303.3194351196289" r="12.460680766186366" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>CRO for D2C Brands: Conversion Rate Optimization Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>CRO FOR D2C • CONVERSION RATE OPTIMIZATION • LANDING PAGE OPTIMIZATION</text>
+  </svg>

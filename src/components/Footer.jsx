@@ -70,6 +70,17 @@ export default function Footer() {
               </a>
             </div>
 
+            <p className="mt-4 text-xs text-slate-500">
+              <a
+                href="https://share.google/cMhg0Uw3dpIxKwEYW"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-900 underline-offset-2 hover:underline"
+              >
+                606, DsMax Skycity, Thanisandra Road, Bengaluru 560064, Karnataka, India
+              </a>
+            </p>
+
             {/* Socials */}
             <div className="mt-6 flex items-center gap-3">
               <a
@@ -125,8 +136,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-slate-900" to="/blogs">
-                  Blogs
+                <Link className="hover:text-slate-900" to="/blog">
+                  Blog
                 </Link>
               </li>
               <li>

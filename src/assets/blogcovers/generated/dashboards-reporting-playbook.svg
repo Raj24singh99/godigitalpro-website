@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Dashboard & Reporting Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#F5F3FF' offset='0%'/>
+        <stop stop-color='#DDD6FE' offset='50%'/>
+        <stop stop-color='#C4B5FD' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 251.8091636057943 C 200 111.80916360579431, 500 371.8091636057943, 1200 191.8091636057943 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 376.3790915161371 C 200 236.37909151613712, 500 496.3790915161371, 1200 316.3790915161371 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 537.8170274430886 C 200 397.8170274430886, 500 657.8170274430886, 1200 477.8170274430886 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M406.455705370754 351.7132195085287 Q 627.4642066587694 257.4999648798257 848.4727079467848 441.0333502292633" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M848.4727079467848 441.0333502292633 Q 890.1824151980691 353.9297894574702 931.8921224493533 441.36219926178455" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="406.455705370754" cy="351.7132195085287" r="57.02928772289306" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="406.455705370754" cy="351.7132195085287" r="39.02928772289306" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="406.455705370754" cy="351.7132195085287" r="13.009762574297687" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="848.4727079467848" cy="441.0333502292633" r="61.88220796221867" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="848.4727079467848" cy="441.0333502292633" r="43.88220796221867" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="848.4727079467848" cy="441.0333502292633" r="14.62740265407289" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="931.8921224493533" cy="441.36219926178455" r="52.08092316053808" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="931.8921224493533" cy="441.36219926178455" r="34.08092316053808" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="931.8921224493533" cy="441.36219926178455" r="11.360307720179359" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Dashboard & Reporting Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>WEB ANALYTICS & DATA • DASHBOARD & REPORTING • DIGITAL MARKETING</text>
+  </svg>

@@ -5,21 +5,21 @@ import { HeartHandshake, Eye, MessageCircle } from "lucide-react";
 const items = [
   {
     icon: MessageCircle,
-    title: "We Start With Understanding You",
+    title: "Strategy Before Spend",
     desc:
-      "Before we talk about ads or budgets, we learn your story — what makes your business different and what success really means for you.",
+      "We pressure-test audiences, offers, and channels so every marketing rupee or dollar is attached to a documented hypothesis.",
   },
   {
     icon: Eye,
-    title: "You’ll Always Know What’s Happening",
+    title: "Transparent Operating System",
     desc:
-      "No confusing reports or hidden numbers. We show where your money goes and the results — clear, simple, honest.",
+      "Dashboards, rituals, and docs make it impossible to lose track of experiments, budgets, or owners—no matter how many channels we run.",
   },
   {
     icon: HeartHandshake,
-    title: "We Grow Together",
+    title: "Compounding Partnerships",
     desc:
-      "Our best work comes from long-term partnerships. We win when you win — and we stay around to help you keep growing.",
+      "We plug into your team like an in-house pod, stay accountable to outcomes, and keep levelling up across markets as you scale.",
   },
 ];
 
@@ -29,9 +29,9 @@ export default function TrustPillars() {
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* heading so the section doesn't get lost */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-dark">Why Teams Pick Us</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-dark">Why teams trust GoDigitalPro as their digital marketing agency</h2>
           <p className="mt-3 text-slate-700">
-            Straight talk, clear numbers, and a partner who actually sticks around.
+            Straight talk, measurable outcomes, and a team that knows how every channel ladders up to revenue.
           </p>
         </div>
 

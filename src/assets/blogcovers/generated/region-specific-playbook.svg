@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Regional / India-Specific Marketing Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FDF2F8' offset='0%'/>
+        <stop stop-color='#FBCFE8' offset='50%'/>
+        <stop stop-color='#F9A8D4' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 256.75270951353014 C 200 116.75270951353014, 500 376.75270951353014, 1200 196.75270951353014 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 392.1311654895544 C 200 252.1311654895544, 500 512.1311654895544, 1200 332.1311654895544 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 578.2823286438361 C 200 438.2823286438361, 500 698.2823286438361, 1200 518.2823286438361 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M146.2827485613525 141.6036482900381 Q 276.22540570097044 41.30917181260884 406.1680628405884 391.4705443382263" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M406.1680628405884 391.4705443382263 Q 683.1719877081923 35.39785357192159 960.1759125757962 148.29916544258595" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="146.2827485613525" cy="141.6036482900381" r="68.43955623079091" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="146.2827485613525" cy="141.6036482900381" r="50.43955623079091" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="146.2827485613525" cy="141.6036482900381" r="16.81318541026364" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="406.1680628405884" cy="391.4705443382263" r="63.980748201254755" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="406.1680628405884" cy="391.4705443382263" r="45.980748201254755" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="406.1680628405884" cy="391.4705443382263" r="15.326916067084918" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="960.1759125757962" cy="148.29916544258595" r="61.268129928037524" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="960.1759125757962" cy="148.29916544258595" r="43.268129928037524" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="960.1759125757962" cy="148.29916544258595" r="14.422709976012507" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Regional / India-Specific Marketing Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>INDUSTRY VERTICALS & CASE STUDIES • REGIONAL / INDIA-SPECIFIC MARKETING • DIGITAL MARKETING</text>
+  </svg>

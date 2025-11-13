@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Tools & Workflows Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#E0F2FE' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 291.7888197954744 C 200 151.7888197954744, 500 411.7888197954744, 1200 231.7888197954744 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 433.59821878373623 C 200 293.59821878373623, 500 553.5982187837362, 1200 373.59821878373623 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 531.7245776439086 C 200 391.72457764390856, 500 651.7245776439086, 1200 471.72457764390856 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M233.45230190083385 355.21161280572414 Q 378.9096338232048 145.0737747270614 524.3669657455757 259.50891733169556" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M524.3669657455757 259.50891733169556 Q 792.1834828727879 174.3222197331488 1060 309.56410475075245" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="233.45230190083385" cy="355.21161280572414" r="65.49261995125562" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="233.45230190083385" cy="355.21161280572414" r="47.49261995125562" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="233.45230190083385" cy="355.21161280572414" r="15.830873317085207" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="524.3669657455757" cy="259.50891733169556" r="64.86122631514445" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="524.3669657455757" cy="259.50891733169556" r="46.86122631514445" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="524.3669657455757" cy="259.50891733169556" r="15.620408771714816" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="1060" cy="309.56410475075245" r="66.98138733021915" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="1060" cy="309.56410475075245" r="48.98138733021915" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="1060" cy="309.56410475075245" r="16.32712911007305" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Tools & Workflows Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>AGENCY GROWTH & OPERATIONS • TOOLS & WORKFLOWS • DIGITAL MARKETING</text>
+  </svg>

@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Real Estate Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#EEF2FF' offset='0%'/>
+        <stop stop-color='#C7D2FE' offset='50%'/>
+        <stop stop-color='#A5B4FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 291.1785054858774 C 200 151.1785054858774, 500 411.1785054858774, 1200 231.1785054858774 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 470.1720368117094 C 200 330.1720368117094, 500 590.1720368117094, 1200 410.1720368117094 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 528.9510836685076 C 200 388.95108366850764, 500 648.9510836685076, 1200 468.95108366850764 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M443.3501978032291 140.16341172158718 Q 572.2724487562664 59.07162983901799 701.1946997093037 253.7759304046631" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M701.1946997093037 253.7759304046631 Q 535.1096713799052 87.94046701863408 369.0246430505067 195.62126941978931" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="443.3501978032291" cy="140.16341172158718" r="55.39258680213243" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="443.3501978032291" cy="140.16341172158718" r="37.39258680213243" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="443.3501978032291" cy="140.16341172158718" r="12.46419560071081" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="701.1946997093037" cy="253.7759304046631" r="66.23177690291777" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="701.1946997093037" cy="253.7759304046631" r="48.23177690291777" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="701.1946997093037" cy="253.7759304046631" r="16.077258967639256" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="369.0246430505067" cy="195.62126941978931" r="51.99531242065132" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="369.0246430505067" cy="195.62126941978931" r="33.99531242065132" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="369.0246430505067" cy="195.62126941978931" r="11.331770806883773" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Real Estate Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>INDUSTRY VERTICALS & CASE STUDIES • REAL ESTATE • DIGITAL MARKETING</text>
+  </svg>

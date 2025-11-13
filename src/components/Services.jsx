@@ -14,42 +14,42 @@ const cards = [
   {
     id: "web",
     title: "Website Development",
-    desc: "Fast, clean websites that convert across devices.",
+    desc: "CRO-grade experience design, performance engineering, and storytelling that convert any channel’s traffic.",
     icon: Globe2,
     link: "/services/website-development",
   },
   {
     id: "smm",
     title: "Social Media Marketing",
-    desc: "Consistent content and real community building.",
+    desc: "Narratives and campaigns that compound across organic, influencer, community, and performance remixes.",
     icon: Share2,
     link: "/services/social-media-marketing",
   },
   {
     id: "brand",
     title: "Brand Building",
-    desc: "Clear identity and story people remember.",
+    desc: "Positioning, messaging, and identity systems that inform every ad, landing page, and nurture track.",
     icon: Users2,
     link: "/services/brand-building",
   },
   {
     id: "paid",
     title: "Paid Marketing",
-    desc: "ROI-focused ads on Google, YouTube, and Meta.",
+    desc: "Search, social, video, and marketplace media managed by squads obsessed with efficiency and scale.",
     icon: Megaphone,
     link: "/services/paid-marketing",
   },
   {
     id: "marketplaces",
     title: "Marketplaces & Quick Commerce",
-    desc: "Launch & scale on Amazon, Flipkart, Blinkit, Zepto.",
+    desc: "Retail media, listings, merchandising, and ops support for Amazon, Flipkart, Instacart, Blinkit, and beyond.",
     icon: Store,
     link: "/services/marketplaces",
   },
   {
     id: "seo",
     title: "SEO & Content",
-    desc: "Content that ranks, educates, and converts.",
+    desc: "Technical foundations, editorial systems, and authority plays that keep organic demand compounding.",
     icon: FileText,
     link: "/services/seo-content",
   },
@@ -61,11 +61,9 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Centered heading & intro */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="h2 text-dark">What We Do Best</h2>
+          <h2 className="h2 text-dark">One Digital Marketing Agency, Every Critical Pod</h2>
           <p className="mt-3 text-slate-700 text-base md:text-lg">
-            From building your online presence to driving measurable growth — our
-            services are designed to make every part of your digital journey
-            stronger, simpler, and more effective.
+            We plug strategy, creative, media, SEO, product, and analytics leaders into a single pod so your growth plan, execution, and reporting stay aligned no matter the market you serve.
           </p>
         </div>
 

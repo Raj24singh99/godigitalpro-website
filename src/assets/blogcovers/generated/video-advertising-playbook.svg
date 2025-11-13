@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Video & YouTube Ads Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FDFDEA' offset='0%'/>
+        <stop stop-color='#FEF08A' offset='50%'/>
+        <stop stop-color='#FACC15' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 285.3149107284844 C 200 145.3149107284844, 500 405.3149107284844, 1200 225.3149107284844 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 450.1084872242063 C 200 310.1084872242063, 500 570.1084872242063, 1200 390.1084872242063 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 569.0125143900514 C 200 429.01251439005136, 500 689.0125143900514, 1200 509.01251439005136 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M859.3114644149318 398.7614008784294 Q 709.130901216995 173.153833784163 558.9503380190581 255.1475016027689" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M558.9503380190581 255.1475016027689 Q 502.00205302098766 135.77901770360768 445.0537680229172 437.1304966509342" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="859.3114644149318" cy="398.7614008784294" r="51.123300683218986" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="859.3114644149318" cy="398.7614008784294" r="33.123300683218986" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="859.3114644149318" cy="398.7614008784294" r="11.041100227739662" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="558.9503380190581" cy="255.1475016027689" r="53.48198813945055" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="558.9503380190581" cy="255.1475016027689" r="35.48198813945055" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="558.9503380190581" cy="255.1475016027689" r="11.82732937981685" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="445.0537680229172" cy="437.1304966509342" r="56.56422577193007" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="445.0537680229172" cy="437.1304966509342" r="38.56422577193007" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="445.0537680229172" cy="437.1304966509342" r="12.85474192397669" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Video & YouTube Ads Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>PAY-PER-CLICK & PAID ADVERTISING (PPC) • VIDEO & YOUTUBE ADS • DIGITAL MARKETING</text>
+  </svg>

@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Web3 & Blockchain Marketing Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FDF2F8' offset='0%'/>
+        <stop stop-color='#FBCFE8' offset='50%'/>
+        <stop stop-color='#F9A8D4' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 214.33179608546197 C 200 74.33179608546197, 500 334.331796085462, 1200 154.33179608546197 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 361.207310333848 C 200 221.207310333848, 500 481.207310333848, 1200 301.207310333848 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 573.2808025414124 C 200 433.2808025414124, 500 693.2808025414124, 1200 513.2808025414124 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M258.87773564085364 237.91245065629482 Q 398.23123826878145 123.36388391442597 537.5847408967093 230.06302952766418" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M537.5847408967093 230.06302952766418 Q 510.47339047072455 59.53132437542081 483.36204004473984 144.3259186297655" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="258.87773564085364" cy="237.91245065629482" r="63.576091405935585" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="258.87773564085364" cy="237.91245065629482" r="45.576091405935585" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="258.87773564085364" cy="237.91245065629482" r="15.192030468645195" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="537.5847408967093" cy="230.06302952766418" r="66.48393219942227" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="537.5847408967093" cy="230.06302952766418" r="48.48393219942227" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="537.5847408967093" cy="230.06302952766418" r="16.161310733140756" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="483.36204004473984" cy="144.3259186297655" r="52.42336612008512" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="483.36204004473984" cy="144.3259186297655" r="34.42336612008512" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="483.36204004473984" cy="144.3259186297655" r="11.474455373361707" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Web3 & Blockchain Marketing Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>EMERGING TRENDS & TECHNOLOGIES • WEB3 & BLOCKCHAIN MARKETING • DIGITAL MARKETING</text>
+  </svg>

@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='A/B & Multivariate Testing Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FDF2F8' offset='0%'/>
+        <stop stop-color='#FBCFE8' offset='50%'/>
+        <stop stop-color='#F9A8D4' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 272.36709259450436 C 200 132.36709259450436, 500 392.36709259450436, 1200 212.36709259450436 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 363.1290241051465 C 200 223.12902410514653, 500 483.1290241051465, 1200 303.1290241051465 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 523.588387882337 C 200 383.588387882337, 500 643.588387882337, 1200 463.588387882337 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M311.0297894431278 165.86097702383995 Q 469.57343600457534 68.75025877729058 628.1170825660229 246.42467014491558" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M628.1170825660229 246.42467014491558 Q 764.6782798808999 138.6926136445254 901.239477195777 372.26328045129776" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="311.0297894431278" cy="165.86097702383995" r="66.38466214714572" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="311.0297894431278" cy="165.86097702383995" r="48.38466214714572" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="311.0297894431278" cy="165.86097702383995" r="16.12822071571524" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="628.1170825660229" cy="246.42467014491558" r="52.72351178806275" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="628.1170825660229" cy="246.42467014491558" r="34.72351178806275" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="628.1170825660229" cy="246.42467014491558" r="11.57450392935425" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="901.239477195777" cy="372.26328045129776" r="57.72990265535191" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="901.239477195777" cy="372.26328045129776" r="39.72990265535191" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="901.239477195777" cy="372.26328045129776" r="13.243300885117302" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>A/B & Multivariate Testing Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>CONVERSION RATE OPTIMIZATION (CRO) & UX • A/B & MULTIVARIATE TESTING • DIGITAL MARKETING</text>
+  </svg>

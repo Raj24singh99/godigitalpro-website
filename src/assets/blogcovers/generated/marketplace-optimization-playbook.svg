@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Marketplace Optimization Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#F0F9FF' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 274.85056324861944 C 200 134.85056324861944, 500 394.85056324861944, 1200 214.85056324861944 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 402.1195650100708 C 200 262.1195650100708, 500 522.1195650100708, 1200 342.1195650100708 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 548.6382724205032 C 200 408.6382724205032, 500 668.6382724205032, 1200 488.6382724205032 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M170.46452412381768 308.70342157781124 Q 436.3728455756791 217.6624193508178 702.2811670275405 378.9360684156418" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M702.2811670275405 378.9360684156418 Q 483.19451845018193 191.5027234889567 264.10786987282336 305.1773286610842" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="170.46452412381768" cy="308.70342157781124" r="67.7611195826903" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="170.46452412381768" cy="308.70342157781124" r="49.7611195826903" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="170.46452412381768" cy="308.70342157781124" r="16.587039860896766" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="702.2811670275405" cy="378.9360684156418" r="67.51896419981495" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="702.2811670275405" cy="378.9360684156418" r="49.518964199814945" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="702.2811670275405" cy="378.9360684156418" r="16.506321399938315" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="264.10786987282336" cy="305.1773286610842" r="57.46152979321778" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="264.10786987282336" cy="305.1773286610842" r="39.46152979321778" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="264.10786987282336" cy="305.1773286610842" r="13.153843264405927" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Marketplace Optimization Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>E-COMMERCE & MARKETPLACE MARKETING • MARKETPLACE OPTIMIZATION • DIGITAL MARKETING</text>
+  </svg>

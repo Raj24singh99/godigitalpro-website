@@ -1,6 +1,5 @@
 // app/frontend/src/pages/LandingPage.jsx
-import React from "react";
-import { Helmet } from "react-helmet-async";
+import React, { useMemo } from "react";
 
 import Hero from "../components/Hero";
 import TrustPillars from "../components/TrustPillars";
@@ -11,137 +10,57 @@ import BusinessTypes from "../components/BusinessTypes";
 import Plans from "../components/PlansSection";
 import Testimonials from "../components/Testimonials";
 import FinalCTA from "../components/FinalCTA";
-
-const SITE = {
-  name: "GoDigitalPro",
-  url: "https://godigitalpro.in/",
-  twitter: "@GoDigitalProIn",
-  logo: "https://godigitalpro.in/apple-touch-icon.png",
-  ogImage: "https://godigitalpro.in/og-home.jpg", // 1200x630 recommended
-};
+import SeoHelmet from "../components/SeoHelmet";
+import {
+  buildCanonical,
+  organizationJsonLd,
+  websiteJsonLd,
+  serviceJsonLd,
+  siteNavigationJsonLd,
+} from "../utils/seo";
 
 const META = {
-  title:
-    "GoDigitalPro — Websites, SEO, Google & Meta Ads that Drive Revenue",
+  title: "GoDigitalPro — Full-Funnel Digital Marketing Agency for Modern Brands",
   description:
-    "GoDigitalPro is a digital marketing agency that plans, builds, and scales growth systems—SEO, high-intent ads, conversion-focused websites, and analytics. Clear plans, transparent reporting, accountable execution.",
+    "GoDigitalPro is a global digital marketing agency that unites strategy, SEO, paid media, creative, web, CRO, and analytics into one accountable growth pod for teams that need clarity and speed.",
   keywords:
-    "digital marketing agency, seo agency, google ads, meta ads, performance marketing, website development, india, cro, analytics",
+    "digital marketing agency, global marketing agency, seo agency, google ads agency, performance marketing, cro, analytics, website development",
 };
 
 export default function LandingPage() {
+  const canonical = buildCanonical("/");
+  const schemaBlocks = useMemo(
+    () => [
+      organizationJsonLd(),
+      websiteJsonLd(),
+      serviceJsonLd({
+        name: "Digital Marketing & Growth Services",
+        description:
+          "SEO, Google Ads, Meta Ads, Website Development, CRO, Analytics, and measurement systems that compound growth.",
+        url: canonical,
+      }),
+      siteNavigationJsonLd([
+        { name: "Services", url: `${canonical}#services` },
+        { name: "SEO", url: buildCanonical("/services/seo-content") },
+        { name: "Paid Advertising", url: buildCanonical("/services/paid-marketing") },
+        { name: "Web Development", url: buildCanonical("/services/website-development") },
+        { name: "Blog", url: buildCanonical("/blog") },
+        { name: "Contact", url: buildCanonical("/onboarding") },
+      ]),
+    ].filter(Boolean),
+    [canonical]
+  );
+
   return (
     <>
-      <Helmet>
-        {/* Core */}
-        <title>{META.title}</title>
-        <meta name="description" content={META.description} />
-        <meta name="keywords" content={META.keywords} />
-        <meta
-          name="robots"
-          content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
-        />
-        <link rel="canonical" href={SITE.url} />
-
-        {/* Helpful extras */}
-        <meta name="application-name" content={SITE.name} />
-        <meta name="theme-color" content="#111827" />
-        <meta httpEquiv="content-language" content="en-IN" />
-        <meta name="author" content="GoDigitalPro" />
-        <meta name="publisher" content="GoDigitalPro" />
-
-        {/* Open Graph */}
-        <meta property="og:site_name" content={SITE.name} />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="en_IN" />
-        <meta property="og:url" content={SITE.url} />
-        <meta property="og:title" content={META.title} />
-        <meta property="og:description" content={META.description} />
-        <meta property="og:image" content={SITE.ogImage} />
-        <meta property="og:image:alt" content="GoDigitalPro — growth marketing agency" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={SITE.twitter} />
-        <meta name="twitter:title" content={META.title} />
-        <meta name="twitter:description" content={META.description} />
-        <meta name="twitter:image" content={SITE.ogImage} />
-
-        {/* JSON-LD: Organization */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: SITE.name,
-            url: SITE.url,
-            logo: SITE.logo,
-            sameAs: [
-              "https://www.linkedin.com/company/godigitalpro",
-              "https://www.instagram.com/godigitalpro.in/",
-              "https://www.youtube.com/@GoDigitalPro",
-              "https://www.facebook.com/profile.php?id=61573650177453",
-            ],
-            description: META.description,
-          })}
-        </script>
-
-        {/* JSON-LD: WebSite + SearchAction */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: SITE.name,
-            url: SITE.url,
-            potentialAction: {
-              "@type": "SearchAction",
-              target: "https://godigitalpro.in/search?q={query}",
-              "query-input": "required name=query",
-            },
-          })}
-        </script>
-
-        {/* JSON-LD: Service (Digital Marketing Agency) */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Digital Marketing & Growth Services",
-            serviceType:
-              "SEO, Google Ads, Meta Ads, Website Development, CRO, Analytics",
-            provider: {
-              "@type": "Organization",
-              name: SITE.name,
-              url: SITE.url,
-              logo: SITE.logo,
-            },
-            areaServed: "IN",
-            offers: {
-              "@type": "Offer",
-              category: "MarketingService",
-              availability: "https://schema.org/InStock",
-              url: SITE.url,
-            },
-            description:
-              "Full-funnel digital marketing services: SEO, high-intent ads, CRO, analytics, and conversion-focused websites.",
-          })}
-        </script>
-
-        {/* JSON-LD: Site Navigation (helps sitelinks/AI overviews) */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            itemListElement: [
-              { "@type": "SiteNavigationElement", name: "Services", url: "https://godigitalpro.in/services" },
-              { "@type": "SiteNavigationElement", name: "SEO", url: "https://godigitalpro.in/services/seo" },
-              { "@type": "SiteNavigationElement", name: "Paid Advertising", url: "https://godigitalpro.in/services/ads" },
-              { "@type": "SiteNavigationElement", name: "Web Development", url: "https://godigitalpro.in/services/web-development" },
-              { "@type": "SiteNavigationElement", name: "Blog", url: "https://godigitalpro.in/blog" },
-              { "@type": "SiteNavigationElement", name: "Contact", url: "https://godigitalpro.in/onboarding" },
-            ],
-          })}
-        </script>
-      </Helmet>
+      <SeoHelmet
+        title={META.title}
+        description={META.description}
+        canonical={canonical}
+        keywords={META.keywords}
+        robots="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+        schema={schemaBlocks}
+      />
 
       <main>
         <Hero />

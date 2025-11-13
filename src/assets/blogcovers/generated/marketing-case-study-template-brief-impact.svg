@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Marketing Case Study Template: From Brief to Impact illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FFE4E6' offset='0%'/>
+        <stop stop-color='#FECDD3' offset='50%'/>
+        <stop stop-color='#FDA4AF' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 285.803162176162 C 200 145.803162176162, 500 405.803162176162, 1200 225.803162176162 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 396.8494328018278 C 200 256.8494328018278, 500 516.8494328018278, 1200 336.8494328018278 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 535.2313095703721 C 200 395.2313095703721, 500 655.2313095703721, 1200 475.2313095703721 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M511.39314769301564 314.799961745739 Q 374.4406492705457 198.1316053494811 237.48815084807575 451.7338911443949" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M237.48815084807575 451.7338911443949 Q 370.4454675898887 314.9115648586303 503.4027843317017 400.2847649157047" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="511.39314769301564" cy="314.799961745739" r="68.00332720251754" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="511.39314769301564" cy="314.799961745739" r="50.00332720251754" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="511.39314769301564" cy="314.799961745739" r="16.667775734172512" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="237.48815084807575" cy="451.7338911443949" r="69.98554766923189" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="237.48815084807575" cy="451.7338911443949" r="51.98554766923189" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="237.48815084807575" cy="451.7338911443949" r="17.328515889743965" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="503.4027843317017" cy="400.2847649157047" r="50.953085699584335" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="503.4027843317017" cy="400.2847649157047" r="32.953085699584335" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="503.4027843317017" cy="400.2847649157047" r="10.984361899861446" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Marketing Case Study Template: From Brief to Impact</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>CASE STUDY TEMPLATE • MARKETING CASE STUDY • B2B PROOF</text>
+  </svg>

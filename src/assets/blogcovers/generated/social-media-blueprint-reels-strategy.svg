@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Social Media Blueprint: 90-Day Strategy for Reels, UGC & Paid Boosts illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FFE4E6' offset='0%'/>
+        <stop stop-color='#FECDD3' offset='50%'/>
+        <stop stop-color='#FDA4AF' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 247.39150517620146 C 200 107.39150517620146, 500 367.39150517620146, 1200 187.39150517620146 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 433.4815734811127 C 200 293.4815734811127, 500 553.4815734811127, 1200 373.4815734811127 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 532.213402944617 C 200 392.213402944617, 500 652.213402944617, 1200 472.213402944617 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M858.6781296972185 291.5717113763094 Q 654.8388540768065 196.8085306044668 450.9995784563944 277.1702419221401" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M450.9995784563944 277.1702419221401 Q 630.1487794495188 190.19647281616926 809.2979804426432 294.08265464007854" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="858.6781296972185" cy="291.5717113763094" r="67.76640268601477" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="858.6781296972185" cy="291.5717113763094" r="49.76640268601477" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="858.6781296972185" cy="291.5717113763094" r="16.588800895338256" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="450.9995784563944" cy="277.1702419221401" r="61.85780760971829" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="450.9995784563944" cy="277.1702419221401" r="43.85780760971829" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="450.9995784563944" cy="277.1702419221401" r="14.619269203239432" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="809.2979804426432" cy="294.08265464007854" r="68.30513630341738" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="809.2979804426432" cy="294.08265464007854" r="50.305136303417385" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="809.2979804426432" cy="294.08265464007854" r="16.768378767805796" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Social Media Blueprint: 90-Day Strategy for Reels, UGC & Paid Boosts</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>INSTAGRAM REELS • UGC • COMMUNITY</text>
+  </svg>

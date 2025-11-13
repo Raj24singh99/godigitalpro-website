@@ -1,7 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:wght@600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #0f172a;
+  background-color: #ffffff;
+}
 
 /* --- Global utility classes --- */
 .btn-primary {
@@ -29,10 +35,15 @@
    ================================ */
 
 .blog-article {
-  font-family: 'Crimson Text', Georgia, serif;
-  font-size: 16.5px;
-  line-height: 1.8;
-  color: #1e293b; /* slate-800 */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.85;
+  color: #1f2937; /* slate-800 */
+  letter-spacing: -0.01em;
+}
+
+.blog-article p {
+  margin-bottom: 0.9rem;
 }
 
 /* Paragraph spacing */
@@ -43,12 +54,18 @@
 /* Lists */
 .blog-article ul,
 .blog-article ol {
-  margin: 1rem 0 1.2rem 1.25rem;
+  margin: 1rem 0 1.2rem 1.5rem;
   padding-left: 1rem;
+}
+
+.blog-article ul li::marker {
+  color: #d97706;
+  font-size: 0.9em;
 }
 
 .blog-article li {
   margin: 0.4rem 0;
+  line-height: 1.7;
 }
 
 /* Headings hierarchy */
@@ -69,7 +86,8 @@
 }
 
 .blog-article h2 {
-  font-size: 1.75rem;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-top: 2.25rem;
   margin-bottom: 0.75rem;
@@ -77,19 +95,21 @@
 
 @media (min-width: 768px) {
   .blog-article h2 {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 }
 
 .blog-article h3 {
+  font-family: 'Crimson Text', Georgia, serif;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 1.6rem;
   margin-bottom: 0.6rem;
   color: #1e293b;
 }
 
 .blog-article h4 {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 1.125rem;
   font-weight: 600;
   margin-top: 1.2rem;
@@ -163,6 +183,12 @@
 
 .blog-article ol li strong {
   color: #111827;
+  font-weight: 700;
+}
+
+.blog-article li strong {
+  color: #0f172a;
+  font-weight: 650;
 }
 
 /* Table of Contents sidebar */

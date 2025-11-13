@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Subscription Models Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#E0F2FE' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 288.5307585541159 C 200 148.5307585541159, 500 408.5307585541159, 1200 228.5307585541159 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 469.2104464955628 C 200 329.2104464955628, 500 589.2104464955628, 1200 409.2104464955628 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 573.3905916986987 C 200 433.3905916986987, 500 693.3905916986987, 1200 513.3905916986987 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M646.8687240127474 415.66168673336506 Q 623.8949328684248 94.60249952040613 600.9211417241022 202.53848418593407" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M600.9211417241022 202.53848418593407 Q 473.18341344362125 88.22037737816572 345.4456851631403 314.7759472578764" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="646.8687240127474" cy="415.66168673336506" r="55.819797897711396" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="646.8687240127474" cy="415.66168673336506" r="37.819797897711396" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="646.8687240127474" cy="415.66168673336506" r="12.606599299237132" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="600.9211417241022" cy="202.53848418593407" r="71.03277984587476" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="600.9211417241022" cy="202.53848418593407" r="53.03277984587476" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="600.9211417241022" cy="202.53848418593407" r="17.677593281958252" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="345.4456851631403" cy="314.7759472578764" r="69.87914280127734" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="345.4456851631403" cy="314.7759472578764" r="51.87914280127734" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="345.4456851631403" cy="314.7759472578764" r="17.29304760042578" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Subscription Models Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>E-COMMERCE & MARKETPLACE MARKETING • SUBSCRIPTION MODELS • DIGITAL MARKETING</text>
+  </svg>

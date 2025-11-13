@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='AR/VR & Immersive Experiences Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FDFDEA' offset='0%'/>
+        <stop stop-color='#FEF08A' offset='50%'/>
+        <stop stop-color='#FACC15' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 209.79207479394972 C 200 69.79207479394972, 500 329.7920747939497, 1200 149.79207479394972 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 401.62455590441823 C 200 261.62455590441823, 500 521.6245559044182, 1200 341.62455590441823 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 531.1224792478606 C 200 391.1224792478606, 500 651.1224792478606, 1200 471.1224792478606 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M573.0797391477972 198.76130230724812 Q 734.2784486734308 104.58237214945257 895.4771581990644 257.0533238351345" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M895.4771581990644 257.0533238351345 Q 733.328901079949 53.09418339282274 571.1806439608335 166.25780694186687" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="573.0797391477972" cy="198.76130230724812" r="59.09319973923266" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="573.0797391477972" cy="198.76130230724812" r="41.09319973923266" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="573.0797391477972" cy="198.76130230724812" r="13.697733246410886" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="895.4771581990644" cy="257.0533238351345" r="62.333641964476556" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="895.4771581990644" cy="257.0533238351345" r="44.333641964476556" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="895.4771581990644" cy="257.0533238351345" r="14.777880654825518" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="571.1806439608335" cy="166.25780694186687" r="70.05036428105086" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="571.1806439608335" cy="166.25780694186687" r="52.05036428105086" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="571.1806439608335" cy="166.25780694186687" r="17.350121427016955" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>AR/VR & Immersive Experiences Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>EMERGING TRENDS & TECHNOLOGIES • AR/VR & IMMERSIVE EXPERIENCES • DIGITAL MARKETING</text>
+  </svg>

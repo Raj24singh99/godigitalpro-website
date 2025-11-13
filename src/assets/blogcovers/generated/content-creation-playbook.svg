@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Content Creation Best Practices Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FFF7ED' offset='0%'/>
+        <stop stop-color='#FED7AA' offset='50%'/>
+        <stop stop-color='#FDBA74' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 186.83052459731698 C 200 46.83052459731698, 500 306.830524597317, 1200 126.83052459731698 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 447.28350578807294 C 200 307.28350578807294, 500 567.283505788073, 1200 387.28350578807294 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 542.9000244289637 C 200 402.90002442896366, 500 662.9000244289637, 1200 482.90002442896366 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M248.06502292398363 298.13110023736954 Q 326.44657746655867 182.66808662563562 404.8281320091337 338.7177524715662" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M404.8281320091337 338.7177524715662 Q 731.1284857452847 253.9137474168092 1057.4288394814357 336.088537722826" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="248.06502292398363" cy="298.13110023736954" r="58.605049670208246" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="248.06502292398363" cy="298.13110023736954" r="40.605049670208246" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="248.06502292398363" cy="298.13110023736954" r="13.535016556736082" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="404.8281320091337" cy="338.7177524715662" r="62.54512084648013" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="404.8281320091337" cy="338.7177524715662" r="44.54512084648013" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="404.8281320091337" cy="338.7177524715662" r="14.848373615493378" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="1057.4288394814357" cy="336.088537722826" r="57.47964513069019" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="1057.4288394814357" cy="336.088537722826" r="39.47964513069019" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="1057.4288394814357" cy="336.088537722826" r="13.159881710230062" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Content Creation Best Practices Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>CONTENT MARKETING • CONTENT CREATION BEST PRACTICES • DIGITAL MARKETING</text>
+  </svg>
