@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Data Governance & Privacy Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FFE4E6' offset='0%'/>
+        <stop stop-color='#FECDD3' offset='50%'/>
+        <stop stop-color='#FDA4AF' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 222.61783006601036 C 200 82.61783006601036, 500 342.61783006601036, 1200 162.61783006601036 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 471.91878262907267 C 200 331.91878262907267, 500 591.9187826290727, 1200 411.91878262907267 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 539.9919069604948 C 200 399.9919069604948, 500 659.9919069604948, 1200 479.9919069604948 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M983.3409933000803 452.6520859450102 Q 832.5084768724628 372.2588783595711 681.6759604448453 456.62955790758133" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M681.6759604448453 456.62955790758133 Q 503.54182057781145 287.03758416697383 325.40768071077764 400.3364560753107" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="983.3409933000803" cy="452.6520859450102" r="50.61183164548129" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="983.3409933000803" cy="452.6520859450102" r="32.61183164548129" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="983.3409933000803" cy="452.6520859450102" r="10.870610548493763" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="681.6759604448453" cy="456.62955790758133" r="58.96622843341902" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="681.6759604448453" cy="456.62955790758133" r="40.96622843341902" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="681.6759604448453" cy="456.62955790758133" r="13.655409477806339" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="325.40768071077764" cy="400.3364560753107" r="70.28747241571546" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="325.40768071077764" cy="400.3364560753107" r="52.287472415715456" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="325.40768071077764" cy="400.3364560753107" r="17.429157471905153" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Data Governance & Privacy Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>WEB ANALYTICS & DATA • DATA GOVERNANCE & PRIVACY • DIGITAL MARKETING</text>
+  </svg>

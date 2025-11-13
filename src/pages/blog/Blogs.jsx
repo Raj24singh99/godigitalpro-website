@@ -1,206 +1,282 @@
 // src/pages/blog/Blogs.jsx
 import React, { useMemo } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import SeoHelmet from "../../components/SeoHelmet";
+import { allPosts } from "../../utils/blog";
+import { blogOrgJsonLd, buildCanonical } from "../../utils/seo";
+import { BLOG_TAXONOMY } from "../../data/blogTaxonomy";
+import { getLucideIcon } from "../../utils/icons";
+import { gradientByIndex } from "../../utils/gradients";
+import performanceCover from "../../assets/blogcovers/performance-80-20.svg";
+import analyticsCover from "../../assets/blogcovers/analytics-ga4-capi.svg";
+import croCover from "../../assets/blogcovers/cro-landing-page.svg";
+import agencyCover from "../../assets/blogcovers/agency-ops-sla.svg";
+import caseStudyCover from "../../assets/blogcovers/case-study-template.svg";
+import socialCover from "../../assets/blogcovers/social-reels-blueprint.svg";
+import seoCover from "../../assets/blogcovers/seo-technical-foundations.svg";
+import webDevCover from "../../assets/blogcovers/webdev-nextjs-cwv.svg";
 
-import { allPosts, getCategories } from "../../utils/blog";
-import { blogOrgJsonLd, breadcrumbsJsonLd } from "../../utils/seo";
-
-// Always-visible categories (even if 0 posts yet)
-const DEFAULT_CATEGORIES = [
-  "performance",
-  "seo",
-  "social",
-  "cro",
-  "analytics",
-  "web-dev",
-  "case-studies",
-  "agency",
+const HERO_BADGES = [
+  {
+    icon: "Sparkles",
+    title: "Playbooks refreshed weekly",
+    body: "Captures shifts in privacy, AI, media efficiency so your roadmap stays sharp.",
+  },
+  {
+    icon: "Layers",
+    title: "Strategy → execution ready",
+    body: "Articles link briefs, templates, calculators, and governance checklists.",
+  },
+  {
+    icon: "Globe",
+    title: "Grounded in India growth",
+    body: "Benchmarks, compliance notes, and regional nuance for SaaS, D2C, marketplaces, and more.",
+  },
 ];
 
-// Soft color tokens for category chips (cycles if more)
-const CHIP_COLORS = [
-  { bg: "bg-amber-50",   ring: "ring-amber-200",   text: "text-amber-800",   hover: "hover:bg-amber-100" },
-  { bg: "bg-sky-50",     ring: "ring-sky-200",     text: "text-sky-800",     hover: "hover:bg-sky-100" },
-  { bg: "bg-emerald-50", ring: "ring-emerald-200", text: "text-emerald-800", hover: "hover:bg-emerald-100" },
-  { bg: "bg-rose-50",    ring: "ring-rose-200",    text: "text-rose-800",    hover: "hover:bg-rose-100" },
-  { bg: "bg-violet-50",  ring: "ring-violet-200",  text: "text-violet-800",  hover: "hover:bg-violet-100" },
-  { bg: "bg-indigo-50",  ring: "ring-indigo-200",  text: "text-indigo-800",  hover: "hover:bg-indigo-100" },
-  { bg: "bg-teal-50",    ring: "ring-teal-200",    text: "text-teal-800",    hover: "hover:bg-teal-100" },
-  { bg: "bg-fuchsia-50", ring: "ring-fuchsia-200", text: "text-fuchsia-800", hover: "hover:bg-fuchsia-100" },
+const LATEST_POST_LIMIT = 12;
+
+const BLOG_COVER_MAP = {
+  "performance-marketing-account-structure": {
+    src: performanceCover,
+    alt: "Magenta 80/20 performance marketing focus chart illustration",
+  },
+  "ga4-setup-sgtm-capi": {
+    src: analyticsCover,
+    alt: "Midnight telemetry board showing GA4, server GTM, and Conversions API flow",
+  },
+  "cro-for-d2c-conversion-rate-optimization": {
+    src: croCover,
+    alt: "Landing page mock with CTA buttons and CRO heatmap overlays",
+  },
+  "agency-operating-system-slas": {
+    src: agencyCover,
+    alt: "Agency SLA dashboard with pods, capacity gauges, and trends",
+  },
+  "marketing-case-study-template-brief-impact": {
+    src: caseStudyCover,
+    alt: "Case study storyboard with sticky notes for brief, barrier, and impact",
+  },
+  "social-media-blueprint-reels-strategy": {
+    src: socialCover,
+    alt: "Vertical reels storyboard with hook, story, CTA tiles",
+  },
+  "technical-seo-foundations": {
+    src: seoCover,
+    alt: "Green technical SEO rings labeled crawl, render, index, serve",
+  },
+  "nextjs-cwv-security-hardening": {
+    src: webDevCover,
+    alt: "Next.js Core Web Vitals dashboard with uptime gauges",
+  },
+};
+
+const FALLBACK_COVERS = [
+  {
+    src: performanceCover,
+    alt: "Gradient growth dashboard with stacked uplift bars",
+  },
+  {
+    src: analyticsCover,
+    alt: "Signal resilience diagram for analytics pipelines",
+  },
+  {
+    src: seoCover,
+    alt: "Technical SEO systems illustration with concentric rings",
+  },
 ];
 
-function pretty(name) {
-  // "case-studies" -> "Case Studies"
-  return name.replace(/-/g, " ").replace(/\b\w/g, (m) => m.toUpperCase());
+function slugToTitle(slug = "") {
+  return slug
+    .split("-")
+    .filter(Boolean)
+    .map((token) => token.charAt(0).toUpperCase() + token.slice(1))
+    .join(" ");
+}
+
+function getCover(post, idx) {
+  const fallback = BLOG_COVER_MAP[post.slug] || FALLBACK_COVERS[idx % FALLBACK_COVERS.length];
+  return {
+    src: post.cover || fallback.src,
+    alt: post.coverAlt || fallback.alt || post.title,
+  };
 }
 
 export default function Blogs() {
-  const title = "GoDigitalPro Blog — Digital Marketing, SEO, Web & Analytics";
-  const desc =
-    "Actionable playbooks from GoDigitalPro: performance marketing, SEO, CRO, analytics, web development, case studies, and governance. Built for EEAT and AI-overview readiness.";
+  const canonical = buildCanonical("/blog");
+  const latestPosts = useMemo(() => allPosts.slice(0, LATEST_POST_LIMIT), [allPosts]);
 
-  // Merge defaults with discovered categories (keeps alphabetical)
-  const categories = useMemo(() => {
-    const discovered = getCategories();
-    return Array.from(new Set([...DEFAULT_CATEGORIES, ...discovered])).sort((a, b) =>
-      a.localeCompare(b)
-    );
-  }, []);
-
-  // JSON-LD: ItemList for the grid (helps AI Overviews)
   const itemListJsonLd = useMemo(() => {
-    const items = allPosts.slice(0, 12).map((p, i) => ({
+    return latestPosts.map((post, idx) => ({
       "@type": "ListItem",
-      position: i + 1,
-      url: `https://www.godigitalpro.in/blog/${p.category}/${p.slug}`,
-      name: p.title,
+      position: idx + 1,
+      url: `https://www.godigitalpro.in/blog/${post.category}/${post.slug}`,
+      name: post.title,
     }));
-    return { "@context": "https://schema.org", "@type": "ItemList", itemListElement: items };
-  }, []);
+  }, [latestPosts]);
 
   return (
-    <main className="relative bg-white text-slate-900">
-      {/* soft top glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(60% 60% at 50% 0%, rgba(255,240,200,.25), rgba(255,255,255,0))",
-        }}
+    <main className="bg-white text-slate-900">
+      <SeoHelmet
+        title="GoDigitalPro Blog — Digital Marketing Strategy, SEO, PPC, Social, Analytics"
+        description="A Bengaluru-built digital marketing blog structured for EEAT + AI overviews: 13 strategic pillars, 70+ sub-categories, templates, and playbooks spanning SEO, PPC, CRO, analytics, content, email, e-commerce, brand, and agency ops."
+        canonical={canonical}
+        keywords="digital marketing blog, SEO blog, PPC blog, CRO, web analytics, India marketing strategy"
+        schema={[blogOrgJsonLd(), { "@context": "https://schema.org", "@type": "ItemList", itemListElement: itemListJsonLd }]}
       />
 
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={desc} />
-        <link rel="canonical" href="https://www.godigitalpro.in/blog" />
-        <meta
-          name="keywords"
-          content="digital marketing blog, performance marketing, SEO, CRO, GA4, CAPI, web development, GoDigitalPro"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={desc} />
-        <meta property="og:url" content="https://www.godigitalpro.in/blog" />
-        <meta property="og:image" content="https://www.godigitalpro.in/public/og-default.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(blogOrgJsonLd())}</script>
-        <script type="application/ld+json">
-          {JSON.stringify(
-            breadcrumbsJsonLd([
-              { name: "Home", url: "https://www.godigitalpro.in" },
-              { name: "Blog", url: "https://www.godigitalpro.in/blog" },
-            ])
-          )}
-        </script>
-        <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>
-      </Helmet>
-
-      {/* Header */}
-      <section className="mx-auto max-w-6xl px-6 md:px-10 pt-10 md:pt-12 pb-6">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <p className="mb-2 text-xs font-semibold tracking-widest text-amber-600 uppercase">
-              GoDigitalPro Blog
-            </p>
-            <h1 className="text-3xl font-extrabold tracking-tight">Insights &amp; Playbooks</h1>
-            <p className="mt-2 max-w-prose text-[15px] text-slate-700">
-              Performance, SEO, CRO, analytics, web dev, and agency governance — no fluff, just
-              what moves growth.
-            </p>
+      {/* Hero */}
+      <section className="mx-auto max-w-6xl px-6 md:px-10 py-12 md:py-16">
+        <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-6 py-10 text-white shadow-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">GoDigitalPro Blog OS</p>
+          <div className="mt-4 flex flex-col gap-10 lg:flex-row lg:items-start">
+            <div className="flex-1">
+              <h1 className="text-3xl font-black leading-tight text-white md:text-4xl">
+                Modern marketing intelligence for teams that need strategy and execution clarity fast.
+              </h1>
+              <p className="mt-3 max-w-2xl text-sm text-white/80">
+                Every story clicks into a pillar—strategy, SEO, paid media, social, content, lifecycle, CRO, analytics, commerce, emerging tech, industry playbooks, and agency ops—so you can go from reading to doing without opening twenty tabs.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link
+                  to="/onboarding"
+                  className="inline-flex items-center rounded-2xl bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-amber-100"
+                >
+                  Get a growth plan
+                </Link>
+              </div>
+            </div>
+            <div className="grid flex-1 gap-4 sm:grid-cols-2">
+              {HERO_BADGES.map((badge) => {
+                const Icon = getLucideIcon(badge.icon);
+                return (
+                  <div
+                    key={badge.title}
+                    className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur transition hover:bg-white/10"
+                  >
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <p className="mt-3 text-sm font-semibold text-white">{badge.title}</p>
+                    <p className="mt-1 text-xs text-white/80">{badge.body}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <Link
-            to="/onboarding"
-            className="hidden md:inline-flex items-center rounded-2xl bg-amber-500 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-600"
-          >
-            Get a Free Growth Plan
-          </Link>
         </div>
       </section>
 
-      {/* Category chips (no counts) */}
-      <section className="mx-auto max-w-6xl px-6 md:px-10">
-        <div className="flex flex-wrap gap-2">
-          <Link
-            to="/blog"
-            className="inline-flex items-center rounded-full bg-slate-900 text-white px-4 py-1.5 text-xs font-semibold shadow-sm hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
-            aria-label="All posts"
-          >
-            All
-          </Link>
+      {/* Categories */}
+      <section id="categories" className="mx-auto max-w-6xl px-6 md:px-10 py-12 md:py-16">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Explore the taxonomy</p>
+            <h2 className="mt-2 text-2xl font-bold text-slate-900">Categories at a glance</h2>
+            <p className="text-sm text-slate-600">
+              Tap any category tile to open the sub-categories → sub-category pages house the focused playbooks.
+            </p>
+          </div>
+          <p className="text-xs text-slate-500">
+            Structure: Blog hub → Category grid → Sub-category detail → Post.
+          </p>
+        </div>
 
-          {categories.map((c, idx) => {
-            const token = CHIP_COLORS[idx % CHIP_COLORS.length];
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {BLOG_TAXONOMY.map((pillar, idx) => {
+            const Icon = getLucideIcon(pillar.icon);
+            const gradient = gradientByIndex(idx);
             return (
               <Link
-                key={c}
-                to={`/blog/${c}`}
-                className={`inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold shadow-sm ring-1 ${token.bg} ${token.text} ${token.ring} ${token.hover} focus:outline-none focus-visible:ring-2`}
-                aria-label={`${pretty(c)} category`}
+                to={`/blog/${pillar.slug}`}
+                key={pillar.slug}
+                className={`group block rounded-[28px] bg-gradient-to-br ${gradient} p-[1px] transition hover:-translate-y-0.5 hover:shadow-xl`}
               >
-                {pretty(c)}
+                <div className="flex h-full flex-col rounded-[26px] bg-white/95 p-5 shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <span className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} text-white shadow-sm`}>
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <div className="flex-1">
+                      <h3 className="text-base font-semibold text-slate-900">{pillar.name}</h3>
+                      <p className="mt-1 text-sm text-slate-600">{pillar.description}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between text-xs text-slate-500">
+                    <span>{pillar.subcategories.length} sub-categories</span>
+                    <span className="font-semibold text-amber-600 group-hover:text-amber-700">View category →</span>
+                  </div>
+                </div>
               </Link>
             );
           })}
         </div>
       </section>
 
-      {/* Posts grid */}
-      <section className="mx-auto max-w-6xl px-6 md:px-10 py-8 md:py-10">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {allPosts.slice(0, 12).map((p) => (
-            <article
-              key={p.slug}
-              className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md"
-            >
-              <Link
-                to={`/blog/${p.category}/${p.slug}`}
-                className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
-              >
-                <div className="relative aspect-[16/9] w-full bg-slate-100">
-                  {p.cover ? (
-                    <img
-                      src={p.cover}
-                      alt={p.title}
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 grid place-items-center text-slate-400 text-xs">
-                      Cover coming soon
-                    </div>
-                  )}
-                </div>
-
-                <div className="p-5">
-                  <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold text-slate-700">
-                    {pretty(p.category)}
-                  </span>
-
-                  <h2 className="mt-3 text-lg font-semibold leading-snug text-slate-900 group-hover:text-slate-950">
-                    {p.title}
-                  </h2>
-
-                  <p className="mt-2 line-clamp-3 text-sm text-slate-600">{p.excerpt}</p>
-
-                  <p className="mt-3 text-xs text-slate-400">
-                    {new Date(p.updated || p.date).toLocaleDateString()} · {p.readingTime || "5 min read"}
-                  </p>
-                </div>
-              </Link>
-            </article>
-          ))}
-        </div>
-
-        {/* Bottom CTA (mobile) */}
-        <div className="mt-10 flex justify-center md:hidden">
+      {/* Latest posts */}
+      <section className="mx-auto max-w-6xl px-6 md:px-10 pb-12 md:pb-16">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Research, templates & case studies</p>
+            <h2 className="mt-2 text-2xl font-bold text-slate-900">Latest published plays</h2>
+            <p className="text-sm text-slate-600">
+              Hand-picked articles across SEO, CRO, analytics, content, social, and agency ops. Showing the latest {LATEST_POST_LIMIT} posts mapped to their sub-categories.
+            </p>
+          </div>
           <Link
             to="/onboarding"
-            className="inline-flex items-center rounded-2xl bg-amber-500 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-600"
+            className="inline-flex items-center justify-center rounded-2xl bg-amber-500 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-600"
           >
-            Get a Free Growth Plan
+            Audit my growth mix
           </Link>
+        </div>
+
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {latestPosts.map((post, idx) => {
+            const cover = getCover(post, idx);
+            return (
+              <article
+                key={post.slug}
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md"
+              >
+                <Link to={`/blog/${post.category}/${post.slug}`} className="flex h-full flex-col">
+                  <div className="relative aspect-[16/9] w-full bg-slate-100">
+                    <img
+                      src={cover.src}
+                      alt={cover.alt}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-[1.01]"
+                    />
+                  </div>
+                  <div className="flex h-full flex-col p-5">
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-500">
+                      <span>{BLOG_TAXONOMY.find((pillar) => pillar.slug === post.category)?.name || slugToTitle(post.category)}</span>
+                      {post.subCategoryLabel && (
+                        <>
+                          <span>•</span>
+                          <span className="tracking-normal text-slate-700">{post.subCategoryLabel}</span>
+                        </>
+                      )}
+                    </div>
+                    <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-slate-950">
+                      {post.title}
+                    </h3>
+                    {post.excerpt && <p className="mt-2 line-clamp-3 text-sm text-slate-600">{post.excerpt}</p>}
+                    <p className="mt-3 text-xs text-slate-400">
+                      {new Date(post.updated || post.date).toLocaleDateString()} · {post.readingTime || "5 min read"}
+                    </p>
+                  </div>
+                </Link>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center gap-3 rounded-3xl border border-dashed border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-600">
+          <span className="font-semibold text-slate-900">Need a content calendar?</span>
+          <span>
+            Week 1: SEO pillar → Week 2-4: technical, link-building, local SEO clusters → Week 5: PPC pillar, and so on.
+          </span>
         </div>
       </section>
     </main>

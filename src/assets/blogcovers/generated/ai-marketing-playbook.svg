@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='AI in Marketing Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#ECFDF5' offset='0%'/>
+        <stop stop-color='#A7F3D0' offset='50%'/>
+        <stop stop-color='#6EE7B7' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 231.63624121807516 C 200 91.63624121807516, 500 351.63624121807516, 1200 171.63624121807516 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 442.7416732907295 C 200 302.7416732907295, 500 562.7416732907295, 1200 382.7416732907295 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 546.0312041500583 C 200 406.03120415005833, 500 666.0312041500583, 1200 486.03120415005833 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M735.9267758764327 221.4495625346899 Q 764.7503375564702 91.97636817581952 793.5738992365077 178.07567059993744" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M793.5738992365077 178.07567059993744 Q 749.2753725382499 87.26544680073857 704.9768458399922 281.07839591801167" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="735.9267758764327" cy="221.4495625346899" r="62.96761166397482" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="735.9267758764327" cy="221.4495625346899" r="44.96761166397482" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="735.9267758764327" cy="221.4495625346899" r="14.989203887991607" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="793.5738992365077" cy="178.07567059993744" r="54.20386396208778" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="793.5738992365077" cy="178.07567059993744" r="36.20386396208778" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="793.5738992365077" cy="178.07567059993744" r="12.06795465402926" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="704.9768458399922" cy="281.07839591801167" r="57.73486860282719" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="704.9768458399922" cy="281.07839591801167" r="39.73486860282719" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="704.9768458399922" cy="281.07839591801167" r="13.244956200942397" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>AI in Marketing Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>EMERGING TRENDS & TECHNOLOGIES • AI IN MARKETING • DIGITAL MARKETING</text>
+  </svg>

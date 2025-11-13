@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Voice Search & Smart Devices Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#EEF2FF' offset='0%'/>
+        <stop stop-color='#C7D2FE' offset='50%'/>
+        <stop stop-color='#A5B4FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 209.54794907011092 C 200 69.54794907011092, 500 329.5479490701109, 1200 149.54794907011092 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 368.2540831156075 C 200 228.2540831156075, 500 488.2540831156075, 1200 308.2540831156075 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 578.0130816577002 C 200 438.01308165770024, 500 698.0130816577002, 1200 518.0130816577002 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M297.0388975087553 240.74202187359333 Q 451.62357464665547 143.90043600462377 606.2082517845556 318.7601290643215" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M606.2082517845556 318.7601290643215 Q 799.1071937954985 94.51940733939409 992.0061358064413 184.68067280948162" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="297.0388975087553" cy="240.74202187359333" r="50.65318647958338" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="297.0388975087553" cy="240.74202187359333" r="32.65318647958338" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="297.0388975087553" cy="240.74202187359333" r="10.88439549319446" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="606.2082517845556" cy="318.7601290643215" r="54.081862199585885" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="606.2082517845556" cy="318.7601290643215" r="36.081862199585885" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="606.2082517845556" cy="318.7601290643215" r="12.027287399861962" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="992.0061358064413" cy="184.68067280948162" r="50.85593431722373" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="992.0061358064413" cy="184.68067280948162" r="32.85593431722373" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="992.0061358064413" cy="184.68067280948162" r="10.951978105741242" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Voice Search & Smart Devices Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>EMERGING TRENDS & TECHNOLOGIES • VOICE SEARCH & SMART DEVICES • DIGITAL MARKETING</text>
+  </svg>

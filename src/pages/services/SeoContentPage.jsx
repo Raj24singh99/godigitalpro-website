@@ -1,7 +1,8 @@
 // src/pages/services/SeoContentPage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SeoHelmet from "../../components/SeoHelmet";
+import { buildCanonical, faqJsonLd, serviceJsonLd } from "../../utils/seo";
 import {
   Search,
   FileText,
@@ -31,6 +32,14 @@ const WORDS = [
   { text: "Local SEO", color: "text-sky-600" },
 ];
 
+const SEO_FAQ = [
+  { question: "How long does SEO take?", answer: "Early gains often show in 4–8 weeks; durable growth compounds over months as content and links build." },
+  { question: "Do you write content?", answer: "Yes. We create briefs and write pages/blogs with clear structure, schema, and internal links." },
+  { question: "Will you fix technical issues?", answer: "Yes. We audit, prioritize, and implement fixes for speed, crawling, indexing, and structured data." },
+  { question: "Do you support Local SEO?", answer: "Yes. GBP optimization, NAP consistency, local pages, and review strategy." },
+  { question: "How do you report progress?", answer: "Shared dashboards with keywords, pages, impressions, clicks, traffic, and next steps." },
+];
+
 export default function SeoContentPage() {
   const [idx, setIdx] = useState(0);
   useEffect(() => {
@@ -45,10 +54,8 @@ export default function SeoContentPage() {
   );
 
   // ---- SEO constants ----
-  const site = "https://www.godigitalpro.in";
   const path = "/services/seo-content";
-  const pageUrl = `${site}${path}`;
-  const ogImage = `${site}/og-seo-content.jpg`;
+  const pageUrl = buildCanonical(path);
 
   const title = "SEO & Content | Technical SEO, Topic Clusters, Links & GEO";
   const desc =
@@ -58,30 +65,25 @@ export default function SeoContentPage() {
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
-      <Helmet>
-        {/* Basic SEO */}
-        <title>{title}</title>
-        <meta name="description" content={desc} />
-        <meta name="keywords" content={keywords} />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={pageUrl} />
-        <meta name="author" content="GoDigitalPro" />
-        <meta name="publisher" content="GoDigitalPro" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={desc} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:site_name" content="GoDigitalPro" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={desc} />
-        <meta name="twitter:image" content={ogImage} />
-      </Helmet>
+      <SeoHelmet
+        title={title}
+        description={desc}
+        canonical={pageUrl}
+        keywords={keywords}
+        schema={[
+          serviceJsonLd({
+            name: "SEO & Content",
+            description: desc,
+            url: pageUrl,
+          }),
+          faqJsonLd(SEO_FAQ),
+        ]}
+        breadcrumbs={[
+          { name: "Home", url: buildCanonical("/") },
+          { name: "Services", url: `${buildCanonical("/")}#services` },
+          { name: "SEO & Content", url: pageUrl },
+        ]}
+      />
 
       <style>{`
         @keyframes fadeSwap { 0%{opacity:0; transform:translateY(8px) scale(.98)} 20%{opacity:1; transform:translateY(0) scale(1)} 80%{opacity:1} 100%{opacity:0; transform:translateY(-8px) scale(.98)} }
@@ -362,42 +364,18 @@ export default function SeoContentPage() {
         </Container>
         <Container className="mt-6">
           <div className="divide-y divide-black/10 rounded-2xl border border-black/10 bg-white">
-            {[
-              { q: "How long does SEO take?", a: "Early gains often show in 4–8 weeks; durable growth compounds over months as content and links build." },
-              { q: "Do you write content?", a: "Yes. We create briefs and write pages/blogs with clear structure, schema, and internal links." },
-              { q: "Will you fix technical issues?", a: "Yes. We audit, prioritize, and implement fixes for speed, crawling, indexing, and structured data." },
-              { q: "Do you support Local SEO?", a: "Yes. GBP optimization, NAP consistency, local pages, and review strategy." },
-              { q: "How do you report progress?", a: "Shared dashboards with keywords, pages, impressions, clicks, traffic, and next steps." },
-            ].map((f) => (
-              <details key={f.q} className="group p-4">
+            {SEO_FAQ.map(({ question, answer }) => (
+              <details key={question} className="group p-4">
                 <summary className="flex cursor-pointer list-none items-center justify-between">
-                  <span className="font-medium">{f.q}</span>
+                  <span className="font-medium">{question}</span>
                   <span className="text-slate-500 transition group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-2 text-sm leading-relaxed text-slate-700">{f.a}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-700">{answer}</p>
               </details>
             ))}
           </div>
         </Container>
       </Section>
-
-      {/* JSON-LD for SEO crawlers */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "SEO & Content",
-            provider: { "@type": "Organization", name: "GoDigitalPro" },
-            serviceType: "Search Engine Optimization",
-            areaServed: "Global",
-            url: pageUrl,
-            description: desc,
-            offers: { "@type": "Offer", category: "Service" },
-          }),
-        }}
-      />
     </main>
   );
 }

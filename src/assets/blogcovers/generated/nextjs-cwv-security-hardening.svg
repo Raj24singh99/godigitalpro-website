@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Next.js at Scale: Core Web Vitals, Security & Reliability Hardening (Production Playbook) illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#F5F3FF' offset='0%'/>
+        <stop stop-color='#DDD6FE' offset='50%'/>
+        <stop stop-color='#C4B5FD' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 208.34613846614957 C 200 68.34613846614957, 500 328.34613846614957, 1200 148.34613846614957 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 444.45852435193956 C 200 304.45852435193956, 500 564.4585243519396, 1200 384.45852435193956 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 576.787534467876 C 200 436.78753446787596, 500 696.787534467876, 1200 516.787534467876 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M536.8185814330354 197.50079959630966 Q 393.76225371612236 88.56844019144773 250.70592599920928 422.2880033403635" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M250.70592599920928 422.2880033403635 Q 510.25491846958175 150.0654820818454 769.8039109399542 235.0465787947178" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="536.8185814330354" cy="197.50079959630966" r="66.0867986571975" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="536.8185814330354" cy="197.50079959630966" r="48.086798657197505" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="536.8185814330354" cy="197.50079959630966" r="16.0289328857325" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="250.70592599920928" cy="422.2880033403635" r="71.60825355350971" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="250.70592599920928" cy="422.2880033403635" r="53.60825355350971" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="250.70592599920928" cy="422.2880033403635" r="17.869417851169903" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="769.8039109399542" cy="235.0465787947178" r="58.395064489450306" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="769.8039109399542" cy="235.0465787947178" r="40.395064489450306" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="769.8039109399542" cy="235.0465787947178" r="13.465021496483436" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Next.js at Scale: Core Web Vitals, Security & Reliability Hardening (Production Playbook)</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>NEXT.JS • CORE WEB VITALS • PERFORMANCE</text>
+  </svg>

@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='List Building & Segmentation Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#E0F2FE' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 247.10516603663564 C 200 107.10516603663564, 500 367.10516603663564, 1200 187.10516603663564 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 454.825287675485 C 200 314.825287675485, 500 574.825287675485, 1200 394.825287675485 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 565.1480967178941 C 200 425.1480967178941, 500 685.1480967178941, 1200 505.1480967178941 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M783.6109697679058 410.90279072523117 Q 531.933310746681 126.83007065206766 280.2556517254561 229.2975965887308" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M280.2556517254561 229.2975965887308 Q 319.62790644029155 107.31037047691643 359.000161155127 195.36281362175941" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="783.6109697679058" cy="410.90279072523117" r="54.35006458731368" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="783.6109697679058" cy="410.90279072523117" r="36.35006458731368" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="783.6109697679058" cy="410.90279072523117" r="12.116688195771227" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="280.2556517254561" cy="229.2975965887308" r="55.328373081982136" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="280.2556517254561" cy="229.2975965887308" r="37.328373081982136" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="280.2556517254561" cy="229.2975965887308" r="12.44279102732738" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="359.000161155127" cy="195.36281362175941" r="65.32337883999571" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="359.000161155127" cy="195.36281362175941" r="47.32337883999571" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="359.000161155127" cy="195.36281362175941" r="15.774459613331905" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>List Building & Segmentation Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>EMAIL MARKETING & AUTOMATION • LIST BUILDING & SEGMENTATION • DIGITAL MARKETING</text>
+  </svg>

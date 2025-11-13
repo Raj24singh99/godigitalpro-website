@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='B2B Marketing Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FFE4E6' offset='0%'/>
+        <stop stop-color='#FECDD3' offset='50%'/>
+        <stop stop-color='#FDA4AF' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 221.45823287777603 C 200 81.45823287777603, 500 341.458232877776, 1200 161.45823287777603 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 373.4090368822217 C 200 233.4090368822217, 500 493.4090368822217, 1200 313.4090368822217 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 552.7222684072331 C 200 412.72226840723306, 500 672.7222684072331, 1200 492.72226840723306 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M1022.1469955146313 332.06050388514996 Q 614.8978252452798 219.01968167163432 207.64865497592837 349.73688274621964" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M207.64865497592837 349.73688274621964 Q 590.9887109766714 163.80739791318774 974.3287669774145 247.84506894648075" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="1022.1469955146313" cy="332.06050388514996" r="71.02176866214722" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="1022.1469955146313" cy="332.06050388514996" r="53.021768662147224" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="1022.1469955146313" cy="332.06050388514996" r="17.673922887382407" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="207.64865497592837" cy="349.73688274621964" r="52.77027455018833" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="207.64865497592837" cy="349.73688274621964" r="34.77027455018833" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="207.64865497592837" cy="349.73688274621964" r="11.590091516729444" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="974.3287669774145" cy="247.84506894648075" r="61.61393008753657" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="974.3287669774145" cy="247.84506894648075" r="43.61393008753657" fill="#FFE4E6" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="974.3287669774145" cy="247.84506894648075" r="14.537976695845524" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>B2B Marketing Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>INDUSTRY VERTICALS & CASE STUDIES • B2B MARKETING • DIGITAL MARKETING</text>
+  </svg>

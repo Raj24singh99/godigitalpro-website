@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Future of Media & Advertising Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#F0F9FF' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 279.939567418769 C 200 139.939567418769, 500 399.939567418769, 1200 219.939567418769 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 376.7858832143247 C 200 236.7858832143247, 500 496.7858832143247, 1200 316.7858832143247 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 575.2927402919158 C 200 435.29274029191583, 500 695.2927402919158, 1200 515.2927402919158 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M927.3544143047184 253.39795090258121 Q 961.2991017312743 135.82770857028663 995.2437891578302 453.1054623425007" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M995.2437891578302 453.1054623425007 Q 787.3378492309712 224.73311059176922 579.4319093041122 321.79399214684963" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="927.3544143047184" cy="253.39795090258121" r="63.7340410836041" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="927.3544143047184" cy="253.39795090258121" r="45.7340410836041" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="927.3544143047184" cy="253.39795090258121" r="15.244680361201366" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="995.2437891578302" cy="453.1054623425007" r="57.23575890576467" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="995.2437891578302" cy="453.1054623425007" r="39.23575890576467" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="995.2437891578302" cy="453.1054623425007" r="13.078586301921556" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="579.4319093041122" cy="321.79399214684963" r="55.52199905086309" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="579.4319093041122" cy="321.79399214684963" r="37.52199905086309" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="579.4319093041122" cy="321.79399214684963" r="12.507333016954362" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Future of Media & Advertising Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>EMERGING TRENDS & TECHNOLOGIES • FUTURE OF MEDIA & ADVERTISING • DIGITAL MARKETING</text>
+  </svg>

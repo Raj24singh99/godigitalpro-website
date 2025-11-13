@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Content Distribution & Amplification Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#ECFDF5' offset='0%'/>
+        <stop stop-color='#A7F3D0' offset='50%'/>
+        <stop stop-color='#6EE7B7' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 183.14524333924055 C 200 43.14524333924055, 500 303.14524333924055, 1200 123.14524333924055 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 364.49740611948073 C 200 224.49740611948073, 500 484.49740611948073, 1200 304.49740611948073 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 576.6245927009732 C 200 436.62459270097315, 500 696.6245927009732, 1200 516.6245927009732 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M628.4099721675739 432.0474334061146 Q 751.7858469649218 216.11072530969977 875.1617217622697 309.734228476882" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M875.1617217622697 309.734228476882 Q 723.759971850086 198.68215559981763 572.3582219379023 453.54039549827576" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="628.4099721675739" cy="432.0474334061146" r="50.66220441227779" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="628.4099721675739" cy="432.0474334061146" r="32.66220441227779" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="628.4099721675739" cy="432.0474334061146" r="10.887401470759263" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="875.1617217622697" cy="309.734228476882" r="65.27605978865176" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="875.1617217622697" cy="309.734228476882" r="47.276059788651764" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="875.1617217622697" cy="309.734228476882" r="15.758686596217254" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="572.3582219379023" cy="453.54039549827576" r="65.2871481650509" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="572.3582219379023" cy="453.54039549827576" r="47.287148165050894" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="572.3582219379023" cy="453.54039549827576" r="15.76238272168363" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Content Distribution & Amplification Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>CONTENT MARKETING • CONTENT DISTRIBUTION & AMPLIFICATION • DIGITAL MARKETING</text>
+  </svg>

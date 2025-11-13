@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='E-commerce / D2C Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FFF7ED' offset='0%'/>
+        <stop stop-color='#FED7AA' offset='50%'/>
+        <stop stop-color='#FDBA74' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 216.73541729338467 C 200 76.73541729338467, 500 336.73541729338467, 1200 156.73541729338467 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 448.7984278611839 C 200 308.7984278611839, 500 568.7984278611839, 1200 388.7984278611839 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 575.731896921061 C 200 435.731896921061, 500 695.731896921061, 1200 515.731896921061 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M679.3183677922934 324.39489521086216 Q 513.9538801298477 241.87729666940868 348.5893924674019 343.0072809755802" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M348.5893924674019 343.0072809755802 Q 638.177941122558 247.85234920680523 927.766489777714 363.5941066592932" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="679.3183677922934" cy="324.39489521086216" r="54.70886705070734" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="679.3183677922934" cy="324.39489521086216" r="36.70886705070734" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="679.3183677922934" cy="324.39489521086216" r="12.236289016902447" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="348.5893924674019" cy="343.0072809755802" r="53.431149491574615" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="348.5893924674019" cy="343.0072809755802" r="35.431149491574615" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="348.5893924674019" cy="343.0072809755802" r="11.810383163858205" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="927.766489777714" cy="363.5941066592932" r="59.345105775631964" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="927.766489777714" cy="363.5941066592932" r="41.345105775631964" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="927.766489777714" cy="363.5941066592932" r="13.781701925210655" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>E-commerce / D2C Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>INDUSTRY VERTICALS & CASE STUDIES • E-COMMERCE / D2C • DIGITAL MARKETING</text>
+  </svg>

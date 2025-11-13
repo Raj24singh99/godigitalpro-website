@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Data-Driven Marketing Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#E0F2FE' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 265.44714549556375 C 200 125.44714549556375, 500 385.44714549556375, 1200 205.44714549556375 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 378.18415998481214 C 200 238.18415998481214, 500 498.18415998481214, 1200 318.18415998481214 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 548.6134380847216 C 200 408.61343808472157, 500 668.6134380847216, 1200 488.61343808472157 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M183.83358696941286 216.0218444466591 Q 524.735624648165 64.50491946190596 865.637662326917 155.05631543695927" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M865.637662326917 155.05631543695927 Q 953.8721444667317 43.22822091169655 1042.1066266065463 333.8181109726429" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="183.83358696941286" cy="216.0218444466591" r="62.111641198862344" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="183.83358696941286" cy="216.0218444466591" r="44.111641198862344" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="183.83358696941286" cy="216.0218444466591" r="14.70388039962078" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="865.637662326917" cy="155.05631543695927" r="67.118368845433" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="865.637662326917" cy="155.05631543695927" r="49.118368845433" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="865.637662326917" cy="155.05631543695927" r="16.37278961514433" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="1042.1066266065463" cy="333.8181109726429" r="58.7112086690031" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="1042.1066266065463" cy="333.8181109726429" r="40.7112086690031" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="1042.1066266065463" cy="333.8181109726429" r="13.5704028896677" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Data-Driven Marketing Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>DIGITAL MARKETING STRATEGY • DATA-DRIVEN MARKETING • DIGITAL MARKETING</text>
+  </svg>

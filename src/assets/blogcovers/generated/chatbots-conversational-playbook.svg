@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Chatbots & Conversational Marketing Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FFF7ED' offset='0%'/>
+        <stop stop-color='#FED7AA' offset='50%'/>
+        <stop stop-color='#FDBA74' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 271.77559630014 C 200 131.77559630014002, 500 391.77559630014, 1200 211.77559630014002 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 402.7596473135054 C 200 262.7596473135054, 500 522.7596473135054, 1200 342.7596473135054 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 525.1363346679136 C 200 385.1363346679136, 500 645.1363346679136, 1200 465.1363346679136 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M340.91157746501267 337.66795583069324 Q 668.3493001409806 235.12310332618654 995.7870228169486 355.68553134799004" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M995.7870228169486 355.68553134799004 Q 761.3802727661096 136.51423882693052 526.9735227152705 216.57202176749706" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="340.91157746501267" cy="337.66795583069324" r="69.91830747388303" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="340.91157746501267" cy="337.66795583069324" r="51.91830747388303" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="340.91157746501267" cy="337.66795583069324" r="17.306102491294343" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="995.7870228169486" cy="355.68553134799004" r="68.87935255421326" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="995.7870228169486" cy="355.68553134799004" r="50.879352554213256" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="995.7870228169486" cy="355.68553134799004" r="16.959784184737753" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="526.9735227152705" cy="216.57202176749706" r="58.25510773714632" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="526.9735227152705" cy="216.57202176749706" r="40.25510773714632" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="526.9735227152705" cy="216.57202176749706" r="13.41836924571544" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Chatbots & Conversational Marketing Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>EMERGING TRENDS & TECHNOLOGIES • CHATBOTS & CONVERSATIONAL MARKETING • DIGITAL MARKETING</text>
+  </svg>

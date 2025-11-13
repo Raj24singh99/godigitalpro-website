@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Crisis Management Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#F0F9FF' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 194.01799282059073 C 200 54.017992820590734, 500 314.01799282059073, 1200 134.01799282059073 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 407.8278505336493 C 200 267.8278505336493, 500 527.8278505336493, 1200 347.8278505336493 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 540.6188396923244 C 200 400.6188396923244, 500 660.6188396923244, 1200 480.6188396923244 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M630.3444932075217 381.78397357463837 Q 838.7768829497509 261.82587809860706 1047.20927269198 362.9649043828249" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M1047.20927269198 362.9649043828249 Q 1020.1992330723442 107.8335149679333 993.1891934527084 195.00197157263756" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="630.3444932075217" cy="381.78397357463837" r="62.6607302413322" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="630.3444932075217" cy="381.78397357463837" r="44.6607302413322" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="630.3444932075217" cy="381.78397357463837" r="14.886910080444068" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="1047.20927269198" cy="362.9649043828249" r="61.89440813846886" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="1047.20927269198" cy="362.9649043828249" r="43.89440813846886" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="1047.20927269198" cy="362.9649043828249" r="14.631469379489621" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="993.1891934527084" cy="195.00197157263756" r="65.96881658909842" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="993.1891934527084" cy="195.00197157263756" r="47.968816589098424" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="993.1891934527084" cy="195.00197157263756" r="15.989605529699475" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Crisis Management Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>SOCIAL MEDIA MARKETING • CRISIS MANAGEMENT • DIGITAL MARKETING</text>
+  </svg>

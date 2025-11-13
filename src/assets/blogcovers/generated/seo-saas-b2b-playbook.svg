@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='SEO for SaaS / B2B Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#ECFDF5' offset='0%'/>
+        <stop stop-color='#A7F3D0' offset='50%'/>
+        <stop stop-color='#6EE7B7' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 274.03833663091063 C 200 134.03833663091063, 500 394.03833663091063, 1200 214.03833663091063 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 470.6087232660502 C 200 330.6087232660502, 500 590.6087232660502, 1200 410.6087232660502 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 546.7112894915044 C 200 406.71128949150443, 500 666.7112894915044, 1200 486.71128949150443 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M803.3478966774419 378.28558027744293 Q 637.3314557853155 143.57219897210598 471.3150148931891 224.48933728039265" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M471.3150148931891 224.48933728039265 Q 639.7177086793818 135.404017502442 808.1204024655744 326.80006608366966" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="803.3478966774419" cy="378.28558027744293" r="54.19739801296964" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="803.3478966774419" cy="378.28558027744293" r="36.19739801296964" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="803.3478966774419" cy="378.28558027744293" r="12.065799337656548" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="471.3150148931891" cy="224.48933728039265" r="58.915389785543084" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="471.3150148931891" cy="224.48933728039265" r="40.915389785543084" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="471.3150148931891" cy="224.48933728039265" r="13.638463261847695" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="808.1204024655744" cy="326.80006608366966" r="51.06835241941735" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="808.1204024655744" cy="326.80006608366966" r="33.06835241941735" fill="#6EE7B7" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="808.1204024655744" cy="326.80006608366966" r="11.022784139805784" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>SEO for SaaS / B2B Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>SEARCH ENGINE OPTIMIZATION (SEO) • SEO FOR SAAS / B2B • DIGITAL MARKETING</text>
+  </svg>

@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Social Media Ads Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FDFDEA' offset='0%'/>
+        <stop stop-color='#FEF08A' offset='50%'/>
+        <stop stop-color='#FACC15' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 299.78851463645697 C 200 159.78851463645697, 500 419.78851463645697, 1200 239.78851463645697 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 445.6534052733332 C 200 305.6534052733332, 500 565.6534052733332, 1200 385.6534052733332 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 531.3703758362681 C 200 391.37037583626807, 500 651.3703758362681, 1200 471.37037583626807 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M882.8483996307477 369.2823274433613 Q 690.2813290967606 259.0473082475364 497.71425856277347 438.2028003782034" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M497.71425856277347 438.2028003782034 Q 503.2114966888912 32.08515188656747 508.70873481500894 146.85480117797852" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="882.8483996307477" cy="369.2823274433613" r="61.11202209210023" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="882.8483996307477" cy="369.2823274433613" r="43.11202209210023" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="882.8483996307477" cy="369.2823274433613" r="14.370674030700078" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="497.71425856277347" cy="438.2028003782034" r="50.81408802140504" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="497.71425856277347" cy="438.2028003782034" r="32.81408802140504" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="497.71425856277347" cy="438.2028003782034" r="10.938029340468347" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="508.70873481500894" cy="146.85480117797852" r="59.86373616242781" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="508.70873481500894" cy="146.85480117797852" r="41.86373616242781" fill="#FEF08A" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="508.70873481500894" cy="146.85480117797852" r="13.954578720809272" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Social Media Ads Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>PAY-PER-CLICK & PAID ADVERTISING (PPC) • SOCIAL MEDIA ADS • DIGITAL MARKETING</text>
+  </svg>

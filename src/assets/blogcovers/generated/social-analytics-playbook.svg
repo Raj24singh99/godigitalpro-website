@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Analytics & Social Listening Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#FDF2F8' offset='0%'/>
+        <stop stop-color='#FBCFE8' offset='50%'/>
+        <stop stop-color='#F9A8D4' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 296.40839053317904 C 200 156.40839053317904, 500 416.40839053317904, 1200 236.40839053317904 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 464.5803965907544 C 200 324.5803965907544, 500 584.5803965907544, 1200 404.5803965907544 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 536.481691095978 C 200 396.481691095978, 500 656.481691095978, 1200 476.481691095978 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M258.24440092314035 450.7227611541748 Q 343.93919112859294 147.01858073472977 429.63398133404553 252.0857698470354" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M429.63398133404553 252.0857698470354 Q 638.6201168992557 159.68589038588107 847.6062524644658 321.27807661890984" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="258.24440092314035" cy="450.7227611541748" r="58.21919340873137" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="258.24440092314035" cy="450.7227611541748" r="40.21919340873137" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="258.24440092314035" cy="450.7227611541748" r="13.406397802910456" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="429.63398133404553" cy="252.0857698470354" r="52.85975166969001" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="429.63398133404553" cy="252.0857698470354" r="34.85975166969001" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="429.63398133404553" cy="252.0857698470354" r="11.619917223230004" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="847.6062524644658" cy="321.27807661890984" r="64.16427665157244" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="847.6062524644658" cy="321.27807661890984" r="46.164276651572436" fill="#FDF2F8" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="847.6062524644658" cy="321.27807661890984" r="15.388092217190811" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Analytics & Social Listening Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>SOCIAL MEDIA MARKETING • ANALYTICS & SOCIAL LISTENING • DIGITAL MARKETING</text>
+  </svg>

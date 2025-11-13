@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Performance Marketing OS: Account Structure for Google & Meta illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#F0F9FF' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 267.2170569933951 C 200 127.21705699339509, 500 387.2170569933951, 1200 207.2170569933951 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 440.12008770368993 C 200 300.12008770368993, 500 560.1200877036899, 1200 380.12008770368993 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 538.6565706133842 C 200 398.65657061338425, 500 658.6565706133842, 1200 478.65657061338425 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M835.1296888524666 231.66162759065628 Q 548.9834613422863 140.41448552161455 262.837233832106 267.68197752535343" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M262.837233832106 267.68197752535343 Q 251.97952227899805 149.08678692765534 241.1218107258901 280.252333432436" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="835.1296888524666" cy="231.66162759065628" r="51.8017373313196" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="835.1296888524666" cy="231.66162759065628" r="33.8017373313196" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="835.1296888524666" cy="231.66162759065628" r="11.267245777106533" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="262.837233832106" cy="267.68197752535343" r="71.94377214089036" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="262.837233832106" cy="267.68197752535343" r="53.94377214089036" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="262.837233832106" cy="267.68197752535343" r="17.981257380296785" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="241.1218107258901" cy="280.252333432436" r="60.370825906749815" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="241.1218107258901" cy="280.252333432436" r="42.370825906749815" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="241.1218107258901" cy="280.252333432436" r="14.123608635583272" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Performance Marketing OS: Account Structure for Google & Meta</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>PERFORMANCE MARKETING • ACCOUNT STRUCTURE • GOOGLE ADS</text>
+  </svg>

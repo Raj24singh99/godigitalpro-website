@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Client Acquisition & Proposals Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#E0F2FE' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 234.99296992085874 C 200 94.99296992085874, 500 354.99296992085874, 1200 174.99296992085874 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 361.58567413687706 C 200 221.58567413687706, 500 481.58567413687706, 1200 301.58567413687706 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 531.2854210147634 C 200 391.2854210147634, 500 651.2854210147634, 1200 471.2854210147634 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M481.4883484132588 284.2146684974432 Q 376.2548554246314 174.72688210196793 271.021362436004 369.607098698616" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M271.021362436004 369.607098698616 Q 519.8238476994447 180.67134285345674 768.6263329628855 267.7639902383089" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="481.4883484132588" cy="284.2146684974432" r="52.51779398415238" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="481.4883484132588" cy="284.2146684974432" r="34.51779398415238" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="481.4883484132588" cy="284.2146684974432" r="11.505931328050792" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="271.021362436004" cy="369.607098698616" r="68.6658357293345" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="271.021362436004" cy="369.607098698616" r="50.6658357293345" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="271.021362436004" cy="369.607098698616" r="16.888611909778167" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="768.6263329628855" cy="267.7639902383089" r="63.15828060545027" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="768.6263329628855" cy="267.7639902383089" r="45.15828060545027" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="768.6263329628855" cy="267.7639902383089" r="15.052760201816758" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Client Acquisition & Proposals Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>AGENCY GROWTH & OPERATIONS • CLIENT ACQUISITION & PROPOSALS • DIGITAL MARKETING</text>
+  </svg>

@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Content Performance Analytics Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#F5F3FF' offset='0%'/>
+        <stop stop-color='#DDD6FE' offset='50%'/>
+        <stop stop-color='#C4B5FD' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 281.56859803944826 C 200 141.56859803944826, 500 401.56859803944826, 1200 221.56859803944826 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 418.97976935841143 C 200 278.97976935841143, 500 538.9797693584114, 1200 358.97976935841143 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 524.4597332645208 C 200 384.45973326452076, 500 644.4597332645208, 1200 464.45973326452076 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M720.6462032487616 223.17291393876076 Q 838.8064522086643 142.35309263691306 956.9667011685669 321.59067891538143" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M956.9667011685669 321.59067891538143 Q 736.0781123046763 56.692893942818046 515.1895234407857 159.18807089328766" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="720.6462032487616" cy="223.17291393876076" r="68.57045211037621" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="720.6462032487616" cy="223.17291393876076" r="50.57045211037621" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="720.6462032487616" cy="223.17291393876076" r="16.856817370125402" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="956.9667011685669" cy="321.59067891538143" r="65.14998214039952" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="956.9667011685669" cy="321.59067891538143" r="47.149982140399516" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="956.9667011685669" cy="321.59067891538143" r="15.716660713466505" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="515.1895234407857" cy="159.18807089328766" r="65.07312131533399" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="515.1895234407857" cy="159.18807089328766" r="47.07312131533399" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="515.1895234407857" cy="159.18807089328766" r="15.691040438444665" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Content Performance Analytics Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>CONTENT MARKETING • CONTENT PERFORMANCE ANALYTICS • DIGITAL MARKETING</text>
+  </svg>

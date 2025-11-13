@@ -1,4 +1,15 @@
 User-agent: *
-Allow: /favicon.ico
-Allow: /favicon.svg
+Allow: /
+Disallow:
+Crawl-delay: 2
+
+User-agent: AdsBot-Google
+User-agent: Googlebot-Image
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Twitterbot
+User-agent: FacebookExternalHit
+Allow: /
+
 Sitemap: https://www.godigitalpro.in/sitemap.xml

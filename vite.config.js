@@ -8,7 +8,8 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true,        // allows access from LAN or external (0.0.0.0)
+    host: "127.0.0.1", // bind only to loopback to avoid sandbox restrictions
+    port: 0,           // ask OS for an available port
     strictPort: false, // let Vite pick a free port automatically
     hmr: {
       // no hardcoded port — Vite auto-detects WebSocket endpoint
@@ -16,7 +17,7 @@ export default defineConfig({
     },
   },
   preview: {
-    host: true,
+    host: "127.0.0.1",
     port: 5000, // optional fallback for preview builds
   },
 });

@@ -1,13 +1,14 @@
 // src/pages/AboutUs.jsx
-import React from "react";
-import { Helmet } from "react-helmet-async";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
+import SeoHelmet from "../components/SeoHelmet";
+import { buildCanonical, organizationJsonLd, personJsonLd } from "../utils/seo";
 
 export default function AboutUs() {
   const linkedInUrl = "https://www.linkedin.com/in/raj24singh99/";
 
   // If your live route is /about_us keep as-is; if you use /about, update both places.
-  const CANONICAL_URL = "https://www.godigitalpro.in/about_us/";
+  const CANONICAL_URL = buildCanonical("/about_us/");
 
   const pageSEO = {
     title: "About Us | GoDigitalPro — Growth Marketing Partner",
@@ -17,72 +18,38 @@ export default function AboutUs() {
     image: "https://www.godigitalpro.in/public/assets/logo.jpg",
   };
 
-  const orgJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "GoDigitalPro",
-    url: pageSEO.url,
-    logo: pageSEO.image,
-    sameAs: [linkedInUrl],
-    description: pageSEO.description,
-    foundingDate: "2018",
-  };
-
-  const founderJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Raj Singh",
-    jobTitle: "Founder & CEO",
-    sameAs: [linkedInUrl],
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: "Indian Institute of Technology Kanpur",
-      url: "https://iitk.ac.in/",
-    },
-    worksFor: {
-      "@type": "Organization",
-      name: "GoDigitalPro",
-    },
-  };
-
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://www.godigitalpro.in/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "About Us",
-        item: pageSEO.url,
-      },
-    ],
-  };
+  const schemaBlocks = useMemo(
+    () =>
+      [
+        organizationJsonLd({ url: pageSEO.url }),
+        personJsonLd({
+          name: "Raj Singh",
+          jobTitle: "Founder & CEO",
+          url: linkedInUrl,
+          sameAs: [linkedInUrl],
+          alumniOf: {
+            "@type": "CollegeOrUniversity",
+            name: "Indian Institute of Technology Kanpur",
+            url: "https://iitk.ac.in/",
+          },
+        }),
+      ].filter(Boolean),
+    [linkedInUrl, pageSEO.url]
+  );
 
   return (
     <main className="relative isolate bg-white text-gray-900">
-      <Helmet>
-        <title>{pageSEO.title}</title>
-        <meta name="description" content={pageSEO.description} />
-        <link rel="canonical" href={pageSEO.url} />
-        <meta property="og:title" content={pageSEO.title} />
-        <meta property="og:description" content={pageSEO.description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={pageSEO.url} />
-        <meta property="og:image" content={pageSEO.image} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageSEO.title} />
-        <meta name="twitter:description" content={pageSEO.description} />
-        <meta name="twitter:image" content={pageSEO.image} />
-        <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
-        <script type="application/ld+json">{JSON.stringify(founderJsonLd)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
-      </Helmet>
+      <SeoHelmet
+        title={pageSEO.title}
+        description={pageSEO.description}
+        canonical={pageSEO.url}
+        image={pageSEO.image}
+        schema={schemaBlocks}
+        breadcrumbs={[
+          { name: "Home", url: buildCanonical("/") },
+          { name: "About Us", url: pageSEO.url },
+        ]}
+      />
 
       {/* Soft gradient top glow */}
       <div

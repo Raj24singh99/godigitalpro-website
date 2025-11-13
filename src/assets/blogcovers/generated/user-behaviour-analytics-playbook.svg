@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='User Behavior Analytics Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#EEF2FF' offset='0%'/>
+        <stop stop-color='#C7D2FE' offset='50%'/>
+        <stop stop-color='#A5B4FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 222.14839663356543 C 200 82.14839663356543, 500 342.1483966335654, 1200 162.14839663356543 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 408.2346422318369 C 200 268.2346422318369, 500 528.2346422318369, 1200 348.2346422318369 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 578.0945525411516 C 200 438.09455254115164, 500 698.0945525411516, 1200 518.0945525411516 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M251.2432021414861 283.4687049686909 Q 272.61177802225575 198.97269098088145 293.9803539030254 375.0370164960623" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M293.9803539030254 375.0370164960623 Q 467.35466710524634 277.91123910807073 640.7289803074673 395.43376445770264" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="251.2432021414861" cy="283.4687049686909" r="69.36548360204324" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="251.2432021414861" cy="283.4687049686909" r="51.36548360204324" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="251.2432021414861" cy="283.4687049686909" r="17.121827867347747" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="293.9803539030254" cy="375.0370164960623" r="57.24795908201486" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="293.9803539030254" cy="375.0370164960623" r="39.24795908201486" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="293.9803539030254" cy="375.0370164960623" r="13.082653027338287" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="640.7289803074673" cy="395.43376445770264" r="69.40989247942343" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="640.7289803074673" cy="395.43376445770264" r="51.40989247942343" fill="#C7D2FE" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="640.7289803074673" cy="395.43376445770264" r="17.136630826474477" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>User Behavior Analytics Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>CONVERSION RATE OPTIMIZATION (CRO) & UX • USER BEHAVIOR ANALYTICS • DIGITAL MARKETING</text>
+  </svg>

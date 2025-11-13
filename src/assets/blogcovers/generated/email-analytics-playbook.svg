@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Analytics & Optimization Playbook illustration'>
+    <defs>
+      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop stop-color='#E0F2FE' offset='0%'/>
+        <stop stop-color='#BAE6FD' offset='50%'/>
+        <stop stop-color='#7DD3FC' offset='100%'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+    <path d='M-200 231.34990207850933 C 200 91.34990207850933, 500 351.34990207850933, 1200 171.34990207850933 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
+    <path d='M-200 464.0853874851018 C 200 324.0853874851018, 500 584.0853874851018, 1200 404.0853874851018 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+    <path d='M-200 578.9658979233354 C 200 438.96589792333543, 500 698.9658979233354, 1200 518.9658979233354 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
+    <path d="M660.8596159471199 340.7806418836117 Q 641.8447942263447 232.57552484050393 622.8299725055695 450.20302526652813" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M622.8299725055695 450.20302526652813 Q 438.7544995290227 90.46965706162155 254.679026552476 182.35855489969254" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g opacity="0.75">
+        <circle cx="660.8596159471199" cy="340.7806418836117" r="71.55127356527373" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="660.8596159471199" cy="340.7806418836117" r="53.55127356527373" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="660.8596159471199" cy="340.7806418836117" r="17.850424521757912" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.83">
+        <circle cx="622.8299725055695" cy="450.20302526652813" r="69.67442943435162" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="622.8299725055695" cy="450.20302526652813" r="51.67442943435162" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="622.8299725055695" cy="450.20302526652813" r="17.22480981145054" fill="#0f172a" fill-opacity="0.8"/>
+      </g><g opacity="0.91">
+        <circle cx="254.679026552476" cy="182.35855489969254" r="54.75311113940552" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="254.679026552476" cy="182.35855489969254" r="36.75311113940552" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
+        <circle cx="254.679026552476" cy="182.35855489969254" r="12.251037046468506" fill="#0f172a" fill-opacity="0.8"/>
+      </g>
+    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Analytics & Optimization Playbook</text>
+    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>EMAIL MARKETING & AUTOMATION • ANALYTICS & OPTIMIZATION • DIGITAL MARKETING</text>
+  </svg>

@@ -1,7 +1,8 @@
 // src/pages/industries/MarketplacesQuickCommercePage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SeoHelmet from "../../components/SeoHelmet";
+import { buildCanonical, faqJsonLd, serviceJsonLd } from "../../utils/seo";
 import {
   PackageCheck,
   FileSpreadsheet,
@@ -35,6 +36,33 @@ const PLATFORMS = [
   { name: "Myntra", color: "#FF3F6C" },
 ];
 
+const MARKETPLACE_FAQ = [
+  {
+    question: "What do you need from us to start?",
+    answer: "Access to seller panels, a product list with MRP/pack info, and ad accounts if already running.",
+  },
+  {
+    question: "Do you support both inventory and marketplace models?",
+    answer: "Yes. We handle seller-fulfilled, FBA/Smart, and 3P marketplace models with clear SLAs.",
+  },
+  {
+    question: "Will you create A+ content and videos?",
+    answer: "Yes. We do full listing makeovers—images, comparison tables, FAQs, and short explainer videos.",
+  },
+  {
+    question: "How do you run ads without wasting budget?",
+    answer: "We use search-intent keywords, negative rules, product targeting, and strict portfolio budgets.",
+  },
+  {
+    question: "Do you cover quick commerce operations too?",
+    answer: "Yes. We manage catalog readiness, slot availability, and discount hygiene for Blinkit/Instamart/Zepto.",
+  },
+  {
+    question: "What cadence do we follow?",
+    answer: "Weekly review on content, price, stock, and ads with a simple scorecard and next actions.",
+  },
+];
+
 export default function MarketplacesQuickCommercePage() {
   const [idx, setIdx] = useState(0);
   useEffect(() => {
@@ -49,10 +77,8 @@ export default function MarketplacesQuickCommercePage() {
   );
 
   // ---- SEO constants ----
-  const site = "https://www.godigitalpro.in";
   const path = "/industries/marketplaces-quick-commerce";
-  const pageUrl = `${site}${path}`;
-  const ogImage = `${site}/og-marketplaces.jpg`;
+  const pageUrl = buildCanonical(path);
 
   const title = "Marketplaces & Quick Commerce | Amazon, Flipkart, Blinkit";
   const desc =
@@ -62,30 +88,25 @@ export default function MarketplacesQuickCommercePage() {
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
-      <Helmet>
-        {/* Basic SEO */}
-        <title>{title}</title>
-        <meta name="description" content={desc} />
-        <meta name="keywords" content={keywords} />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={pageUrl} />
-        <meta name="author" content="GoDigitalPro" />
-        <meta name="publisher" content="GoDigitalPro" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={desc} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:site_name" content="GoDigitalPro" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={desc} />
-        <meta name="twitter:image" content={ogImage} />
-      </Helmet>
+      <SeoHelmet
+        title={title}
+        description={desc}
+        canonical={pageUrl}
+        keywords={keywords}
+        schema={[
+          serviceJsonLd({
+            name: "Marketplaces & Quick Commerce",
+            description: desc,
+            url: pageUrl,
+          }),
+          faqJsonLd(MARKETPLACE_FAQ),
+        ]}
+        breadcrumbs={[
+          { name: "Home", url: buildCanonical("/") },
+          { name: "Services", url: `${buildCanonical("/")}#services` },
+          { name: "Marketplaces & Quick Commerce", url: pageUrl },
+        ]}
+      />
 
       <style>{`
         @keyframes fadeSwap { 0%{opacity:0; transform:translateY(8px) scale(.98)} 20%{opacity:1; transform:translateY(0) scale(1)} 80%{opacity:1} 100%{opacity:0; transform:translateY(-8px) scale(.98)} }
@@ -329,61 +350,18 @@ export default function MarketplacesQuickCommercePage() {
         </Container>
         <Container className="mt-6">
           <div className="divide-y divide-black/10 rounded-2xl border border-black/10 bg-white">
-            {[
-              {
-                q: "What do you need from us to start?",
-                a: "Access to seller panels, a product list with MRP/pack info, and ad accounts if already running.",
-              },
-              {
-                q: "Do you support both inventory and marketplace models?",
-                a: "Yes. We handle seller-fulfilled, FBA/Smart, and 3P marketplace models with clear SLAs.",
-              },
-              {
-                q: "Will you create A+ content and videos?",
-                a: "Yes. We do full listing makeovers—images, comparison tables, FAQs, and short explainer videos.",
-              },
-              {
-                q: "How do you run ads without wasting budget?",
-                a: "We use search-intent keywords, negative rules, product targeting, and strict portfolio budgets.",
-              },
-              {
-                q: "Do you cover quick commerce operations too?",
-                a: "Yes. We manage catalog readiness, slot availability, and discount hygiene for Blinkit/Instamart/Zepto.",
-              },
-              {
-                q: "What cadence do we follow?",
-                a: "Weekly review on content, price, stock, and ads with a simple scorecard and next actions.",
-              },
-            ].map((f) => (
-              <details key={f.q} className="group p-4">
+            {MARKETPLACE_FAQ.map(({ question, answer }) => (
+              <details key={question} className="group p-4">
                 <summary className="flex cursor-pointer list-none items-center justify-between">
-                  <span className="font-medium">{f.q}</span>
+                  <span className="font-medium">{question}</span>
                   <span className="text-slate-500 transition group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-2 text-sm leading-relaxed text-slate-700">{f.a}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-700">{answer}</p>
               </details>
             ))}
           </div>
         </Container>
       </Section>
-
-      {/* JSON-LD for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Marketplaces & Quick Commerce",
-            provider: { "@type": "Organization", name: "GoDigitalPro" },
-            serviceType: "Marketplace Management and Retail Media",
-            areaServed: "India",
-            url: pageUrl,
-            description: desc,
-            offers: { "@type": "Offer", category: "Service" },
-          }),
-        }}
-      />
     </main>
   );
 }
