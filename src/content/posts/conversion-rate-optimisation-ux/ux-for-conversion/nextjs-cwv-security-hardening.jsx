@@ -1,6 +1,6 @@
 import React from "react";
 import blogCover from "../../../../assets/blogcovers/generated/nextjs-cwv-security-hardening.svg";
-import OnPageNav from "../../../../components/blog/OnPageNav.jsx";
+import SimpleArticleLayout from "../../../../components/blog/SimpleArticleLayout.jsx";
 
 export const meta = {
   title: "Next.js at Scale: Core Web Vitals, Security & Reliability Hardening (Production Playbook)",
@@ -473,87 +473,6 @@ const sections = [
   }
 ];
 
-function formatDate(value) {
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value;
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-}
-
-function estimateReadTime() {
-  const text = sections
-    .flatMap((section) => [
-      section.summary,
-      ...section.perspectives.map((p) => p.body),
-      ...section.plays.map((play) => play.detail),
-    ])
-    .join(" ");
-  const words = text.trim().split(/\s+/).length;
-  return (Math.max(10, Math.round(words / 210))) + " min read";
-}
-
 export default function BlogArticle() {
-  const published = formatDate(meta.date);
-  const updated = formatDate(meta.updated || meta.date);
-  const estimatedRead = estimateReadTime();
-
-  return (
-    <div className="mx-auto max-w-6xl px-4 py-12 lg:px-6">
-      <div className="lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-12">
-        <article className="order-1 prose prose-slate max-w-none lg:order-2">
-          <header className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-600">GoDigitalPro Blog · Conversion Rate Optimisation Ux</p>
-            <h1>{meta.title}</h1>
-            <p className="text-lg text-slate-600">{meta.metaDescription}</p>
-            <div className="mt-4 flex flex-wrap gap-4 text-sm text-slate-500">
-              <span>Published {published}</span>
-              <span>Updated {updated}</span>
-              <span>{estimatedRead}</span>
-            </div>
-          </header>
-
-          <figure className="my-8 overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm">
-            <img src={meta.cover} alt={meta.coverAlt} loading="lazy" className="h-80 w-full object-cover sm:h-[28rem]" />
-            <figcaption className="px-6 py-4 text-sm text-slate-500">{meta.title}</figcaption>
-          </figure>
-
-          <div className="mb-10 lg:hidden">
-            <OnPageNav sections={sections} showDesktop={false} />
-          </div>
-
-          {sections.map((section, index) => (
-            <section key={section.id} id={section.id} className="scroll-mt-24">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Section {String(index + 1).padStart(2, "0")}</p>
-              <h2>{section.title}</h2>
-              <p className="text-base text-slate-700">{section.summary}</p>
-
-              <div className="mt-6 space-y-4">
-                {section.perspectives.map((perspective) => (
-                  <div key={perspective.title} className="rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
-                    <h3 className="text-base font-semibold text-slate-900">{perspective.title}</h3>
-                    <p className="mt-2 text-slate-700">{perspective.body}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
-                {section.plays.map((play) => (
-                  <div key={play.title} className="rounded-xl border border-slate-200 bg-slate-50 px-5 py-4">
-                    <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-indigo-500">{play.title}</h4>
-                    <p className="mt-2 text-sm text-slate-700">{play.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          ))}
-        </article>
-        <aside className="order-2 mt-10 hidden lg:order-1 lg:block lg:mt-0">
-          <OnPageNav sections={sections} showMobile={false} />
-        </aside>
-      </div>
-    </div>
-  );
+  return <SimpleArticleLayout meta={meta} sections={sections} />;
 }

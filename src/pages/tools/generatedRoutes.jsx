@@ -1,0 +1,1211 @@
+import React from "react";
+const semrush = React.lazy(() => import("./tools/semrush.jsx"));
+const se_ranking = React.lazy(() => import("./tools/se-ranking.jsx"));
+const mangools = React.lazy(() => import("./tools/mangools.jsx"));
+const serpstat = React.lazy(() => import("./tools/serpstat.jsx"));
+const moz_pro = React.lazy(() => import("./tools/moz-pro.jsx"));
+const ahrefs = React.lazy(() => import("./tools/ahrefs.jsx"));
+const ubersuggest = React.lazy(() => import("./tools/ubersuggest.jsx"));
+const rank_math = React.lazy(() => import("./tools/rank-math.jsx"));
+const yoast_seo = React.lazy(() => import("./tools/yoast-seo.jsx"));
+const seopress = React.lazy(() => import("./tools/seopress.jsx"));
+const all_in_one_seo = React.lazy(() => import("./tools/all-in-one-seo.jsx"));
+const surfer_seo = React.lazy(() => import("./tools/surfer-seo.jsx"));
+const hubspot = React.lazy(() => import("./tools/hubspot.jsx"));
+const getresponse = React.lazy(() => import("./tools/getresponse.jsx"));
+const aweber = React.lazy(() => import("./tools/aweber.jsx"));
+const convertkit = React.lazy(() => import("./tools/convertkit.jsx"));
+const activecampaign = React.lazy(() => import("./tools/activecampaign.jsx"));
+const mailerlite = React.lazy(() => import("./tools/mailerlite.jsx"));
+const omnisend = React.lazy(() => import("./tools/omnisend.jsx"));
+const brevo = React.lazy(() => import("./tools/brevo.jsx"));
+const klaviyo = React.lazy(() => import("./tools/klaviyo.jsx"));
+const beehiiv = React.lazy(() => import("./tools/beehiiv.jsx"));
+const unbounce = React.lazy(() => import("./tools/unbounce.jsx"));
+const instapage = React.lazy(() => import("./tools/instapage.jsx"));
+const leadpages = React.lazy(() => import("./tools/leadpages.jsx"));
+const landingi = React.lazy(() => import("./tools/landingi.jsx"));
+const vwo = React.lazy(() => import("./tools/vwo.jsx"));
+const crazy_egg = React.lazy(() => import("./tools/crazy-egg.jsx"));
+const hotjar = React.lazy(() => import("./tools/hotjar.jsx"));
+const lucky_orange = React.lazy(() => import("./tools/lucky-orange.jsx"));
+const shopify = React.lazy(() => import("./tools/shopify.jsx"));
+const bigcommerce = React.lazy(() => import("./tools/bigcommerce.jsx"));
+const woocommerce = React.lazy(() => import("./tools/woocommerce.jsx"));
+const wix = React.lazy(() => import("./tools/wix.jsx"));
+const squarespace = React.lazy(() => import("./tools/squarespace.jsx"));
+const webflow = React.lazy(() => import("./tools/webflow.jsx"));
+const framer = React.lazy(() => import("./tools/framer.jsx"));
+const carrd = React.lazy(() => import("./tools/carrd.jsx"));
+const elementor = React.lazy(() => import("./tools/elementor.jsx"));
+const divi = React.lazy(() => import("./tools/divi.jsx"));
+const envato = React.lazy(() => import("./tools/envato.jsx"));
+const bluehost = React.lazy(() => import("./tools/bluehost.jsx"));
+const hostinger = React.lazy(() => import("./tools/hostinger.jsx"));
+const siteground = React.lazy(() => import("./tools/siteground.jsx"));
+const wp_engine = React.lazy(() => import("./tools/wp-engine.jsx"));
+const kinsta = React.lazy(() => import("./tools/kinsta.jsx"));
+const cloudways = React.lazy(() => import("./tools/cloudways.jsx"));
+const a2_hosting = React.lazy(() => import("./tools/a2-hosting.jsx"));
+const namecheap = React.lazy(() => import("./tools/namecheap.jsx"));
+const godaddy = React.lazy(() => import("./tools/godaddy.jsx"));
+const digitalocean = React.lazy(() => import("./tools/digitalocean.jsx"));
+const vultr = React.lazy(() => import("./tools/vultr.jsx"));
+const bunny_net = React.lazy(() => import("./tools/bunny-net.jsx"));
+const rocket_net = React.lazy(() => import("./tools/rocket-net.jsx"));
+const clickmagick = React.lazy(() => import("./tools/clickmagick.jsx"));
+const fathom_analytics = React.lazy(() => import("./tools/fathom-analytics.jsx"));
+const plausible = React.lazy(() => import("./tools/plausible.jsx"));
+const matomo = React.lazy(() => import("./tools/matomo.jsx"));
+const monsterinsights = React.lazy(() => import("./tools/monsterinsights.jsx"));
+const buffer = React.lazy(() => import("./tools/buffer.jsx"));
+const hootsuite = React.lazy(() => import("./tools/hootsuite.jsx"));
+const later = React.lazy(() => import("./tools/later.jsx"));
+const socialpilot = React.lazy(() => import("./tools/socialpilot.jsx"));
+const tailwind = React.lazy(() => import("./tools/tailwind.jsx"));
+const zapier = React.lazy(() => import("./tools/zapier.jsx"));
+const make = React.lazy(() => import("./tools/make.jsx"));
+const pabbly = React.lazy(() => import("./tools/pabbly.jsx"));
+const canva = React.lazy(() => import("./tools/canva.jsx"));
+const descript = React.lazy(() => import("./tools/descript.jsx"));
+const pictory = React.lazy(() => import("./tools/pictory.jsx"));
+const veed = React.lazy(() => import("./tools/veed.jsx"));
+const invideo = React.lazy(() => import("./tools/invideo.jsx"));
+const kapwing = React.lazy(() => import("./tools/kapwing.jsx"));
+const synthesia = React.lazy(() => import("./tools/synthesia.jsx"));
+const quillbot = React.lazy(() => import("./tools/quillbot.jsx"));
+const grammarly = React.lazy(() => import("./tools/grammarly.jsx"));
+const prowritingaid = React.lazy(() => import("./tools/prowritingaid.jsx"));
+const rytr = React.lazy(() => import("./tools/rytr.jsx"));
+const writesonic = React.lazy(() => import("./tools/writesonic.jsx"));
+const jasper_ai = React.lazy(() => import("./tools/jasper-ai.jsx"));
+const customgpt_ai = React.lazy(() => import("./tools/customgpt-ai.jsx"));
+const midjourney = React.lazy(() => import("./tools/midjourney.jsx"));
+const icons8 = React.lazy(() => import("./tools/icons8.jsx"));
+const envira_gallery = React.lazy(() => import("./tools/envira-gallery.jsx"));
+const clickup = React.lazy(() => import("./tools/clickup.jsx"));
+const monday = React.lazy(() => import("./tools/monday.jsx"));
+const asana = React.lazy(() => import("./tools/asana.jsx"));
+const trello = React.lazy(() => import("./tools/trello.jsx"));
+const notion = React.lazy(() => import("./tools/notion.jsx"));
+const airtable = React.lazy(() => import("./tools/airtable.jsx"));
+const zoho = React.lazy(() => import("./tools/zoho.jsx"));
+const pipedrive = React.lazy(() => import("./tools/pipedrive.jsx"));
+const freshworks = React.lazy(() => import("./tools/freshworks.jsx"));
+const freshdesk = React.lazy(() => import("./tools/freshdesk.jsx"));
+const zoho_desk = React.lazy(() => import("./tools/zoho-desk.jsx"));
+const zendesk = React.lazy(() => import("./tools/zendesk.jsx"));
+const helpscout = React.lazy(() => import("./tools/helpscout.jsx"));
+const document360 = React.lazy(() => import("./tools/document360.jsx"));
+const intercom = React.lazy(() => import("./tools/intercom.jsx"));
+const livechat = React.lazy(() => import("./tools/livechat.jsx"));
+const tidio = React.lazy(() => import("./tools/tidio.jsx"));
+const crisp = React.lazy(() => import("./tools/crisp.jsx"));
+const teachable = React.lazy(() => import("./tools/teachable.jsx"));
+const thinkific = React.lazy(() => import("./tools/thinkific.jsx"));
+const kajabi = React.lazy(() => import("./tools/kajabi.jsx"));
+const podia = React.lazy(() => import("./tools/podia.jsx"));
+const gumroad = React.lazy(() => import("./tools/gumroad.jsx"));
+const paddle = React.lazy(() => import("./tools/paddle.jsx"));
+const lemon_squeezy = React.lazy(() => import("./tools/lemon-squeezy.jsx"));
+const stripe = React.lazy(() => import("./tools/stripe.jsx"));
+const nordvpn = React.lazy(() => import("./tools/nordvpn.jsx"));
+const surfshark = React.lazy(() => import("./tools/surfshark.jsx"));
+const expressvpn = React.lazy(() => import("./tools/expressvpn.jsx"));
+const pcloud = React.lazy(() => import("./tools/pcloud.jsx"));
+const sync_com = React.lazy(() => import("./tools/sync-com.jsx"));
+const dropbox = React.lazy(() => import("./tools/dropbox.jsx"));
+const onedrive = React.lazy(() => import("./tools/onedrive.jsx"));
+const box = React.lazy(() => import("./tools/box.jsx"));
+const vimeo = React.lazy(() => import("./tools/vimeo.jsx"));
+const wistia = React.lazy(() => import("./tools/wistia.jsx"));
+const loom = React.lazy(() => import("./tools/loom.jsx"));
+const zoom = React.lazy(() => import("./tools/zoom.jsx"));
+const typeform = React.lazy(() => import("./tools/typeform.jsx"));
+const jotform = React.lazy(() => import("./tools/jotform.jsx"));
+const paperform = React.lazy(() => import("./tools/paperform.jsx"));
+const tally = React.lazy(() => import("./tools/tally.jsx"));
+const surveymonkey = React.lazy(() => import("./tools/surveymonkey.jsx"));
+const printful = React.lazy(() => import("./tools/printful.jsx"));
+const printify = React.lazy(() => import("./tools/printify.jsx"));
+const shipstation = React.lazy(() => import("./tools/shipstation.jsx"));
+const shipbob = React.lazy(() => import("./tools/shipbob.jsx"));
+const voluum = React.lazy(() => import("./tools/voluum.jsx"));
+const redtrack = React.lazy(() => import("./tools/redtrack.jsx"));
+const thrivecart = React.lazy(() => import("./tools/thrivecart.jsx"));
+const cartflows = React.lazy(() => import("./tools/cartflows.jsx"));
+const wp_rocket = React.lazy(() => import("./tools/wp-rocket.jsx"));
+const perfmatters = React.lazy(() => import("./tools/perfmatters.jsx"));
+const seedprod = React.lazy(() => import("./tools/seedprod.jsx"));
+const optinmonster = React.lazy(() => import("./tools/optinmonster.jsx"));
+const tubebuddy = React.lazy(() => import("./tools/tubebuddy.jsx"));
+const vidiq = React.lazy(() => import("./tools/vidiq.jsx"));
+const riverside = React.lazy(() => import("./tools/riverside.jsx"));
+const restream = React.lazy(() => import("./tools/restream.jsx"));
+const webinarjam = React.lazy(() => import("./tools/webinarjam.jsx"));
+const demio = React.lazy(() => import("./tools/demio.jsx"));
+const canva_creators = React.lazy(() => import("./tools/canva-creators.jsx"));
+const microsoft_teams = React.lazy(() => import("./tools/microsoft-teams.jsx"));
+const google_meet = React.lazy(() => import("./tools/google-meet.jsx"));
+const webex = React.lazy(() => import("./tools/webex.jsx"));
+const goto_meeting = React.lazy(() => import("./tools/goto-meeting.jsx"));
+const whereby = React.lazy(() => import("./tools/whereby.jsx"));
+const anyword = React.lazy(() => import("./tools/anyword.jsx"));
+const neuroflash = React.lazy(() => import("./tools/neuroflash.jsx"));
+const hyperwrite = React.lazy(() => import("./tools/hyperwrite.jsx"));
+const textcortex = React.lazy(() => import("./tools/textcortex.jsx"));
+const sudowrite = React.lazy(() => import("./tools/sudowrite.jsx"));
+const writer_com = React.lazy(() => import("./tools/writer-com.jsx"));
+const longshot_ai = React.lazy(() => import("./tools/longshot-ai.jsx"));
+const peppertype_ai = React.lazy(() => import("./tools/peppertype-ai.jsx"));
+const contentbot = React.lazy(() => import("./tools/contentbot.jsx"));
+const kafkai = React.lazy(() => import("./tools/kafkai.jsx"));
+const article_forge = React.lazy(() => import("./tools/article-forge.jsx"));
+const scalenut = React.lazy(() => import("./tools/scalenut.jsx"));
+const aiseo = React.lazy(() => import("./tools/aiseo.jsx"));
+const writesonic_chatsonic = React.lazy(() => import("./tools/writesonic-chatsonic.jsx"));
+const moonbeam_ai = React.lazy(() => import("./tools/moonbeam-ai.jsx"));
+const copylime = React.lazy(() => import("./tools/copylime.jsx"));
+const copyleaks = React.lazy(() => import("./tools/copyleaks.jsx"));
+const outranking_io = React.lazy(() => import("./tools/outranking-io.jsx"));
+const frase_io = React.lazy(() => import("./tools/frase-io.jsx"));
+const clearscope = React.lazy(() => import("./tools/clearscope.jsx"));
+const growthbar = React.lazy(() => import("./tools/growthbar.jsx"));
+const ink_editor = React.lazy(() => import("./tools/ink-editor.jsx"));
+const scite_ai = React.lazy(() => import("./tools/scite-ai.jsx"));
+const koalawriter = React.lazy(() => import("./tools/koalawriter.jsx"));
+const zimmwriter = React.lazy(() => import("./tools/zimmwriter.jsx"));
+const paragraphai = React.lazy(() => import("./tools/paragraphai.jsx"));
+const essaybot = React.lazy(() => import("./tools/essaybot.jsx"));
+const justdone_ai = React.lazy(() => import("./tools/justdone-ai.jsx"));
+const you_com_write = React.lazy(() => import("./tools/you-com-write.jsx"));
+const klazify = React.lazy(() => import("./tools/klazify.jsx"));
+const heygen = React.lazy(() => import("./tools/heygen.jsx"));
+const rephrase_ai = React.lazy(() => import("./tools/rephrase-ai.jsx"));
+const d_id = React.lazy(() => import("./tools/d-id.jsx"));
+const colossyan = React.lazy(() => import("./tools/colossyan.jsx"));
+const runwayml = React.lazy(() => import("./tools/runwayml.jsx"));
+const descript_overdub = React.lazy(() => import("./tools/descript-overdub.jsx"));
+const synthesys = React.lazy(() => import("./tools/synthesys.jsx"));
+const elai_io = React.lazy(() => import("./tools/elai-io.jsx"));
+const veed_ai = React.lazy(() => import("./tools/veed-ai.jsx"));
+const lumen5_ai = React.lazy(() => import("./tools/lumen5-ai.jsx"));
+const kapwing_ai = React.lazy(() => import("./tools/kapwing-ai.jsx"));
+const flexclip_ai = React.lazy(() => import("./tools/flexclip-ai.jsx"));
+const invideo_io_ai_modes = React.lazy(() => import("./tools/invideo-io-ai-modes.jsx"));
+const pictory_ai = React.lazy(() => import("./tools/pictory-ai.jsx"));
+const raw_shorts = React.lazy(() => import("./tools/raw-shorts.jsx"));
+const wibbitz = React.lazy(() => import("./tools/wibbitz.jsx"));
+const animaker_ai = React.lazy(() => import("./tools/animaker-ai.jsx"));
+const wave_video = React.lazy(() => import("./tools/wave-video.jsx"));
+const biteable = React.lazy(() => import("./tools/biteable.jsx"));
+const wisecut = React.lazy(() => import("./tools/wisecut.jsx"));
+const stable_diffusion = React.lazy(() => import("./tools/stable-diffusion.jsx"));
+const leonardo_ai = React.lazy(() => import("./tools/leonardo-ai.jsx"));
+const firefly_adobe = React.lazy(() => import("./tools/firefly-adobe.jsx"));
+const canva_ai_magic_studio = React.lazy(() => import("./tools/canva-ai-magic-studio.jsx"));
+const fotor_ai = React.lazy(() => import("./tools/fotor-ai.jsx"));
+const picsart_ai = React.lazy(() => import("./tools/picsart-ai.jsx"));
+const remove_bg = React.lazy(() => import("./tools/remove-bg.jsx"));
+const cleanup_pictures = React.lazy(() => import("./tools/cleanup-pictures.jsx"));
+const hotpot_ai = React.lazy(() => import("./tools/hotpot-ai.jsx"));
+const clipdrop = React.lazy(() => import("./tools/clipdrop.jsx"));
+const photoroom = React.lazy(() => import("./tools/photoroom.jsx"));
+const stockai = React.lazy(() => import("./tools/stockai.jsx"));
+const craiyon = React.lazy(() => import("./tools/craiyon.jsx"));
+const dreamstudio = React.lazy(() => import("./tools/dreamstudio.jsx"));
+const playgroundai = React.lazy(() => import("./tools/playgroundai.jsx"));
+const nightcafe = React.lazy(() => import("./tools/nightcafe.jsx"));
+const artbreeder = React.lazy(() => import("./tools/artbreeder.jsx"));
+const relaythat = React.lazy(() => import("./tools/relaythat.jsx"));
+const elevenlabs = React.lazy(() => import("./tools/elevenlabs.jsx"));
+const murf_ai = React.lazy(() => import("./tools/murf-ai.jsx"));
+const play_ht = React.lazy(() => import("./tools/play-ht.jsx"));
+const speechelo = React.lazy(() => import("./tools/speechelo.jsx"));
+const listnr = React.lazy(() => import("./tools/listnr.jsx"));
+const lovo_ai = React.lazy(() => import("./tools/lovo-ai.jsx"));
+const voicely = React.lazy(() => import("./tools/voicely.jsx"));
+const wellsaid_labs = React.lazy(() => import("./tools/wellsaid-labs.jsx"));
+const resemble_ai = React.lazy(() => import("./tools/resemble-ai.jsx"));
+const altered_studio = React.lazy(() => import("./tools/altered-studio.jsx"));
+const krisp_ai = React.lazy(() => import("./tools/krisp-ai.jsx"));
+const cleanvoice_ai = React.lazy(() => import("./tools/cleanvoice-ai.jsx"));
+const descript_studio_sound = React.lazy(() => import("./tools/descript-studio-sound.jsx"));
+const auphonic_ai = React.lazy(() => import("./tools/auphonic-ai.jsx"));
+const chatgpt = React.lazy(() => import("./tools/chatgpt.jsx"));
+const claude = React.lazy(() => import("./tools/claude.jsx"));
+const perplexity_ai = React.lazy(() => import("./tools/perplexity-ai.jsx"));
+const characterai = React.lazy(() => import("./tools/characterai.jsx"));
+const poe = React.lazy(() => import("./tools/poe.jsx"));
+const pi_ai = React.lazy(() => import("./tools/pi-ai.jsx"));
+const agentgpt = React.lazy(() => import("./tools/agentgpt.jsx"));
+const autogpt = React.lazy(() => import("./tools/autogpt.jsx"));
+const superagi = React.lazy(() => import("./tools/superagi.jsx"));
+const langchain = React.lazy(() => import("./tools/langchain.jsx"));
+const flowiseai = React.lazy(() => import("./tools/flowiseai.jsx"));
+const zapier_ai_actions = React.lazy(() => import("./tools/zapier-ai-actions.jsx"));
+const make_com_ai_agents = React.lazy(() => import("./tools/make-com-ai-agents.jsx"));
+const botpress_ai = React.lazy(() => import("./tools/botpress-ai.jsx"));
+const tidio_ai = React.lazy(() => import("./tools/tidio-ai.jsx"));
+const intercom_finai = React.lazy(() => import("./tools/intercom-finai.jsx"));
+const drift_ai = React.lazy(() => import("./tools/drift-ai.jsx"));
+const zendesk_ai_agents = React.lazy(() => import("./tools/zendesk-ai-agents.jsx"));
+const airtable_ai = React.lazy(() => import("./tools/airtable-ai.jsx"));
+const notion_ai = React.lazy(() => import("./tools/notion-ai.jsx"));
+const clickup_ai = React.lazy(() => import("./tools/clickup-ai.jsx"));
+const motion_ai = React.lazy(() => import("./tools/motion-ai.jsx"));
+const taskade_ai = React.lazy(() => import("./tools/taskade-ai.jsx"));
+const fireflies_ai = React.lazy(() => import("./tools/fireflies-ai.jsx"));
+const otter_ai = React.lazy(() => import("./tools/otter-ai.jsx"));
+const superhuman_ai = React.lazy(() => import("./tools/superhuman-ai.jsx"));
+const magical_ai = React.lazy(() => import("./tools/magical-ai.jsx"));
+const sanebox_ai = React.lazy(() => import("./tools/sanebox-ai.jsx"));
+const bardeen_ai = React.lazy(() => import("./tools/bardeen-ai.jsx"));
+const sheetai = React.lazy(() => import("./tools/sheetai.jsx"));
+const rows_ai = React.lazy(() => import("./tools/rows-ai.jsx"));
+const webscraperai = React.lazy(() => import("./tools/webscraperai.jsx"));
+const marketmuse = React.lazy(() => import("./tools/marketmuse.jsx"));
+const surfer_ai_mode = React.lazy(() => import("./tools/surfer-ai-mode.jsx"));
+const page_optimizer_pro = React.lazy(() => import("./tools/page-optimizer-pro.jsx"));
+const neuronwriter = React.lazy(() => import("./tools/neuronwriter.jsx"));
+const seo_assistant_semrush_ai = React.lazy(() => import("./tools/seo-assistant-semrush-ai.jsx"));
+const keywordinsights_ai = React.lazy(() => import("./tools/keywordinsights-ai.jsx"));
+const lowfruits = React.lazy(() => import("./tools/lowfruits.jsx"));
+const rankiq = React.lazy(() => import("./tools/rankiq.jsx"));
+const topicmojo = React.lazy(() => import("./tools/topicmojo.jsx"));
+const keyword_chef = React.lazy(() => import("./tools/keyword-chef.jsx"));
+const aiseo_keyword_mode = React.lazy(() => import("./tools/aiseo-keyword-mode.jsx"));
+const akkio_ai = React.lazy(() => import("./tools/akkio-ai.jsx"));
+const obviously_ai = React.lazy(() => import("./tools/obviously-ai.jsx"));
+const levity_ai = React.lazy(() => import("./tools/levity-ai.jsx"));
+const sisense_ai = React.lazy(() => import("./tools/sisense-ai.jsx"));
+const tableau_ai = React.lazy(() => import("./tools/tableau-ai.jsx"));
+const powerbi_ai = React.lazy(() => import("./tools/powerbi-ai.jsx"));
+const polymersearch = React.lazy(() => import("./tools/polymersearch.jsx"));
+const metabase_ai = React.lazy(() => import("./tools/metabase-ai.jsx"));
+const contentstudio_ai = React.lazy(() => import("./tools/contentstudio-ai.jsx"));
+const predis_ai = React.lazy(() => import("./tools/predis-ai.jsx"));
+const postwise = React.lazy(() => import("./tools/postwise.jsx"));
+const feedhive_ai = React.lazy(() => import("./tools/feedhive-ai.jsx"));
+const hoppycopy = React.lazy(() => import("./tools/hoppycopy.jsx"));
+const brightedge = React.lazy(() => import("./tools/brightedge.jsx"));
+const conductor = React.lazy(() => import("./tools/conductor.jsx"));
+const botify = React.lazy(() => import("./tools/botify.jsx"));
+const deepcrawl = React.lazy(() => import("./tools/deepcrawl.jsx"));
+const screamingfrog = React.lazy(() => import("./tools/screamingfrog.jsx"));
+const sitebulb = React.lazy(() => import("./tools/sitebulb.jsx"));
+const ryte = React.lazy(() => import("./tools/ryte.jsx"));
+const seoclarity = React.lazy(() => import("./tools/seoclarity.jsx"));
+const cognitiveseo = React.lazy(() => import("./tools/cognitiveseo.jsx"));
+const keywordtool_io = React.lazy(() => import("./tools/keywordtool-io.jsx"));
+const ranktracker = React.lazy(() => import("./tools/ranktracker.jsx"));
+const spyfu = React.lazy(() => import("./tools/spyfu.jsx"));
+const similarweb = React.lazy(() => import("./tools/similarweb.jsx"));
+const majestic_seo = React.lazy(() => import("./tools/majestic-seo.jsx"));
+const searchmetrics = React.lazy(() => import("./tools/searchmetrics.jsx"));
+const moosend = React.lazy(() => import("./tools/moosend.jsx"));
+const sendgrid = React.lazy(() => import("./tools/sendgrid.jsx"));
+const campaign_monitor = React.lazy(() => import("./tools/campaign-monitor.jsx"));
+const drip = React.lazy(() => import("./tools/drip.jsx"));
+const mailpoet = React.lazy(() => import("./tools/mailpoet.jsx"));
+const mailgun = React.lazy(() => import("./tools/mailgun.jsx"));
+const constant_contact = React.lazy(() => import("./tools/constant-contact.jsx"));
+const zoho_campaigns = React.lazy(() => import("./tools/zoho-campaigns.jsx"));
+const convertful = React.lazy(() => import("./tools/convertful.jsx"));
+const smartwriter_ai = React.lazy(() => import("./tools/smartwriter-ai.jsx"));
+const keap_infusionsoft = React.lazy(() => import("./tools/keap-infusionsoft.jsx"));
+const ontraport = React.lazy(() => import("./tools/ontraport.jsx"));
+const ortto = React.lazy(() => import("./tools/ortto.jsx"));
+const act_on = React.lazy(() => import("./tools/act-on.jsx"));
+const sharpspring = React.lazy(() => import("./tools/sharpspring.jsx"));
+const eloqua = React.lazy(() => import("./tools/eloqua.jsx"));
+const marketo = React.lazy(() => import("./tools/marketo.jsx"));
+const autopilothq = React.lazy(() => import("./tools/autopilothq.jsx"));
+const mautic = React.lazy(() => import("./tools/mautic.jsx"));
+const systeme_io = React.lazy(() => import("./tools/systeme-io.jsx"));
+const groovefunnels = React.lazy(() => import("./tools/groovefunnels.jsx"));
+const builderall = React.lazy(() => import("./tools/builderall.jsx"));
+const kartra = React.lazy(() => import("./tools/kartra.jsx"));
+const samcart = React.lazy(() => import("./tools/samcart.jsx"));
+const leadpages_ai_builder = React.lazy(() => import("./tools/leadpages-ai-builder.jsx"));
+const swipe_pages = React.lazy(() => import("./tools/swipe-pages.jsx"));
+const tars = React.lazy(() => import("./tools/tars.jsx"));
+const landbot = React.lazy(() => import("./tools/landbot.jsx"));
+const microsoft_clarity = React.lazy(() => import("./tools/microsoft-clarity.jsx"));
+const mouseflow = React.lazy(() => import("./tools/mouseflow.jsx"));
+const fullstory = React.lazy(() => import("./tools/fullstory.jsx"));
+const inspectlet = React.lazy(() => import("./tools/inspectlet.jsx"));
+const crazy_egg_ai = React.lazy(() => import("./tools/crazy-egg-ai.jsx"));
+const ab_tasty = React.lazy(() => import("./tools/ab-tasty.jsx"));
+const omniconvert = React.lazy(() => import("./tools/omniconvert.jsx"));
+const optimizely = React.lazy(() => import("./tools/optimizely.jsx"));
+const convert_com = React.lazy(() => import("./tools/convert-com.jsx"));
+const segment = React.lazy(() => import("./tools/segment.jsx"));
+const mixpanel = React.lazy(() => import("./tools/mixpanel.jsx"));
+const amplitude = React.lazy(() => import("./tools/amplitude.jsx"));
+const heap = React.lazy(() => import("./tools/heap.jsx"));
+const woopra = React.lazy(() => import("./tools/woopra.jsx"));
+const snowplow = React.lazy(() => import("./tools/snowplow.jsx"));
+const funnel_io = React.lazy(() => import("./tools/funnel-io.jsx"));
+const improvely = React.lazy(() => import("./tools/improvely.jsx"));
+const triple_whale = React.lazy(() => import("./tools/triple-whale.jsx"));
+const anytrack = React.lazy(() => import("./tools/anytrack.jsx"));
+const wicked_reports = React.lazy(() => import("./tools/wicked-reports.jsx"));
+const attributionapp = React.lazy(() => import("./tools/attributionapp.jsx"));
+const adespresso = React.lazy(() => import("./tools/adespresso.jsx"));
+const revealbot = React.lazy(() => import("./tools/revealbot.jsx"));
+const madgicx = React.lazy(() => import("./tools/madgicx.jsx"));
+const hyros = React.lazy(() => import("./tools/hyros.jsx"));
+const trackify = React.lazy(() => import("./tools/trackify.jsx"));
+const voluum_dsp = React.lazy(() => import("./tools/voluum-dsp.jsx"));
+const optmyzr = React.lazy(() => import("./tools/optmyzr.jsx"));
+const adzooma = React.lazy(() => import("./tools/adzooma.jsx"));
+const stackadapt = React.lazy(() => import("./tools/stackadapt.jsx"));
+const thetradedesk = React.lazy(() => import("./tools/thetradedesk.jsx"));
+const rtbhouse = React.lazy(() => import("./tools/rtbhouse.jsx"));
+const taboola = React.lazy(() => import("./tools/taboola.jsx"));
+const outbrain = React.lazy(() => import("./tools/outbrain.jsx"));
+const mgid = React.lazy(() => import("./tools/mgid.jsx"));
+const zemanta = React.lazy(() => import("./tools/zemanta.jsx"));
+const upfluence = React.lazy(() => import("./tools/upfluence.jsx"));
+const grin = React.lazy(() => import("./tools/grin.jsx"));
+const aspireiq = React.lazy(() => import("./tools/aspireiq.jsx"));
+const creator_co = React.lazy(() => import("./tools/creator-co.jsx"));
+const klear = React.lazy(() => import("./tools/klear.jsx"));
+const heepsy = React.lazy(() => import("./tools/heepsy.jsx"));
+const modash = React.lazy(() => import("./tools/modash.jsx"));
+const metricool = React.lazy(() => import("./tools/metricool.jsx"));
+const planoly = React.lazy(() => import("./tools/planoly.jsx"));
+const plann = React.lazy(() => import("./tools/plann.jsx"));
+const postly = React.lazy(() => import("./tools/postly.jsx"));
+const socialbee = React.lazy(() => import("./tools/socialbee.jsx"));
+const loomly = React.lazy(() => import("./tools/loomly.jsx"));
+const buffer_ai = React.lazy(() => import("./tools/buffer-ai.jsx"));
+const ripl = React.lazy(() => import("./tools/ripl.jsx"));
+const sendible = React.lazy(() => import("./tools/sendible.jsx"));
+const privy = React.lazy(() => import("./tools/privy.jsx"));
+const vitals = React.lazy(() => import("./tools/vitals.jsx"));
+const reconvert = React.lazy(() => import("./tools/reconvert.jsx"));
+const loox = React.lazy(() => import("./tools/loox.jsx"));
+const yotpo = React.lazy(() => import("./tools/yotpo.jsx"));
+const judge_me = React.lazy(() => import("./tools/judge-me.jsx"));
+const stamped_io = React.lazy(() => import("./tools/stamped-io.jsx"));
+const tidio_for_shopify = React.lazy(() => import("./tools/tidio-for-shopify.jsx"));
+const basecamp = React.lazy(() => import("./tools/basecamp.jsx"));
+const wrike = React.lazy(() => import("./tools/wrike.jsx"));
+const zoho_projects = React.lazy(() => import("./tools/zoho-projects.jsx"));
+const hive = React.lazy(() => import("./tools/hive.jsx"));
+const meistertask = React.lazy(() => import("./tools/meistertask.jsx"));
+const todoist_business = React.lazy(() => import("./tools/todoist-business.jsx"));
+const smartsheet = React.lazy(() => import("./tools/smartsheet.jsx"));
+const scoro = React.lazy(() => import("./tools/scoro.jsx"));
+const ntask = React.lazy(() => import("./tools/ntask.jsx"));
+const kantata_mavenlink = React.lazy(() => import("./tools/kantata-mavenlink.jsx"));
+const salesforce = React.lazy(() => import("./tools/salesforce.jsx"));
+const close_com = React.lazy(() => import("./tools/close-com.jsx"));
+const zoho_crm = React.lazy(() => import("./tools/zoho-crm.jsx"));
+const nutshell_crm = React.lazy(() => import("./tools/nutshell-crm.jsx"));
+const copper_crm = React.lazy(() => import("./tools/copper-crm.jsx"));
+const freshsales = React.lazy(() => import("./tools/freshsales.jsx"));
+const salesmate = React.lazy(() => import("./tools/salesmate.jsx"));
+const zendesk_sell = React.lazy(() => import("./tools/zendesk-sell.jsx"));
+const pipeliner_crm = React.lazy(() => import("./tools/pipeliner-crm.jsx"));
+const helpcrunch = React.lazy(() => import("./tools/helpcrunch.jsx"));
+const groovehq = React.lazy(() => import("./tools/groovehq.jsx"));
+const kayako = React.lazy(() => import("./tools/kayako.jsx"));
+const helpjuice = React.lazy(() => import("./tools/helpjuice.jsx"));
+const liveagent = React.lazy(() => import("./tools/liveagent.jsx"));
+const toggl = React.lazy(() => import("./tools/toggl.jsx"));
+const clockify = React.lazy(() => import("./tools/clockify.jsx"));
+const time_doctor = React.lazy(() => import("./tools/time-doctor.jsx"));
+const harvest = React.lazy(() => import("./tools/harvest.jsx"));
+const hubstaff = React.lazy(() => import("./tools/hubstaff.jsx"));
+const rescuetime = React.lazy(() => import("./tools/rescuetime.jsx"));
+const everhour = React.lazy(() => import("./tools/everhour.jsx"));
+const quickbooks_online = React.lazy(() => import("./tools/quickbooks-online.jsx"));
+const xero = React.lazy(() => import("./tools/xero.jsx"));
+const wave_accounting = React.lazy(() => import("./tools/wave-accounting.jsx"));
+const freshbooks = React.lazy(() => import("./tools/freshbooks.jsx"));
+const zoho_books = React.lazy(() => import("./tools/zoho-books.jsx"));
+const chargebee = React.lazy(() => import("./tools/chargebee.jsx"));
+const recurly = React.lazy(() => import("./tools/recurly.jsx"));
+const paddle_billing = React.lazy(() => import("./tools/paddle-billing.jsx"));
+const bamboohr = React.lazy(() => import("./tools/bamboohr.jsx"));
+const gusto = React.lazy(() => import("./tools/gusto.jsx"));
+const rippling = React.lazy(() => import("./tools/rippling.jsx"));
+const deel = React.lazy(() => import("./tools/deel.jsx"));
+const remote_com = React.lazy(() => import("./tools/remote-com.jsx"));
+const paychex = React.lazy(() => import("./tools/paychex.jsx"));
+const justworks = React.lazy(() => import("./tools/justworks.jsx"));
+const zoho_people = React.lazy(() => import("./tools/zoho-people.jsx"));
+const factorialhr = React.lazy(() => import("./tools/factorialhr.jsx"));
+const hibob = React.lazy(() => import("./tools/hibob.jsx"));
+const klipfolio = React.lazy(() => import("./tools/klipfolio.jsx"));
+const domo = React.lazy(() => import("./tools/domo.jsx"));
+const looker = React.lazy(() => import("./tools/looker.jsx"));
+const sisense = React.lazy(() => import("./tools/sisense.jsx"));
+const clicdata = React.lazy(() => import("./tools/clicdata.jsx"));
+const cyfe = React.lazy(() => import("./tools/cyfe.jsx"));
+const workamajig = React.lazy(() => import("./tools/workamajig.jsx"));
+const productive_io = React.lazy(() => import("./tools/productive-io.jsx"));
+const functionpoint = React.lazy(() => import("./tools/functionpoint.jsx"));
+const accelo = React.lazy(() => import("./tools/accelo.jsx"));
+const teamwork = React.lazy(() => import("./tools/teamwork.jsx"));
+const agiled = React.lazy(() => import("./tools/agiled.jsx"));
+const plutio = React.lazy(() => import("./tools/plutio.jsx"));
+const clientjoy = React.lazy(() => import("./tools/clientjoy.jsx"));
+const bonsai = React.lazy(() => import("./tools/bonsai.jsx"));
+const google_workspace = React.lazy(() => import("./tools/google-workspace.jsx"));
+const microsoft_365 = React.lazy(() => import("./tools/microsoft-365.jsx"));
+const proton_drive = React.lazy(() => import("./tools/proton-drive.jsx"));
+const icedrive = React.lazy(() => import("./tools/icedrive.jsx"));
+const tresorit = React.lazy(() => import("./tools/tresorit.jsx"));
+const bubble = React.lazy(() => import("./tools/bubble.jsx"));
+const adalo = React.lazy(() => import("./tools/adalo.jsx"));
+const glide = React.lazy(() => import("./tools/glide.jsx"));
+const softr = React.lazy(() => import("./tools/softr.jsx"));
+const bildr = React.lazy(() => import("./tools/bildr.jsx"));
+const stacker = React.lazy(() => import("./tools/stacker.jsx"));
+const weweb = React.lazy(() => import("./tools/weweb.jsx"));
+const tilda = React.lazy(() => import("./tools/tilda.jsx"));
+const figma = React.lazy(() => import("./tools/figma.jsx"));
+const adobe_xd = React.lazy(() => import("./tools/adobe-xd.jsx"));
+const sketch = React.lazy(() => import("./tools/sketch.jsx"));
+const affinity_designer = React.lazy(() => import("./tools/affinity-designer.jsx"));
+const gravit_designer = React.lazy(() => import("./tools/gravit-designer.jsx"));
+const coreldraw = React.lazy(() => import("./tools/coreldraw.jsx"));
+const vectr = React.lazy(() => import("./tools/vectr.jsx"));
+const protopie = React.lazy(() => import("./tools/protopie.jsx"));
+const marvel = React.lazy(() => import("./tools/marvel.jsx"));
+const invision = React.lazy(() => import("./tools/invision.jsx"));
+const zeplin = React.lazy(() => import("./tools/zeplin.jsx"));
+const slite = React.lazy(() => import("./tools/slite.jsx"));
+const coda = React.lazy(() => import("./tools/coda.jsx"));
+const confluence = React.lazy(() => import("./tools/confluence.jsx"));
+const documentationhq = React.lazy(() => import("./tools/documentationhq.jsx"));
+const github = React.lazy(() => import("./tools/github.jsx"));
+const gitlab = React.lazy(() => import("./tools/gitlab.jsx"));
+const bitbucket = React.lazy(() => import("./tools/bitbucket.jsx"));
+const render = React.lazy(() => import("./tools/render.jsx"));
+const vercel = React.lazy(() => import("./tools/vercel.jsx"));
+const netlify = React.lazy(() => import("./tools/netlify.jsx"));
+const railway = React.lazy(() => import("./tools/railway.jsx"));
+const supabase = React.lazy(() => import("./tools/supabase.jsx"));
+const firebase = React.lazy(() => import("./tools/firebase.jsx"));
+const appwrite = React.lazy(() => import("./tools/appwrite.jsx"));
+const hasura = React.lazy(() => import("./tools/hasura.jsx"));
+const planetscale = React.lazy(() => import("./tools/planetscale.jsx"));
+const neon_tech = React.lazy(() => import("./tools/neon-tech.jsx"));
+const recharge_subscriptions = React.lazy(() => import("./tools/recharge-subscriptions.jsx"));
+const bold_commerce = React.lazy(() => import("./tools/bold-commerce.jsx"));
+const gorgias = React.lazy(() => import("./tools/gorgias.jsx"));
+const rebuy = React.lazy(() => import("./tools/rebuy.jsx"));
+const klaviyo_cdp = React.lazy(() => import("./tools/klaviyo-cdp.jsx"));
+const attentive = React.lazy(() => import("./tools/attentive.jsx"));
+const smsbump = React.lazy(() => import("./tools/smsbump.jsx"));
+const postscript = React.lazy(() => import("./tools/postscript.jsx"));
+const route = React.lazy(() => import("./tools/route.jsx"));
+const aftership = React.lazy(() => import("./tools/aftership.jsx"));
+const wonderment = React.lazy(() => import("./tools/wonderment.jsx"));
+const nosto = React.lazy(() => import("./tools/nosto.jsx"));
+const bloomreach = React.lazy(() => import("./tools/bloomreach.jsx"));
+const klaviyo_reviews = React.lazy(() => import("./tools/klaviyo-reviews.jsx"));
+const triple_whale_pixel = React.lazy(() => import("./tools/triple-whale-pixel.jsx"));
+const peel_insights = React.lazy(() => import("./tools/peel-insights.jsx"));
+const junip_reviews = React.lazy(() => import("./tools/junip-reviews.jsx"));
+const okendo = React.lazy(() => import("./tools/okendo.jsx"));
+const aovboost = React.lazy(() => import("./tools/aovboost.jsx"));
+const dovetale = React.lazy(() => import("./tools/dovetale.jsx"));
+const gatsby = React.lazy(() => import("./tools/gatsby.jsx"));
+const alloy_automation = React.lazy(() => import("./tools/alloy-automation.jsx"));
+const shyp = React.lazy(() => import("./tools/shyp.jsx"));
+const skio = React.lazy(() => import("./tools/skio.jsx"));
+const smartrr = React.lazy(() => import("./tools/smartrr.jsx"));
+const lifetimely = React.lazy(() => import("./tools/lifetimely.jsx"));
+const daasity = React.lazy(() => import("./tools/daasity.jsx"));
+const malomo = React.lazy(() => import("./tools/malomo.jsx"));
+const litcommerce = React.lazy(() => import("./tools/litcommerce.jsx"));
+const spently = React.lazy(() => import("./tools/spently.jsx"));
+const carthook = React.lazy(() => import("./tools/carthook.jsx"));
+const uppromote = React.lazy(() => import("./tools/uppromote.jsx"));
+const cmp_semrush_vs_ahrefs = React.lazy(() => import("./compare/semrush-vs-ahrefs.jsx"));
+const cmp_zapier_vs_make_vs_pabbly = React.lazy(() => import("./compare/zapier-vs-make-vs-pabbly.jsx"));
+const cmp_zapier_vs_hubspot_vs_activecampaign = React.lazy(() => import("./compare/zapier-vs-hubspot-vs-activecampaign.jsx"));
+const cmp_yoast_seo_vs_rank_math_vs_all_in_one_seo = React.lazy(() => import("./compare/yoast-seo-vs-rank-math-vs-all-in-one-seo.jsx"));
+const cmp_yoast_seo_vs_seopress_vs_rank_math = React.lazy(() => import("./compare/yoast-seo-vs-seopress-vs-rank-math.jsx"));
+const cmp_writesonic_vs_jasper_vs_rytr = React.lazy(() => import("./compare/writesonic-vs-jasper-vs-rytr.jsx"));
+const cmp_writesonic_vs_jasper_vs_quillbot = React.lazy(() => import("./compare/writesonic-vs-jasper-vs-quillbot.jsx"));
+const cmp_wp_rocket_vs_perfmatters_vs_cloudways = React.lazy(() => import("./compare/wp-rocket-vs-perfmatters-vs-cloudways.jsx"));
+const cmp_wp_rocket_vs_perfmatters_vs_siteground = React.lazy(() => import("./compare/wp-rocket-vs-perfmatters-vs-siteground.jsx"));
+const cmp_wp_engine_vs_cloudways_vs_siteground = React.lazy(() => import("./compare/wp-engine-vs-cloudways-vs-siteground.jsx"));
+const cmp_webflow_vs_framer_vs_wix = React.lazy(() => import("./compare/webflow-vs-framer-vs-wix.jsx"));
+const cmp_hubspot_vs_pipedrive_vs_zoho = React.lazy(() => import("./compare/hubspot-vs-pipedrive-vs-zoho.jsx"));
+const cmp_klaviyo_vs_omnisend_vs_mailerlite = React.lazy(() => import("./compare/klaviyo-vs-omnisend-vs-mailerlite.jsx"));
+const cmp_kinsta_vs_wp_engine_vs_rocket_net = React.lazy(() => import("./compare/kinsta-vs-wp-engine-vs-rocket-net.jsx"));
+const cmp_synthesia_vs_pictory_vs_descript = React.lazy(() => import("./compare/synthesia-vs-pictory-vs-descript.jsx"));
+const cmp_fathom_vs_plausible_vs_ga4 = React.lazy(() => import("./compare/fathom-vs-plausible-vs-ga4.jsx"));
+const cmp_buffer_vs_hootsuite_vs_later = React.lazy(() => import("./compare/buffer-vs-hootsuite-vs-later.jsx"));
+const cmp_brevo_vs_activecampaign_vs_convertkit = React.lazy(() => import("./compare/brevo-vs-activecampaign-vs-convertkit.jsx"));
+const cmp_cloudways_vs_digitalocean_vs_vultr = React.lazy(() => import("./compare/cloudways-vs-digitalocean-vs-vultr.jsx"));
+const cmp_wistia_vs_vimeo_vs_loom = React.lazy(() => import("./compare/wistia-vs-vimeo-vs-loom.jsx"));
+const cmp_thrivecart_vs_cartflows_vs_shopify_checkout = React.lazy(() => import("./compare/thrivecart-vs-cartflows-vs-shopify-checkout.jsx"));
+const cmp_zoom_vs_microsoft_teams_vs_google_meet = React.lazy(() => import("./compare/zoom-vs-microsoft-teams-vs-google-meet.jsx"));
+const cmp_zendesk_vs_freshdesk_vs_zoho_desk = React.lazy(() => import("./compare/zendesk-vs-freshdesk-vs-zoho-desk.jsx"));
+const cmp_sync_com_vs_dropbox_vs_pcloud = React.lazy(() => import("./compare/sync-com-vs-dropbox-vs-pcloud.jsx"));
+const cmp_surveymonkey_vs_typeform_vs_jotform = React.lazy(() => import("./compare/surveymonkey-vs-typeform-vs-jotform.jsx"));
+const cmp_surfshark_vs_nordvpn_vs_expressvpn = React.lazy(() => import("./compare/surfshark-vs-nordvpn-vs-expressvpn.jsx"));
+const cmp_surfer_seo_vs_semrush_vs_se_ranking = React.lazy(() => import("./compare/surfer-seo-vs-semrush-vs-se-ranking.jsx"));
+const cmp_stripe_vs_paddle_vs_lemon_squeezy = React.lazy(() => import("./compare/stripe-vs-paddle-vs-lemon-squeezy.jsx"));
+const cmp_squarespace_vs_wix_vs_shopify = React.lazy(() => import("./compare/squarespace-vs-wix-vs-shopify.jsx"));
+const cmp_zoho_desk_vs_zendesk = React.lazy(() => import("./compare/zoho-desk-vs-zendesk.jsx"));
+const cmp_shipstation_vs_shipbob_vs_shopify = React.lazy(() => import("./compare/shipstation-vs-shipbob-vs-shopify.jsx"));
+const cmp_synthesia_vs_pictory_vs_veed = React.lazy(() => import("./compare/synthesia-vs-pictory-vs-veed.jsx"));
+const cmp_tailwind_vs_elementor_vs_divi = React.lazy(() => import("./compare/tailwind-vs-elementor-vs-divi.jsx"));
+const cmp_tailwind_vs_webflow_vs_framer = React.lazy(() => import("./compare/tailwind-vs-webflow-vs-framer.jsx"));
+const cmp_tally_vs_typeform_vs_jotform = React.lazy(() => import("./compare/tally-vs-typeform-vs-jotform.jsx"));
+const cmp_teachable_vs_kajabi_vs_podia = React.lazy(() => import("./compare/teachable-vs-kajabi-vs-podia.jsx"));
+const cmp_thinkific_vs_kajabi_vs_podia = React.lazy(() => import("./compare/thinkific-vs-kajabi-vs-podia.jsx"));
+const cmp_thinkific_vs_teachable_vs_kajabi = React.lazy(() => import("./compare/thinkific-vs-teachable-vs-kajabi.jsx"));
+const cmp_thrivecart_vs_cartflows_vs_woocommerce = React.lazy(() => import("./compare/thrivecart-vs-cartflows-vs-woocommerce.jsx"));
+const cmp_tidio_vs_crisp_vs_livechat = React.lazy(() => import("./compare/tidio-vs-crisp-vs-livechat.jsx"));
+const cmp_tidio_vs_intercom_vs_helpscout = React.lazy(() => import("./compare/tidio-vs-intercom-vs-helpscout.jsx"));
+const cmp_trello_vs_asana_vs_monday = React.lazy(() => import("./compare/trello-vs-asana-vs-monday.jsx"));
+const cmp_trello_vs_clickup_vs_notion = React.lazy(() => import("./compare/trello-vs-clickup-vs-notion.jsx"));
+const cmp_typeform_vs_jotform_vs_paperform = React.lazy(() => import("./compare/typeform-vs-jotform-vs-paperform.jsx"));
+const cmp_typeform_vs_surveymonkey_vs_tally = React.lazy(() => import("./compare/typeform-vs-surveymonkey-vs-tally.jsx"));
+const cmp_ubersuggest_vs_se_ranking_vs_moz_pro = React.lazy(() => import("./compare/ubersuggest-vs-se-ranking-vs-moz-pro.jsx"));
+const cmp_ubersuggest_vs_semrush_vs_ahrefs = React.lazy(() => import("./compare/ubersuggest-vs-semrush-vs-ahrefs.jsx"));
+const cmp_unbounce_vs_instapage_vs_leadpages = React.lazy(() => import("./compare/unbounce-vs-instapage-vs-leadpages.jsx"));
+const cmp_unbounce_vs_landingi_vs_webflow = React.lazy(() => import("./compare/unbounce-vs-landingi-vs-webflow.jsx"));
+const cmp_landingi_vs_unbounce_vs_instapage = React.lazy(() => import("./compare/landingi-vs-unbounce-vs-instapage.jsx"));
+const cmp_veed_vs_descript_vs_kapwing = React.lazy(() => import("./compare/veed-vs-descript-vs-kapwing.jsx"));
+const cmp_kapwing_vs_canva_vs_invideo = React.lazy(() => import("./compare/kapwing-vs-canva-vs-invideo.jsx"));
+const cmp_veed_vs_invideo_vs_canva = React.lazy(() => import("./compare/veed-vs-invideo-vs-canva.jsx"));
+const cmp_vidiq_vs_tubebuddy_vs_invideo = React.lazy(() => import("./compare/vidiq-vs-tubebuddy-vs-invideo.jsx"));
+const cmp_vidiq_vs_tubebuddy_vs_pictory = React.lazy(() => import("./compare/vidiq-vs-tubebuddy-vs-pictory.jsx"));
+const cmp_voluum_vs_redtrack_vs_clickmagick = React.lazy(() => import("./compare/voluum-vs-redtrack-vs-clickmagick.jsx"));
+const cmp_voluum_vs_redtrack_vs_hyros = React.lazy(() => import("./compare/voluum-vs-redtrack-vs-hyros.jsx"));
+const cmp_vultr_vs_digitalocean_vs_siteground = React.lazy(() => import("./compare/vultr-vs-digitalocean-vs-siteground.jsx"));
+const cmp_vwo_vs_hotjar_vs_crazy_egg = React.lazy(() => import("./compare/vwo-vs-hotjar-vs-crazy-egg.jsx"));
+const cmp_vwo_vs_hotjar_vs_lucky_orange = React.lazy(() => import("./compare/vwo-vs-hotjar-vs-lucky-orange.jsx"));
+const cmp_lucky_orange_vs_hotjar_vs_crazy_egg = React.lazy(() => import("./compare/lucky-orange-vs-hotjar-vs-crazy-egg.jsx"));
+const cmp_webex_vs_zoom_vs_google_meet = React.lazy(() => import("./compare/webex-vs-zoom-vs-google-meet.jsx"));
+const cmp_webex_vs_zoom_vs_microsoft_teams = React.lazy(() => import("./compare/webex-vs-zoom-vs-microsoft-teams.jsx"));
+const cmp_webflow_vs_wordpress_vs_squarespace = React.lazy(() => import("./compare/webflow-vs-wordpress-vs-squarespace.jsx"));
+const cmp_webinarjam_vs_demio_vs_goto_meeting = React.lazy(() => import("./compare/webinarjam-vs-demio-vs-goto-meeting.jsx"));
+const cmp_webinarjam_vs_demio_vs_zoom = React.lazy(() => import("./compare/webinarjam-vs-demio-vs-zoom.jsx"));
+const cmp_whereby_vs_zoom_vs_google_meet = React.lazy(() => import("./compare/whereby-vs-zoom-vs-google-meet.jsx"));
+const cmp_whereby_vs_zoom_vs_microsoft_teams = React.lazy(() => import("./compare/whereby-vs-zoom-vs-microsoft-teams.jsx"));
+const cmp_wistia_vs_vimeo_vs_descript = React.lazy(() => import("./compare/wistia-vs-vimeo-vs-descript.jsx"));
+const cmp_woocommerce_vs_shopify_vs_bigcommerce = React.lazy(() => import("./compare/woocommerce-vs-shopify-vs-bigcommerce.jsx"));
+const cmp_woocommerce_vs_shopify_vs_wix = React.lazy(() => import("./compare/woocommerce-vs-shopify-vs-wix.jsx"));
+const cmp_customgpt_ai_vs_jasper_ai_vs_writesonic = React.lazy(() => import("./compare/customgpt-ai-vs-jasper-ai-vs-writesonic.jsx"));
+const cmp_customgpt_ai_vs_rytr_vs_quillbot = React.lazy(() => import("./compare/customgpt-ai-vs-rytr-vs-quillbot.jsx"));
+
+export const toolRoutes = [
+  { path: "/tools/semrush", element: React.createElement(semrush) },
+  { path: "/tools/se-ranking", element: React.createElement(se_ranking) },
+  { path: "/tools/mangools", element: React.createElement(mangools) },
+  { path: "/tools/serpstat", element: React.createElement(serpstat) },
+  { path: "/tools/moz-pro", element: React.createElement(moz_pro) },
+  { path: "/tools/ahrefs", element: React.createElement(ahrefs) },
+  { path: "/tools/ubersuggest", element: React.createElement(ubersuggest) },
+  { path: "/tools/rank-math", element: React.createElement(rank_math) },
+  { path: "/tools/yoast-seo", element: React.createElement(yoast_seo) },
+  { path: "/tools/seopress", element: React.createElement(seopress) },
+  { path: "/tools/all-in-one-seo", element: React.createElement(all_in_one_seo) },
+  { path: "/tools/surfer-seo", element: React.createElement(surfer_seo) },
+  { path: "/tools/hubspot", element: React.createElement(hubspot) },
+  { path: "/tools/getresponse", element: React.createElement(getresponse) },
+  { path: "/tools/aweber", element: React.createElement(aweber) },
+  { path: "/tools/convertkit", element: React.createElement(convertkit) },
+  { path: "/tools/activecampaign", element: React.createElement(activecampaign) },
+  { path: "/tools/mailerlite", element: React.createElement(mailerlite) },
+  { path: "/tools/omnisend", element: React.createElement(omnisend) },
+  { path: "/tools/brevo", element: React.createElement(brevo) },
+  { path: "/tools/klaviyo", element: React.createElement(klaviyo) },
+  { path: "/tools/beehiiv", element: React.createElement(beehiiv) },
+  { path: "/tools/unbounce", element: React.createElement(unbounce) },
+  { path: "/tools/instapage", element: React.createElement(instapage) },
+  { path: "/tools/leadpages", element: React.createElement(leadpages) },
+  { path: "/tools/landingi", element: React.createElement(landingi) },
+  { path: "/tools/vwo", element: React.createElement(vwo) },
+  { path: "/tools/crazy-egg", element: React.createElement(crazy_egg) },
+  { path: "/tools/hotjar", element: React.createElement(hotjar) },
+  { path: "/tools/lucky-orange", element: React.createElement(lucky_orange) },
+  { path: "/tools/shopify", element: React.createElement(shopify) },
+  { path: "/tools/bigcommerce", element: React.createElement(bigcommerce) },
+  { path: "/tools/woocommerce", element: React.createElement(woocommerce) },
+  { path: "/tools/wix", element: React.createElement(wix) },
+  { path: "/tools/squarespace", element: React.createElement(squarespace) },
+  { path: "/tools/webflow", element: React.createElement(webflow) },
+  { path: "/tools/framer", element: React.createElement(framer) },
+  { path: "/tools/carrd", element: React.createElement(carrd) },
+  { path: "/tools/elementor", element: React.createElement(elementor) },
+  { path: "/tools/divi", element: React.createElement(divi) },
+  { path: "/tools/envato", element: React.createElement(envato) },
+  { path: "/tools/bluehost", element: React.createElement(bluehost) },
+  { path: "/tools/hostinger", element: React.createElement(hostinger) },
+  { path: "/tools/siteground", element: React.createElement(siteground) },
+  { path: "/tools/wp-engine", element: React.createElement(wp_engine) },
+  { path: "/tools/kinsta", element: React.createElement(kinsta) },
+  { path: "/tools/cloudways", element: React.createElement(cloudways) },
+  { path: "/tools/a2-hosting", element: React.createElement(a2_hosting) },
+  { path: "/tools/namecheap", element: React.createElement(namecheap) },
+  { path: "/tools/godaddy", element: React.createElement(godaddy) },
+  { path: "/tools/digitalocean", element: React.createElement(digitalocean) },
+  { path: "/tools/vultr", element: React.createElement(vultr) },
+  { path: "/tools/bunny-net", element: React.createElement(bunny_net) },
+  { path: "/tools/rocket-net", element: React.createElement(rocket_net) },
+  { path: "/tools/clickmagick", element: React.createElement(clickmagick) },
+  { path: "/tools/fathom-analytics", element: React.createElement(fathom_analytics) },
+  { path: "/tools/plausible", element: React.createElement(plausible) },
+  { path: "/tools/matomo", element: React.createElement(matomo) },
+  { path: "/tools/monsterinsights", element: React.createElement(monsterinsights) },
+  { path: "/tools/buffer", element: React.createElement(buffer) },
+  { path: "/tools/hootsuite", element: React.createElement(hootsuite) },
+  { path: "/tools/later", element: React.createElement(later) },
+  { path: "/tools/socialpilot", element: React.createElement(socialpilot) },
+  { path: "/tools/tailwind", element: React.createElement(tailwind) },
+  { path: "/tools/zapier", element: React.createElement(zapier) },
+  { path: "/tools/make", element: React.createElement(make) },
+  { path: "/tools/pabbly", element: React.createElement(pabbly) },
+  { path: "/tools/canva", element: React.createElement(canva) },
+  { path: "/tools/descript", element: React.createElement(descript) },
+  { path: "/tools/pictory", element: React.createElement(pictory) },
+  { path: "/tools/veed", element: React.createElement(veed) },
+  { path: "/tools/invideo", element: React.createElement(invideo) },
+  { path: "/tools/kapwing", element: React.createElement(kapwing) },
+  { path: "/tools/synthesia", element: React.createElement(synthesia) },
+  { path: "/tools/quillbot", element: React.createElement(quillbot) },
+  { path: "/tools/grammarly", element: React.createElement(grammarly) },
+  { path: "/tools/prowritingaid", element: React.createElement(prowritingaid) },
+  { path: "/tools/rytr", element: React.createElement(rytr) },
+  { path: "/tools/writesonic", element: React.createElement(writesonic) },
+  { path: "/tools/jasper-ai", element: React.createElement(jasper_ai) },
+  { path: "/tools/customgpt-ai", element: React.createElement(customgpt_ai) },
+  { path: "/tools/midjourney", element: React.createElement(midjourney) },
+  { path: "/tools/icons8", element: React.createElement(icons8) },
+  { path: "/tools/envira-gallery", element: React.createElement(envira_gallery) },
+  { path: "/tools/clickup", element: React.createElement(clickup) },
+  { path: "/tools/monday", element: React.createElement(monday) },
+  { path: "/tools/asana", element: React.createElement(asana) },
+  { path: "/tools/trello", element: React.createElement(trello) },
+  { path: "/tools/notion", element: React.createElement(notion) },
+  { path: "/tools/airtable", element: React.createElement(airtable) },
+  { path: "/tools/zoho", element: React.createElement(zoho) },
+  { path: "/tools/pipedrive", element: React.createElement(pipedrive) },
+  { path: "/tools/freshworks", element: React.createElement(freshworks) },
+  { path: "/tools/freshdesk", element: React.createElement(freshdesk) },
+  { path: "/tools/zoho-desk", element: React.createElement(zoho_desk) },
+  { path: "/tools/zendesk", element: React.createElement(zendesk) },
+  { path: "/tools/helpscout", element: React.createElement(helpscout) },
+  { path: "/tools/document360", element: React.createElement(document360) },
+  { path: "/tools/intercom", element: React.createElement(intercom) },
+  { path: "/tools/livechat", element: React.createElement(livechat) },
+  { path: "/tools/tidio", element: React.createElement(tidio) },
+  { path: "/tools/crisp", element: React.createElement(crisp) },
+  { path: "/tools/teachable", element: React.createElement(teachable) },
+  { path: "/tools/thinkific", element: React.createElement(thinkific) },
+  { path: "/tools/kajabi", element: React.createElement(kajabi) },
+  { path: "/tools/podia", element: React.createElement(podia) },
+  { path: "/tools/gumroad", element: React.createElement(gumroad) },
+  { path: "/tools/paddle", element: React.createElement(paddle) },
+  { path: "/tools/lemon-squeezy", element: React.createElement(lemon_squeezy) },
+  { path: "/tools/stripe", element: React.createElement(stripe) },
+  { path: "/tools/nordvpn", element: React.createElement(nordvpn) },
+  { path: "/tools/surfshark", element: React.createElement(surfshark) },
+  { path: "/tools/expressvpn", element: React.createElement(expressvpn) },
+  { path: "/tools/pcloud", element: React.createElement(pcloud) },
+  { path: "/tools/sync-com", element: React.createElement(sync_com) },
+  { path: "/tools/dropbox", element: React.createElement(dropbox) },
+  { path: "/tools/onedrive", element: React.createElement(onedrive) },
+  { path: "/tools/box", element: React.createElement(box) },
+  { path: "/tools/vimeo", element: React.createElement(vimeo) },
+  { path: "/tools/wistia", element: React.createElement(wistia) },
+  { path: "/tools/loom", element: React.createElement(loom) },
+  { path: "/tools/zoom", element: React.createElement(zoom) },
+  { path: "/tools/typeform", element: React.createElement(typeform) },
+  { path: "/tools/jotform", element: React.createElement(jotform) },
+  { path: "/tools/paperform", element: React.createElement(paperform) },
+  { path: "/tools/tally", element: React.createElement(tally) },
+  { path: "/tools/surveymonkey", element: React.createElement(surveymonkey) },
+  { path: "/tools/printful", element: React.createElement(printful) },
+  { path: "/tools/printify", element: React.createElement(printify) },
+  { path: "/tools/shipstation", element: React.createElement(shipstation) },
+  { path: "/tools/shipbob", element: React.createElement(shipbob) },
+  { path: "/tools/voluum", element: React.createElement(voluum) },
+  { path: "/tools/redtrack", element: React.createElement(redtrack) },
+  { path: "/tools/thrivecart", element: React.createElement(thrivecart) },
+  { path: "/tools/cartflows", element: React.createElement(cartflows) },
+  { path: "/tools/wp-rocket", element: React.createElement(wp_rocket) },
+  { path: "/tools/perfmatters", element: React.createElement(perfmatters) },
+  { path: "/tools/seedprod", element: React.createElement(seedprod) },
+  { path: "/tools/optinmonster", element: React.createElement(optinmonster) },
+  { path: "/tools/tubebuddy", element: React.createElement(tubebuddy) },
+  { path: "/tools/vidiq", element: React.createElement(vidiq) },
+  { path: "/tools/riverside", element: React.createElement(riverside) },
+  { path: "/tools/restream", element: React.createElement(restream) },
+  { path: "/tools/webinarjam", element: React.createElement(webinarjam) },
+  { path: "/tools/demio", element: React.createElement(demio) },
+  { path: "/tools/canva-creators", element: React.createElement(canva_creators) },
+  { path: "/tools/microsoft-teams", element: React.createElement(microsoft_teams) },
+  { path: "/tools/google-meet", element: React.createElement(google_meet) },
+  { path: "/tools/webex", element: React.createElement(webex) },
+  { path: "/tools/goto-meeting", element: React.createElement(goto_meeting) },
+  { path: "/tools/whereby", element: React.createElement(whereby) },
+  { path: "/tools/anyword", element: React.createElement(anyword) },
+  { path: "/tools/neuroflash", element: React.createElement(neuroflash) },
+  { path: "/tools/hyperwrite", element: React.createElement(hyperwrite) },
+  { path: "/tools/textcortex", element: React.createElement(textcortex) },
+  { path: "/tools/sudowrite", element: React.createElement(sudowrite) },
+  { path: "/tools/writer-com", element: React.createElement(writer_com) },
+  { path: "/tools/longshot-ai", element: React.createElement(longshot_ai) },
+  { path: "/tools/peppertype-ai", element: React.createElement(peppertype_ai) },
+  { path: "/tools/contentbot", element: React.createElement(contentbot) },
+  { path: "/tools/kafkai", element: React.createElement(kafkai) },
+  { path: "/tools/article-forge", element: React.createElement(article_forge) },
+  { path: "/tools/scalenut", element: React.createElement(scalenut) },
+  { path: "/tools/aiseo", element: React.createElement(aiseo) },
+  { path: "/tools/writesonic-chatsonic", element: React.createElement(writesonic_chatsonic) },
+  { path: "/tools/moonbeam-ai", element: React.createElement(moonbeam_ai) },
+  { path: "/tools/copylime", element: React.createElement(copylime) },
+  { path: "/tools/copyleaks", element: React.createElement(copyleaks) },
+  { path: "/tools/outranking-io", element: React.createElement(outranking_io) },
+  { path: "/tools/frase-io", element: React.createElement(frase_io) },
+  { path: "/tools/clearscope", element: React.createElement(clearscope) },
+  { path: "/tools/growthbar", element: React.createElement(growthbar) },
+  { path: "/tools/ink-editor", element: React.createElement(ink_editor) },
+  { path: "/tools/scite-ai", element: React.createElement(scite_ai) },
+  { path: "/tools/koalawriter", element: React.createElement(koalawriter) },
+  { path: "/tools/zimmwriter", element: React.createElement(zimmwriter) },
+  { path: "/tools/paragraphai", element: React.createElement(paragraphai) },
+  { path: "/tools/essaybot", element: React.createElement(essaybot) },
+  { path: "/tools/justdone-ai", element: React.createElement(justdone_ai) },
+  { path: "/tools/you-com-write", element: React.createElement(you_com_write) },
+  { path: "/tools/klazify", element: React.createElement(klazify) },
+  { path: "/tools/heygen", element: React.createElement(heygen) },
+  { path: "/tools/rephrase-ai", element: React.createElement(rephrase_ai) },
+  { path: "/tools/d-id", element: React.createElement(d_id) },
+  { path: "/tools/colossyan", element: React.createElement(colossyan) },
+  { path: "/tools/runwayml", element: React.createElement(runwayml) },
+  { path: "/tools/descript-overdub", element: React.createElement(descript_overdub) },
+  { path: "/tools/synthesys", element: React.createElement(synthesys) },
+  { path: "/tools/elai-io", element: React.createElement(elai_io) },
+  { path: "/tools/veed-ai", element: React.createElement(veed_ai) },
+  { path: "/tools/lumen5-ai", element: React.createElement(lumen5_ai) },
+  { path: "/tools/kapwing-ai", element: React.createElement(kapwing_ai) },
+  { path: "/tools/flexclip-ai", element: React.createElement(flexclip_ai) },
+  { path: "/tools/invideo-io-ai-modes", element: React.createElement(invideo_io_ai_modes) },
+  { path: "/tools/pictory-ai", element: React.createElement(pictory_ai) },
+  { path: "/tools/raw-shorts", element: React.createElement(raw_shorts) },
+  { path: "/tools/wibbitz", element: React.createElement(wibbitz) },
+  { path: "/tools/animaker-ai", element: React.createElement(animaker_ai) },
+  { path: "/tools/wave-video", element: React.createElement(wave_video) },
+  { path: "/tools/biteable", element: React.createElement(biteable) },
+  { path: "/tools/wisecut", element: React.createElement(wisecut) },
+  { path: "/tools/stable-diffusion", element: React.createElement(stable_diffusion) },
+  { path: "/tools/leonardo-ai", element: React.createElement(leonardo_ai) },
+  { path: "/tools/firefly-adobe", element: React.createElement(firefly_adobe) },
+  { path: "/tools/canva-ai-magic-studio", element: React.createElement(canva_ai_magic_studio) },
+  { path: "/tools/fotor-ai", element: React.createElement(fotor_ai) },
+  { path: "/tools/picsart-ai", element: React.createElement(picsart_ai) },
+  { path: "/tools/remove-bg", element: React.createElement(remove_bg) },
+  { path: "/tools/cleanup-pictures", element: React.createElement(cleanup_pictures) },
+  { path: "/tools/hotpot-ai", element: React.createElement(hotpot_ai) },
+  { path: "/tools/clipdrop", element: React.createElement(clipdrop) },
+  { path: "/tools/photoroom", element: React.createElement(photoroom) },
+  { path: "/tools/stockai", element: React.createElement(stockai) },
+  { path: "/tools/craiyon", element: React.createElement(craiyon) },
+  { path: "/tools/dreamstudio", element: React.createElement(dreamstudio) },
+  { path: "/tools/playgroundai", element: React.createElement(playgroundai) },
+  { path: "/tools/nightcafe", element: React.createElement(nightcafe) },
+  { path: "/tools/artbreeder", element: React.createElement(artbreeder) },
+  { path: "/tools/relaythat", element: React.createElement(relaythat) },
+  { path: "/tools/elevenlabs", element: React.createElement(elevenlabs) },
+  { path: "/tools/murf-ai", element: React.createElement(murf_ai) },
+  { path: "/tools/play-ht", element: React.createElement(play_ht) },
+  { path: "/tools/speechelo", element: React.createElement(speechelo) },
+  { path: "/tools/listnr", element: React.createElement(listnr) },
+  { path: "/tools/lovo-ai", element: React.createElement(lovo_ai) },
+  { path: "/tools/voicely", element: React.createElement(voicely) },
+  { path: "/tools/wellsaid-labs", element: React.createElement(wellsaid_labs) },
+  { path: "/tools/resemble-ai", element: React.createElement(resemble_ai) },
+  { path: "/tools/altered-studio", element: React.createElement(altered_studio) },
+  { path: "/tools/krisp-ai", element: React.createElement(krisp_ai) },
+  { path: "/tools/cleanvoice-ai", element: React.createElement(cleanvoice_ai) },
+  { path: "/tools/descript-studio-sound", element: React.createElement(descript_studio_sound) },
+  { path: "/tools/auphonic-ai", element: React.createElement(auphonic_ai) },
+  { path: "/tools/chatgpt", element: React.createElement(chatgpt) },
+  { path: "/tools/claude", element: React.createElement(claude) },
+  { path: "/tools/perplexity-ai", element: React.createElement(perplexity_ai) },
+  { path: "/tools/characterai", element: React.createElement(characterai) },
+  { path: "/tools/poe", element: React.createElement(poe) },
+  { path: "/tools/pi-ai", element: React.createElement(pi_ai) },
+  { path: "/tools/agentgpt", element: React.createElement(agentgpt) },
+  { path: "/tools/autogpt", element: React.createElement(autogpt) },
+  { path: "/tools/superagi", element: React.createElement(superagi) },
+  { path: "/tools/langchain", element: React.createElement(langchain) },
+  { path: "/tools/flowiseai", element: React.createElement(flowiseai) },
+  { path: "/tools/zapier-ai-actions", element: React.createElement(zapier_ai_actions) },
+  { path: "/tools/make-com-ai-agents", element: React.createElement(make_com_ai_agents) },
+  { path: "/tools/botpress-ai", element: React.createElement(botpress_ai) },
+  { path: "/tools/tidio-ai", element: React.createElement(tidio_ai) },
+  { path: "/tools/intercom-finai", element: React.createElement(intercom_finai) },
+  { path: "/tools/drift-ai", element: React.createElement(drift_ai) },
+  { path: "/tools/zendesk-ai-agents", element: React.createElement(zendesk_ai_agents) },
+  { path: "/tools/airtable-ai", element: React.createElement(airtable_ai) },
+  { path: "/tools/notion-ai", element: React.createElement(notion_ai) },
+  { path: "/tools/clickup-ai", element: React.createElement(clickup_ai) },
+  { path: "/tools/motion-ai", element: React.createElement(motion_ai) },
+  { path: "/tools/taskade-ai", element: React.createElement(taskade_ai) },
+  { path: "/tools/fireflies-ai", element: React.createElement(fireflies_ai) },
+  { path: "/tools/otter-ai", element: React.createElement(otter_ai) },
+  { path: "/tools/superhuman-ai", element: React.createElement(superhuman_ai) },
+  { path: "/tools/magical-ai", element: React.createElement(magical_ai) },
+  { path: "/tools/sanebox-ai", element: React.createElement(sanebox_ai) },
+  { path: "/tools/bardeen-ai", element: React.createElement(bardeen_ai) },
+  { path: "/tools/sheetai", element: React.createElement(sheetai) },
+  { path: "/tools/rows-ai", element: React.createElement(rows_ai) },
+  { path: "/tools/webscraperai", element: React.createElement(webscraperai) },
+  { path: "/tools/marketmuse", element: React.createElement(marketmuse) },
+  { path: "/tools/surfer-ai-mode", element: React.createElement(surfer_ai_mode) },
+  { path: "/tools/page-optimizer-pro", element: React.createElement(page_optimizer_pro) },
+  { path: "/tools/neuronwriter", element: React.createElement(neuronwriter) },
+  { path: "/tools/seo-assistant-semrush-ai", element: React.createElement(seo_assistant_semrush_ai) },
+  { path: "/tools/keywordinsights-ai", element: React.createElement(keywordinsights_ai) },
+  { path: "/tools/lowfruits", element: React.createElement(lowfruits) },
+  { path: "/tools/rankiq", element: React.createElement(rankiq) },
+  { path: "/tools/topicmojo", element: React.createElement(topicmojo) },
+  { path: "/tools/keyword-chef", element: React.createElement(keyword_chef) },
+  { path: "/tools/aiseo-keyword-mode", element: React.createElement(aiseo_keyword_mode) },
+  { path: "/tools/akkio-ai", element: React.createElement(akkio_ai) },
+  { path: "/tools/obviously-ai", element: React.createElement(obviously_ai) },
+  { path: "/tools/levity-ai", element: React.createElement(levity_ai) },
+  { path: "/tools/sisense-ai", element: React.createElement(sisense_ai) },
+  { path: "/tools/tableau-ai", element: React.createElement(tableau_ai) },
+  { path: "/tools/powerbi-ai", element: React.createElement(powerbi_ai) },
+  { path: "/tools/polymersearch", element: React.createElement(polymersearch) },
+  { path: "/tools/metabase-ai", element: React.createElement(metabase_ai) },
+  { path: "/tools/contentstudio-ai", element: React.createElement(contentstudio_ai) },
+  { path: "/tools/predis-ai", element: React.createElement(predis_ai) },
+  { path: "/tools/postwise", element: React.createElement(postwise) },
+  { path: "/tools/feedhive-ai", element: React.createElement(feedhive_ai) },
+  { path: "/tools/hoppycopy", element: React.createElement(hoppycopy) },
+  { path: "/tools/brightedge", element: React.createElement(brightedge) },
+  { path: "/tools/conductor", element: React.createElement(conductor) },
+  { path: "/tools/botify", element: React.createElement(botify) },
+  { path: "/tools/deepcrawl", element: React.createElement(deepcrawl) },
+  { path: "/tools/screamingfrog", element: React.createElement(screamingfrog) },
+  { path: "/tools/sitebulb", element: React.createElement(sitebulb) },
+  { path: "/tools/ryte", element: React.createElement(ryte) },
+  { path: "/tools/seoclarity", element: React.createElement(seoclarity) },
+  { path: "/tools/cognitiveseo", element: React.createElement(cognitiveseo) },
+  { path: "/tools/keywordtool-io", element: React.createElement(keywordtool_io) },
+  { path: "/tools/ranktracker", element: React.createElement(ranktracker) },
+  { path: "/tools/spyfu", element: React.createElement(spyfu) },
+  { path: "/tools/similarweb", element: React.createElement(similarweb) },
+  { path: "/tools/majestic-seo", element: React.createElement(majestic_seo) },
+  { path: "/tools/searchmetrics", element: React.createElement(searchmetrics) },
+  { path: "/tools/moosend", element: React.createElement(moosend) },
+  { path: "/tools/sendgrid", element: React.createElement(sendgrid) },
+  { path: "/tools/campaign-monitor", element: React.createElement(campaign_monitor) },
+  { path: "/tools/drip", element: React.createElement(drip) },
+  { path: "/tools/mailpoet", element: React.createElement(mailpoet) },
+  { path: "/tools/mailgun", element: React.createElement(mailgun) },
+  { path: "/tools/constant-contact", element: React.createElement(constant_contact) },
+  { path: "/tools/zoho-campaigns", element: React.createElement(zoho_campaigns) },
+  { path: "/tools/convertful", element: React.createElement(convertful) },
+  { path: "/tools/smartwriter-ai", element: React.createElement(smartwriter_ai) },
+  { path: "/tools/keap-infusionsoft", element: React.createElement(keap_infusionsoft) },
+  { path: "/tools/ontraport", element: React.createElement(ontraport) },
+  { path: "/tools/ortto", element: React.createElement(ortto) },
+  { path: "/tools/act-on", element: React.createElement(act_on) },
+  { path: "/tools/sharpspring", element: React.createElement(sharpspring) },
+  { path: "/tools/eloqua", element: React.createElement(eloqua) },
+  { path: "/tools/marketo", element: React.createElement(marketo) },
+  { path: "/tools/autopilothq", element: React.createElement(autopilothq) },
+  { path: "/tools/mautic", element: React.createElement(mautic) },
+  { path: "/tools/systeme-io", element: React.createElement(systeme_io) },
+  { path: "/tools/groovefunnels", element: React.createElement(groovefunnels) },
+  { path: "/tools/builderall", element: React.createElement(builderall) },
+  { path: "/tools/kartra", element: React.createElement(kartra) },
+  { path: "/tools/samcart", element: React.createElement(samcart) },
+  { path: "/tools/leadpages-ai-builder", element: React.createElement(leadpages_ai_builder) },
+  { path: "/tools/swipe-pages", element: React.createElement(swipe_pages) },
+  { path: "/tools/tars", element: React.createElement(tars) },
+  { path: "/tools/landbot", element: React.createElement(landbot) },
+  { path: "/tools/microsoft-clarity", element: React.createElement(microsoft_clarity) },
+  { path: "/tools/mouseflow", element: React.createElement(mouseflow) },
+  { path: "/tools/fullstory", element: React.createElement(fullstory) },
+  { path: "/tools/inspectlet", element: React.createElement(inspectlet) },
+  { path: "/tools/crazy-egg-ai", element: React.createElement(crazy_egg_ai) },
+  { path: "/tools/ab-tasty", element: React.createElement(ab_tasty) },
+  { path: "/tools/omniconvert", element: React.createElement(omniconvert) },
+  { path: "/tools/optimizely", element: React.createElement(optimizely) },
+  { path: "/tools/convert-com", element: React.createElement(convert_com) },
+  { path: "/tools/segment", element: React.createElement(segment) },
+  { path: "/tools/mixpanel", element: React.createElement(mixpanel) },
+  { path: "/tools/amplitude", element: React.createElement(amplitude) },
+  { path: "/tools/heap", element: React.createElement(heap) },
+  { path: "/tools/woopra", element: React.createElement(woopra) },
+  { path: "/tools/snowplow", element: React.createElement(snowplow) },
+  { path: "/tools/funnel-io", element: React.createElement(funnel_io) },
+  { path: "/tools/improvely", element: React.createElement(improvely) },
+  { path: "/tools/triple-whale", element: React.createElement(triple_whale) },
+  { path: "/tools/anytrack", element: React.createElement(anytrack) },
+  { path: "/tools/wicked-reports", element: React.createElement(wicked_reports) },
+  { path: "/tools/attributionapp", element: React.createElement(attributionapp) },
+  { path: "/tools/adespresso", element: React.createElement(adespresso) },
+  { path: "/tools/revealbot", element: React.createElement(revealbot) },
+  { path: "/tools/madgicx", element: React.createElement(madgicx) },
+  { path: "/tools/hyros", element: React.createElement(hyros) },
+  { path: "/tools/trackify", element: React.createElement(trackify) },
+  { path: "/tools/voluum-dsp", element: React.createElement(voluum_dsp) },
+  { path: "/tools/optmyzr", element: React.createElement(optmyzr) },
+  { path: "/tools/adzooma", element: React.createElement(adzooma) },
+  { path: "/tools/stackadapt", element: React.createElement(stackadapt) },
+  { path: "/tools/thetradedesk", element: React.createElement(thetradedesk) },
+  { path: "/tools/rtbhouse", element: React.createElement(rtbhouse) },
+  { path: "/tools/taboola", element: React.createElement(taboola) },
+  { path: "/tools/outbrain", element: React.createElement(outbrain) },
+  { path: "/tools/mgid", element: React.createElement(mgid) },
+  { path: "/tools/zemanta", element: React.createElement(zemanta) },
+  { path: "/tools/upfluence", element: React.createElement(upfluence) },
+  { path: "/tools/grin", element: React.createElement(grin) },
+  { path: "/tools/aspireiq", element: React.createElement(aspireiq) },
+  { path: "/tools/creator-co", element: React.createElement(creator_co) },
+  { path: "/tools/klear", element: React.createElement(klear) },
+  { path: "/tools/heepsy", element: React.createElement(heepsy) },
+  { path: "/tools/modash", element: React.createElement(modash) },
+  { path: "/tools/metricool", element: React.createElement(metricool) },
+  { path: "/tools/planoly", element: React.createElement(planoly) },
+  { path: "/tools/plann", element: React.createElement(plann) },
+  { path: "/tools/postly", element: React.createElement(postly) },
+  { path: "/tools/socialbee", element: React.createElement(socialbee) },
+  { path: "/tools/loomly", element: React.createElement(loomly) },
+  { path: "/tools/buffer-ai", element: React.createElement(buffer_ai) },
+  { path: "/tools/ripl", element: React.createElement(ripl) },
+  { path: "/tools/sendible", element: React.createElement(sendible) },
+  { path: "/tools/privy", element: React.createElement(privy) },
+  { path: "/tools/vitals", element: React.createElement(vitals) },
+  { path: "/tools/reconvert", element: React.createElement(reconvert) },
+  { path: "/tools/loox", element: React.createElement(loox) },
+  { path: "/tools/yotpo", element: React.createElement(yotpo) },
+  { path: "/tools/judge-me", element: React.createElement(judge_me) },
+  { path: "/tools/stamped-io", element: React.createElement(stamped_io) },
+  { path: "/tools/tidio-for-shopify", element: React.createElement(tidio_for_shopify) },
+  { path: "/tools/basecamp", element: React.createElement(basecamp) },
+  { path: "/tools/wrike", element: React.createElement(wrike) },
+  { path: "/tools/zoho-projects", element: React.createElement(zoho_projects) },
+  { path: "/tools/hive", element: React.createElement(hive) },
+  { path: "/tools/meistertask", element: React.createElement(meistertask) },
+  { path: "/tools/todoist-business", element: React.createElement(todoist_business) },
+  { path: "/tools/smartsheet", element: React.createElement(smartsheet) },
+  { path: "/tools/scoro", element: React.createElement(scoro) },
+  { path: "/tools/ntask", element: React.createElement(ntask) },
+  { path: "/tools/kantata-mavenlink", element: React.createElement(kantata_mavenlink) },
+  { path: "/tools/salesforce", element: React.createElement(salesforce) },
+  { path: "/tools/close-com", element: React.createElement(close_com) },
+  { path: "/tools/zoho-crm", element: React.createElement(zoho_crm) },
+  { path: "/tools/nutshell-crm", element: React.createElement(nutshell_crm) },
+  { path: "/tools/copper-crm", element: React.createElement(copper_crm) },
+  { path: "/tools/freshsales", element: React.createElement(freshsales) },
+  { path: "/tools/salesmate", element: React.createElement(salesmate) },
+  { path: "/tools/zendesk-sell", element: React.createElement(zendesk_sell) },
+  { path: "/tools/pipeliner-crm", element: React.createElement(pipeliner_crm) },
+  { path: "/tools/helpcrunch", element: React.createElement(helpcrunch) },
+  { path: "/tools/groovehq", element: React.createElement(groovehq) },
+  { path: "/tools/kayako", element: React.createElement(kayako) },
+  { path: "/tools/helpjuice", element: React.createElement(helpjuice) },
+  { path: "/tools/liveagent", element: React.createElement(liveagent) },
+  { path: "/tools/toggl", element: React.createElement(toggl) },
+  { path: "/tools/clockify", element: React.createElement(clockify) },
+  { path: "/tools/time-doctor", element: React.createElement(time_doctor) },
+  { path: "/tools/harvest", element: React.createElement(harvest) },
+  { path: "/tools/hubstaff", element: React.createElement(hubstaff) },
+  { path: "/tools/rescuetime", element: React.createElement(rescuetime) },
+  { path: "/tools/everhour", element: React.createElement(everhour) },
+  { path: "/tools/quickbooks-online", element: React.createElement(quickbooks_online) },
+  { path: "/tools/xero", element: React.createElement(xero) },
+  { path: "/tools/wave-accounting", element: React.createElement(wave_accounting) },
+  { path: "/tools/freshbooks", element: React.createElement(freshbooks) },
+  { path: "/tools/zoho-books", element: React.createElement(zoho_books) },
+  { path: "/tools/chargebee", element: React.createElement(chargebee) },
+  { path: "/tools/recurly", element: React.createElement(recurly) },
+  { path: "/tools/paddle-billing", element: React.createElement(paddle_billing) },
+  { path: "/tools/bamboohr", element: React.createElement(bamboohr) },
+  { path: "/tools/gusto", element: React.createElement(gusto) },
+  { path: "/tools/rippling", element: React.createElement(rippling) },
+  { path: "/tools/deel", element: React.createElement(deel) },
+  { path: "/tools/remote-com", element: React.createElement(remote_com) },
+  { path: "/tools/paychex", element: React.createElement(paychex) },
+  { path: "/tools/justworks", element: React.createElement(justworks) },
+  { path: "/tools/zoho-people", element: React.createElement(zoho_people) },
+  { path: "/tools/factorialhr", element: React.createElement(factorialhr) },
+  { path: "/tools/hibob", element: React.createElement(hibob) },
+  { path: "/tools/klipfolio", element: React.createElement(klipfolio) },
+  { path: "/tools/domo", element: React.createElement(domo) },
+  { path: "/tools/looker", element: React.createElement(looker) },
+  { path: "/tools/sisense", element: React.createElement(sisense) },
+  { path: "/tools/clicdata", element: React.createElement(clicdata) },
+  { path: "/tools/cyfe", element: React.createElement(cyfe) },
+  { path: "/tools/workamajig", element: React.createElement(workamajig) },
+  { path: "/tools/productive-io", element: React.createElement(productive_io) },
+  { path: "/tools/functionpoint", element: React.createElement(functionpoint) },
+  { path: "/tools/accelo", element: React.createElement(accelo) },
+  { path: "/tools/teamwork", element: React.createElement(teamwork) },
+  { path: "/tools/agiled", element: React.createElement(agiled) },
+  { path: "/tools/plutio", element: React.createElement(plutio) },
+  { path: "/tools/clientjoy", element: React.createElement(clientjoy) },
+  { path: "/tools/bonsai", element: React.createElement(bonsai) },
+  { path: "/tools/google-workspace", element: React.createElement(google_workspace) },
+  { path: "/tools/microsoft-365", element: React.createElement(microsoft_365) },
+  { path: "/tools/proton-drive", element: React.createElement(proton_drive) },
+  { path: "/tools/icedrive", element: React.createElement(icedrive) },
+  { path: "/tools/tresorit", element: React.createElement(tresorit) },
+  { path: "/tools/bubble", element: React.createElement(bubble) },
+  { path: "/tools/adalo", element: React.createElement(adalo) },
+  { path: "/tools/glide", element: React.createElement(glide) },
+  { path: "/tools/softr", element: React.createElement(softr) },
+  { path: "/tools/bildr", element: React.createElement(bildr) },
+  { path: "/tools/stacker", element: React.createElement(stacker) },
+  { path: "/tools/weweb", element: React.createElement(weweb) },
+  { path: "/tools/tilda", element: React.createElement(tilda) },
+  { path: "/tools/figma", element: React.createElement(figma) },
+  { path: "/tools/adobe-xd", element: React.createElement(adobe_xd) },
+  { path: "/tools/sketch", element: React.createElement(sketch) },
+  { path: "/tools/affinity-designer", element: React.createElement(affinity_designer) },
+  { path: "/tools/gravit-designer", element: React.createElement(gravit_designer) },
+  { path: "/tools/coreldraw", element: React.createElement(coreldraw) },
+  { path: "/tools/vectr", element: React.createElement(vectr) },
+  { path: "/tools/protopie", element: React.createElement(protopie) },
+  { path: "/tools/marvel", element: React.createElement(marvel) },
+  { path: "/tools/invision", element: React.createElement(invision) },
+  { path: "/tools/zeplin", element: React.createElement(zeplin) },
+  { path: "/tools/slite", element: React.createElement(slite) },
+  { path: "/tools/coda", element: React.createElement(coda) },
+  { path: "/tools/confluence", element: React.createElement(confluence) },
+  { path: "/tools/documentationhq", element: React.createElement(documentationhq) },
+  { path: "/tools/github", element: React.createElement(github) },
+  { path: "/tools/gitlab", element: React.createElement(gitlab) },
+  { path: "/tools/bitbucket", element: React.createElement(bitbucket) },
+  { path: "/tools/render", element: React.createElement(render) },
+  { path: "/tools/vercel", element: React.createElement(vercel) },
+  { path: "/tools/netlify", element: React.createElement(netlify) },
+  { path: "/tools/railway", element: React.createElement(railway) },
+  { path: "/tools/supabase", element: React.createElement(supabase) },
+  { path: "/tools/firebase", element: React.createElement(firebase) },
+  { path: "/tools/appwrite", element: React.createElement(appwrite) },
+  { path: "/tools/hasura", element: React.createElement(hasura) },
+  { path: "/tools/planetscale", element: React.createElement(planetscale) },
+  { path: "/tools/neon-tech", element: React.createElement(neon_tech) },
+  { path: "/tools/recharge-subscriptions", element: React.createElement(recharge_subscriptions) },
+  { path: "/tools/bold-commerce", element: React.createElement(bold_commerce) },
+  { path: "/tools/gorgias", element: React.createElement(gorgias) },
+  { path: "/tools/rebuy", element: React.createElement(rebuy) },
+  { path: "/tools/klaviyo-cdp", element: React.createElement(klaviyo_cdp) },
+  { path: "/tools/attentive", element: React.createElement(attentive) },
+  { path: "/tools/smsbump", element: React.createElement(smsbump) },
+  { path: "/tools/postscript", element: React.createElement(postscript) },
+  { path: "/tools/route", element: React.createElement(route) },
+  { path: "/tools/aftership", element: React.createElement(aftership) },
+  { path: "/tools/wonderment", element: React.createElement(wonderment) },
+  { path: "/tools/nosto", element: React.createElement(nosto) },
+  { path: "/tools/bloomreach", element: React.createElement(bloomreach) },
+  { path: "/tools/klaviyo-reviews", element: React.createElement(klaviyo_reviews) },
+  { path: "/tools/triple-whale-pixel", element: React.createElement(triple_whale_pixel) },
+  { path: "/tools/peel-insights", element: React.createElement(peel_insights) },
+  { path: "/tools/junip-reviews", element: React.createElement(junip_reviews) },
+  { path: "/tools/okendo", element: React.createElement(okendo) },
+  { path: "/tools/aovboost", element: React.createElement(aovboost) },
+  { path: "/tools/dovetale", element: React.createElement(dovetale) },
+  { path: "/tools/gatsby", element: React.createElement(gatsby) },
+  { path: "/tools/alloy-automation", element: React.createElement(alloy_automation) },
+  { path: "/tools/shyp", element: React.createElement(shyp) },
+  { path: "/tools/skio", element: React.createElement(skio) },
+  { path: "/tools/smartrr", element: React.createElement(smartrr) },
+  { path: "/tools/lifetimely", element: React.createElement(lifetimely) },
+  { path: "/tools/daasity", element: React.createElement(daasity) },
+  { path: "/tools/malomo", element: React.createElement(malomo) },
+  { path: "/tools/litcommerce", element: React.createElement(litcommerce) },
+  { path: "/tools/spently", element: React.createElement(spently) },
+  { path: "/tools/carthook", element: React.createElement(carthook) },
+  { path: "/tools/uppromote", element: React.createElement(uppromote) },
+];
+
+export const comparisonRoutes = [
+  { path: "/tools/compare/semrush-vs-ahrefs", element: React.createElement(cmp_semrush_vs_ahrefs) },
+  { path: "/tools/compare/zapier-vs-make-vs-pabbly", element: React.createElement(cmp_zapier_vs_make_vs_pabbly) },
+  { path: "/tools/compare/zapier-vs-hubspot-vs-activecampaign", element: React.createElement(cmp_zapier_vs_hubspot_vs_activecampaign) },
+  { path: "/tools/compare/yoast-seo-vs-rank-math-vs-all-in-one-seo", element: React.createElement(cmp_yoast_seo_vs_rank_math_vs_all_in_one_seo) },
+  { path: "/tools/compare/yoast-seo-vs-seopress-vs-rank-math", element: React.createElement(cmp_yoast_seo_vs_seopress_vs_rank_math) },
+  { path: "/tools/compare/writesonic-vs-jasper-vs-rytr", element: React.createElement(cmp_writesonic_vs_jasper_vs_rytr) },
+  { path: "/tools/compare/writesonic-vs-jasper-vs-quillbot", element: React.createElement(cmp_writesonic_vs_jasper_vs_quillbot) },
+  { path: "/tools/compare/wp-rocket-vs-perfmatters-vs-cloudways", element: React.createElement(cmp_wp_rocket_vs_perfmatters_vs_cloudways) },
+  { path: "/tools/compare/wp-rocket-vs-perfmatters-vs-siteground", element: React.createElement(cmp_wp_rocket_vs_perfmatters_vs_siteground) },
+  { path: "/tools/compare/wp-engine-vs-cloudways-vs-siteground", element: React.createElement(cmp_wp_engine_vs_cloudways_vs_siteground) },
+  { path: "/tools/compare/webflow-vs-framer-vs-wix", element: React.createElement(cmp_webflow_vs_framer_vs_wix) },
+  { path: "/tools/compare/hubspot-vs-pipedrive-vs-zoho", element: React.createElement(cmp_hubspot_vs_pipedrive_vs_zoho) },
+  { path: "/tools/compare/klaviyo-vs-omnisend-vs-mailerlite", element: React.createElement(cmp_klaviyo_vs_omnisend_vs_mailerlite) },
+  { path: "/tools/compare/kinsta-vs-wp-engine-vs-rocket-net", element: React.createElement(cmp_kinsta_vs_wp_engine_vs_rocket_net) },
+  { path: "/tools/compare/synthesia-vs-pictory-vs-descript", element: React.createElement(cmp_synthesia_vs_pictory_vs_descript) },
+  { path: "/tools/compare/fathom-vs-plausible-vs-ga4", element: React.createElement(cmp_fathom_vs_plausible_vs_ga4) },
+  { path: "/tools/compare/buffer-vs-hootsuite-vs-later", element: React.createElement(cmp_buffer_vs_hootsuite_vs_later) },
+  { path: "/tools/compare/brevo-vs-activecampaign-vs-convertkit", element: React.createElement(cmp_brevo_vs_activecampaign_vs_convertkit) },
+  { path: "/tools/compare/cloudways-vs-digitalocean-vs-vultr", element: React.createElement(cmp_cloudways_vs_digitalocean_vs_vultr) },
+  { path: "/tools/compare/wistia-vs-vimeo-vs-loom", element: React.createElement(cmp_wistia_vs_vimeo_vs_loom) },
+  { path: "/tools/compare/thrivecart-vs-cartflows-vs-shopify-checkout", element: React.createElement(cmp_thrivecart_vs_cartflows_vs_shopify_checkout) },
+  { path: "/tools/compare/zoom-vs-microsoft-teams-vs-google-meet", element: React.createElement(cmp_zoom_vs_microsoft_teams_vs_google_meet) },
+  { path: "/tools/compare/zendesk-vs-freshdesk-vs-zoho-desk", element: React.createElement(cmp_zendesk_vs_freshdesk_vs_zoho_desk) },
+  { path: "/tools/compare/sync-com-vs-dropbox-vs-pcloud", element: React.createElement(cmp_sync_com_vs_dropbox_vs_pcloud) },
+  { path: "/tools/compare/surveymonkey-vs-typeform-vs-jotform", element: React.createElement(cmp_surveymonkey_vs_typeform_vs_jotform) },
+  { path: "/tools/compare/surfshark-vs-nordvpn-vs-expressvpn", element: React.createElement(cmp_surfshark_vs_nordvpn_vs_expressvpn) },
+  { path: "/tools/compare/surfer-seo-vs-semrush-vs-se-ranking", element: React.createElement(cmp_surfer_seo_vs_semrush_vs_se_ranking) },
+  { path: "/tools/compare/stripe-vs-paddle-vs-lemon-squeezy", element: React.createElement(cmp_stripe_vs_paddle_vs_lemon_squeezy) },
+  { path: "/tools/compare/squarespace-vs-wix-vs-shopify", element: React.createElement(cmp_squarespace_vs_wix_vs_shopify) },
+  { path: "/tools/compare/zoho-desk-vs-zendesk", element: React.createElement(cmp_zoho_desk_vs_zendesk) },
+  { path: "/tools/compare/shipstation-vs-shipbob-vs-shopify", element: React.createElement(cmp_shipstation_vs_shipbob_vs_shopify) },
+  { path: "/tools/compare/synthesia-vs-pictory-vs-veed", element: React.createElement(cmp_synthesia_vs_pictory_vs_veed) },
+  { path: "/tools/compare/tailwind-vs-elementor-vs-divi", element: React.createElement(cmp_tailwind_vs_elementor_vs_divi) },
+  { path: "/tools/compare/tailwind-vs-webflow-vs-framer", element: React.createElement(cmp_tailwind_vs_webflow_vs_framer) },
+  { path: "/tools/compare/tally-vs-typeform-vs-jotform", element: React.createElement(cmp_tally_vs_typeform_vs_jotform) },
+  { path: "/tools/compare/teachable-vs-kajabi-vs-podia", element: React.createElement(cmp_teachable_vs_kajabi_vs_podia) },
+  { path: "/tools/compare/thinkific-vs-kajabi-vs-podia", element: React.createElement(cmp_thinkific_vs_kajabi_vs_podia) },
+  { path: "/tools/compare/thinkific-vs-teachable-vs-kajabi", element: React.createElement(cmp_thinkific_vs_teachable_vs_kajabi) },
+  { path: "/tools/compare/thrivecart-vs-cartflows-vs-woocommerce", element: React.createElement(cmp_thrivecart_vs_cartflows_vs_woocommerce) },
+  { path: "/tools/compare/tidio-vs-crisp-vs-livechat", element: React.createElement(cmp_tidio_vs_crisp_vs_livechat) },
+  { path: "/tools/compare/tidio-vs-intercom-vs-helpscout", element: React.createElement(cmp_tidio_vs_intercom_vs_helpscout) },
+  { path: "/tools/compare/trello-vs-asana-vs-monday", element: React.createElement(cmp_trello_vs_asana_vs_monday) },
+  { path: "/tools/compare/trello-vs-clickup-vs-notion", element: React.createElement(cmp_trello_vs_clickup_vs_notion) },
+  { path: "/tools/compare/typeform-vs-jotform-vs-paperform", element: React.createElement(cmp_typeform_vs_jotform_vs_paperform) },
+  { path: "/tools/compare/typeform-vs-surveymonkey-vs-tally", element: React.createElement(cmp_typeform_vs_surveymonkey_vs_tally) },
+  { path: "/tools/compare/ubersuggest-vs-se-ranking-vs-moz-pro", element: React.createElement(cmp_ubersuggest_vs_se_ranking_vs_moz_pro) },
+  { path: "/tools/compare/ubersuggest-vs-semrush-vs-ahrefs", element: React.createElement(cmp_ubersuggest_vs_semrush_vs_ahrefs) },
+  { path: "/tools/compare/unbounce-vs-instapage-vs-leadpages", element: React.createElement(cmp_unbounce_vs_instapage_vs_leadpages) },
+  { path: "/tools/compare/unbounce-vs-landingi-vs-webflow", element: React.createElement(cmp_unbounce_vs_landingi_vs_webflow) },
+  { path: "/tools/compare/landingi-vs-unbounce-vs-instapage", element: React.createElement(cmp_landingi_vs_unbounce_vs_instapage) },
+  { path: "/tools/compare/veed-vs-descript-vs-kapwing", element: React.createElement(cmp_veed_vs_descript_vs_kapwing) },
+  { path: "/tools/compare/kapwing-vs-canva-vs-invideo", element: React.createElement(cmp_kapwing_vs_canva_vs_invideo) },
+  { path: "/tools/compare/veed-vs-invideo-vs-canva", element: React.createElement(cmp_veed_vs_invideo_vs_canva) },
+  { path: "/tools/compare/vidiq-vs-tubebuddy-vs-invideo", element: React.createElement(cmp_vidiq_vs_tubebuddy_vs_invideo) },
+  { path: "/tools/compare/vidiq-vs-tubebuddy-vs-pictory", element: React.createElement(cmp_vidiq_vs_tubebuddy_vs_pictory) },
+  { path: "/tools/compare/voluum-vs-redtrack-vs-clickmagick", element: React.createElement(cmp_voluum_vs_redtrack_vs_clickmagick) },
+  { path: "/tools/compare/voluum-vs-redtrack-vs-hyros", element: React.createElement(cmp_voluum_vs_redtrack_vs_hyros) },
+  { path: "/tools/compare/vultr-vs-digitalocean-vs-siteground", element: React.createElement(cmp_vultr_vs_digitalocean_vs_siteground) },
+  { path: "/tools/compare/vwo-vs-hotjar-vs-crazy-egg", element: React.createElement(cmp_vwo_vs_hotjar_vs_crazy_egg) },
+  { path: "/tools/compare/vwo-vs-hotjar-vs-lucky-orange", element: React.createElement(cmp_vwo_vs_hotjar_vs_lucky_orange) },
+  { path: "/tools/compare/lucky-orange-vs-hotjar-vs-crazy-egg", element: React.createElement(cmp_lucky_orange_vs_hotjar_vs_crazy_egg) },
+  { path: "/tools/compare/webex-vs-zoom-vs-google-meet", element: React.createElement(cmp_webex_vs_zoom_vs_google_meet) },
+  { path: "/tools/compare/webex-vs-zoom-vs-microsoft-teams", element: React.createElement(cmp_webex_vs_zoom_vs_microsoft_teams) },
+  { path: "/tools/compare/webflow-vs-wordpress-vs-squarespace", element: React.createElement(cmp_webflow_vs_wordpress_vs_squarespace) },
+  { path: "/tools/compare/webinarjam-vs-demio-vs-goto-meeting", element: React.createElement(cmp_webinarjam_vs_demio_vs_goto_meeting) },
+  { path: "/tools/compare/webinarjam-vs-demio-vs-zoom", element: React.createElement(cmp_webinarjam_vs_demio_vs_zoom) },
+  { path: "/tools/compare/whereby-vs-zoom-vs-google-meet", element: React.createElement(cmp_whereby_vs_zoom_vs_google_meet) },
+  { path: "/tools/compare/whereby-vs-zoom-vs-microsoft-teams", element: React.createElement(cmp_whereby_vs_zoom_vs_microsoft_teams) },
+  { path: "/tools/compare/wistia-vs-vimeo-vs-descript", element: React.createElement(cmp_wistia_vs_vimeo_vs_descript) },
+  { path: "/tools/compare/woocommerce-vs-shopify-vs-bigcommerce", element: React.createElement(cmp_woocommerce_vs_shopify_vs_bigcommerce) },
+  { path: "/tools/compare/woocommerce-vs-shopify-vs-wix", element: React.createElement(cmp_woocommerce_vs_shopify_vs_wix) },
+  { path: "/tools/compare/customgpt-ai-vs-jasper-ai-vs-writesonic", element: React.createElement(cmp_customgpt_ai_vs_jasper_ai_vs_writesonic) },
+  { path: "/tools/compare/customgpt-ai-vs-rytr-vs-quillbot", element: React.createElement(cmp_customgpt_ai_vs_rytr_vs_quillbot) },
+];

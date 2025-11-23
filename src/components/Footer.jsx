@@ -141,6 +141,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link className="hover:text-slate-900" to="/tools">
+                  Tools Hub
+                </Link>
+              </li>
+              <li>
                 <Link className="hover:text-slate-900" to="/privacy-policy">
                   Privacy Policy
                 </Link>
