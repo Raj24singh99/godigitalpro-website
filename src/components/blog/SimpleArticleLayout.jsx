@@ -1,0 +1,164 @@
+import React from "react";
+import OnPageNav from "./OnPageNav.jsx";
+
+function formatDate(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  });
+}
+
+function SectionBlock({ section, index }) {
+  return (
+    <section id={section.id} className="scroll-mt-24">
+      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+        Section {String(index + 1).padStart(2, "0")}
+      </p>
+      <h2>{section.title}</h2>
+
+      {section.summary ? <p className="text-base text-slate-700">{section.summary}</p> : null}
+      {section.lede ? <p className="text-base text-slate-700">{section.lede}</p> : null}
+
+      {section.image ? (
+        <figure className="my-6 overflow-hidden rounded-2xl">
+          <img
+            src={section.image.src}
+            alt={section.image.alt}
+            loading="lazy"
+            className="h-72 w-full object-cover sm:h-80"
+          />
+          {section.image.caption ? (
+            <figcaption className="px-1 py-2 text-sm text-slate-600">{section.image.caption}</figcaption>
+          ) : null}
+        </figure>
+      ) : null}
+
+      {section.paragraphs?.map((para) => (
+        <p key={para} className="text-base text-slate-700">
+          {para}
+        </p>
+      ))}
+
+      {section.perspectives?.length ? (
+        <div className="mt-4 space-y-3">
+          {section.perspectives.map((item) => (
+            <div key={item.title}>
+              <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
+              <p className="text-sm text-slate-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      ) : null}
+
+      {section.plays?.length ? (
+        <div className="mt-4 space-y-2">
+          {section.plays.map((play) => (
+            <div key={play.title}>
+              <h4 className="text-sm font-semibold text-slate-900">{play.title}</h4>
+              <p className="text-sm text-slate-700">{play.detail}</p>
+            </div>
+          ))}
+        </div>
+      ) : null}
+
+      {section.checklist?.items?.length ? (
+        <div className="mt-4">
+          <h3 className="text-base font-semibold text-slate-900">{section.checklist.title || "Checklist"}</h3>
+          <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-slate-700">
+            {section.checklist.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
+      {section.references?.length ? (
+        <div className="mt-4">
+          <h3 className="text-base font-semibold text-slate-900">References</h3>
+          <ul className="mt-2 space-y-1 text-sm">
+            {section.references.map((ref) => (
+              <li key={ref.href || ref.label}>
+                <a
+                  className="text-indigo-700 underline"
+                  href={ref.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {ref.label || ref.href}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </section>
+  );
+}
+
+export default function SimpleArticleLayout({ meta, sections }) {
+  const published = formatDate(meta.date);
+  const updated = formatDate(meta.updated || meta.date);
+  const estimatedRead =
+    meta.readingTime ||
+    `${Math.max(
+      8,
+      Math.round(
+        sections
+          .flatMap((section) => [
+            section.summary,
+            section.lede,
+            ...(section.paragraphs || []),
+            ...(section.perspectives || []).map((p) => p.body),
+            ...(section.plays || []).map((p) => p.detail),
+            ...(section.checklist?.items || []),
+            ...(section.references || []).map((r) => r.label)
+          ])
+          .filter(Boolean)
+          .join(" ")
+          .trim()
+          .split(/\s+/).length / 210
+      )
+    )} min read`;
+
+  return (
+    <div className="bg-white text-slate-900">
+      <section className="border-b border-slate-200 bg-slate-50">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 sm:py-12 lg:px-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-600">
+            GoDigitalPro Blog - {meta.categoryLabel || meta.category || "Blog"}
+          </p>
+          <h1 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">{meta.title}</h1>
+          <p className="max-w-3xl text-lg text-slate-700">{meta.metaDescription}</p>
+          <div className="flex flex-wrap gap-4 text-sm text-slate-600">
+            <span>Published {published}</span>
+            <span className="hidden sm:inline">-</span>
+            <span>Updated {updated}</span>
+            <span className="hidden sm:inline">-</span>
+            <span>{estimatedRead}</span>
+          </div>
+        </div>
+      </section>
+
+      <main className="mx-auto max-w-6xl px-4 py-10 lg:px-6">
+        <div className="grid gap-10 lg:grid-cols-[240px_minmax(0,1fr)]">
+          <aside className="order-1 hidden lg:block lg:sticky lg:top-24 lg:self-start">
+            <OnPageNav sections={sections} showMobile={false} />
+          </aside>
+
+          <article className="order-2 prose prose-slate max-w-none">
+            <div className="mb-8 lg:hidden">
+              <OnPageNav sections={sections} showDesktop={false} />
+            </div>
+
+            {sections.map((section, index) => (
+              <SectionBlock key={section.id || section.title} section={section} index={index} />
+            ))}
+          </article>
+        </div>
+      </main>
+    </div>
+  );
+}

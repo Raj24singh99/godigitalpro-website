@@ -2,6 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { BLOG_TAXONOMY } from "../src/data/blogTaxonomy.js";
+import { TOOLS, COMPARISONS, TAGS } from "../src/data/tools.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -32,6 +33,8 @@ const STATIC_ROUTES = [
   "/industries/edtech",
   "/industries/b2b-services",
 ];
+
+const TOOL_STATIC_ROUTES = ["/tools"];
 
 function normalizePath(route) {
   if (!route.startsWith("/")) return `/${route}`;
@@ -103,6 +106,10 @@ async function generate() {
   };
 
   STATIC_ROUTES.forEach((route) => addUrl(route, TODAY_ISO));
+  TOOL_STATIC_ROUTES.forEach((route) => addUrl(route, TODAY_ISO));
+  TOOLS.forEach((tool) => addUrl(`/tools/${tool.slug}`, TODAY_ISO));
+  TAGS.forEach((tag) => addUrl(`/tools/tag/${encodeURIComponent(tag)}`, TODAY_ISO));
+  COMPARISONS.forEach((comp) => addUrl(`/tools/compare/${comp.slug}`, TODAY_ISO));
 
   const posts = await collectPostMeta();
 

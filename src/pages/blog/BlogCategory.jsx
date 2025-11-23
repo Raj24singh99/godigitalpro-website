@@ -21,6 +21,7 @@ export default function BlogCategory() {
   const categoryDefinition = getCategoryDefinition(categoryParam);
   const canonicalSlug = categoryDefinition?.slug || categoryParam;
   const posts = getPostsByCategory(canonicalSlug);
+  const related = RELATED_BY_CATEGORY[canonicalSlug] || RELATED_BY_CATEGORY.default;
 
   if (categoryDefinition && categoryParam !== canonicalSlug) {
     return <Navigate to={`/blog/${canonicalSlug}`} replace />;
@@ -198,6 +199,84 @@ export default function BlogCategory() {
           </div>
         )}
       </section>
+
+      {related?.links?.length ? (
+        <section className="mx-auto max-w-6xl px-6 md:px-10 pb-14">
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+            <h3 className="text-xl font-semibold text-slate-900">Recommended tools & comparisons</h3>
+            <p className="mt-1 text-sm text-slate-700">
+              High-intent tool pages tied to this pillar—refreshed automatically from the Tools Hub.
+            </p>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {related.links.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="group flex items-start gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm hover:-translate-y-0.5 hover:shadow-md transition"
+                >
+                  <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-emerald-700">{item.title}</p>
+                    {item.description && (
+                      <p className="text-sm text-slate-700">{item.description}</p>
+                    )}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
     </main>
   );
 }
+
+const RELATED_BY_CATEGORY = {
+  "email-marketing-automation": {
+    links: [
+      { title: "Brevo vs ActiveCampaign vs ConvertKit", href: "/tools/compare/brevo-vs-activecampaign-vs-convertkit", description: "Email/CRM options ranked by automation depth, SMS, and pricing." },
+      { title: "Klaviyo vs Omnisend vs MailerLite", href: "/tools/compare/klaviyo-vs-omnisend-vs-mailerlite", description: "Lifecycle email/SMS choices scored for segmentation, SMS, and cost." },
+      { title: "Automation platforms compared", href: "/tools/compare/zapier-vs-make-vs-pabbly", description: "See which automation stack fits your team and budget." },
+      { title: "Browse email tools", href: "/tools/tag/email", description: "All email tools in one place, auto-updated when we add more." },
+    ],
+  },
+  "search-engine-optimisation": {
+    links: [
+      { title: "SEMrush vs Ahrefs", href: "/tools/compare/semrush-vs-ahrefs", description: "Backlinks versus PPC/PLA visibility—see which fits your SEO program." },
+      { title: "Fathom vs Plausible vs GA4", href: "/tools/compare/fathom-vs-plausible-vs-ga4", description: "Privacy-first vs deep event analytics—ratings and picks." },
+      { title: "Browse SEO tools", href: "/tools/tag/seo", description: "Keyword, backlink, and audit tools curated by GoDigitalPro." },
+    ],
+  },
+  "web-analytics-data-reporting": {
+    links: [
+      { title: "Fathom vs Plausible vs GA4", href: "/tools/compare/fathom-vs-plausible-vs-ga4", description: "Privacy-first vs deep event analytics—ratings and picks." },
+      { title: "Attribution and tracking tools", href: "/tools/tag/analytics", description: "Lightweight analytics, tracking, and privacy-friendly options." },
+    ],
+  },
+  "social-media-marketing-content": {
+    links: [
+      { title: "Buffer vs Hootsuite vs Later", href: "/tools/compare/buffer-vs-hootsuite-vs-later", description: "Scheduling, monitoring, and IG/TikTok workflows compared." },
+      { title: "Best design & video tools for social", href: "/tools/tag/social", description: "Curated tools for social scheduling and asset creation." },
+    ],
+  },
+  "ecommerce-marketplace-marketing": {
+    links: [
+      { title: "ThriveCart vs CartFlows vs Shopify Checkout", href: "/tools/compare/thrivecart-vs-cartflows-vs-shopify-checkout", description: "Checkout and funnel options ranked by speed, upsells, and payments." },
+      { title: "Email/SMS for ecommerce", href: "/tools/compare/klaviyo-vs-omnisend-vs-mailerlite", description: "Pick the lifecycle platform that fits your store and budget." },
+    ],
+  },
+  "website-development": {
+    links: [
+      { title: "Kinsta vs WP Engine vs Rocket.net", href: "/tools/compare/kinsta-vs-wp-engine-vs-rocket-net", description: "Managed WordPress hosting compared for speed, DX, and value." },
+      { title: "Cloudways vs DigitalOcean vs Vultr", href: "/tools/compare/cloudways-vs-digitalocean-vs-vultr", description: "Managed vs DIY cloud hosting—speed-to-launch vs control." },
+      { title: "Webflow vs Framer vs Wix", href: "/tools/compare/webflow-vs-framer-vs-wix", description: "Site builders compared for design fidelity, CMS, and speed-to-publish." },
+    ],
+  },
+  default: {
+    links: [
+      { title: "Explore the Tools Hub", href: "/tools", description: "Filter by tags, see comparisons, and find playbooks." },
+      { title: "Automation stacks compared", href: "/tools/compare/zapier-vs-make-vs-pabbly", description: "Pick the right automation platform for your team." },
+      { title: "SEO tools and comparisons", href: "/tools/compare/semrush-vs-ahrefs", description: "See which SEO suite fits your goals and budget." },
+    ],
+  },
+};

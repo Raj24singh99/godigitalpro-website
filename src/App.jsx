@@ -5,6 +5,7 @@ import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 // Layout
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { toolRoutes, comparisonRoutes } from "./pages/tools/generatedRoutes.jsx";
 
 /* -------------------------
    Lazy page imports (exact paths/casing)
@@ -14,6 +15,10 @@ const OnboardingPage                  = lazy(() => import("./pages/OnboardingPag
 // const SignInPage                   = lazy(() => import("./pages/SignInPage.jsx"));
 const ThankYou                        = lazy(() => import("./pages/ThankYou.jsx"));
 const AboutUs                         = lazy(() => import("./pages/AboutUs.jsx"));
+const ToolsHub                        = lazy(() => import("./pages/tools/ToolsHub.jsx"));
+const ToolDetail                      = lazy(() => import("./pages/tools/ToolDetail.jsx"));
+const ToolTag                         = lazy(() => import("./pages/tools/ToolTag.jsx"));
+const ToolComparison                  = lazy(() => import("./pages/tools/ToolComparison.jsx"));
 
 const PrivacyPolicy                   = lazy(() => import("./pages/PrivacyPolicy.jsx"));
 
@@ -76,6 +81,16 @@ export default function App() {
             <Route path="/onboarding" element={<OnboardingPage />} />
             {/* <Route path="/signin" element={<SignInPage />} /> */}
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/tools" element={<ToolsHub />} />
+            <Route path="/tools/tag/:tag" element={<ToolTag />} />
+            <Route path="/tools/compare/:slug" element={<ToolComparison />} />
+            <Route path="/tools/:slug" element={<ToolDetail />} />
+            {toolRoutes.map((route) => (
+              <Route key={route.path} path={route.path} element={route.element} />
+            ))}
+            {comparisonRoutes.map((route) => (
+              <Route key={route.path} path={route.path} element={route.element} />
+            ))}
 
             {/* About */}
             <Route path="/about_us" element={<AboutUs />} />

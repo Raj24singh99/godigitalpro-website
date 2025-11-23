@@ -219,3 +219,25 @@ aside ul li a.text-amber-600 {
 html {
   scroll-behavior: smooth;
 }
+
+/* Keep wide tables usable on tool pages (pricing, comparisons, etc.) */
+.tool-page :is(div, section):has(> table),
+.section--pricing :is(div, section):has(> table) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+}
+
+.tool-page :is(div, section):has(> table) table,
+.section--pricing :is(div, section):has(> table) table {
+  width: 100%;
+  min-width: 640px;
+}
+
+@media (min-width: 900px) {
+  .tool-page :is(div, section):has(> table) table,
+  .section--pricing :is(div, section):has(> table) table {
+    min-width: 100%;
+  }
+}
