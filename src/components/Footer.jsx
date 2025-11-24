@@ -275,6 +275,47 @@ export default function Footer() {
             </ul>
           </nav>
         </div>
+
+        {/* Wide locations strip */}
+        <div className="mt-8 border-t border-slate-200 pt-5 text-sm text-slate-700">
+          <h4 className="font-semibold text-slate-900">Locations</h4>
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            {[
+              { name: "Delhi", to: "/locations/delhi-digital-marketing-agency" },
+              { name: "Mumbai", to: "/locations/mumbai-digital-marketing-agency" },
+              { name: "Bangalore", to: "/locations/bangalore-digital-marketing-agency" },
+              { name: "Hyderabad", to: "/locations/hyderabad-digital-marketing-agency" },
+              { name: "Chennai", to: "/locations/chennai-digital-marketing-agency" },
+              { name: "Kolkata", to: "/locations/kolkata-digital-marketing-agency" },
+              { name: "Pune", to: "/locations/pune-digital-marketing-agency" },
+              { name: "Ahmedabad", to: "/locations/ahmedabad-digital-marketing-agency" },
+              { name: "Jaipur", to: "/locations/jaipur-digital-marketing-agency" },
+              { name: "Surat", to: "/locations/surat-digital-marketing-agency" },
+              { name: "Noida", to: "/locations/noida-digital-marketing-agency" },
+              { name: "Gurgaon", to: "/locations/gurgaon-digital-marketing-agency" },
+              { name: "Indore", to: "/locations/indore-digital-marketing-agency" },
+              { name: "Coimbatore", to: "/locations/coimbatore-digital-marketing-agency" },
+              { name: "Kochi", to: "/locations/kochi-digital-marketing-agency" },
+              { name: "Lucknow", to: "/locations/lucknow-digital-marketing-agency" },
+              { name: "Chandigarh", to: "/locations/chandigarh-digital-marketing-agency" },
+              { name: "Nagpur", to: "/locations/nagpur-digital-marketing-agency" },
+              { name: "Bhopal", to: "/locations/bhopal-digital-marketing-agency" },
+              { name: "Visakhapatnam", to: "/locations/visakhapatnam-digital-marketing-agency" },
+              { name: "Vadodara", to: "/locations/vadodara-digital-marketing-agency" },
+              { name: "Kanpur", to: "/locations/kanpur-digital-marketing-agency" },
+              { name: "Patna", to: "/locations/patna-digital-marketing-agency" },
+              { name: "Bhubaneswar", to: "/locations/bhubaneswar-digital-marketing-agency" },
+              { name: "Goa", to: "/locations/goa-digital-marketing-agency" },
+            ].map((loc, idx, arr) => (
+              <React.Fragment key={loc.to}>
+                <Link className="hover:text-slate-900 whitespace-nowrap" to={loc.to}>
+                  {loc.name}
+                </Link>
+                {idx < arr.length - 1 && <span className="text-slate-300">|</span>}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* bottom bar */}
