@@ -7,6 +7,7 @@ import { TOOLS, COMPARISONS, TAGS } from "../src/data/tools.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT, "src", "content", "posts");
+const LOCATIONS_DIR = path.join(ROOT, "src", "pages", "locations");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const SITE_URL = (process.env.SITE_URL || "https://www.godigitalpro.in").replace(/\/+$/, "");
 const TODAY_ISO = new Date().toISOString();
@@ -68,6 +69,18 @@ function extractField(content, field) {
   return match ? match[1] : null;
 }
 
+async function collectLocations() {
+  try {
+    const entries = await fs.readdir(LOCATIONS_DIR, { withFileTypes: true });
+    return entries
+      .filter((e) => e.isFile() && e.name.endsWith(".jsx"))
+      .map((e) => e.name.replace(/\.jsx$/, ""))
+      .map((slug) => `/locations/${slug}`);
+  } catch {
+    return [];
+  }
+}
+
 async function collectPostMeta() {
   const files = await walk(CONTENT_DIR);
   const posts = [];
@@ -110,6 +123,9 @@ async function generate() {
   TOOLS.forEach((tool) => addUrl(`/tools/${tool.slug}`, TODAY_ISO));
   TAGS.forEach((tag) => addUrl(`/tools/tag/${encodeURIComponent(tag)}`, TODAY_ISO));
   COMPARISONS.forEach((comp) => addUrl(`/tools/compare/${comp.slug}`, TODAY_ISO));
+
+  const locationRoutes = await collectLocations();
+  locationRoutes.forEach((route) => addUrl(route, TODAY_ISO));
 
   const posts = await collectPostMeta();
 
