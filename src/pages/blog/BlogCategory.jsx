@@ -237,26 +237,26 @@ const RELATED_BY_CATEGORY = {
       { title: "Brevo vs ActiveCampaign vs ConvertKit", href: "/tools/compare/brevo-vs-activecampaign-vs-convertkit", description: "Email/CRM options ranked by automation depth, SMS, and pricing." },
       { title: "Klaviyo vs Omnisend vs MailerLite", href: "/tools/compare/klaviyo-vs-omnisend-vs-mailerlite", description: "Lifecycle email/SMS choices scored for segmentation, SMS, and cost." },
       { title: "Automation platforms compared", href: "/tools/compare/zapier-vs-make-vs-pabbly", description: "See which automation stack fits your team and budget." },
-      { title: "Browse email tools", href: "/tools/tag/email", description: "All email tools in one place, auto-updated when we add more." },
+      { title: "Browse email tools", href: "/tools/email", description: "All email tools in one place, auto-updated when we add more." },
     ],
   },
   "search-engine-optimisation": {
     links: [
       { title: "SEMrush vs Ahrefs", href: "/tools/compare/semrush-vs-ahrefs", description: "Backlinks versus PPC/PLA visibility—see which fits your SEO program." },
       { title: "Fathom vs Plausible vs GA4", href: "/tools/compare/fathom-vs-plausible-vs-ga4", description: "Privacy-first vs deep event analytics—ratings and picks." },
-      { title: "Browse SEO tools", href: "/tools/tag/seo", description: "Keyword, backlink, and audit tools curated by GoDigitalPro." },
+      { title: "Browse SEO tools", href: "/tools/seo", description: "Keyword, backlink, and audit tools curated by GoDigitalPro." },
     ],
   },
   "web-analytics-data-reporting": {
     links: [
       { title: "Fathom vs Plausible vs GA4", href: "/tools/compare/fathom-vs-plausible-vs-ga4", description: "Privacy-first vs deep event analytics—ratings and picks." },
-      { title: "Attribution and tracking tools", href: "/tools/tag/analytics", description: "Lightweight analytics, tracking, and privacy-friendly options." },
+      { title: "Attribution and tracking tools", href: "/tools/analytics", description: "Lightweight analytics, tracking, and privacy-friendly options." },
     ],
   },
   "social-media-marketing-content": {
     links: [
       { title: "Buffer vs Hootsuite vs Later", href: "/tools/compare/buffer-vs-hootsuite-vs-later", description: "Scheduling, monitoring, and IG/TikTok workflows compared." },
-      { title: "Best design & video tools for social", href: "/tools/tag/social", description: "Curated tools for social scheduling and asset creation." },
+      { title: "Best design & video tools for social", href: "/tools/social", description: "Curated tools for social scheduling and asset creation." },
     ],
   },
   "ecommerce-marketplace-marketing": {

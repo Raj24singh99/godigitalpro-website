@@ -150,7 +150,7 @@ const RELATED_BY_CATEGORY = {
       },
       {
         title: "Browse email tools",
-        href: "/tools/tag/email",
+        href: "/tools/email",
         description: "All email tools in one place, auto-updated when we add more.",
       },
       {
@@ -169,7 +169,7 @@ const RELATED_BY_CATEGORY = {
       },
       {
         title: "Browse SEO tools",
-        href: "/tools/tag/seo",
+        href: "/tools/seo",
         description: "Keyword, backlink, and audit tools curated by GoDigitalPro.",
       },
       {
@@ -188,7 +188,7 @@ const RELATED_BY_CATEGORY = {
       },
       {
         title: "Attribution and tracking tools",
-        href: "/tools/tag/analytics",
+        href: "/tools/analytics",
         description: "Lightweight analytics, tracking, and privacy-friendly options.",
       },
     ],
@@ -202,7 +202,7 @@ const RELATED_BY_CATEGORY = {
       },
       {
         title: "Best design & video tools for social",
-        href: "/tools/tag/social",
+        href: "/tools/social",
         description: "Curated tools for social scheduling and asset creation.",
       },
     ],

@@ -12,16 +12,17 @@ const Container = ({ className = "", children }) => (
   <div className={`mx-auto max-w-5xl px-6 md:px-10 ${className}`}>{children}</div>
 );
 
-export default function ToolTag() {
+export default function ToolTag({ tagOverride }) {
   const { tag } = useParams();
-  const decodedTag = decodeURIComponent(tag || "").toLowerCase();
+  const rawTag = tagOverride ?? tag;
+  const decodedTag = decodeURIComponent(rawTag || "").toLowerCase();
 
   if (!decodedTag || !TAGS.map((t) => t.toLowerCase()).includes(decodedTag)) {
     return <Navigate to="/tools" replace />;
   }
 
   const tools = getToolsByTag(decodedTag);
-  const canonical = buildCanonical(`/tools/tag/${encodeURIComponent(decodedTag)}`);
+  const canonical = buildCanonical(`/tools/${encodeURIComponent(decodedTag)}`);
   const itemListSchema = useMemo(() => buildItemListSchema(tools), [tools]);
 
   return (
@@ -69,7 +70,7 @@ export default function ToolTag() {
                     {tool.tags.slice(0, 6).map((t) => (
                       <Link
                         key={t}
-                        to={`/tools/tag/${encodeURIComponent(t)}`}
+                        to={`/tools/${encodeURIComponent(t)}`}
                         className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-[11px] font-medium text-slate-700 hover:bg-slate-200"
                       >
                         <TagIcon className="h-3.5 w-3.5" />
