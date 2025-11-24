@@ -121,7 +121,7 @@ async function generate() {
   STATIC_ROUTES.forEach((route) => addUrl(route, TODAY_ISO));
   TOOL_STATIC_ROUTES.forEach((route) => addUrl(route, TODAY_ISO));
   TOOLS.forEach((tool) => addUrl(`/tools/${tool.slug}`, TODAY_ISO));
-  TAGS.forEach((tag) => addUrl(`/tools/tag/${encodeURIComponent(tag)}`, TODAY_ISO));
+  TAGS.forEach((tag) => addUrl(`/tools/${encodeURIComponent(tag)}`, TODAY_ISO));
   COMPARISONS.forEach((comp) => addUrl(`/tools/compare/${comp.slug}`, TODAY_ISO));
 
   const locationRoutes = await collectLocations();

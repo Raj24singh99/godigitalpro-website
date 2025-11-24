@@ -28,6 +28,7 @@ export default function ToolsHub() {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedToolForCompare, setSelectedToolForCompare] = useState("");
   const [selectedComparisonSlug, setSelectedComparisonSlug] = useState("");
+  const [selectedTag, setSelectedTag] = useState("seo");
   const navigate = useNavigate();
 
   const filteredTools = useMemo(() => searchTools(query), [query]);
@@ -146,6 +147,13 @@ export default function ToolsHub() {
     }
   }, [matchedToolFromQuery]);
 
+  const sortedTags = useMemo(() => [...TAGS].sort((a, b) => a.localeCompare(b)), []);
+
+  const handleTagNavigate = (tag) => {
+    if (!tag) return;
+    navigate(`/tools/${encodeURIComponent(tag)}`);
+  };
+
   return (
     <main className="bg-gradient-to-b from-white via-slate-50 to-white text-slate-900">
       <SeoHelmet
@@ -203,6 +211,33 @@ export default function ToolsHub() {
                     {chip}
                   </span>
                 ))}
+              </div>
+
+              <div className="grid gap-3 rounded-2xl bg-white/90 p-4 shadow-sm ring-1 ring-black/5 sm:grid-cols-[1.2fr,1fr]">
+                <div className="space-y-1">
+                  <p className="text-xs uppercase tracking-[0.18em] text-slate-500">Browse by tag</p>
+                  <p className="text-sm text-slate-700">Jump straight to a tag page with curated tools and descriptions.</p>
+                </div>
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-end">
+                  <select
+                    value={selectedTag}
+                    onChange={(e) => setSelectedTag(e.target.value)}
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 sm:w-56"
+                  >
+                    {sortedTags.map((tag) => (
+                      <option key={tag} value={tag}>
+                        {tag}
+                      </option>
+                    ))}
+                  </select>
+                  <button
+                    type="button"
+                    onClick={() => handleTagNavigate(selectedTag)}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-500"
+                  >
+                    View tag page <ArrowRight className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2 max-w-3xl">
@@ -424,7 +459,7 @@ export default function ToolsHub() {
                   {item.tags.map((tag) => (
                     <Link
                       key={tag}
-                      to={`/tools/tag/${encodeURIComponent(tag)}`}
+                      to={`/tools/${encodeURIComponent(tag)}`}
                       className="rounded-full bg-white px-3 py-1 text-[11px] font-medium text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100"
                     >
                       {tag}
