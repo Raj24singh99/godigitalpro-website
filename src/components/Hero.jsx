@@ -219,9 +219,9 @@ export default function Hero() {
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative max-w-5xl mx-auto px-6 md:px-10 w-full">
+      <div className="relative max-w-5xl mx-auto px-6 md:px-10 w-full text-center">
         {/* Tagline */}
-        <div className="inline-flex items-center gap-2 bg-primary/15 text-dark px-4 py-2 rounded-full text-sm font-medium ring-1 ring-black/5">
+        <div className="inline-flex items-center gap-2 bg-primary/15 text-dark px-4 py-2 rounded-full text-sm font-medium ring-1 ring-black/5 mx-auto">
           <Sparkles size={16} className="text-yellow-500" />
           <span>Global Digital Marketing Partner on Speed Dial</span>
         </div>
@@ -237,12 +237,12 @@ export default function Hero() {
         </motion.h1>
 
         {/* Description */}
-        <p className="mt-4 text-base md:text-lg text-slate-800 max-w-2xl">
+        <p className="mt-4 text-base md:text-lg text-slate-800 max-w-3xl mx-auto">
           Growth leaders plug us in when they need one accountable digital marketing team across brand, SEO, paid media, lifecycle, CRO, and analytics—without hiring six agencies or juggling five dashboards.
         </p>
 
         {/* CTAs */}
-        <div className="mt-6 flex flex-wrap gap-4">
+        <div className="mt-6 flex flex-wrap gap-4 justify-center">
           <Link to="/onboarding" className="btn-primary inline-flex items-center gap-2 text-base">
             Start Your Journey <ArrowRight size={18} />
           </Link>
@@ -259,20 +259,20 @@ export default function Hero() {
 
         {/* Metrics */}
         <div className="mt-10 pt-6 border-t border-black/10">
-          <ul className="grid grid-cols-3 gap-4 text-dark">
-            <li className="text-center md:text-left">
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-dark text-center">
+            <li>
               <div className="text-2xl font-extrabold">
                 <CountUp end={12} suffix="+ Years " />
               </div>
               <div className="text-sm text-slate-700">Digital Experience</div>
             </li>
-            <li className="text-center md:text-left">
+            <li>
               <div className="text-2xl font-extrabold">
                 <CountUp end={342} suffix="+ " />
               </div>
               <div className="text-sm text-slate-700">Clients</div>
             </li>
-            <li className="text-center md:text-left">
+            <li>
               <div className="text-2xl font-extrabold">
                 <CountUp end={1265} suffix=" Cr+" />
               </div>
