@@ -66,20 +66,20 @@ export default function Header() {
   useOutsideClose(mobileRef, () => setMobileOpen(false));
 
   const baseLink =
-    "px-3 py-2 rounded-lg hover:bg-white/10 text-slate-100 font-medium";
-  const activeClass = "bg-white/20";
+    "px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-800 font-semibold";
+  const activeClass = "bg-slate-100 text-slate-900";
 
   return (
-    <header className="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-slate-800">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
       <div className="h-16 flex items-center">
         <div className="max-w-6xl mx-auto w-full px-4 flex items-center justify-between">
           {/* Logo -> Home */}
           <div className="shrink-0">
-            <Logo size={40} variant="header-dark" />
+            <Logo size={40} />
           </div>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1 text-slate-100">
+          <nav className="hidden md:flex items-center gap-1 text-slate-800">
             {/* Services */}
             <div
               className="relative"
@@ -96,14 +96,14 @@ export default function Header() {
               {openServices && (
                 <div
                   role="menu"
-                  className="absolute left-0 mt-2 w-[320px] rounded-xl border border-slate-700 bg-slate-900 shadow-xl p-2 grid"
+                  className="absolute left-0 mt-2 w-[320px] rounded-xl border border-slate-200 bg-white shadow-xl p-2 grid"
                 >
                   {SERVICES.map((s) => (
                     <NavLink
                       key={s.to}
                       to={s.to}
                       className={({ isActive }) =>
-                        `block rounded-lg px-3 py-2 text-slate-100 hover:bg-white/10 ${
+                        `block rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100 ${
                           isActive ? activeClass : ""
                         }`
                       }
@@ -131,14 +131,14 @@ export default function Header() {
               {openIndustries && (
                 <div
                   role="menu"
-                  className="absolute left-0 mt-2 w-[300px] rounded-xl border border-slate-700 bg-slate-900 shadow-xl p-2 grid"
+                  className="absolute left-0 mt-2 w-[300px] rounded-xl border border-slate-200 bg-white shadow-xl p-2 grid"
                 >
                   {INDUSTRIES.map((i) => (
                     <NavLink
                       key={i.to}
                       to={i.to}
                       className={({ isActive }) =>
-                        `block rounded-lg px-3 py-2 text-slate-100 hover:bg-white/10 ${
+                        `block rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100 ${
                           isActive ? activeClass : ""
                         }`
                       }
@@ -165,13 +165,13 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link
               to="/onboarding"
-              className="hidden md:inline-flex rounded-xl px-4 py-2 font-semibold bg-white text-black hover:bg-yellow-400 transition"
+              className="hidden md:inline-flex rounded-xl px-4 py-2 font-semibold bg-black text-white hover:bg-slate-800 transition"
             >
               Get Started
             </Link>
 
             <button
-              className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-700 text-slate-100 hover:bg-white/10"
+              className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300 text-slate-800 hover:bg-slate-100"
               aria-label="Open menu"
               onClick={() => setMobileOpen((v) => !v)}
             >
@@ -185,16 +185,16 @@ export default function Header() {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div ref={mobileRef} className="md:hidden border-t border-slate-800 bg-slate-900">
+        <div ref={mobileRef} className="md:hidden border-t border-slate-200 bg-white shadow-md">
           <div className="max-w-6xl mx-auto px-4 py-4 space-y-3">
             <details className="group">
-              <summary className="cursor-pointer list-none flex items-center justify-between rounded-lg px-3 py-2 text-slate-100 hover:bg-white/10">
+              <summary className="cursor-pointer list-none flex items-center justify-between rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100">
                 <span className="font-semibold">Services</span>
                 <span className="transition group-open:rotate-180">▾</span>
               </summary>
               <div className="mt-2 pl-2">
                 {SERVICES.map((s) => (
-                  <Link key={s.to} to={s.to} className="block rounded-lg px-3 py-2 text-slate-100 hover:bg-white/10">
+                  <Link key={s.to} to={s.to} className="block rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100">
                     {s.label}
                   </Link>
                 ))}
@@ -202,24 +202,24 @@ export default function Header() {
             </details>
 
             <details className="group">
-              <summary className="cursor-pointer list-none flex items-center justify-between rounded-lg px-3 py-2 text-slate-100 hover:bg-white/10">
+              <summary className="cursor-pointer list-none flex items-center justify-between rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100">
                 <span className="font-semibold">Industries</span>
                 <span className="transition group-open:rotate-180">▾</span>
               </summary>
               <div className="mt-2 pl-2">
                 {INDUSTRIES.map((i) => (
-                  <Link key={i.to} to={i.to} className="block rounded-lg px-3 py-2 text-slate-100 hover:bg-white/10">
+                  <Link key={i.to} to={i.to} className="block rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100">
                     {i.label}
                   </Link>
                 ))}
               </div>
             </details>
 
-            <Link to="/about" className="block rounded-lg px-3 py-2 text-slate-100 hover:bg-white/10">
+            <Link to="/about" className="block rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100">
               About
             </Link>
 
-            <Link to="/onboarding" className="inline-flex mt-2 rounded-xl px-4 py-2 font-semibold bg-white text-black hover:bg-yellow-400 transition">
+            <Link to="/onboarding" className="inline-flex mt-2 rounded-xl px-4 py-2 font-semibold bg-black text-white hover:bg-slate-800 transition">
               Get Started
             </Link>
           </div>
