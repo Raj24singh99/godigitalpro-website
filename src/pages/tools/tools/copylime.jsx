@@ -456,6 +456,7 @@ function AccordionItem({ question, answer, defaultOpen = false }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         className="flex w-full items-center justify-between px-4 py-3 text-left text-slate-900"
+      >
         <span className="text-sm font-semibold md:text-base">{question}</span>
         <ChevronDown className={`h-5 w-5 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
