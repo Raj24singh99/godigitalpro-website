@@ -15,6 +15,11 @@ const OnboardingPage                  = lazy(() => import("./pages/OnboardingPag
 // const SignInPage                   = lazy(() => import("./pages/SignInPage.jsx"));
 const ThankYou                        = lazy(() => import("./pages/ThankYou.jsx"));
 const AboutUs                         = lazy(() => import("./pages/AboutUs.jsx"));
+const LearnHub                        = lazy(() => import("./pages/learn/LearnHub.jsx"));
+const LearnDigitalProducts            = lazy(() => import("./pages/learn/DigitalProducts.jsx"));
+const LearnMasterclasses              = lazy(() => import("./pages/learn/Masterclasses.jsx"));
+const LearnCourses                    = lazy(() => import("./pages/learn/Courses.jsx"));
+const LearnInternship                 = lazy(() => import("./pages/learn/Internship.jsx"));
 const ToolsHub                        = lazy(() => import("./pages/tools/ToolsHub.jsx"));
 const ToolDetail                      = lazy(() => import("./pages/tools/ToolDetail.jsx"));
 const ToolTag                         = lazy(() => import("./pages/tools/ToolTag.jsx"));
@@ -115,6 +120,11 @@ export default function App() {
             <Route path="/onboarding" element={<OnboardingPage />} />
             {/* <Route path="/signin" element={<SignInPage />} /> */}
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/learn" element={<LearnHub />} />
+            <Route path="/learn/digital-products" element={<LearnDigitalProducts />} />
+            <Route path="/learn/masterclasses" element={<LearnMasterclasses />} />
+            <Route path="/learn/courses" element={<LearnCourses />} />
+            <Route path="/learn/internship" element={<LearnInternship />} />
             <Route path="/tools" element={<ToolsHub />} />
             <Route path="/tools/tag/:tag" element={<TagLegacyRedirect />} />
             <Route path="/tools/compare/:slug" element={<ToolComparison />} />
