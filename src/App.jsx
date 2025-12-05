@@ -20,6 +20,14 @@ const LearnDigitalProducts            = lazy(() => import("./pages/learn/Digital
 const LearnMasterclasses              = lazy(() => import("./pages/learn/Masterclasses.jsx"));
 const LearnCourses                    = lazy(() => import("./pages/learn/Courses.jsx"));
 const LearnInternship                 = lazy(() => import("./pages/learn/Internship.jsx"));
+const LookerStudioChecklist           = lazy(() => import("./pages/digital-products/LookerStudioChecklist.jsx"));
+const LinkedinAdsChecklist            = lazy(() => import("./pages/digital-products/LinkedinAdsChecklist.jsx"));
+const MetaAdsChecklist                = lazy(() => import("./pages/digital-products/MetaAdsChecklist.jsx"));
+const TiktokAdsChecklist              = lazy(() => import("./pages/digital-products/TiktokAdsChecklist.jsx"));
+const AmazonAdsChecklist              = lazy(() => import("./pages/digital-products/AmazonAdsChecklist.jsx"));
+const Ga4AnalyticsChecklist           = lazy(() => import("./pages/digital-products/Ga4AnalyticsChecklist.jsx"));
+const GoogleAdsChecklist              = lazy(() => import("./pages/digital-products/GoogleAdsChecklist.jsx"));
+const GtmImplementationChecklist      = lazy(() => import("./pages/digital-products/GtmImplementationChecklist.jsx"));
 const ToolsHub                        = lazy(() => import("./pages/tools/ToolsHub.jsx"));
 const ToolDetail                      = lazy(() => import("./pages/tools/ToolDetail.jsx"));
 const ToolTag                         = lazy(() => import("./pages/tools/ToolTag.jsx"));
@@ -125,6 +133,14 @@ export default function App() {
             <Route path="/learn/masterclasses" element={<LearnMasterclasses />} />
             <Route path="/learn/courses" element={<LearnCourses />} />
             <Route path="/learn/internship" element={<LearnInternship />} />
+            <Route path="/digital-products/looker-studio-reporting-dashboard-checklist" element={<LookerStudioChecklist />} />
+            <Route path="/digital-products/linkedin-ads-launch-optimization-checklist" element={<LinkedinAdsChecklist />} />
+            <Route path="/digital-products/meta-ads-launch-optimization-checklist" element={<MetaAdsChecklist />} />
+            <Route path="/digital-products/tiktok-ads-launch-optimization-checklist" element={<TiktokAdsChecklist />} />
+            <Route path="/digital-products/amazon-ads-launch-optimization-checklist" element={<AmazonAdsChecklist />} />
+            <Route path="/digital-products/ga4-analytics-master-checklist" element={<Ga4AnalyticsChecklist />} />
+            <Route path="/digital-products/google-ads-launch-optimization-checklist" element={<GoogleAdsChecklist />} />
+            <Route path="/digital-products/gtm-implementation-tracking-checklist" element={<GtmImplementationChecklist />} />
             <Route path="/tools" element={<ToolsHub />} />
             <Route path="/tools/tag/:tag" element={<TagLegacyRedirect />} />
             <Route path="/tools/compare/:slug" element={<ToolComparison />} />
