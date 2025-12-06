@@ -11,7 +11,7 @@ const shortPitch =
   "ElevenLabs creates natural-sounding AI voices, clones custom voices, and offers multilingual dubbing for content, products, and support experiences.";
 const pricingSummary =
   "Plans start around $5–$22/month for personal/creator usage; higher tiers add more characters, voice cloning, commercial rights, and enterprise controls. API is usage-based.";
-const officialUrl = "https://elevenlabs.io";
+const officialUrl = "https://try.elevenlabs.io/r3rzp012ette";
 const ratingValue = 4.6;
 
 const brandMeta = {
