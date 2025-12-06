@@ -1,0 +1,48 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Digital marketing agency versus in-house team comparison illustration'>
+  <defs>
+    <linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#ECF4FF'/>
+      <stop offset='50%' stop-color='#D7E3FE'/>
+      <stop offset='100%' stop-color='#C6D4FF'/>
+    </linearGradient>
+    <linearGradient id='card' x1='0%' y1='0%' x2='100%' y2='0%'>
+      <stop offset='0%' stop-color='#0EA5E9' stop-opacity='0.2'/>
+      <stop offset='100%' stop-color='#2563EB' stop-opacity='0.3'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='630' rx='48' fill='url(#bg)'/>
+  <path d='M-120 250 C 220 120 520 360 1180 200 L1200 630 L-120 630 Z' fill='rgba(255,255,255,0.6)'/>
+  <path d='M-120 420 C 240 290 540 520 1180 340 L1200 630 L-120 630 Z' fill='rgba(255,255,255,0.35)'/>
+  <path d='M-120 560 C 220 470 540 650 1180 470 L1200 630 L-120 630 Z' fill='rgba(255,255,255,0.22)'/>
+
+  <g transform='translate(170 150)'>
+    <rect width='360' height='240' rx='28' fill='white' opacity='0.96' stroke='rgba(15,23,42,0.08)' stroke-width='3'/>
+    <rect x='24' y='32' width='230' height='20' rx='10' fill='#A5B4FC'/>
+    <rect x='24' y='70' width='310' height='16' rx='8' fill='url(#card)'/>
+    <rect x='24' y='98' width='280' height='16' rx='8' fill='rgba(37,99,235,0.35)'/>
+    <rect x='24' y='140' width='120' height='40' rx='12' fill='#22C55E' opacity='0.9'/>
+    <rect x='160' y='140' width='120' height='40' rx='12' fill='#0EA5E9' opacity='0.9'/>
+    <rect x='296' y='140' width='40' height='40' rx='12' fill='#F97316' opacity='0.85'/>
+  </g>
+
+  <g transform='translate(640 120)'>
+    <rect width='360' height='270' rx='28' fill='white' opacity='0.96' stroke='rgba(15,23,42,0.08)' stroke-width='3'/>
+    <rect x='26' y='32' width='210' height='20' rx='10' fill='#C4D4FF'/>
+    <rect x='26' y='70' width='308' height='120' rx='16' fill='url(#card)'/>
+    <rect x='46' y='90' width='70' height='70' rx='14' fill='white' opacity='0.9'/>
+    <rect x='132' y='90' width='70' height='70' rx='14' fill='white' opacity='0.9'/>
+    <rect x='218' y='90' width='70' height='70' rx='14' fill='white' opacity='0.9'/>
+    <rect x='26' y='210' width='120' height='24' rx='12' fill='#0EA5E9' opacity='0.9'/>
+    <rect x='160' y='210' width='120' height='24' rx='12' fill='#22C55E' opacity='0.85'/>
+    <rect x='296' y='210' width='28' height='24' rx='10' fill='#F59E0B' opacity='0.85'/>
+  </g>
+
+  <circle cx='360' cy='470' r='70' fill='rgba(14,165,233,0.16)'/>
+  <circle cx='600' cy='500' r='90' fill='rgba(34,197,94,0.18)'/>
+  <circle cx='860' cy='470' r='70' fill='rgba(249,115,22,0.16)'/>
+  <path d='M360 470 Q 480 350 600 500 T 860 470' stroke='rgba(15,23,42,0.2)' stroke-width='6' stroke-linecap='round' fill='none' stroke-dasharray='8 12'/>
+  <path d='M600 500 L 600 380' stroke='rgba(15,23,42,0.18)' stroke-width='6' stroke-linecap='round' stroke-dasharray='10 10'/>
+
+  <text x='80' y='560' fill='rgba(15,23,42,0.78)' font-family='"Inter","Segoe UI",sans-serif' font-size='28' font-weight='700'>Digital Marketing Agency vs In-House Team</text>
+  <text x='80' y='594' fill='rgba(15,23,42,0.6)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='3'>COST • CONTROL • PERFORMANCE • HYBRID MODELS</text>
+</svg>
