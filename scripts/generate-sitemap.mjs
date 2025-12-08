@@ -40,6 +40,17 @@ const STATIC_ROUTES = [
   "/industries/b2b-services",
 ];
 
+const DIGITAL_PRODUCT_ROUTES = [
+  "/digital-products/looker-studio-reporting-dashboard-checklist",
+  "/digital-products/linkedin-ads-launch-optimization-checklist",
+  "/digital-products/meta-ads-launch-optimization-checklist",
+  "/digital-products/tiktok-ads-launch-optimization-checklist",
+  "/digital-products/amazon-ads-launch-optimization-checklist",
+  "/digital-products/ga4-analytics-master-checklist",
+  "/digital-products/google-ads-launch-optimization-checklist",
+  "/digital-products/gtm-implementation-tracking-checklist",
+];
+
 const TOOL_STATIC_ROUTES = ["/tools"];
 
 function normalizePath(route) {
@@ -124,6 +135,7 @@ async function generate() {
   };
 
   STATIC_ROUTES.forEach((route) => addUrl(route, TODAY_ISO));
+  DIGITAL_PRODUCT_ROUTES.forEach((route) => addUrl(route, TODAY_ISO));
   TOOL_STATIC_ROUTES.forEach((route) => addUrl(route, TODAY_ISO));
   TOOLS.forEach((tool) => addUrl(`/tools/${tool.slug}`, TODAY_ISO));
   TAGS.forEach((tag) => addUrl(`/tools/${encodeURIComponent(tag)}`, TODAY_ISO));
