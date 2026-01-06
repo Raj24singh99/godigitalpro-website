@@ -5,6 +5,7 @@ import { Routes, Route, useLocation, Navigate, useParams } from "react-router-do
 // Layout
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ProtectedRoute from "./components/ProtectedRoute";
 import { toolRoutes, comparisonRoutes } from "./pages/tools/generatedRoutes.jsx";
 
 /* -------------------------
@@ -35,6 +36,12 @@ const ToolParamRouter                 = lazy(() => import("./pages/tools/ToolPar
 const ToolComparison                  = lazy(() => import("./pages/tools/ToolComparison.jsx"));
 
 const PrivacyPolicy                   = lazy(() => import("./pages/PrivacyPolicy.jsx"));
+const Login                           = lazy(() => import("./pages/app/Login.jsx"));
+const Signup                          = lazy(() => import("./pages/app/Signup.jsx"));
+const ForgotPassword                  = lazy(() => import("./pages/app/ForgotPassword.jsx"));
+const Dashboard                       = lazy(() => import("./pages/app/Dashboard.jsx"));
+const BudgetAutomation                = lazy(() => import("./pages/app/BudgetAutomation.jsx"));
+const SavedDatasets                   = lazy(() => import("./pages/app/SavedDatasets.jsx"));
 
 /** ✅ Blog hub + category + post (correct folder) */
 const Blogs                           = lazy(() => import("./pages/blog/Blogs.jsx"));
@@ -114,17 +121,25 @@ function TagLegacyRedirect() {
 }
 
 export default function App() {
+  const location = useLocation();
+  const isAppRoute =
+    location.pathname.startsWith("/app") ||
+    ["/login", "/signup", "/forgot-password"].includes(location.pathname);
+
   return (
     <>
       <ScrollToTop />
       <div>
-        <Header />
+        {!isAppRoute && <Header />}
 
         {/* Wrap only page routes in Suspense */}
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             {/* Public */}
             <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/onboarding" element={<OnboardingPage />} />
             {/* <Route path="/signin" element={<SignInPage />} /> */}
             <Route path="/thank-you" element={<ThankYou />} />
@@ -158,6 +173,32 @@ export default function App() {
 
             {/* Company */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+            {/* App */}
+            <Route
+              path="/app"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/app/budget-automation"
+              element={
+                <ProtectedRoute>
+                  <BudgetAutomation />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/app/datasets"
+              element={
+                <ProtectedRoute>
+                  <SavedDatasets />
+                </ProtectedRoute>
+              }
+            />
 
             {/* ✅ Blog */}
             <Route path="/blog" element={<Blogs />} />
@@ -215,7 +256,7 @@ export default function App() {
           </Routes>
         </Suspense>
 
-        <Footer />
+        {!isAppRoute && <Footer />}
       </div>
     </>
   );
