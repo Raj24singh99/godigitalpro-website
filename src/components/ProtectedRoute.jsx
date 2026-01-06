@@ -16,11 +16,7 @@ export default function ProtectedRoute({ children }) {
     );
   }
 
-  // Optional extra rule: must also have completed onboarding first time
-  const onboarded = localStorage.getItem("gdp_onboarding_complete") === "true";
-
-  if (!onboarded) return <Navigate to="/onboarding" replace />;
-  if (!user) return <Navigate to="/signin" state={{ from: location }} replace />;
+  if (!user) return <Navigate to="/login" state={{ from: location }} replace />;
 
   return children;
 }

@@ -1,0 +1,21 @@
+Date,Campaign Name,Spend,Leads,Demos,Enrollments,Budget,Bid Strategy,TCPA,Impressions,Clicks,Conversions,Budget Utilization %
+2024-07-01,Spring Intake - Search,1200,48,18,6,500,Maximize Conversions,,45000,3200,22,0.92
+2024-07-02,Spring Intake - Search,1150,46,16,5,500,Maximize Conversions,,43800,3120,20,0.88
+2024-07-03,Spring Intake - Search,1300,52,20,7,520,Maximize Conversions,,46000,3300,24,0.94
+2024-07-04,Spring Intake - Search,980,41,15,4,520,Maximize Conversions,,41000,2850,18,0.83
+2024-07-05,Spring Intake - Search,1400,55,21,8,540,Maximize Conversions,,49000,3450,26,0.97
+2024-07-01,Adult Upskilling - PMax,900,35,12,3,400,TCPA,120,36000,2400,14,0.68
+2024-07-02,Adult Upskilling - PMax,880,33,11,2,400,TCPA,120,35200,2380,12,0.71
+2024-07-03,Adult Upskilling - PMax,940,36,12,3,420,TCPA,120,37000,2500,14,0.74
+2024-07-04,Adult Upskilling - PMax,760,28,9,2,420,TCPA,120,32000,2150,10,0.61
+2024-07-05,Adult Upskilling - PMax,820,30,10,2,420,TCPA,120,33000,2200,11,0.64
+2024-07-01,Global MBA - LinkedIn,650,22,6,1,300,TCPA,180,22000,900,7,0.55
+2024-07-02,Global MBA - LinkedIn,720,24,7,1,300,TCPA,180,24000,980,8,0.58
+2024-07-03,Global MBA - LinkedIn,780,25,7,1,320,TCPA,180,25000,1020,8,0.6
+2024-07-04,Global MBA - LinkedIn,700,23,6,1,320,TCPA,180,23000,960,7,0.56
+2024-07-05,Global MBA - LinkedIn,740,24,7,1,320,TCPA,180,23500,970,8,0.57
+2024-07-01,Healthcare MBA - Search,400,12,4,0,200,Maximize Conversions,,18000,1100,3,0.78
+2024-07-02,Healthcare MBA - Search,420,12,4,0,200,Maximize Conversions,,18500,1120,3,0.81
+2024-07-03,Healthcare MBA - Search,460,13,4,0,220,Maximize Conversions,,19000,1180,3,0.86
+2024-07-04,Healthcare MBA - Search,410,12,3,0,220,Maximize Conversions,,18200,1140,2,0.8
+2024-07-05,Healthcare MBA - Search,470,13,4,0,220,Maximize Conversions,,19500,1200,3,0.88
