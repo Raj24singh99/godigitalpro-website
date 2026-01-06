@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   MapPin,
   Sparkles,
@@ -12,11 +12,14 @@ import {
   ClipboardCheck,
   Gauge,
 } from "lucide-react";
+import SeoHelmet from "../../components/SeoHelmet";
+import { buildCanonical, faqJsonLd, serviceJsonLd } from "../../utils/seo";
 
 export default function LocationPageTemplate({
   city,
   region = "",
 }) {
+  const location = useLocation();
 
   const seed = city.split("").reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
   const randBetween = (min, max) => min + (seed % (max - min + 1));
@@ -108,8 +111,40 @@ export default function LocationPageTemplate({
     `Language/creative: Mixing English with local phrasing improves CTR; motion-first ads outperform static.`,
   ];
 
+  const canonical = buildCanonical(location.pathname);
+  const metaTitle = `Digital Marketing Agency in ${city} | GoDigitalPro`;
+  const metaDescription = `GoDigitalPro helps ${city} brands grow with ROI-first SEO, Google Ads, social media, and conversion-focused landing pages. Transparent reporting and fast experimentation.`;
+  const keywords = [
+    `digital marketing agency ${city}`,
+    `seo ${city}`,
+    `google ads ${city}`,
+    `ppc ${city}`,
+    `social media marketing ${city}`,
+    `performance marketing ${city}`,
+  ].join(", ");
+  const schema = [
+    serviceJsonLd({
+      name: `Digital Marketing Services in ${city}`,
+      description: metaDescription,
+      url: canonical,
+      areaServed: "IN",
+    }),
+    faqJsonLd(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
+  ];
+
   return (
     <main className="bg-white">
+      <SeoHelmet
+        title={metaTitle}
+        description={metaDescription}
+        canonical={canonical}
+        keywords={keywords}
+        schema={schema}
+        breadcrumbs={[
+          { name: "Home", url: buildCanonical("/") },
+          { name: `Digital Marketing in ${city}`, url: canonical },
+        ]}
+      />
       {/* Hero */}
       <section className="border-b border-black/5 bg-gradient-to-r from-white via-primary/40 to-white">
         <div className="mx-auto max-w-5xl px-4 py-12 space-y-6 text-center">

@@ -39,6 +39,7 @@ export default function BlogPost() {
   const PostComponent = post.Component;
   const related = RELATED_BY_CATEGORY[post.category] || RELATED_BY_CATEGORY.default;
   const inlineCtas = CTA_BY_CATEGORY[post.category] || CTA_BY_CATEGORY.default;
+  const schemaBlocks = [articleJsonLd(post), ...(post.schema || [])].filter(Boolean);
 
   return (
     <main className="bg-white text-slate-900">
@@ -52,7 +53,7 @@ export default function BlogPost() {
         publishedTime={post.date}
         modifiedTime={post.updated || post.date}
         authorName={post.author?.name || "GoDigitalPro"}
-        schema={[articleJsonLd(post)]}
+        schema={schemaBlocks}
         breadcrumbs={breadcrumbs}
       />
 

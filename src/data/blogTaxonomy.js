@@ -37,6 +37,12 @@ export const BLOG_TAXONOMY = [
         icon: "Wallet",
         description: "Scenario planning, payback math, ROI storytelling for leadership review cycles.",
       },
+      {
+        slug: "agency-selection",
+        name: "Agency Selection",
+        icon: "Handshake",
+        description: "How to shortlist, evaluate, and onboard the right marketing partners for your growth stage.",
+      },
     ],
   },
   {
