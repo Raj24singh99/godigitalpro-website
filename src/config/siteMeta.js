@@ -15,7 +15,7 @@ export const SITE = {
     addressCountry: "IN",
   },
   logo: "https://www.godigitalpro.in/apple-touch-icon.png",
-  defaultOgImage: "https://www.godigitalpro.in/public/og-default.jpg",
+  defaultOgImage: "https://www.godigitalpro.in/og-default.jpg",
   socialProfiles: {
     linkedin: "https://www.linkedin.com/company/godigitalpro",
     instagram: "https://www.instagram.com/godigitalpro.in/",
