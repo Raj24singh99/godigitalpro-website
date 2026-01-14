@@ -14,9 +14,6 @@ function formatDate(value) {
 function SectionBlock({ section, index }) {
   return (
     <section id={section.id} className="scroll-mt-24">
-      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-        Section {String(index + 1).padStart(2, "0")}
-      </p>
       <h2>{section.title}</h2>
 
       {section.summary ? <p className="text-base text-slate-700">{section.summary}</p> : null}

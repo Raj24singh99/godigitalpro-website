@@ -28,6 +28,30 @@ function useActiveSection(sections = []) {
   return activeId;
 }
 
+function deriveTocTitle(title = "") {
+  if (!title) return title;
+  let cleaned = title.trim();
+
+  cleaned = cleaned.replace(/^Why does (.+) matter\?$/i, "Why $1 matters");
+  cleaned = cleaned.replace(/^How does (.+) work\?$/i, "How $1 works");
+  cleaned = cleaned.replace(/^How do (.+) work\?$/i, "How $1 works");
+  cleaned = cleaned.replace(/^Step-by-step:\s*(.+)$/i, "Step-by-step: $1");
+  cleaned = cleaned.replace(/^Common failure points and how to prevent them$/i, "Common failure points and prevention");
+  cleaned = cleaned.replace(/^When (.+) is not enough \(and what to do instead\)$/i, "When $1 is not enough");
+  cleaned = cleaned.replace(/^Field mapping and data hygiene:.*$/i, "Field mapping and data hygiene");
+  cleaned = cleaned.replace(/^Lead routing and speed-to-lead:.*$/i, "Lead routing and speed-to-lead");
+  cleaned = cleaned.replace(/^About the team:.*$/i, "About the team");
+
+  if (cleaned.includes(":")) {
+    const [left, right] = cleaned.split(":").map((part) => part.trim());
+    if (left.split(/\s+/).length >= 3 && right.length >= 6) {
+      cleaned = left;
+    }
+  }
+
+  return cleaned;
+}
+
 export default function OnPageNav({
   sections = [],
   showDesktop = true,
@@ -51,7 +75,9 @@ export default function OnPageNav({
               <span className={`text-xs font-semibold uppercase tracking-wide ${isActive ? "text-indigo-600" : "text-slate-400"}`}>
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="flex-1 font-medium leading-tight">{section.title}</span>
+              <span className="flex-1 font-medium leading-tight">
+                {section.tocTitle || deriveTocTitle(section.title)}
+              </span>
             </a>
           </li>
         );
