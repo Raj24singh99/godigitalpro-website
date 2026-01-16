@@ -103,6 +103,33 @@ function SectionBlock({ section, index }) {
         </div>
       ) : null}
 
+      {section.comparisonTable?.headers?.length && section.comparisonTable?.rows?.length ? (
+        <div className="mt-6 overflow-x-auto">
+          <table className="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b border-slate-200">
+                {section.comparisonTable.headers.map((header) => (
+                  <th key={header} className="px-3 py-2 font-semibold text-slate-900">
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {section.comparisonTable.rows.map((row, rowIndex) => (
+                <tr key={`${row[0]}-${rowIndex}`} className="border-b border-slate-100">
+                  {row.map((cell, cellIndex) => (
+                    <td key={`${rowIndex}-${cellIndex}`} className="px-3 py-2 text-slate-700">
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : null}
+
       {section.references?.length ? (
         <div className="mt-4">
           {section.referencesTitle === null ? null : (

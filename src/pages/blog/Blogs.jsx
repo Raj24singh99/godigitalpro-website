@@ -110,7 +110,7 @@ export default function Blogs() {
     return latestPosts.map((post, idx) => ({
       "@type": "ListItem",
       position: idx + 1,
-      url: `https://www.godigitalpro.in/blog/${post.category}/${post.slug}`,
+      url: `https://www.godigitalpro.in/blog/${post.slug}`,
       name: post.title,
     }));
   }, [latestPosts]);
@@ -188,7 +188,7 @@ export default function Blogs() {
             const gradient = gradientByIndex(idx);
             return (
               <Link
-                to={`/blog/${pillar.slug}`}
+                to={`/blog/category/${pillar.slug}`}
                 key={pillar.slug}
                 className={`group block rounded-[28px] bg-gradient-to-br ${gradient} p-[1px] transition hover:-translate-y-0.5 hover:shadow-xl`}
               >
@@ -237,19 +237,19 @@ export default function Blogs() {
             return (
               <article
                 key={post.slug}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md"
+                className="group flex h-full flex-col transition hover:-translate-y-0.5"
               >
-                <Link to={`/blog/${post.category}/${post.slug}`} className="flex h-full flex-col">
-                  <div className="relative aspect-[16/9] w-full bg-slate-100">
+                <Link to={`/blog/${post.slug}`} className="flex h-full flex-col">
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl bg-slate-100">
                     <img
                       src={cover.src}
                       alt={cover.alt}
                       loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-[1.01]"
+                      className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                     />
                   </div>
-                  <div className="flex h-full flex-col p-5">
-                    <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-500">
+                  <div className="flex h-full flex-col pt-4">
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                       <span>{BLOG_TAXONOMY.find((pillar) => pillar.slug === post.category)?.name || slugToTitle(post.category)}</span>
                       {post.subCategoryLabel && (
                         <>
@@ -258,7 +258,7 @@ export default function Blogs() {
                         </>
                       )}
                     </div>
-                    <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-slate-950">
+                    <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-emerald-700">
                       {post.title}
                     </h3>
                     {post.excerpt && <p className="mt-2 line-clamp-3 text-sm text-slate-600">{post.excerpt}</p>}

@@ -24,11 +24,11 @@ export default function BlogCategory() {
   const related = RELATED_BY_CATEGORY[canonicalSlug] || RELATED_BY_CATEGORY.default;
 
   if (categoryDefinition && categoryParam !== canonicalSlug) {
-    return <Navigate to={`/blog/${canonicalSlug}`} replace />;
+    return <Navigate to={`/blog/category/${canonicalSlug}`} replace />;
   }
 
   const categoryTitle = categoryDefinition?.name || fallbackTitle(canonicalSlug);
-  const canonical = buildCanonical(`/blog/${canonicalSlug}`);
+  const canonical = buildCanonical(`/blog/category/${canonicalSlug}`);
   const description = categoryDefinition
     ? `${categoryDefinition.description} Explore ${categoryDefinition.subcategories.length} sub-categories plus the latest plays from GoDigitalPro.`
     : `Expert articles on ${categoryTitle} by GoDigitalPro: practical guides, checklists, and playbooks for growth.`;
@@ -102,7 +102,7 @@ export default function BlogCategory() {
               const gradient = gradientByKey(sub.slug || `${idx}`);
               return (
                 <Link
-                  to={`/blog/${canonicalSlug}/sub/${sub.slug}`}
+                  to={`/blog/category/${canonicalSlug}/sub/${sub.slug}`}
                   key={sub.slug}
                   className={`group block rounded-[26px] bg-gradient-to-br ${gradient} p-[1px] transition hover:-translate-y-0.5 hover:shadow-lg`}
                 >
@@ -154,21 +154,21 @@ export default function BlogCategory() {
           {postsToShow.map((post) => (
             <article
               key={post.slug}
-              className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md"
+              className="group flex h-full flex-col transition hover:-translate-y-0.5"
             >
-              <Link to={`/blog/${post.category}/${post.slug}`} className="flex h-full flex-col">
+              <Link to={`/blog/${post.slug}`} className="flex h-full flex-col">
                 {post.cover && (
-                  <div className="relative aspect-[16/9] w-full bg-slate-100">
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl bg-slate-100">
                     <img
                       src={post.cover}
                       alt={post.coverAlt || post.title}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                       loading="lazy"
                     />
                   </div>
                 )}
-                <div className="flex h-full flex-col p-5">
-                  <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-slate-500">
+                <div className="flex h-full flex-col pt-4">
+                  <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                     {post.subCategoryLabel && (
                       <span className="rounded-full bg-slate-50 px-2.5 py-1 text-[10px] font-semibold text-slate-700 tracking-normal">
                         {post.subCategoryLabel}
@@ -179,7 +179,7 @@ export default function BlogCategory() {
                     <span>{post.readingTime || "5 min read"}</span>
                   </div>
 
-                  <h3 className="mt-3 text-lg font-semibold text-slate-900">{post.title}</h3>
+                  <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-emerald-700">{post.title}</h3>
                   {post.excerpt && (
                     <p className="mt-2 line-clamp-3 text-sm text-slate-600">{post.excerpt}</p>
                   )}

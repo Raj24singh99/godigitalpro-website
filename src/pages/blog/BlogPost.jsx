@@ -3,7 +3,7 @@ import React, { useMemo } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import SeoHelmet from "../../components/SeoHelmet";
 import { articleJsonLd, buildCanonical } from "../../utils/seo";
-import { allPosts, findPost } from "../../utils/blog";
+import { allPosts, findPost, getCategoryDefinition } from "../../utils/blog";
 
 export default function BlogPost() {
   const { category, slug } = useParams();
@@ -23,27 +23,31 @@ export default function BlogPost() {
   }, [post]);
 
   if (!post) {
+    const categoryMatch = getCategoryDefinition(slug || category);
+    if (categoryMatch) {
+      return <Navigate to={`/blog/category/${categoryMatch.slug}`} replace />;
+    }
     return <Navigate to="/blog" replace />;
   }
 
-  if (post.category && category !== post.category) {
-    return <Navigate to={`/blog/${post.category}/${post.slug}`} replace />;
+  if (category) {
+    return <Navigate to={`/blog/${post.slug}`} replace />;
   }
 
-  const canonical = buildCanonical(`/blog/${post.category}/${post.slug}`);
+  const canonical = buildCanonical(`/blog/${post.slug}`);
   const breadcrumbs = [
     { name: "Home", url: buildCanonical("/") },
     { name: "Blog", url: buildCanonical("/blog") },
     {
       name: post.categoryLabel || post.category,
-      url: buildCanonical(`/blog/${post.category}`),
+      url: buildCanonical(`/blog/category/${post.category}`),
     },
   ];
 
   if (post.subCategory && post.subCategoryLabel) {
     breadcrumbs.push({
       name: post.subCategoryLabel,
-      url: buildCanonical(`/blog/${post.category}/sub/${post.subCategory}`),
+      url: buildCanonical(`/blog/category/${post.category}/sub/${post.subCategory}`),
     });
   }
 
@@ -78,14 +82,14 @@ export default function BlogPost() {
             Blog
           </Link>
           <span>/</span>
-          <Link to={`/blog/${post.category}`} className="hover:text-slate-800">
+          <Link to={`/blog/category/${post.category}`} className="hover:text-slate-800">
             {post.categoryLabel || post.category}
           </Link>
           {post.subCategory && post.subCategoryLabel && (
             <>
               <span>/</span>
               <Link
-                to={`/blog/${post.category}/sub/${post.subCategory}`}
+                to={`/blog/category/${post.category}/sub/${post.subCategory}`}
                 className="rounded-full bg-slate-100 px-3 py-1 text-[11px] capitalize tracking-normal text-slate-700 hover:bg-slate-200"
               >
                 {post.subCategoryLabel}
@@ -106,27 +110,29 @@ export default function BlogPost() {
             <p className="mt-1 text-sm text-slate-700">
               Recent and relevant articles to continue exploring this topic.
             </p>
-            <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <div className="mt-6 grid gap-8 md:grid-cols-2">
               {relatedPosts.map((item) => (
                 <Link
                   key={item.slug}
-                  to={`/blog/${item.category}/${item.slug}`}
-                  className="group flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                  to={`/blog/${item.slug}`}
+                  className="group flex flex-col gap-3 rounded-2xl transition hover:-translate-y-0.5"
                 >
                   {item.cover ? (
-                    <div className="overflow-hidden rounded-xl">
+                    <div className="aspect-[16/9] overflow-hidden rounded-3xl bg-slate-100">
                       <img
                         src={item.cover}
                         alt={item.coverAlt || item.title}
                         loading="lazy"
-                        className="h-40 w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                        className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                       />
                     </div>
                   ) : null}
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600">
-                    {item.subCategoryLabel || item.categoryLabel || "Blog"}
-                  </p>
-                  <p className="text-base font-semibold text-slate-900 group-hover:text-emerald-700">
+                  <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600">
+                    <span>{item.subCategoryLabel || item.categoryLabel || "Blog"}</span>
+                    <span className="text-slate-400">·</span>
+                    <span className="text-slate-500">{item.readingTime || "5 min read"}</span>
+                  </div>
+                  <p className="text-lg font-semibold text-slate-900 group-hover:text-emerald-700">
                     {item.title}
                   </p>
                   <p className="text-sm text-slate-700">

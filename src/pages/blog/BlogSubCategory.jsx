@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useLocation, useParams } from "react-router-dom";
 import SeoHelmet from "../../components/SeoHelmet";
 import { buildCanonical } from "../../utils/seo";
 import { getCategoryDefinition, getSubCategoryDefinition, getPostsBySubCategory } from "../../utils/blog";
@@ -10,6 +10,7 @@ const SUBCATEGORY_POST_LIMIT = 12;
 
 export default function BlogSubCategory() {
   const { category: categoryParam, subCategory: subCategoryParam } = useParams();
+  const location = useLocation();
   const categoryDefinition = getCategoryDefinition(categoryParam);
 
   if (!categoryDefinition) {
@@ -20,12 +21,21 @@ export default function BlogSubCategory() {
   const subCategoryDefinition = getSubCategoryDefinition(canonicalCategory, subCategoryParam);
 
   if (!subCategoryDefinition) {
-    return <Navigate to={`/blog/${canonicalCategory}`} replace />;
+    return <Navigate to={`/blog/category/${canonicalCategory}`} replace />;
+  }
+
+  if (!location.pathname.startsWith("/blog/category/")) {
+    return (
+      <Navigate
+        to={`/blog/category/${canonicalCategory}/sub/${subCategoryDefinition.slug}`}
+        replace
+      />
+    );
   }
 
   const posts = getPostsBySubCategory(canonicalCategory, subCategoryDefinition.slug);
   const postsToShow = posts.slice(0, SUBCATEGORY_POST_LIMIT);
-  const canonical = buildCanonical(`/blog/${canonicalCategory}/sub/${subCategoryDefinition.slug}`);
+  const canonical = buildCanonical(`/blog/category/${canonicalCategory}/sub/${subCategoryDefinition.slug}`);
   const SubIcon = getLucideIcon(subCategoryDefinition.icon || categoryDefinition.icon);
   const subGradient = gradientByKey(subCategoryDefinition.slug);
   const description = `${subCategoryDefinition.description} Fresh plays curated from the ${categoryDefinition.name} pillar.`;
@@ -39,7 +49,7 @@ export default function BlogSubCategory() {
         breadcrumbs={[
           { name: "Home", url: buildCanonical("/") },
           { name: "Blog", url: buildCanonical("/blog") },
-          { name: categoryDefinition.name, url: buildCanonical(`/blog/${canonicalCategory}`) },
+          { name: categoryDefinition.name, url: buildCanonical(`/blog/category/${canonicalCategory}`) },
           { name: subCategoryDefinition.name, url: canonical },
         ]}
       />
@@ -48,7 +58,7 @@ export default function BlogSubCategory() {
         <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-widest text-slate-500">
           <Link to="/blog" className="hover:text-slate-800">Blog</Link>
           <span>/</span>
-          <Link to={`/blog/${canonicalCategory}`} className="hover:text-slate-800">
+          <Link to={`/blog/category/${canonicalCategory}`} className="hover:text-slate-800">
             {categoryDefinition.name}
           </Link>
           <span>/</span>
@@ -75,7 +85,7 @@ export default function BlogSubCategory() {
             </p>
           </div>
           <Link
-            to={`/blog/${canonicalCategory}`}
+            to={`/blog/category/${canonicalCategory}`}
             className="hidden whitespace-nowrap text-sm font-semibold text-amber-600 hover:text-amber-700 md:inline-flex"
           >
             Back to {categoryDefinition.name} →
@@ -86,21 +96,21 @@ export default function BlogSubCategory() {
           {postsToShow.map((post) => (
             <article
               key={post.slug}
-              className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md"
+              className="group flex h-full flex-col transition hover:-translate-y-0.5"
             >
-              <Link to={`/blog/${post.category}/${post.slug}`} className="flex h-full flex-col">
+              <Link to={`/blog/${post.slug}`} className="flex h-full flex-col">
                 {post.cover && (
-                  <div className="relative aspect-[16/9] w-full bg-slate-100">
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl bg-slate-100">
                     <img
                       src={post.cover}
                       alt={post.coverAlt || post.title}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                       loading="lazy"
                     />
                   </div>
                 )}
-                <div className="flex h-full flex-col p-5">
-                  <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-slate-500">
+                <div className="flex h-full flex-col pt-4">
+                  <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                     <span>{categoryDefinition.name}</span>
                     <span>·</span>
                     <span className="tracking-normal text-slate-700">{subCategoryDefinition.name}</span>
@@ -108,7 +118,7 @@ export default function BlogSubCategory() {
                     <span>{new Date(post.updated || post.date).toLocaleDateString()}</span>
                   </div>
 
-                  <h3 className="mt-3 text-lg font-semibold text-slate-900">{post.title}</h3>
+                  <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-emerald-700">{post.title}</h3>
                   {post.excerpt && (
                     <p className="mt-2 line-clamp-3 text-sm text-slate-600">{post.excerpt}</p>
                   )}
@@ -139,7 +149,7 @@ export default function BlogSubCategory() {
                 .map((sub) => (
                   <Link
                     key={sub.slug}
-                    to={`/blog/${canonicalCategory}/sub/${sub.slug}`}
+                    to={`/blog/category/${canonicalCategory}/sub/${sub.slug}`}
                     className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-600 hover:border-slate-300 hover:text-slate-900"
                   >
                     {sub.name}
