@@ -1,6 +1,8 @@
 import React from "react";
-import blogCover from "../../../../assets/blogcovers/generated/ga4-setup-sgtm-capi.svg";
 import SimpleArticleLayout from "../../../../components/blog/SimpleArticleLayout.jsx";
+
+const heroImage =
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80";
 
 export const meta = {
   title: "GA4 Setup OS: GA4 Event Setup, Server-Side GTM & Meta CAPI",
@@ -26,8 +28,8 @@ export const meta = {
     "LTV",
     "measurement"
   ],
-  cover: blogCover,
-  coverAlt: "Deep blue telemetry board connecting GA4, server-side GTM, Conversions API, and ad endpoints",
+  cover: heroImage,
+  coverAlt: "Analytics dashboard interface representing GA4 setup and event tracking",
   readingTime: "17 min read",
   author: {
     name: "Raj Singh",

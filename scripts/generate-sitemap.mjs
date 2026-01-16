@@ -146,7 +146,7 @@ async function generate() {
 
   posts.forEach((post) => {
     const lastmod = isoDate(post.updated || post.date);
-    addUrl(`/blog/${post.category}/${post.slug}`, lastmod);
+    addUrl(`/blog/${post.slug}`, lastmod);
 
     const currentCat = categoryLastMod.get(post.category);
     if (!currentCat || lastmod > currentCat) {
@@ -163,12 +163,12 @@ async function generate() {
   });
 
   BLOG_TAXONOMY.forEach((category) => {
-    const catPath = `/blog/${category.slug}`;
+    const catPath = `/blog/category/${category.slug}`;
     addUrl(catPath, categoryLastMod.get(category.slug) || TODAY_ISO);
 
     category.subcategories?.forEach((sub) => {
       const key = `${category.slug}::${sub.slug}`;
-      const subPath = `/blog/${category.slug}/sub/${sub.slug}`;
+      const subPath = `/blog/category/${category.slug}/sub/${sub.slug}`;
       addUrl(subPath, subCategoryLastMod.get(key) || categoryLastMod.get(category.slug) || TODAY_ISO);
     });
   });

@@ -147,7 +147,7 @@ export function blogOrgJsonLd() {
 }
 
 export function articleJsonLd(post) {
-  const url = buildCanonical(`/blog/${post.category}/${post.slug}`);
+  const url = buildCanonical(`/blog/${post.slug}`);
   return {
     "@context": "https://schema.org",
     "@type": "Article",

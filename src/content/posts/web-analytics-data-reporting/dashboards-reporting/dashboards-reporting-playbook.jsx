@@ -1,6 +1,8 @@
 import React from "react";
-import blogCover from "../../../../assets/blogcovers/generated/dashboards-reporting-playbook.svg";
 import SimpleArticleLayout from "../../../../components/blog/SimpleArticleLayout.jsx";
+
+const heroImage =
+  "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80";
 
 export const meta = {
   title: "Dashboard & Reporting Playbook",
@@ -17,8 +19,8 @@ export const meta = {
     "digital marketing"
   ],
   draft: false,
-  cover: blogCover,
-  coverAlt: "Dashboard & Reporting Playbook hero illustration"
+  cover: heroImage,
+  coverAlt: "Team reviewing a dashboard report with charts on a screen"
 };
 
 const sections = [

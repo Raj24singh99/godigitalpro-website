@@ -1,6 +1,8 @@
 import React from "react";
-import blogCover from "../../../../assets/blogcovers/generated/attribution-mmm-playbook.svg";
 import SimpleArticleLayout from "../../../../components/blog/SimpleArticleLayout.jsx";
+
+const heroImage =
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80";
 
 export const meta = {
   title: "Attribution & Mix Modeling Playbook",
@@ -17,8 +19,8 @@ export const meta = {
     "digital marketing"
   ],
   draft: false,
-  cover: blogCover,
-  coverAlt: "Attribution & Mix Modeling Playbook hero illustration"
+  cover: heroImage,
+  coverAlt: "Analytics dashboard with charts representing attribution and mix modeling"
 };
 
 const sections = [

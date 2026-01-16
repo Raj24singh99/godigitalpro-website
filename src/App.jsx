@@ -217,9 +217,11 @@ export default function App() {
 
             {/* ✅ Blog */}
             <Route path="/blog" element={<Blogs />} />
-            <Route path="/blog/:category" element={<BlogCategory />} />
+            <Route path="/blog/category/:category" element={<BlogCategory />} />
+            <Route path="/blog/category/:category/sub/:subCategory" element={<BlogSubCategory />} />
             <Route path="/blog/:category/sub/:subCategory" element={<BlogSubCategory />} />
             <Route path="/blog/:category/:slug" element={<BlogPost />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             {/* Backward-compat for old /blogs link */}
             <Route path="/blogs" element={<Navigate to="/blog" replace />} />
 

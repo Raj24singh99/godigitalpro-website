@@ -103,11 +103,17 @@ export function getPostsBySubCategory(categorySlug, subCategorySlug) {
 }
 
 export function findPost(category, slug) {
-  const canonical = resolveCategorySlug(category) ?? category;
-  return (
-    allPosts.find((p) => p.category === canonical && p.slug === slug) ||
-    allPosts.find(
-      (p) => p.slug === slug && (p.legacyCategories || []).some((legacy) => legacy === category)
-    )
-  );
+  const targetSlug = slug ?? category;
+  const targetCategory = slug ? category : undefined;
+  if (!targetSlug) return undefined;
+  const canonical = resolveCategorySlug(targetCategory) ?? targetCategory;
+  const primaryMatch = canonical
+    ? allPosts.find(
+        (p) =>
+          p.slug === targetSlug &&
+          (p.category === canonical ||
+            (p.legacyCategories || []).some((legacy) => legacy === canonical))
+      )
+    : null;
+  return primaryMatch || allPosts.find((p) => p.slug === targetSlug);
 }
