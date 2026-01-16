@@ -216,7 +216,7 @@ export const TOOLS = [
   { slug: "zoom", name: "Zoom", category: "Meetings", headline: "Video meetings and webinars.", description: "Meetings, webinars, and chat for teams.", url: "https://zoom.us/", pricing: "Freemium", tags: ["meetings", "video"] },
 
   // Forms / surveys
-  { slug: "typeform", name: "Typeform", category: "Forms", headline: "Conversational forms and surveys.", description: "Engaging form experience with logic and embeds.", url: "https://www.typeform.com/", pricing: "Freemium", tags: ["forms", "surveys"] },
+  { slug: "typeform", name: "Typeform", category: "Forms", headline: "Conversational forms and surveys.", description: "Engaging form experience with logic and embeds.", url: "https://www.typeform.com/", pricing: "Freemium", tags: ["forms", "surveys"], logo: "/assets/tool-logos/typeform.svg" },
   { slug: "jotform", name: "Jotform", category: "Forms", headline: "Powerful form builder.", description: "Form templates, payments, and approvals.", url: "https://www.jotform.com/", pricing: "Freemium", tags: ["forms"] },
   { slug: "paperform", name: "Paperform", category: "Forms", headline: "Flexible form and page builder.", description: "Create forms that look like mini-sites.", url: "https://paperform.co/", pricing: "Paid", tags: ["forms", "landing pages"] },
   { slug: "tally", name: "Tally", category: "Forms", headline: "Notion-style form builder.", description: "Simple forms with generous free limits.", url: "https://tally.so/", pricing: "Freemium", tags: ["forms"] },

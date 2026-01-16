@@ -24,7 +24,7 @@ const brandMeta = {
   typeform: {
     gradient: "from-amber-500 via-orange-500 to-rose-500",
     badge: "bg-amber-100 text-amber-900",
-    logo: "https://logo.clearbit.com/typeform.com",
+    logo: "/assets/tool-logos/typeform.svg",
   },
   surveymonkey: {
     gradient: "from-emerald-500 via-green-500 to-teal-500",

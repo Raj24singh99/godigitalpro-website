@@ -267,6 +267,7 @@ function buildBudgetRecommendations({
   timeframeSelection,
   customRange,
   seasonalityMultiplier,
+  enableGuardrails,
   guardrailOverrides,
   campaignSettings,
   experimentVariant,
@@ -276,13 +277,15 @@ function buildBudgetRecommendations({
   timeframeSelection: number;
   customRange: { start: string; end: string } | null;
   seasonalityMultiplier: number;
+  enableGuardrails?: boolean;
   guardrailOverrides: any;
   campaignSettings: Record<string, any>;
   experimentVariant: string;
 }) {
+  const guardrailsActive = enableGuardrails !== false;
   const configGuardrails = {
     ...CONFIG.guardrails,
-    ...guardrailOverrides,
+    ...(guardrailOverrides || {}),
   };
 
   const datedRows = rows
@@ -360,22 +363,25 @@ function buildBudgetRecommendations({
     let action = determineBand(adjustedScore);
     const guardrails: string[] = [];
     const campaignConfig = campaignSettings[campaign] || {};
-    const lastChange = parseDate(campaignConfig.lastBudgetChangeDate || null);
-    if (lastChange) {
-      const daysSince = daysBetween(endDate, lastChange);
-      if (daysSince < configGuardrails.minDaysBetweenChanges) {
-        guardrails.push(
-          `Budget change blocked (changed ${daysSince} days ago).`
-        );
-        action = "Hold";
+    let stopLoss = false;
+    if (guardrailsActive) {
+      const lastChange = parseDate(campaignConfig.lastBudgetChangeDate || null);
+      if (lastChange) {
+        const daysSince = daysBetween(endDate, lastChange);
+        if (daysSince < configGuardrails.minDaysBetweenChanges) {
+          guardrails.push(
+            `Budget change blocked (changed ${daysSince} days ago).`
+          );
+          action = "Hold";
+        }
       }
-    }
 
-    const stopLoss =
-      perTimeframe.d7?.spend > configGuardrails.stopLossSpend &&
-      perTimeframe.d7?.conversions === 0;
-    if (stopLoss) {
-      guardrails.push("Stop-loss flag: spend with zero conversions.");
+      stopLoss =
+        perTimeframe.d7?.spend > configGuardrails.stopLossSpend &&
+        perTimeframe.d7?.conversions === 0;
+      if (stopLoss) {
+        guardrails.push("Stop-loss flag: spend with zero conversions.");
+      }
     }
 
     const bidIsTcpa = isTcpA(current.bidStrategy);
@@ -383,7 +389,7 @@ function buildBudgetRecommendations({
       perTimeframe.d7?.budgetUtilization ?? current.budgetUtilization ?? 0;
 
     let adjustmentType = "Budget";
-    if (bidIsTcpa) {
+    if (guardrailsActive && bidIsTcpa) {
       adjustmentType =
         utilization < configGuardrails.utilizationThreshold
           ? "TCPA"
@@ -396,8 +402,8 @@ function buildBudgetRecommendations({
       configGuardrails.maxStepPercent
     );
 
-    const minBudget = campaignConfig.minBudget ?? 0;
-    const maxBudget = campaignConfig.maxBudget ?? Infinity;
+    const minBudget = guardrailsActive ? campaignConfig.minBudget ?? 0 : 0;
+    const maxBudget = guardrailsActive ? campaignConfig.maxBudget ?? Infinity : Infinity;
     let recommendedBudget = current.currentBudget;
     let budgetDelta = 0;
     if (action === "Scale") {
@@ -457,7 +463,7 @@ function buildBudgetRecommendations({
       );
     }
 
-    if (guardrails.length) {
+    if (guardrailsActive && guardrails.length) {
       reasonParts.push(guardrails.join(" "));
     }
 
@@ -505,6 +511,7 @@ serve(async (req) => {
       timeframeSelection,
       customRange,
       seasonalityMultiplier,
+      enableGuardrails,
       guardrailOverrides,
       campaignSettings,
       experimentVariant = "A",
@@ -534,6 +541,7 @@ serve(async (req) => {
       timeframeSelection,
       customRange,
       seasonalityMultiplier,
+      enableGuardrails,
       guardrailOverrides,
       campaignSettings,
       experimentVariant,
@@ -556,6 +564,7 @@ serve(async (req) => {
       timeframeSelection,
       customRange,
       seasonalityMultiplier,
+      enableGuardrails,
       guardrailOverrides,
       campaignSettings,
       experimentVariant,
