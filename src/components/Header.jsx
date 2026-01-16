@@ -159,21 +159,24 @@ export default function Header() {
             >
               About
             </NavLink>
+
+            <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                `${baseLink} ${isActive ? activeClass : ""}`
+              }
+            >
+              Blog
+            </NavLink>
           </nav>
 
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-3">
             <Link
-              to="/login"
-              className="hidden md:inline-flex rounded-xl px-4 py-2 font-semibold border border-slate-300 text-slate-800 hover:bg-slate-100 transition"
+              to="/app"
+              className="hidden md:inline-flex rounded-xl px-4 py-2 font-semibold bg-slate-900 text-white hover:bg-slate-800 transition"
             >
-              Login
-            </Link>
-            <Link
-              to="/onboarding"
-              className="hidden md:inline-flex rounded-xl px-4 py-2 font-semibold bg-black text-white hover:bg-slate-800 transition"
-            >
-              Sign Up
+              App
             </Link>
 
             <button
@@ -225,11 +228,12 @@ export default function Header() {
               About
             </Link>
 
-            <Link to="/onboarding" className="inline-flex mt-2 rounded-xl px-4 py-2 font-semibold bg-black text-white hover:bg-slate-800 transition">
-              Sign Up
+            <Link to="/blog" className="block rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100">
+              Blog
             </Link>
-            <Link to="/login" className="inline-flex mt-2 rounded-xl px-4 py-2 font-semibold border border-slate-300 text-slate-800 hover:bg-slate-100 transition">
-              Login
+
+            <Link to="/app" className="inline-flex mt-2 rounded-xl px-4 py-2 font-semibold bg-slate-900 text-white hover:bg-slate-800 transition">
+              App
             </Link>
           </div>
         </div>

@@ -1,0 +1,398 @@
+import React from "react";
+import blogCover from "../../../../assets/blogcovers/generated/ai-marketing-playbook.svg";
+import SimpleArticleLayout from "../../../../components/blog/SimpleArticleLayout.jsx";
+
+export const meta = {
+  title: "Top 20 AI Tools for Marketing: A Workflow-First Stack",
+  seoTitle: "Top 20 AI Tools for Marketing (2025 Guide)",
+  metaDescription:
+    "A practical, workflow-first list of the top 20 AI tools for marketing, plus how to choose, roll out, and govern them.",
+  slug: "top-20-ai-tools-for-marketing",
+  date: "2025-03-05",
+  updated: "2025-03-05",
+  category: "emerging-trends-technologies",
+  subCategory: "ai-marketing",
+  tags: ["AI Marketing", "Marketing Tools", "Automation", "Content", "Performance Marketing"],
+  draft: false,
+  cover: blogCover,
+  coverAlt: "AI marketing stack overview with workflow categories",
+};
+
+const sections = [
+  {
+    id: "intro-top-20-ai-tools",
+    title: "Top 20 AI tools for marketing",
+    summary:
+      "This is a straight, no‑fluff list of 20 AI tools marketing teams actually use. Each entry includes a short description and why it is valuable. Godigitalpro recommends picking 3–5 tools that remove your biggest bottlenecks first, then expanding only after you see measurable impact.",
+  },
+  {
+    id: "tool-chatgpt",
+    title: "ChatGPT",
+    summary: "Research drafts, messaging iterations, and workflow copilots.",
+    link: "https://openai.com/chatgpt",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=openai.com",
+    logoAlt: "OpenAI logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Speeds up first drafts for ads, emails, and landing pages.",
+        "Turns rough ideas into structured messaging frameworks quickly.",
+        "Summarizes long docs into usable campaign notes.",
+        "Helps generate testable variations for A/B experiments.",
+      ],
+    },
+  },
+  {
+    id: "tool-claude",
+    title: "Claude",
+    summary: "Long-form editing, synthesis, and internal knowledge work.",
+    link: "https://claude.ai",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=claude.ai",
+    logoAlt: "Claude logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Strong at long-form editing and clarity improvement.",
+        "Summarizes complex docs into clear briefs.",
+        "Helps maintain consistent tone across long assets.",
+        "Useful for internal policy and playbook drafting.",
+      ],
+    },
+  },
+  {
+    id: "tool-gemini",
+    title: "Gemini",
+    summary: "Multimodal brainstorming and prompt-assisted research.",
+    link: "https://gemini.google.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=google.com",
+    logoAlt: "Google logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Handles text and image inputs for richer ideation.",
+        "Helpful for early-stage brainstorming and direction setting.",
+        "Quickly generates alternative angles for campaigns.",
+        "Works well for research and summarization tasks.",
+      ],
+    },
+  },
+  {
+    id: "tool-perplexity",
+    title: "Perplexity",
+    summary: "Fast research with citations for briefs and POVs.",
+    link: "https://www.perplexity.ai",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=perplexity.ai",
+    logoAlt: "Perplexity logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Provides sources so research can be verified quickly.",
+        "Great for competitor scans and market overviews.",
+        "Turns research into short, usable briefs.",
+        "Speeds up insight gathering for strategy decks.",
+      ],
+    },
+  },
+  {
+    id: "tool-jasper",
+    title: "Jasper",
+    summary: "Brand-safe content workflows and campaign copy.",
+    link: "https://www.jasper.ai",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=jasper.ai",
+    logoAlt: "Jasper logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Supports brand voice consistency across teams.",
+        "Good for campaign copy at scale with approvals.",
+        "Helps teams structure content workflows reliably.",
+        "Useful for marketing teams with multiple contributors.",
+      ],
+    },
+  },
+  {
+    id: "tool-copyai",
+    title: "Copy.ai",
+    summary: "Marketing copy templates and campaign drafts.",
+    link: "https://www.copy.ai",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=copy.ai",
+    logoAlt: "Copy.ai logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Fast copy generation for ads, emails, and social.",
+        "Great for brainstorming multiple angles quickly.",
+        "Useful templates help junior teams move faster.",
+        "Reduces time spent on blank-page drafting.",
+      ],
+    },
+  },
+  {
+    id: "tool-writesonic",
+    title: "Writesonic",
+    summary: "Landing page and ad copy generation.",
+    link: "https://writesonic.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=writesonic.com",
+    logoAlt: "Writesonic logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Produces landing page sections quickly.",
+        "Generates multiple ad copy variations for testing.",
+        "Helpful for rapid campaign launches.",
+        "Good for short-form marketing content needs.",
+      ],
+    },
+  },
+  {
+    id: "tool-grammarly",
+    title: "Grammarly",
+    summary: "Editing, clarity, and tone consistency.",
+    link: "https://www.grammarly.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=grammarly.com",
+    logoAlt: "Grammarly logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Cleans grammar and improves readability fast.",
+        "Helps maintain consistent tone across teams.",
+        "Reduces QA time for content and emails.",
+        "Useful for teams producing high volumes of copy.",
+      ],
+    },
+  },
+  {
+    id: "tool-notion-ai",
+    title: "Notion AI",
+    summary: "Docs, briefs, and knowledge operations.",
+    link: "https://www.notion.so/product/ai",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=notion.so",
+    logoAlt: "Notion logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Turns meeting notes into structured briefs.",
+        "Keeps knowledge bases searchable and usable.",
+        "Helps teams document processes quickly.",
+        "Supports collaboration across marketing pods.",
+      ],
+    },
+  },
+  {
+    id: "tool-canva",
+    title: "Canva",
+    summary: "AI-assisted design and quick creative variants.",
+    link: "https://www.canva.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=canva.com",
+    logoAlt: "Canva logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Creates design assets quickly without heavy tools.",
+        "Useful for social templates and ad variants.",
+        "Brand kits keep visuals consistent across teams.",
+        "Great for fast turnaround requests.",
+      ],
+    },
+  },
+  {
+    id: "tool-figma",
+    title: "Figma",
+    summary: "Design workflows with AI-assisted ideation.",
+    link: "https://www.figma.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=figma.com",
+    logoAlt: "Figma logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Great for collaborative design and handoff.",
+        "Helps teams prototype landing pages quickly.",
+        "Component libraries keep layouts consistent.",
+        "Works well for iterative design feedback loops.",
+      ],
+    },
+  },
+  {
+    id: "tool-runway",
+    title: "Runway",
+    summary: "AI video generation and editing for ads.",
+    link: "https://runwayml.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=runwayml.com",
+    logoAlt: "Runway logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Generates video variations for ad testing.",
+        "Speeds up edit cycles without full production.",
+        "Useful for quick cutdowns and refinements.",
+        "Helps creative teams explore directions fast.",
+      ],
+    },
+  },
+  {
+    id: "tool-descript",
+    title: "Descript",
+    summary: "AI video and audio editing with transcripts.",
+    link: "https://www.descript.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=descript.com",
+    logoAlt: "Descript logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Edits audio and video like a document.",
+        "Great for podcasts, webinars, and clips.",
+        "Speeds up trimming and cleanup tasks.",
+        "Makes repurposing content much faster.",
+      ],
+    },
+  },
+  {
+    id: "tool-synthesia",
+    title: "Synthesia",
+    summary: "AI video creation for explainers and onboarding.",
+    link: "https://www.synthesia.io",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=synthesia.io",
+    logoAlt: "Synthesia logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Creates explainers without studio production.",
+        "Scales onboarding and training content easily.",
+        "Useful for multilingual or regional variants.",
+        "Reduces turnaround time for video needs.",
+      ],
+    },
+  },
+  {
+    id: "tool-midjourney",
+    title: "Midjourney",
+    summary: "Concept art and visual ideation.",
+    link: "https://www.midjourney.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=midjourney.com",
+    logoAlt: "Midjourney logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Generates visual directions for campaigns.",
+        "Great for moodboards and concept exploration.",
+        "Speeds up creative brainstorming cycles.",
+        "Helpful before full production starts.",
+      ],
+    },
+  },
+  {
+    id: "tool-surfer",
+    title: "Surfer",
+    summary: "SEO content optimization and audits.",
+    link: "https://surferseo.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=surferseo.com",
+    logoAlt: "Surfer logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Helps align content with SERP intent.",
+        "Suggests structure and topic coverage gaps.",
+        "Useful for audits and on-page updates.",
+        "Improves consistency across large content sets.",
+      ],
+    },
+  },
+  {
+    id: "tool-semrush",
+    title: "Semrush",
+    summary: "AI-assisted SEO research and competitive analysis.",
+    link: "https://www.semrush.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=semrush.com",
+    logoAlt: "Semrush logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Strong for keyword research and gaps.",
+        "Useful for competitor content analysis.",
+        "Supports site audits and tracking.",
+        "Helps prioritize SEO opportunities quickly.",
+      ],
+    },
+  },
+  {
+    id: "tool-hubspot",
+    title: "HubSpot",
+    summary: "AI marketing automation and CRM insights.",
+    link: "https://www.hubspot.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=hubspot.com",
+    logoAlt: "HubSpot logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Unifies CRM, email, and automation workflows.",
+        "Improves lead scoring and lifecycle visibility.",
+        "Good for nurture sequences and reporting.",
+        "Godigitalpro teams use it to keep sales and marketing aligned.",
+      ],
+    },
+  },
+  {
+    id: "tool-zapier",
+    title: "Zapier",
+    summary: "AI-driven automation across tools and workflows.",
+    link: "https://zapier.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=zapier.com",
+    logoAlt: "Zapier logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Connects apps without engineering effort.",
+        "Automates lead routing and alerts quickly.",
+        "Reduces manual data movement between tools.",
+        "Great for lightweight ops automation.",
+      ],
+    },
+  },
+  {
+    id: "tool-hotjar",
+    title: "Hotjar",
+    summary: "AI-assisted behavior insights and user research.",
+    link: "https://www.hotjar.com",
+    logo: "https://www.google.com/s2/favicons?sz=64&domain=hotjar.com",
+    logoAlt: "Hotjar logo",
+    checklist: {
+      title: null,
+      className: "space-y-3 text-base",
+      items: [
+        "Heatmaps reveal drop-offs and friction.",
+        "Recordings show where users struggle.",
+        "Feedback tools capture real objections.",
+        "Helps prioritize high-impact UX fixes.",
+      ],
+    },
+  },
+  {
+    id: "conclusion-top-20-ai-tools",
+    title: "Conclusion",
+    summary:
+      "Choose tools that directly reduce your biggest marketing bottlenecks. Start with a small set, prove impact, and expand only after outcomes improve. If you want help building a workflow-first AI stack, Godigitalpro can guide you without compromising quality.",
+  },
+];
+
+export default function Top20AiToolsMarketing() {
+  return <SimpleArticleLayout meta={meta} sections={sections} />;
+}

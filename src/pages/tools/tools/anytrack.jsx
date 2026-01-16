@@ -11,7 +11,8 @@ const shortPitch =
   "AnyTrack stitches ad platform pixels, analytics, and conversion APIs so you can track ROAS, conversions, and funnels across channels.";
 const pricingSummary =
   "Free trial, then paid plans by tracked conversions and features. Higher tiers add more API calls, workspaces, advanced routing, and white labeling.";
-const officialUrl = "https://anytrack.io";
+const officialUrl =
+  "https://anytrack.io/?utm_campaign=referral_campaign&utm_medium=referral&utm_source=rewardful&via=136364";
 const ratingValue = 4.4;
 
 const brandMeta = {
