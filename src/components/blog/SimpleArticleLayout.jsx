@@ -14,7 +14,32 @@ function formatDate(value) {
 function SectionBlock({ section, index }) {
   return (
     <section id={section.id} className="scroll-mt-24">
-      <h2>{section.title}</h2>
+      {section.link ? (
+        <h2>
+          <a
+            href={section.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 text-slate-900 no-underline hover:text-slate-900"
+          >
+            {section.logo ? (
+              <img
+                src={section.logo}
+                alt={section.logoAlt || section.title || "Tool logo"}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                onError={(event) => {
+                  event.currentTarget.style.display = "none";
+                }}
+                className="h-7 w-7 rounded-full bg-white ring-1 ring-slate-200"
+              />
+            ) : null}
+            {section.title}
+          </a>
+        </h2>
+      ) : (
+        <h2>{section.title}</h2>
+      )}
 
       {section.summary ? <p className="text-base text-slate-700">{section.summary}</p> : null}
       {section.lede ? <p className="text-base text-slate-700">{section.lede}</p> : null}
@@ -63,8 +88,14 @@ function SectionBlock({ section, index }) {
 
       {section.checklist?.items?.length ? (
         <div className="mt-4">
-          <h3 className="text-base font-semibold text-slate-900">{section.checklist.title || "Checklist"}</h3>
-          <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-slate-700">
+          {section.checklist.title ? (
+            <h3 className="text-base font-semibold text-slate-900">{section.checklist.title}</h3>
+          ) : null}
+          <ul
+            className={`mt-2 list-disc pl-5 text-slate-700 ${
+              section.checklist.className || "space-y-2 text-sm"
+            }`}
+          >
             {section.checklist.items.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -74,16 +105,32 @@ function SectionBlock({ section, index }) {
 
       {section.references?.length ? (
         <div className="mt-4">
-          <h3 className="text-base font-semibold text-slate-900">References</h3>
+          {section.referencesTitle === null ? null : (
+            <h3 className="text-base font-semibold text-slate-900">
+              {section.referencesTitle || "References"}
+            </h3>
+          )}
           <ul className="mt-2 space-y-1 text-sm">
             {section.references.map((ref) => (
               <li key={ref.href || ref.label}>
                 <a
-                  className="text-indigo-700 underline"
+                  className="inline-flex items-center gap-2 text-indigo-700 underline"
                   href={ref.href}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  {ref.image ? (
+                    <img
+                      src={ref.image}
+                      alt={ref.imageAlt || ref.label || "Tool logo"}
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                      onError={(event) => {
+                        event.currentTarget.style.display = "none";
+                      }}
+                      className="h-6 w-6 rounded-full bg-white ring-1 ring-slate-200"
+                    />
+                  ) : null}
                   {ref.label || ref.href}
                 </a>
               </li>
