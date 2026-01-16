@@ -1,10 +1,16 @@
 import React, { useMemo, useState } from "react";
-import AppShell from "../../components/app/AppShell";
-import { parseCsv } from "../../utils/csv";
-import { buildBudgetRecommendations } from "../../utils/budgetEngine";
-import { BUDGET_ENGINE_CONFIG } from "../../config/budgetEngineConfig";
-import { useAuth } from "../../context/AuthProvider";
-import { supabase } from "../../config/supabase";
+import AppShell from "../../../components/app/AppShell";
+import { parseCsv } from "./utils/csv";
+import { buildBudgetRecommendations } from "./utils/budgetEngine";
+import { BUDGET_ENGINE_CONFIG } from "./config/budgetEngineConfig";
+import { useAuth } from "../../../context/AuthProvider";
+import { supabase } from "../../../config/supabase";
+import GoogleCsvUploader from "./components/GoogleCsvUploader";
+import MetaCsvUploader from "./components/MetaCsvUploader";
+import CrmLeadsCsvUploader from "./components/CrmLeadsCsvUploader";
+import CrmDemosCsvUploader from "./components/CrmDemosCsvUploader";
+import CrmEnrollmentsCsvUploader from "./components/CrmEnrollmentsCsvUploader";
+import CrmAppointmentsCsvUploader from "./components/CrmAppointmentsCsvUploader";
 import {
   UploadCloud,
   Layers,
@@ -80,6 +86,31 @@ function toNumber(value) {
   return Number.isNaN(parsed) ? 0 : parsed;
 }
 
+function normalizeDateString(value) {
+  if (!value) return "";
+  const trimmed = String(value).trim();
+  return trimmed.split(" ")[0];
+}
+
+function buildHeaderMap(headers = []) {
+  return headers.reduce((acc, header) => {
+    acc[String(header).trim().toLowerCase()] = header;
+    return acc;
+  }, {});
+}
+
+function pickValue(row, headerMap, keys = []) {
+  for (const key of keys) {
+    const actual = headerMap[key];
+    if (actual && row[actual] !== undefined) return row[actual];
+  }
+  return "";
+}
+
+function normalizeCampaignKey(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
 function toPercent(value) {
   if (value === null || value === undefined || value === "") return null;
   const raw = toNumber(value);
@@ -106,6 +137,15 @@ function formatPercent(value) {
 }
 
 export default function BudgetAutomation() {
+  const [googleData, setGoogleData] = useState([]);
+  const [metaData, setMetaData] = useState([]);
+  const [crmLeadsData, setCrmLeadsData] = useState([]);
+  const [crmDemosData, setCrmDemosData] = useState([]);
+  const [crmEnrollmentsData, setCrmEnrollmentsData] = useState([]);
+  const [crmAppointmentsData, setCrmAppointmentsData] = useState([]);
+  const [combineError, setCombineError] = useState("");
+  const [combineMessage, setCombineMessage] = useState("");
+  const [combinedReady, setCombinedReady] = useState(null);
   const [fileName, setFileName] = useState("");
   const [fileRef, setFileRef] = useState(null);
   const [headers, setHeaders] = useState([]);
@@ -114,6 +154,7 @@ export default function BudgetAutomation() {
   const [mappingReady, setMappingReady] = useState(false);
   const [focus, setFocus] = useState("enrollment");
   const [timeframe, setTimeframe] = useState(28);
+  const [enableGuardrails, setEnableGuardrails] = useState(false);
   const [customRange, setCustomRange] = useState({
     start: "",
     end: "",
@@ -133,6 +174,15 @@ export default function BudgetAutomation() {
   const [saving, setSaving] = useState(false);
   const [savedMessage, setSavedMessage] = useState("");
   const { user } = useAuth();
+  const hasCustomRange =
+    timeframe !== "custom" || (customRange.start && customRange.end);
+  const canRun = mappingReady && rows.length > 0 && hasCustomRange && !saving;
+  const needsSteps = [];
+  if (!rows.length) needsSteps.push("1) Upload CSV or build combined CSV");
+  if (rows.length > 0 && !mappingReady) needsSteps.push("2) Map required columns");
+  if (rows.length > 0 && mappingReady && !hasCustomRange) {
+    needsSteps.push("3) Select a valid date range");
+  }
 
   const requiredMissing = useMemo(() => {
     return REQUIRED_COLUMNS.filter(
@@ -144,6 +194,180 @@ export default function BudgetAutomation() {
     const list = new Set(rows.map((row) => row.campaign));
     return Array.from(list);
   }, [rows]);
+
+  const buildCombinedCsv = () => {
+    setCombineError("");
+    setCombineMessage("");
+
+    const hasAnySource =
+      googleData.length ||
+      metaData.length ||
+      crmLeadsData.length ||
+      crmDemosData.length ||
+      crmEnrollmentsData.length ||
+      crmAppointmentsData.length;
+
+    if (!hasAnySource) {
+      setCombineError("Add at least one source file to combine.");
+      return;
+    }
+
+    const googleHeaders = buildHeaderMap(Object.keys(googleData[0] || {}));
+    const metaHeaders = buildHeaderMap(Object.keys(metaData[0] || {}));
+    const crmLeadsHeaders = buildHeaderMap(Object.keys(crmLeadsData[0] || {}));
+    const crmDemosHeaders = buildHeaderMap(Object.keys(crmDemosData[0] || {}));
+    const crmEnrollmentsHeaders = buildHeaderMap(Object.keys(crmEnrollmentsData[0] || {}));
+    const crmAppointmentsHeaders = buildHeaderMap(Object.keys(crmAppointmentsData[0] || {}));
+
+    const knownCampaigns = new Set();
+    const combinedMap = new Map();
+
+    const ensureRow = (date, campaign) => {
+      const key = `${date}__${campaign}`;
+      if (!combinedMap.has(key)) {
+        combinedMap.set(key, {
+          date,
+          campaign,
+          source: new Set(),
+          spend: 0,
+          budget: 0,
+          bidStrategy: "",
+          tcpa: "",
+          leads: 0,
+          demos: 0,
+          enrollments: 0,
+          appointments: 0,
+          positiveLeads: 0,
+          impressions: 0,
+          clicks: 0,
+          conversions: 0,
+        });
+      }
+      return combinedMap.get(key);
+    };
+
+    googleData.forEach((row) => {
+      const date = normalizeDateString(pickValue(row, googleHeaders, ["date"]));
+      const campaign = pickValue(row, googleHeaders, ["campaign", "campaign name"]);
+      if (!date || !campaign) return;
+      const normalized = normalizeCampaignKey(campaign);
+      knownCampaigns.add(normalized);
+      const item = ensureRow(date, campaign);
+      item.source.add("Google");
+      item.spend += toNumber(pickValue(row, googleHeaders, ["spend", "spent", "cost"]));
+      item.budget += toNumber(pickValue(row, googleHeaders, ["budget", "daily budget"]));
+      item.bidStrategy = pickValue(row, googleHeaders, ["bid strategy", "bid stratgy"]) || item.bidStrategy;
+      item.tcpa = pickValue(row, googleHeaders, ["tcpa", "t cpa", "target cpa"]) || item.tcpa;
+      item.conversions += toNumber(pickValue(row, googleHeaders, ["conversion", "conversions"]));
+      item.impressions += toNumber(pickValue(row, googleHeaders, ["imp", "impressions"]));
+      item.clicks += toNumber(pickValue(row, googleHeaders, ["click", "clicks"]));
+    });
+
+    metaData.forEach((row) => {
+      const date = normalizeDateString(pickValue(row, metaHeaders, ["date"]));
+      const campaign = pickValue(row, metaHeaders, [
+        "campaign/ad set",
+        "ad set",
+        "ad set name",
+        "campaign",
+        "campaign name",
+      ]);
+      if (!date || !campaign) return;
+      const normalized = normalizeCampaignKey(campaign);
+      knownCampaigns.add(normalized);
+      const item = ensureRow(date, campaign);
+      item.source.add("Meta");
+      item.spend += toNumber(pickValue(row, metaHeaders, ["spend", "spent", "cost"]));
+      item.budget += toNumber(pickValue(row, metaHeaders, ["budget", "daily budget"]));
+      item.impressions += toNumber(pickValue(row, metaHeaders, ["impression", "impressions", "imp"]));
+      item.clicks += toNumber(pickValue(row, metaHeaders, ["click", "clicks"]));
+    });
+
+    const aggregateCrm = (rows, headerMap, fieldLabel) => {
+      rows.forEach((row) => {
+        const date = normalizeDateString(pickValue(row, headerMap, ["date", "created at", "created"]));
+        const campaignName = pickValue(row, headerMap, ["campaign", "campaign name"]);
+        const adSetName = pickValue(row, headerMap, ["ad set", "ad set name"]);
+        const rawCampaign = adSetName || campaignName;
+        if (!date || !rawCampaign) return;
+        const normalized = normalizeCampaignKey(rawCampaign);
+        const campaign = knownCampaigns.has(normalized)
+          ? rawCampaign
+          : `Unmatched CRM · ${rawCampaign}`;
+        const item = ensureRow(date, campaign);
+        item.source.add("CRM");
+        item[fieldLabel] += 1;
+      });
+    };
+
+    aggregateCrm(crmLeadsData, crmLeadsHeaders, "leads");
+    aggregateCrm(crmDemosData, crmDemosHeaders, "demos");
+    aggregateCrm(crmEnrollmentsData, crmEnrollmentsHeaders, "enrollments");
+    aggregateCrm(crmAppointmentsData, crmAppointmentsHeaders, "appointments");
+
+    const combinedRows = Array.from(combinedMap.values()).map((item) => {
+      const positiveLeads = item.demos + item.enrollments + item.appointments;
+      return {
+        date: item.date,
+        campaign: item.campaign,
+        source: Array.from(item.source).join(" + "),
+        spend: item.spend,
+        budget: item.budget,
+        bidStrategy: item.bidStrategy,
+        tcpa: item.tcpa,
+        leads: item.leads,
+        demos: item.demos,
+        enrollments: item.enrollments,
+        appointments: item.appointments,
+        positiveLeads,
+        impressions: item.impressions,
+        clicks: item.clicks,
+        conversions: item.conversions,
+      };
+    });
+
+    const combinedHeaders = [
+      "date",
+      "campaign",
+      "source",
+      "spend",
+      "budget",
+      "bidStrategy",
+      "tcpa",
+      "leads",
+      "demos",
+      "enrollments",
+      "appointments",
+      "positiveLeads",
+      "impressions",
+      "clicks",
+      "conversions",
+    ];
+
+    setCombineMessage(`Combined ${combinedRows.length} rows into a single CSV.`);
+
+    const combinedPayload = {
+      headers: combinedHeaders,
+      rows: combinedRows,
+    };
+
+    setCombinedReady(combinedPayload);
+  };
+
+  const applyCombinedToStep1 = () => {
+    if (!combinedReady) return;
+    setFileName("combined-budget-data.csv");
+    setFileRef(null);
+    setHeaders(combinedReady.headers);
+    setRows(combinedReady.rows);
+    setMapping(guessMapping(combinedReady.headers));
+    setMappingReady(false);
+    setRecommendations([]);
+    setCampaignSettings({});
+    setError("");
+    setSavedMessage("");
+    setCombineMessage("Combined CSV applied to Step 1.");
+  };
 
   const handleFileUpload = async (event) => {
     const file = event.target.files?.[0];
@@ -230,7 +454,8 @@ export default function BudgetAutomation() {
               customRange:
                 custom?.start && custom?.end ? custom : null,
               seasonalityMultiplier,
-              guardrailOverrides: guardrails,
+              enableGuardrails,
+              guardrailOverrides: enableGuardrails ? guardrails : null,
               campaignSettings,
               fileName,
               fileUrl: null,
@@ -256,7 +481,8 @@ export default function BudgetAutomation() {
           customRange:
             custom?.start && custom?.end ? custom : null,
           seasonalityMultiplier,
-          guardrailOverrides: guardrails,
+          enableGuardrails,
+          guardrailOverrides: enableGuardrails ? guardrails : null,
           campaignSettings,
           experimentVariant,
         });
@@ -276,7 +502,8 @@ export default function BudgetAutomation() {
         customRange:
           custom?.start && custom?.end ? custom : null,
         seasonalityMultiplier,
-        guardrailOverrides: guardrails,
+        enableGuardrails,
+        guardrailOverrides: enableGuardrails ? guardrails : null,
         campaignSettings,
         experimentVariant,
       });
@@ -332,29 +559,136 @@ export default function BudgetAutomation() {
   return (
     <AppShell
       title="Budget Automation"
-      subtitle="Upload performance data, apply weighted logic, and ship guardrail-safe recommendations."
+      subtitle="Upload performance data, apply weighted logic, and ship clean budget recommendations."
     >
-      <div className="rounded-3xl border border-slate-800/60 bg-slate-900/70 p-6 space-y-6 shadow-xl shadow-blue-500/10">
+      <div className="space-y-6 pb-24">
+      <div className="rounded-3xl border border-slate-200 bg-white p-6 space-y-6 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-start gap-3">
-            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-500/20 text-blue-200">
+            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">
+              <Layers className="h-5 w-5" />
+            </span>
+            <div>
+              <h2 className="text-xl font-bold text-slate-900">Step 0 · Combine sources (optional)</h2>
+              <p className="text-sm text-slate-600">
+                Upload Google, Meta, and CRM CSVs to generate a single combined CSV for optimization.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <GoogleCsvUploader
+            onValid={(rowsData) => {
+              setGoogleData(rowsData);
+              setCombineError("");
+              setCombineMessage("");
+            }}
+            onInvalid={() => {
+              setGoogleData([]);
+            }}
+          />
+          <MetaCsvUploader
+            onValid={(rowsData) => {
+              setMetaData(rowsData);
+              setCombineError("");
+              setCombineMessage("");
+            }}
+            onInvalid={() => {
+              setMetaData([]);
+            }}
+          />
+          <CrmLeadsCsvUploader
+            onValid={(rowsData) => {
+              setCrmLeadsData(rowsData);
+              setCombineError("");
+              setCombineMessage("");
+            }}
+            onInvalid={() => {
+              setCrmLeadsData([]);
+            }}
+          />
+          <CrmDemosCsvUploader
+            onValid={(rowsData) => {
+              setCrmDemosData(rowsData);
+              setCombineError("");
+              setCombineMessage("");
+            }}
+            onInvalid={() => {
+              setCrmDemosData([]);
+            }}
+          />
+          <CrmEnrollmentsCsvUploader
+            onValid={(rowsData) => {
+              setCrmEnrollmentsData(rowsData);
+              setCombineError("");
+              setCombineMessage("");
+            }}
+            onInvalid={() => {
+              setCrmEnrollmentsData([]);
+            }}
+          />
+          <CrmAppointmentsCsvUploader
+            onValid={(rowsData) => {
+              setCrmAppointmentsData(rowsData);
+              setCombineError("");
+              setCombineMessage("");
+            }}
+            onInvalid={() => {
+              setCrmAppointmentsData([]);
+            }}
+          />
+        </div>
+
+        {combineError && (
+          <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700">
+            {combineError}
+          </div>
+        )}
+        {combineMessage && (
+          <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+            {combineMessage}
+          </div>
+        )}
+        <div className="flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            onClick={buildCombinedCsv}
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+          >
+            Build combined CSV
+          </button>
+          <button
+            type="button"
+            onClick={applyCombinedToStep1}
+            disabled={!combinedReady}
+            className="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-amber-300 disabled:opacity-60"
+          >
+            Use in Step 1
+          </button>
+        </div>
+      </div>
+      <div className="rounded-3xl border border-slate-200 bg-white p-6 space-y-6 shadow-sm">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-start gap-3">
+            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">
               <UploadCloud className="h-5 w-5" />
             </span>
             <div>
-              <h2 className="text-xl font-semibold text-white">Step 1 · Data Upload</h2>
-              <p className="text-sm text-slate-400">
+              <h2 className="text-xl font-bold text-slate-900">Step 1 · Data Upload</h2>
+              <p className="text-sm text-slate-600">
                 Upload a CSV with campaign-level performance and budget data.
               </p>
             </div>
           </div>
           <a
             href="/sample-budget-data.csv"
-            className="text-sm font-semibold text-blue-200 hover:text-blue-100"
+            className="text-sm font-semibold text-amber-700 hover:text-amber-600"
           >
             Download sample CSV
           </a>
         </div>
-        <label className="group flex flex-col items-center justify-center gap-3 rounded-3xl border border-dashed border-slate-700 bg-slate-950/60 px-4 py-8 text-sm text-slate-400 transition hover:border-blue-400 hover:text-blue-200">
+        <label className="group flex flex-col items-center justify-center gap-3 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-4 py-8 text-sm text-slate-600 transition hover:border-amber-400 hover:text-amber-700">
           <UploadCloud className="h-6 w-6" />
           <span>Drag & drop your CSV or click to browse</span>
           <input
@@ -365,20 +699,20 @@ export default function BudgetAutomation() {
           />
         </label>
         {fileName && (
-          <div className="text-xs text-slate-400">
-            Loaded: <span className="text-slate-200">{fileName}</span>
+          <div className="text-xs text-slate-500">
+            Loaded: <span className="text-slate-700">{fileName}</span>
           </div>
         )}
       </div>
 
-      <div className={`rounded-3xl border border-slate-800/60 bg-slate-900/70 p-6 space-y-6 shadow-xl shadow-emerald-500/10 ${headers.length === 0 ? "opacity-60" : ""}`}>
+      <div className={`rounded-3xl border border-slate-200 bg-white p-6 space-y-6 shadow-sm ${headers.length === 0 ? "opacity-60" : ""}`}>
           <div className="flex items-start gap-3">
-            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-200">
+            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">
               <Layers className="h-5 w-5" />
             </span>
             <div>
-              <h2 className="text-xl font-semibold text-white">Step 1b · Column Mapping</h2>
-              <p className="text-sm text-slate-400">
+              <h2 className="text-xl font-bold text-slate-900">Step 1b · Column Mapping</h2>
+              <p className="text-sm text-slate-600">
                 Confirm or map columns to the required schema.
               </p>
             </div>
@@ -386,10 +720,10 @@ export default function BudgetAutomation() {
           <div className="grid gap-4 md:grid-cols-2">
             {REQUIRED_COLUMNS.map((column) => (
               <label key={column.key} className="text-sm" htmlFor={`map-${column.key}`}>
-                <span className="flex items-center gap-2 text-slate-300">
+                <span className="flex items-center gap-2 text-slate-800 font-semibold">
                   {column.label}
                   {column.required && (
-                    <span className="text-xs text-rose-300">Required</span>
+                    <span className="text-xs text-rose-500">Required</span>
                   )}
                 </span>
                 <select
@@ -403,7 +737,7 @@ export default function BudgetAutomation() {
                     }))
                   }
                   disabled={headers.length === 0}
-                  className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 disabled:opacity-40"
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 disabled:opacity-40"
                 >
                   <option value="">Select column</option>
                   {headers.map((header) => (
@@ -416,7 +750,7 @@ export default function BudgetAutomation() {
             ))}
           </div>
           {requiredMissing.length > 0 && (
-            <div className="rounded-2xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-xs text-amber-200">
+            <div className="rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-xs text-amber-900">
               Missing required columns:{" "}
               {requiredMissing.map((col) => col.label).join(", ")}
             </div>
@@ -424,35 +758,35 @@ export default function BudgetAutomation() {
           <button
             onClick={handleMappingConfirm}
             disabled={headers.length === 0}
-            className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-400"
+            className="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-amber-300"
           >
             <Wand2 className="h-4 w-4" />
             Confirm mapping
           </button>
       </div>
 
-      <div className={`rounded-3xl border border-slate-800/60 bg-slate-900/70 p-6 space-y-6 shadow-xl shadow-blue-500/10 ${!mappingReady ? "opacity-60" : ""}`}>
+      <div className={`rounded-3xl border border-slate-200 bg-white p-6 space-y-6 shadow-sm ${!mappingReady ? "opacity-60" : ""}`}>
           <div className="flex items-start gap-3">
-            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-500/20 text-blue-200">
+            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">
               <Target className="h-5 w-5" />
             </span>
             <div>
-              <h2 className="text-xl font-semibold text-white">Step 2 · Timeframe & Funnel Focus</h2>
-              <p className="text-sm text-slate-400">
+              <h2 className="text-xl font-bold text-slate-900">Step 2 · Timeframe & Funnel Focus</h2>
+              <p className="text-sm text-slate-600">
                 Select your evaluation window and optimization goal.
               </p>
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             <div>
-              <label className="text-sm text-slate-300" htmlFor="timeframe-select">Timeframe</label>
+              <label className="text-sm font-semibold text-slate-800" htmlFor="timeframe-select">Timeframe</label>
               <select
                 id="timeframe-select"
                 name="timeframe"
                 value={timeframe}
                 onChange={(event) => setTimeframe(event.target.value === "custom" ? "custom" : Number(event.target.value))}
                 disabled={!mappingReady}
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
               >
                 <option value={7}>Last 7 days</option>
                 <option value={28}>Last 28 days</option>
@@ -473,7 +807,7 @@ export default function BudgetAutomation() {
                       }))
                     }
                     disabled={!mappingReady}
-                    className="rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                    className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
                   />
                   <input
                     type="date"
@@ -487,13 +821,13 @@ export default function BudgetAutomation() {
                       }))
                     }
                     disabled={!mappingReady}
-                    className="rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                    className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
                   />
                 </div>
               )}
             </div>
             <div>
-              <label className="text-sm text-slate-300">Funnel focus</label>
+              <label className="text-sm font-semibold text-slate-800">Funnel focus</label>
               <div className="mt-2 grid gap-2">
                 {[
                   { value: "demo", label: "Optimize for Demo" },
@@ -507,8 +841,8 @@ export default function BudgetAutomation() {
                     disabled={!mappingReady}
                     className={`rounded-xl border px-3 py-2 text-left text-sm font-semibold ${
                       focus === option.value
-                        ? "border-blue-400 bg-blue-500/10 text-blue-100"
-                        : "border-slate-700 bg-slate-950 text-slate-300"
+                        ? "border-amber-300 bg-amber-50 text-amber-900"
+                        : "border-slate-300 bg-white text-slate-600"
                     }`}
                   >
                     {option.label}
@@ -517,7 +851,7 @@ export default function BudgetAutomation() {
               </div>
             </div>
             <div>
-              <label className="text-sm text-slate-300" htmlFor="seasonality-multiplier">Seasonality multiplier</label>
+              <label className="text-sm font-semibold text-slate-800" htmlFor="seasonality-multiplier">Seasonality multiplier</label>
               <input
                 type="number"
                 id="seasonality-multiplier"
@@ -528,7 +862,7 @@ export default function BudgetAutomation() {
                 value={seasonalityMultiplier}
                 onChange={(event) => setSeasonalityMultiplier(Number(event.target.value))}
                 disabled={!mappingReady}
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
               />
               <p className="mt-2 text-xs text-slate-500">
                 Example: 1.2 adds a +20% scaling bias for enrollment windows.
@@ -536,7 +870,7 @@ export default function BudgetAutomation() {
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
-            <label className="text-sm text-slate-300" htmlFor="experiment-variant">
+            <label className="text-sm font-semibold text-slate-800" htmlFor="experiment-variant">
               Experiment variant
               <select
                 id="experiment-variant"
@@ -544,7 +878,7 @@ export default function BudgetAutomation() {
                 value={experimentVariant}
                 onChange={(event) => setExperimentVariant(event.target.value)}
                 disabled={!mappingReady}
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
               >
                 <option value="A">Variant A · Baseline weights</option>
                 <option value="B">Variant B · Recency-heavy weights</option>
@@ -556,20 +890,46 @@ export default function BudgetAutomation() {
           </div>
       </div>
 
-      <div className={`rounded-3xl border border-slate-800/60 bg-slate-900/70 p-6 space-y-6 shadow-xl shadow-emerald-500/10 ${!mappingReady ? "opacity-60" : ""}`}>
+      <div className="rounded-3xl border border-slate-200 bg-white p-6 space-y-4 shadow-sm">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <h2 className="text-lg font-bold text-slate-900">Optional guardrails</h2>
+            <p className="text-sm text-slate-600">
+              Turn on guardrails if you want cooldowns, utilization checks, and stop-loss flags.
+            </p>
+          </div>
+          <label className="inline-flex items-center gap-2 text-sm font-semibold text-slate-800">
+            <input
+              type="checkbox"
+              checked={enableGuardrails}
+              onChange={(event) => setEnableGuardrails(event.target.checked)}
+              className="h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-200"
+            />
+            Enable
+          </label>
+        </div>
+        {!enableGuardrails && (
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-800">
+            Guardrails are off. Recommendations use performance signals only.
+          </div>
+        )}
+      </div>
+
+      {enableGuardrails && (
+      <div className={`rounded-3xl border border-slate-200 bg-white p-6 space-y-6 shadow-sm ${!mappingReady ? "opacity-60" : ""}`}>
           <div className="flex items-start gap-3">
-            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-200">
+            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">
               <ShieldCheck className="h-5 w-5" />
             </span>
             <div>
-              <h2 className="text-xl font-semibold text-white">Step 3 · Guardrails & Inputs</h2>
-              <p className="text-sm text-slate-400">
+              <h2 className="text-xl font-bold text-slate-900">Step 3 · Guardrails & Inputs</h2>
+              <p className="text-sm text-slate-600">
                 Lock budgets, enforce change frequency, and apply stop-loss rules.
               </p>
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-4">
-            <label className="text-sm text-slate-300" htmlFor="min-days-between-changes">
+            <label className="text-sm font-semibold text-slate-800" htmlFor="min-days-between-changes">
               Min days between changes
               <input
                 type="number"
@@ -584,10 +944,10 @@ export default function BudgetAutomation() {
                   }))
                 }
                 disabled={!mappingReady}
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
               />
             </label>
-            <label className="text-sm text-slate-300" htmlFor="utilization-threshold">
+            <label className="text-sm font-semibold text-slate-800" htmlFor="utilization-threshold">
               Utilization threshold
               <input
                 type="number"
@@ -604,10 +964,10 @@ export default function BudgetAutomation() {
                   }))
                 }
                 disabled={!mappingReady}
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
               />
             </label>
-            <label className="text-sm text-slate-300" htmlFor="stop-loss-spend">
+            <label className="text-sm font-semibold text-slate-800" htmlFor="stop-loss-spend">
               Stop-loss spend
               <input
                 type="number"
@@ -622,10 +982,10 @@ export default function BudgetAutomation() {
                   }))
                 }
                 disabled={!mappingReady}
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
               />
             </label>
-            <label className="text-sm text-slate-300" htmlFor="change-step">
+            <label className="text-sm font-semibold text-slate-800" htmlFor="change-step">
               Change step
               <select
                 id="change-step"
@@ -638,7 +998,7 @@ export default function BudgetAutomation() {
                   }))
                 }
                 disabled={!mappingReady}
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
               >
                 {STEP_OPTIONS.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -649,13 +1009,13 @@ export default function BudgetAutomation() {
             </label>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-            <h3 className="text-sm font-semibold text-slate-200">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <h3 className="text-sm font-bold text-slate-800">
               Campaign budget guardrails
             </h3>
             <div className="mt-3 overflow-x-auto">
               <table className="min-w-full text-sm">
-                <thead className="text-slate-400">
+                <thead className="text-slate-500">
                   <tr>
                     <th className="px-2 py-2 text-left">Campaign</th>
                     <th className="px-2 py-2 text-left">Min Budget</th>
@@ -665,14 +1025,14 @@ export default function BudgetAutomation() {
                 </thead>
                 <tbody>
                   {campaigns.map((campaign, index) => (
-                    <tr key={`${campaign}-${index}`} className="border-t border-slate-800">
-                      <td className="px-2 py-2 text-slate-200">{campaign}</td>
+                    <tr key={`${campaign}-${index}`} className="border-t border-slate-200">
+                      <td className="px-2 py-2 text-slate-700">{campaign}</td>
                       <td className="px-2 py-2">
                         <input
                           type="number"
                           id={`min-budget-${index}`}
                           name={`minBudget-${campaign}`}
-                          className="w-full rounded-lg border border-slate-700 bg-slate-950 px-2 py-1 text-xs text-slate-100"
+                          className="w-full rounded-lg border border-slate-300 bg-white px-2 py-1 text-xs text-slate-900"
                           value={campaignSettings[campaign]?.minBudget ?? ""}
                           onChange={(event) =>
                             setCampaignSettings((prev) => ({
@@ -691,7 +1051,7 @@ export default function BudgetAutomation() {
                           type="number"
                           id={`max-budget-${index}`}
                           name={`maxBudget-${campaign}`}
-                          className="w-full rounded-lg border border-slate-700 bg-slate-950 px-2 py-1 text-xs text-slate-100"
+                          className="w-full rounded-lg border border-slate-300 bg-white px-2 py-1 text-xs text-slate-900"
                           value={campaignSettings[campaign]?.maxBudget ?? ""}
                           onChange={(event) =>
                             setCampaignSettings((prev) => ({
@@ -710,7 +1070,7 @@ export default function BudgetAutomation() {
                           type="date"
                           id={`last-change-${index}`}
                           name={`lastChange-${campaign}`}
-                          className="w-full rounded-lg border border-slate-700 bg-slate-950 px-2 py-1 text-xs text-slate-100"
+                          className="w-full rounded-lg border border-slate-300 bg-white px-2 py-1 text-xs text-slate-900"
                           value={campaignSettings[campaign]?.lastBudgetChangeDate ?? ""}
                           onChange={(event) =>
                             setCampaignSettings((prev) => ({
@@ -737,44 +1097,27 @@ export default function BudgetAutomation() {
               </table>
             </div>
           </div>
-
-          {error && (
-            <div className="rounded-xl border border-rose-500/40 bg-rose-500/10 px-3 py-2 text-xs text-rose-200">
-              {error}
-            </div>
-          )}
-
-          <button
-            onClick={handleRun}
-            disabled={saving}
-            className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-400"
-          >
-            <Wand2 className="h-4 w-4" />
-            {saving ? "Saving..." : "Generate recommendations"}
-          </button>
-          {savedMessage && (
-            <div className="text-xs text-emerald-200">{savedMessage}</div>
-          )}
       </div>
+      )}
 
       {recommendations.length > 0 && (
-        <div className="rounded-3xl border border-slate-800/60 bg-slate-900/70 p-6 space-y-6 shadow-xl shadow-purple-500/10">
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 space-y-6 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-start gap-3">
-              <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-purple-500/20 text-purple-200">
+              <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">
                 <Layers className="h-5 w-5" />
               </span>
               <div>
-                <h2 className="text-xl font-semibold text-white">Recommendations</h2>
-                <p className="text-sm text-slate-400">
-                  Campaign-level actions with weighted scoring and guardrails.
+                <h2 className="text-xl font-bold text-slate-900">Recommendations</h2>
+                <p className="text-sm text-slate-600">
+                  Campaign-level actions with weighted scoring and optional guardrails.
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <button
                 onClick={handleCopy}
-                className="rounded-xl border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 hover:bg-slate-800"
+                className="rounded-xl border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
               >
                 <span className="flex items-center gap-2">
                   <ClipboardCopy className="h-4 w-4" />
@@ -783,7 +1126,7 @@ export default function BudgetAutomation() {
               </button>
               <button
                 onClick={handleExport}
-                className="rounded-xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-400"
+                className="rounded-xl bg-amber-400 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-amber-300"
               >
                 <span className="flex items-center gap-2">
                   <Download className="h-4 w-4" />
@@ -797,14 +1140,14 @@ export default function BudgetAutomation() {
             {recommendations.map((rec, index) => (
               <div
                 key={`${rec.campaign}-${index}`}
-                className="rounded-3xl border border-slate-800/60 bg-slate-950/70 p-5 shadow-lg shadow-slate-950/50"
+                className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
               >
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="text-lg font-bold text-slate-900">
                       {rec.campaign}
                     </h3>
-                    <p className="text-sm text-slate-400">
+                    <p className="text-sm text-slate-600">
                       Current Budget: {formatCurrency(rec.currentBudget)}
                     </p>
                   </div>
@@ -812,39 +1155,39 @@ export default function BudgetAutomation() {
                     <div className="text-xs uppercase tracking-[0.3em] text-slate-500">
                       {rec.adjustmentType} Action
                     </div>
-                    <div className="mt-1 text-2xl font-semibold text-emerald-200">
+                    <div className="mt-1 text-2xl font-semibold text-amber-700">
                       {rec.action}
                     </div>
-                    <div className="text-xs text-slate-400">
+                    <div className="text-xs text-slate-500">
                       Confidence {rec.confidenceScore}/100
                     </div>
                   </div>
                 </div>
-                <p className="mt-4 text-sm text-slate-300">
+                <p className="mt-4 text-sm text-slate-600">
                   {rec.reasonSummary}
                 </p>
-                <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-600">
                   <span>
                     Recommended Budget:{" "}
-                    <span className="text-slate-100">
+                    <span className="text-slate-900">
                       {formatCurrency(rec.recommendedBudget)}
                     </span>
                   </span>
                   <span>
                     Delta:{" "}
-                    <span className="text-slate-100">
+                    <span className="text-slate-900">
                       {formatCurrency(rec.budgetDelta)}
                     </span>
                   </span>
                   {rec.stopLoss && (
-                    <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-semibold text-rose-200">
+                    <span className="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700">
                       Stop-loss flag
                     </span>
                   )}
                 </div>
 
                 <button
-                  className="mt-4 text-xs font-semibold text-emerald-200 hover:text-emerald-100"
+                  className="mt-4 text-xs font-semibold text-amber-700 hover:text-amber-600"
                   onClick={() =>
                     setExpanded((prev) => ({
                       ...prev,
@@ -866,12 +1209,12 @@ export default function BudgetAutomation() {
                 </button>
 
                 {expanded[rec.campaign] && (
-                  <div className="mt-4 grid gap-4 md:grid-cols-2 text-sm text-slate-300">
-                    <div className="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
-                      <h4 className="text-sm font-semibold text-slate-200">
+                  <div className="mt-4 grid gap-4 md:grid-cols-2 text-sm text-slate-600">
+                    <div className="rounded-xl border border-slate-200 bg-white p-4">
+                      <h4 className="text-sm font-bold text-slate-800">
                         Timeframe metrics
                       </h4>
-                      <div className="mt-3 space-y-2 text-xs text-slate-400">
+                      <div className="mt-3 space-y-2 text-xs text-slate-500">
                         {BUDGET_ENGINE_CONFIG.timeframes.map((timeframeConfig) => {
                           const data = rec.timeframeMetrics[timeframeConfig.key];
                           return (
@@ -887,35 +1230,43 @@ export default function BudgetAutomation() {
                         })}
                       </div>
                     </div>
-                    <div className="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
-                      <h4 className="text-sm font-semibold text-slate-200">
-                        Guardrails & scoring
+                    <div className="rounded-xl border border-slate-200 bg-white p-4">
+                      <h4 className="text-sm font-bold text-slate-800">
+                        {enableGuardrails ? "Guardrails & scoring" : "Scoring details"}
                       </h4>
-                      <div className="mt-3 space-y-2 text-xs text-slate-400">
+                      <div className="mt-3 space-y-2 text-xs text-slate-500">
                         <div>
                           Bid strategy:{" "}
-                          <span className="text-slate-200">{rec.bidStrategy || "—"}</span>
+                          <span className="text-slate-800">{rec.bidStrategy || "—"}</span>
                         </div>
                         <div>
                           Utilization:{" "}
-                          <span className="text-slate-200">
+                          <span className="text-slate-800">
                             {formatPercent(rec.utilization)}
                           </span>
                         </div>
                         <div>
                           Score weights:{" "}
-                          <span className="text-slate-200">
+                          <span className="text-slate-800">
                             7d {rec.scoreDetail.d7?.weight ?? 0}, 28d {rec.scoreDetail.d28?.weight ?? 0}, 90d {rec.scoreDetail.d90?.weight ?? 0}
                           </span>
                         </div>
-                        {rec.guardrails.length > 0 && (
-                          <div className="text-rose-200">
-                            {rec.guardrails.join(" ")}
-                          </div>
-                        )}
-                        {rec.guardrails.length === 0 && (
-                          <div className="text-emerald-200">
-                            Guardrails clear for action.
+                        {enableGuardrails ? (
+                          <>
+                            {rec.guardrails.length > 0 && (
+                              <div className="text-rose-600">
+                                {rec.guardrails.join(" ")}
+                              </div>
+                            )}
+                            {rec.guardrails.length === 0 && (
+                              <div className="text-amber-700">
+                                Guardrails clear for action.
+                              </div>
+                            )}
+                          </>
+                        ) : (
+                          <div className="text-slate-500">
+                            Guardrails disabled for this run.
                           </div>
                         )}
                       </div>
@@ -927,6 +1278,39 @@ export default function BudgetAutomation() {
           </div>
         </div>
       )}
+      </div>
+
+      <div className="sticky bottom-4 z-10">
+        <div className="rounded-2xl border border-slate-200 bg-white/95 px-4 py-3 shadow-sm backdrop-blur">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="text-sm text-slate-600">
+              {needsSteps.length > 0
+                ? `Complete the steps to enable: ${needsSteps.join(" · ")}`
+                : "Generate recommendations."}
+            </div>
+            <div className="flex items-center gap-3">
+              {error && (
+                <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700">
+                  {error}
+                </div>
+              )}
+              {savedMessage && (
+                <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+                  {savedMessage}
+                </div>
+              )}
+              <button
+                onClick={handleRun}
+                disabled={!canRun}
+                className="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-amber-300 disabled:opacity-60"
+              >
+                <Wand2 className="h-4 w-4" />
+                {saving ? "Saving..." : "Generate recommendations"}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </AppShell>
   );
 }

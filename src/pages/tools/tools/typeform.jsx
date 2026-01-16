@@ -14,7 +14,7 @@ const ratingValue = 4.6;
 
 const brandMeta = {
   name: toolName,
-  logo: "https://logo.clearbit.com/typeform.com",
+  logo: "/assets/tool-logos/typeform.svg",
   gradient: "from-amber-500 via-orange-500 to-rose-500",
   glow: "shadow-[0_20px_80px_rgba(251,191,36,0.15)]",
 };

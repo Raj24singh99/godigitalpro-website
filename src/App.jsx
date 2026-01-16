@@ -36,12 +36,15 @@ const ToolParamRouter                 = lazy(() => import("./pages/tools/ToolPar
 const ToolComparison                  = lazy(() => import("./pages/tools/ToolComparison.jsx"));
 
 const PrivacyPolicy                   = lazy(() => import("./pages/PrivacyPolicy.jsx"));
+const AppOverview                     = lazy(() => import("./pages/app/AppOverview.jsx"));
+const InstagramCallback               = lazy(() => import("./pages/app/automatedsocialmediamanager/InstagramCallback.jsx"));
 const Login                           = lazy(() => import("./pages/app/Login.jsx"));
 const Signup                          = lazy(() => import("./pages/app/Signup.jsx"));
 const ForgotPassword                  = lazy(() => import("./pages/app/ForgotPassword.jsx"));
 const Dashboard                       = lazy(() => import("./pages/app/Dashboard.jsx"));
-const BudgetAutomation                = lazy(() => import("./pages/app/BudgetAutomation.jsx"));
-const SavedDatasets                   = lazy(() => import("./pages/app/SavedDatasets.jsx"));
+const BudgetAutomation                = lazy(() => import("./pages/app/budgetautomation/BudgetAutomation.jsx"));
+const SavedDatasets                   = lazy(() => import("./pages/app/budgetautomation/SavedDatasets.jsx"));
+const AutomatedSocialMediaManager     = lazy(() => import("./pages/app/automatedsocialmediamanager/AutomatedSocialMediaManager.jsx"));
 
 /** ✅ Blog hub + category + post (correct folder) */
 const Blogs                           = lazy(() => import("./pages/blog/Blogs.jsx"));
@@ -123,7 +126,7 @@ function TagLegacyRedirect() {
 export default function App() {
   const location = useLocation();
   const isAppRoute =
-    location.pathname.startsWith("/app") ||
+    location.pathname.startsWith("/dashboard") ||
     ["/login", "/signup", "/forgot-password"].includes(location.pathname);
 
   return (
@@ -175,8 +178,12 @@ export default function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
             {/* App */}
+            <Route path="/app" element={<AppOverview />} />
+            <Route path="/app/instagram/callback" element={<InstagramCallback />} />
+            <Route path="/app/budget-automation" element={<Navigate to="/dashboard/budget-automation" replace />} />
+            <Route path="/app/datasets" element={<Navigate to="/dashboard/datasets" replace />} />
             <Route
-              path="/app"
+              path="/dashboard"
               element={
                 <ProtectedRoute>
                   <Dashboard />
@@ -184,7 +191,7 @@ export default function App() {
               }
             />
             <Route
-              path="/app/budget-automation"
+              path="/dashboard/budget-automation"
               element={
                 <ProtectedRoute>
                   <BudgetAutomation />
@@ -192,7 +199,15 @@ export default function App() {
               }
             />
             <Route
-              path="/app/datasets"
+              path="/dashboard/automated-social-media-manager"
+              element={
+                <ProtectedRoute>
+                  <AutomatedSocialMediaManager />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard/datasets"
               element={
                 <ProtectedRoute>
                   <SavedDatasets />

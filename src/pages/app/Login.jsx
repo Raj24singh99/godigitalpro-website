@@ -14,7 +14,7 @@ export default function Login() {
 
   useEffect(() => {
     if (user) {
-      navigate("/app", { replace: true });
+      navigate("/dashboard", { replace: true });
     }
   }, [user, navigate]);
 
@@ -34,7 +34,7 @@ export default function Login() {
     try {
       setLoading(true);
       await login(email, password);
-      const target = location.state?.from?.pathname || "/app";
+      const target = location.state?.from?.pathname || "/dashboard";
       navigate(target, { replace: true });
     } catch (err) {
       setError(err?.message || "Login failed. Try again.");
@@ -48,7 +48,7 @@ export default function Login() {
     try {
       setLoading(true);
       await loginWithGoogle();
-      const target = location.state?.from?.pathname || "/app";
+      const target = location.state?.from?.pathname || "/dashboard";
       navigate(target, { replace: true });
     } catch (err) {
       setError(err?.message || "Google login failed.");
@@ -58,27 +58,27 @@ export default function Login() {
   };
 
   return (
-    <div className="app-shell text-slate-100">
+    <div className="app-shell text-slate-900">
       <div className="max-w-md mx-auto px-6 py-16">
-        <div className="rounded-3xl border border-slate-800/60 bg-slate-900/80 p-8 shadow-2xl shadow-blue-500/20">
+        <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
             Platform Access
           </p>
           <h1 className="mt-3 text-3xl font-semibold app-title flex items-center gap-2">
-            <Sparkles className="h-6 w-6 text-blue-200" /> Login
+            <Sparkles className="h-6 w-6 text-amber-500" /> Login
           </h1>
-          <p className="mt-2 text-sm text-slate-400">
+          <p className="mt-2 text-sm text-slate-600">
             Securely access the Performance Budget Automation Engine.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
             <label className="block text-sm">
-              <span className="text-slate-300">Work email</span>
+              <span className="text-slate-700">Work email</span>
               <input
                 type="email"
                 id="login-email"
                 name="email"
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-amber-400"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 placeholder="you@company.com"
@@ -86,12 +86,12 @@ export default function Login() {
               />
             </label>
             <label className="block text-sm">
-              <span className="text-slate-300">Password</span>
+              <span className="text-slate-700">Password</span>
               <input
                 type="password"
                 id="login-password"
                 name="password"
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-amber-400"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
                 placeholder="••••••••"
@@ -100,7 +100,7 @@ export default function Login() {
             </label>
 
             {error && (
-              <div className="rounded-xl border border-rose-500/40 bg-rose-500/10 px-3 py-2 text-xs text-rose-200">
+              <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700">
                 {error}
               </div>
             )}
@@ -108,7 +108,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-slate-950 hover:bg-emerald-400 disabled:opacity-60"
+              className="w-full rounded-xl bg-amber-400 px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-amber-300 disabled:opacity-60"
             >
               <span className="flex items-center justify-center gap-2">
                 <LogIn className="h-4 w-4" />
@@ -119,17 +119,17 @@ export default function Login() {
               type="button"
               onClick={handleGoogle}
               disabled={loading}
-              className="w-full rounded-xl border border-slate-700 px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800 disabled:opacity-60"
+              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 disabled:opacity-60"
             >
               Continue with Google
             </button>
           </form>
 
-          <div className="mt-4 flex items-center justify-between text-xs text-slate-400">
-            <Link to="/forgot-password" className="hover:text-emerald-200">
+          <div className="mt-4 flex items-center justify-between text-xs text-slate-500">
+            <Link to="/forgot-password" className="hover:text-amber-700">
               Forgot password?
             </Link>
-            <Link to="/signup" className="hover:text-emerald-200">
+            <Link to="/signup" className="hover:text-amber-700">
               Create account
             </Link>
           </div>

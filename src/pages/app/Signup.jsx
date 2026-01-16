@@ -30,7 +30,7 @@ export default function Signup() {
           email,
           company,
         });
-        navigate("/app", { replace: true });
+        navigate("/dashboard", { replace: true });
       } else {
         setInfo("Check your email to confirm your account, then log in.");
       }
@@ -46,7 +46,7 @@ export default function Signup() {
     try {
       setLoading(true);
       await loginWithGoogle();
-      navigate("/app", { replace: true });
+      navigate("/dashboard", { replace: true });
     } catch (err) {
       setError(err?.message || "Google signup failed.");
     } finally {
@@ -55,27 +55,27 @@ export default function Signup() {
   };
 
   return (
-    <div className="app-shell text-slate-100">
+    <div className="app-shell text-slate-900">
       <div className="max-w-md mx-auto px-6 py-16">
-        <div className="rounded-3xl border border-slate-800/60 bg-slate-900/80 p-8 shadow-2xl shadow-emerald-500/20">
+        <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
             Start Now
           </p>
           <h1 className="mt-3 text-3xl font-semibold app-title flex items-center gap-2">
-            <Sparkles className="h-6 w-6 text-emerald-200" /> Create account
+            <Sparkles className="h-6 w-6 text-amber-500" /> Create account
           </h1>
-          <p className="mt-2 text-sm text-slate-400">
+          <p className="mt-2 text-sm text-slate-600">
             Spin up your automation workspace in minutes.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
             <label className="block text-sm">
-              <span className="text-slate-300">Company</span>
+              <span className="text-slate-700">Company</span>
               <input
                 type="text"
                 id="signup-company"
                 name="company"
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-amber-400"
                 value={company}
                 onChange={(event) => setCompany(event.target.value)}
                 placeholder="Acme Education"
@@ -83,12 +83,12 @@ export default function Signup() {
               />
             </label>
             <label className="block text-sm">
-              <span className="text-slate-300">Work email</span>
+              <span className="text-slate-700">Work email</span>
               <input
                 type="email"
                 id="signup-email"
                 name="email"
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-amber-400"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 placeholder="you@company.com"
@@ -96,12 +96,12 @@ export default function Signup() {
               />
             </label>
             <label className="block text-sm">
-              <span className="text-slate-300">Password</span>
+              <span className="text-slate-700">Password</span>
               <input
                 type="password"
                 id="signup-password"
                 name="password"
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-amber-400"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
                 placeholder="••••••••"
@@ -110,12 +110,12 @@ export default function Signup() {
             </label>
 
             {error && (
-              <div className="rounded-xl border border-rose-500/40 bg-rose-500/10 px-3 py-2 text-xs text-rose-200">
+              <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700">
                 {error}
               </div>
             )}
             {info && (
-              <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-xs text-emerald-200">
+              <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
                 {info}
               </div>
             )}
@@ -123,7 +123,7 @@ export default function Signup() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-slate-950 hover:bg-emerald-400 disabled:opacity-60"
+              className="w-full rounded-xl bg-amber-400 px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-amber-300 disabled:opacity-60"
             >
               <span className="flex items-center justify-center gap-2">
                 <UserPlus className="h-4 w-4" />
@@ -134,15 +134,15 @@ export default function Signup() {
               type="button"
               onClick={handleGoogle}
               disabled={loading}
-              className="w-full rounded-xl border border-slate-700 px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800 disabled:opacity-60"
+              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 disabled:opacity-60"
             >
               Continue with Google
             </button>
           </form>
 
-          <div className="mt-4 text-xs text-slate-400">
+          <div className="mt-4 text-xs text-slate-500">
             Already have an account?{" "}
-            <Link to="/login" className="text-emerald-200 hover:text-emerald-100">
+            <Link to="/login" className="text-amber-700 hover:text-amber-600">
               Login
             </Link>
           </div>

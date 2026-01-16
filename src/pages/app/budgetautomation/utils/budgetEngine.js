@@ -203,13 +203,15 @@ export function buildBudgetRecommendations({
   timeframeSelection,
   customRange,
   seasonalityMultiplier,
+  enableGuardrails = true,
   guardrailOverrides,
   campaignSettings,
   experimentVariant = "A",
 }) {
+  const guardrailsActive = enableGuardrails !== false;
   const configGuardrails = {
     ...BUDGET_ENGINE_CONFIG.guardrails,
-    ...guardrailOverrides,
+    ...(guardrailOverrides || {}),
   };
 
   const dates = rows
@@ -284,22 +286,25 @@ export function buildBudgetRecommendations({
     let action = determineBand(adjustedScore);
     const guardrails = [];
     const campaignConfig = campaignSettings[campaign] || {};
-    const lastChange = parseDate(campaignConfig.lastBudgetChangeDate);
-    if (lastChange) {
-      const daysSince = daysBetween(endDate, lastChange);
-      if (daysSince < configGuardrails.minDaysBetweenChanges) {
-        guardrails.push(
-          `Budget change blocked (changed ${daysSince} days ago).`
-        );
-        action = "Hold";
+    let stopLoss = false;
+    if (guardrailsActive) {
+      const lastChange = parseDate(campaignConfig.lastBudgetChangeDate);
+      if (lastChange) {
+        const daysSince = daysBetween(endDate, lastChange);
+        if (daysSince < configGuardrails.minDaysBetweenChanges) {
+          guardrails.push(
+            `Budget change blocked (changed ${daysSince} days ago).`
+          );
+          action = "Hold";
+        }
       }
-    }
 
-    const stopLoss =
-      perTimeframe.d7?.spend > configGuardrails.stopLossSpend &&
-      perTimeframe.d7?.conversions === 0;
-    if (stopLoss) {
-      guardrails.push("Stop-loss flag: spend with zero conversions.");
+      stopLoss =
+        perTimeframe.d7?.spend > configGuardrails.stopLossSpend &&
+        perTimeframe.d7?.conversions === 0;
+      if (stopLoss) {
+        guardrails.push("Stop-loss flag: spend with zero conversions.");
+      }
     }
 
     const bidIsTcpa = isTcpA(current.bidStrategy);
@@ -309,7 +314,7 @@ export function buildBudgetRecommendations({
       0;
 
     let adjustmentType = "Budget";
-    if (bidIsTcpa) {
+    if (guardrailsActive && bidIsTcpa) {
       adjustmentType =
         utilization < configGuardrails.utilizationThreshold
           ? "TCPA"
@@ -322,8 +327,8 @@ export function buildBudgetRecommendations({
       configGuardrails.maxStepPercent
     );
 
-    const minBudget = campaignConfig.minBudget ?? 0;
-    const maxBudget = campaignConfig.maxBudget ?? Infinity;
+    const minBudget = guardrailsActive ? campaignConfig.minBudget ?? 0 : 0;
+    const maxBudget = guardrailsActive ? campaignConfig.maxBudget ?? Infinity : Infinity;
     let recommendedBudget = current.currentBudget;
     let budgetDelta = 0;
     if (action === "Scale") {
@@ -383,7 +388,7 @@ export function buildBudgetRecommendations({
       );
     }
 
-    if (guardrails.length) {
+    if (guardrailsActive && guardrails.length) {
       reasonParts.push(guardrails.join(" "));
     }
 

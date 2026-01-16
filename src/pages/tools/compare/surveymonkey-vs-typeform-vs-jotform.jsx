@@ -30,7 +30,7 @@ const brandMeta = {
   typeform: {
     gradient: "from-amber-500 via-orange-500 to-rose-500",
     badge: "bg-amber-100 text-amber-900",
-    logo: "https://logo.clearbit.com/typeform.com",
+    logo: "/assets/tool-logos/typeform.svg",
   },
   jotform: {
     gradient: "from-indigo-600 via-purple-600 to-pink-500",
