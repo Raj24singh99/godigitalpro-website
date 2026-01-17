@@ -5,6 +5,7 @@ import { buildCanonical } from "../../utils/seo";
 import { getCategoryDefinition, getSubCategoryDefinition, getPostsBySubCategory } from "../../utils/blog";
 import { getLucideIcon } from "../../utils/icons";
 import { gradientByKey } from "../../utils/gradients";
+import { getPostCover } from "../../utils/blogCovers";
 
 const SUBCATEGORY_POST_LIMIT = 12;
 
@@ -92,44 +93,48 @@ export default function BlogSubCategory() {
           </Link>
         </div>
 
-        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {postsToShow.map((post) => (
+        <div className="mt-6 grid gap-8 md:grid-cols-2">
+          {postsToShow.map((post, idx) => {
+            const cover = getPostCover(post, idx);
+            return (
             <article
               key={post.slug}
               className="group flex h-full flex-col transition hover:-translate-y-0.5"
             >
               <Link to={`/blog/${post.slug}`} className="flex h-full flex-col">
-                {post.cover && (
-                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl bg-slate-100">
-                    <img
-                      src={post.cover}
-                      alt={post.coverAlt || post.title}
-                      className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl bg-slate-100">
+                  <img
+                    src={cover.src}
+                    alt={cover.alt}
+                    className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                    loading="lazy"
+                    onError={(event) => {
+                      if (cover.fallbackSrc && event.currentTarget.src !== cover.fallbackSrc) {
+                        event.currentTarget.src = cover.fallbackSrc;
+                      }
+                    }}
+                  />
+                </div>
                 <div className="flex h-full flex-col pt-4">
-                  <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                    <span>{categoryDefinition.name}</span>
-                    <span>·</span>
-                    <span className="tracking-normal text-slate-700">{subCategoryDefinition.name}</span>
-                    <span>·</span>
-                    <span>{new Date(post.updated || post.date).toLocaleDateString()}</span>
+                  <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600">
+                    <span>{post.subCategoryLabel || post.categoryLabel || "Blog"}</span>
+                    <span className="text-slate-400">·</span>
+                    <span className="text-slate-500">{post.readingTime || "5 min read"}</span>
                   </div>
 
                   <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-emerald-700">{post.title}</h3>
-                  {post.excerpt && (
-                    <p className="mt-2 line-clamp-3 text-sm text-slate-600">{post.excerpt}</p>
+                  {(post.excerpt || post.metaDescription) && (
+                    <p className="mt-2 line-clamp-3 text-sm text-slate-600">{post.excerpt || post.metaDescription}</p>
                   )}
 
-                  <span className="mt-auto inline-flex items-center text-sm font-semibold text-amber-600">
-                    Read the play →
+                  <span className="mt-3 text-xs text-slate-500">
+                    {new Date(post.updated || post.date).toLocaleDateString()}
                   </span>
                 </div>
               </Link>
             </article>
-          ))}
+          );
+          })}
         </div>
 
         {!postsToShow.length && (

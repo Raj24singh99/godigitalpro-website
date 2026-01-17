@@ -1,29 +1,32 @@
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Local SEO Playbook illustration'>
-    <defs>
-      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
-        <stop stop-color='#F5F3FF' offset='0%'/>
-        <stop stop-color='#DDD6FE' offset='50%'/>
-        <stop stop-color='#C4B5FD' offset='100%'/>
-      </linearGradient>
-    </defs>
-    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
-    <path d='M-200 297.7134459838271 C 200 157.7134459838271, 500 417.7134459838271, 1200 237.7134459838271 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
-    <path d='M-200 402.004386568442 C 200 262.004386568442, 500 522.004386568442, 1200 342.004386568442 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
-    <path d='M-200 569.9404963199049 C 200 429.9404963199049, 500 689.9404963199049, 1200 509.9404963199049 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
-    <path d="M336.5012456988916 406.1184437572956 Q 537.71489986917 69.84305208548903 738.9285540394485 162.710644826293" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M738.9285540394485 162.710644826293 Q 612.3269847710617 24.19955543242395 485.7254155026749 143.44916105270386" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
-    <g opacity="0.75">
-        <circle cx="336.5012456988916" cy="406.1184437572956" r="66.37190938508138" fill="rgba(255,255,255,0.25)"/>
-        <circle cx="336.5012456988916" cy="406.1184437572956" r="48.37190938508138" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
-        <circle cx="336.5012456988916" cy="406.1184437572956" r="16.123969795027126" fill="#0f172a" fill-opacity="0.8"/>
-      </g><g opacity="0.83">
-        <circle cx="738.9285540394485" cy="162.710644826293" r="68.67396001983434" fill="rgba(255,255,255,0.25)"/>
-        <circle cx="738.9285540394485" cy="162.710644826293" r="50.67396001983434" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
-        <circle cx="738.9285540394485" cy="162.710644826293" r="16.891320006611448" fill="#0f172a" fill-opacity="0.8"/>
-      </g><g opacity="0.91">
-        <circle cx="485.7254155026749" cy="143.44916105270386" r="61.71108146989718" fill="rgba(255,255,255,0.25)"/>
-        <circle cx="485.7254155026749" cy="143.44916105270386" r="43.71108146989718" fill="#F5F3FF" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
-        <circle cx="485.7254155026749" cy="143.44916105270386" r="14.570360489965728" fill="#0f172a" fill-opacity="0.8"/>
-      </g>
-    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Local SEO Playbook</text>
-    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>SEARCH ENGINE OPTIMIZATION (SEO) • LOCAL SEO • DIGITAL MARKETING</text>
-  </svg>
+  <defs>
+    <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop stop-color='#FDF4FF' offset='0%'/>
+      <stop stop-color='#E9D5FF' offset='50%'/>
+      <stop stop-color='#DDD6FE' offset='100%'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+  <path d='M-200 210 C 220 80, 520 340, 1200 150 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.5)'/>
+  <path d='M-200 430 C 220 300, 520 560, 1200 380 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+
+  <g opacity='0.85'>
+    <rect x='270' y='150' width='660' height='280' rx='32' fill='rgba(255,255,255,0.7)' stroke='rgba(15,23,42,0.2)' stroke-width='4'/>
+    <circle cx='420' cy='300' r='14' fill='rgba(15,23,42,0.7)'/>
+    <circle cx='600' cy='250' r='14' fill='rgba(15,23,42,0.7)'/>
+    <circle cx='780' cy='320' r='14' fill='rgba(15,23,42,0.7)'/>
+    <path d='M420 300 C 500 240, 560 240, 600 250' stroke='rgba(15,23,42,0.35)' stroke-width='3' fill='none' stroke-linecap='round'/>
+    <path d='M600 250 C 680 290, 740 310, 780 320' stroke='rgba(15,23,42,0.35)' stroke-width='3' fill='none' stroke-linecap='round'/>
+  </g>
+  <g opacity='0.9'>
+    <path d='M600 150 C 555 150, 520 185, 520 230 C 520 295, 600 360, 600 360 C 600 360, 680 295, 680 230 C 680 185, 645 150, 600 150 Z' fill='rgba(167,139,250,0.25)' stroke='rgba(15,23,42,0.2)' stroke-width='4'/>
+    <circle cx='600' cy='230' r='22' fill='rgba(15,23,42,0.7)'/>
+  </g>
+
+  <text x='80' y='560' fill='rgba(15,23,42,0.7)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>
+    Local SEO Playbook
+  </text>
+  <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>
+    LOCAL SEO • MAPS • REVIEWS
+  </text>
+</svg>

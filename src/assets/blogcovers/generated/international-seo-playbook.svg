@@ -1,29 +1,32 @@
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='International SEO Playbook illustration'>
-    <defs>
-      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
-        <stop stop-color='#FFF7ED' offset='0%'/>
-        <stop stop-color='#FED7AA' offset='50%'/>
-        <stop stop-color='#FDBA74' offset='100%'/>
-      </linearGradient>
-    </defs>
-    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
-    <path d='M-200 294.9436361901462 C 200 154.9436361901462, 500 414.9436361901462, 1200 234.9436361901462 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
-    <path d='M-200 384.35755985789 C 200 244.35755985789, 500 504.35755985789, 1200 324.35755985789 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
-    <path d='M-200 577.8253055550158 C 200 437.8253055550158, 500 697.8253055550158, 1200 517.8253055550158 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
-    <path d="M401.99935108888894 382.6070785522461 Q 448.0099469679408 221.28347784280777 494.0205428469926 302.3266012221575" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M494.0205428469926 302.3266012221575 Q 583.2898731925525 187.94087023474276 672.5592035381123 431.8152718245983" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
-    <g opacity="0.75">
-        <circle cx="401.99935108888894" cy="382.6070785522461" r="51.57911385083571" fill="rgba(255,255,255,0.25)"/>
-        <circle cx="401.99935108888894" cy="382.6070785522461" r="33.57911385083571" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
-        <circle cx="401.99935108888894" cy="382.6070785522461" r="11.19303795027857" fill="#0f172a" fill-opacity="0.8"/>
-      </g><g opacity="0.83">
-        <circle cx="494.0205428469926" cy="302.3266012221575" r="69.34907308034599" fill="rgba(255,255,255,0.25)"/>
-        <circle cx="494.0205428469926" cy="302.3266012221575" r="51.34907308034599" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
-        <circle cx="494.0205428469926" cy="302.3266012221575" r="17.116357693448663" fill="#0f172a" fill-opacity="0.8"/>
-      </g><g opacity="0.91">
-        <circle cx="672.5592035381123" cy="431.8152718245983" r="58.99769686860964" fill="rgba(255,255,255,0.25)"/>
-        <circle cx="672.5592035381123" cy="431.8152718245983" r="40.99769686860964" fill="#FED7AA" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
-        <circle cx="672.5592035381123" cy="431.8152718245983" r="13.665898956203213" fill="#0f172a" fill-opacity="0.8"/>
-      </g>
-    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>International SEO Playbook</text>
-    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>SEARCH ENGINE OPTIMIZATION (SEO) • INTERNATIONAL SEO • DIGITAL MARKETING</text>
-  </svg>
+  <defs>
+    <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop stop-color='#EFF6FF' offset='0%'/>
+      <stop stop-color='#DBEAFE' offset='50%'/>
+      <stop stop-color='#BFDBFE' offset='100%'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+  <path d='M-200 210 C 220 80, 520 340, 1200 150 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.5)'/>
+  <path d='M-200 430 C 220 300, 520 560, 1200 380 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+
+  <g opacity='0.85'>
+    <circle cx='600' cy='250' r='120' fill='rgba(255,255,255,0.7)' stroke='rgba(15,23,42,0.2)' stroke-width='4'/>
+    <circle cx='600' cy='250' r='72' fill='rgba(59,130,246,0.2)' stroke='rgba(15,23,42,0.2)' stroke-width='3'/>
+    <path d='M480 250 C 540 210, 660 210, 720 250' stroke='rgba(15,23,42,0.35)' stroke-width='4' fill='none' stroke-linecap='round'/>
+    <path d='M480 250 C 540 290, 660 290, 720 250' stroke='rgba(15,23,42,0.35)' stroke-width='4' fill='none' stroke-linecap='round'/>
+  </g>
+  <g opacity='0.8'>
+    <circle cx='360' cy='330' r='18' fill='rgba(15,23,42,0.7)'/>
+    <circle cx='840' cy='180' r='18' fill='rgba(15,23,42,0.7)'/>
+    <path d='M378 322 C 450 270, 520 250, 560 240' stroke='rgba(15,23,42,0.35)' stroke-width='3' fill='none' stroke-linecap='round'/>
+    <path d='M780 200 C 720 220, 680 230, 640 240' stroke='rgba(15,23,42,0.35)' stroke-width='3' fill='none' stroke-linecap='round'/>
+  </g>
+
+  <text x='80' y='560' fill='rgba(15,23,42,0.7)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>
+    International SEO Playbook
+  </text>
+  <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>
+    INTERNATIONAL SEO • HREFLANG • GLOBAL
+  </text>
+</svg>

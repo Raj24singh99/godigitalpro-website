@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 export default function Logo({ size = 40, variant = "default" }) {
   const isDark = variant === "header-dark";
-  const textClass = isDark ? "text-white" : "text-black";
+  const baseTextClass = isDark ? "text-white" : "text-black";
+  const digitalClass = isDark ? "text-yellow-300" : "text-yellow-400";
 
   return (
     <Link
@@ -20,9 +21,10 @@ export default function Logo({ size = 40, variant = "default" }) {
         className="object-contain"
         loading="lazy"
       />
-      <span className={`font-extrabold text-xl tracking-tight ${textClass}`}>
-        <span className="text-yellow-400">Go</span>
-        DigitalPro
+      <span className={`font-extrabold text-xl tracking-tight ${baseTextClass}`}>
+        <span className={baseTextClass}>Go</span>
+        <span className={digitalClass}>Digital</span>
+        <span className={baseTextClass}>Pro</span>
       </span>
     </Link>
   );
