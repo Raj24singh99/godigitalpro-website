@@ -1,29 +1,31 @@
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630' role='img' aria-label='Off-Page SEO Playbook illustration'>
-    <defs>
-      <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
-        <stop stop-color='#F0F9FF' offset='0%'/>
-        <stop stop-color='#BAE6FD' offset='50%'/>
-        <stop stop-color='#7DD3FC' offset='100%'/>
-      </linearGradient>
-    </defs>
-    <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
-    <path d='M-200 288.2678148150444 C 200 148.2678148150444, 500 408.2678148150444, 1200 228.2678148150444 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.45)'/>
-    <path d='M-200 432.78316852636635 C 200 292.78316852636635, 500 552.7831685263664, 1200 372.78316852636635 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
-    <path d='M-200 555.9597533475608 C 200 415.95975334756076, 500 675.9597533475608, 1200 495.95975334756076 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.18)'/>
-    <path d="M550.8439902542159 390.78722640872 Q 785.8270096383058 37.43029588833451 1020.8100290223956 149.25144128501415" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/><path d="M1020.8100290223956 149.25144128501415 Q 706.7054450628348 47.76731419377029 392.6008611032739 374.9472364783287" stroke="rgba(15,23,42,0.35)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
-    <g opacity="0.75">
-        <circle cx="550.8439902542159" cy="390.78722640872" r="55.74610616220161" fill="rgba(255,255,255,0.25)"/>
-        <circle cx="550.8439902542159" cy="390.78722640872" r="37.74610616220161" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
-        <circle cx="550.8439902542159" cy="390.78722640872" r="12.582035387400538" fill="#0f172a" fill-opacity="0.8"/>
-      </g><g opacity="0.83">
-        <circle cx="1020.8100290223956" cy="149.25144128501415" r="69.9957099026069" fill="rgba(255,255,255,0.25)"/>
-        <circle cx="1020.8100290223956" cy="149.25144128501415" r="51.995709902606905" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
-        <circle cx="1020.8100290223956" cy="149.25144128501415" r="17.33190330086897" fill="#0f172a" fill-opacity="0.8"/>
-      </g><g opacity="0.91">
-        <circle cx="392.6008611032739" cy="374.9472364783287" r="57.17343284608796" fill="rgba(255,255,255,0.25)"/>
-        <circle cx="392.6008611032739" cy="374.9472364783287" r="39.17343284608796" fill="#7DD3FC" fill-opacity="0.35" stroke="rgba(15,23,42,0.25)" stroke-width="4"/>
-        <circle cx="392.6008611032739" cy="374.9472364783287" r="13.057810948695987" fill="#0f172a" fill-opacity="0.8"/>
-      </g>
-    <text x='80' y='560' fill='rgba(15,23,42,0.65)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>Off-Page SEO Playbook</text>
-    <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>SEARCH ENGINE OPTIMIZATION (SEO) • OFF-PAGE SEO • DIGITAL MARKETING</text>
-  </svg>
+  <defs>
+    <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop stop-color='#FFF7ED' offset='0%'/>
+      <stop stop-color='#FED7AA' offset='50%'/>
+      <stop stop-color='#FDBA74' offset='100%'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='630' rx='48' fill='url(#grad)'/>
+  <path d='M-200 210 C 220 80, 520 340, 1200 150 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.5)'/>
+  <path d='M-200 430 C 220 300, 520 560, 1200 380 L1200 630 L-200 630 Z' fill='rgba(255,255,255,0.25)'/>
+
+  <g opacity='0.85'>
+    <rect x='280' y='200' width='260' height='140' rx='24' fill='rgba(255,255,255,0.7)' stroke='rgba(15,23,42,0.2)' stroke-width='4'/>
+    <rect x='660' y='200' width='260' height='140' rx='24' fill='rgba(255,255,255,0.7)' stroke='rgba(15,23,42,0.2)' stroke-width='4'/>
+    <path d='M540 270 L660 270' stroke='rgba(15,23,42,0.35)' stroke-width='6' stroke-linecap='round'/>
+    <circle cx='540' cy='270' r='18' fill='rgba(15,23,42,0.7)'/>
+    <circle cx='660' cy='270' r='18' fill='rgba(15,23,42,0.7)'/>
+  </g>
+  <g opacity='0.8'>
+    <path d='M470 150 C 520 120, 580 120, 630 150' stroke='rgba(15,23,42,0.35)' stroke-width='3' fill='none' stroke-linecap='round'/>
+    <path d='M470 390 C 520 420, 580 420, 630 390' stroke='rgba(15,23,42,0.35)' stroke-width='3' fill='none' stroke-linecap='round'/>
+  </g>
+
+  <text x='80' y='560' fill='rgba(15,23,42,0.7)' font-family='"Inter","Segoe UI",sans-serif' font-size='26' font-weight='600'>
+    Off-Page SEO Playbook
+  </text>
+  <text x='80' y='600' fill='rgba(15,23,42,0.55)' font-family='"Inter","Segoe UI",sans-serif' font-size='18' letter-spacing='4'>
+    OFF-PAGE SEO • LINKS • AUTHORITY
+  </text>
+</svg>

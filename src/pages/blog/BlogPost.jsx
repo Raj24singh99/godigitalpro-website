@@ -118,7 +118,7 @@ export default function BlogPost() {
                   className="group flex flex-col gap-3 rounded-2xl transition hover:-translate-y-0.5"
                 >
                   {item.cover ? (
-                    <div className="aspect-[16/9] overflow-hidden rounded-3xl bg-slate-100">
+                    <div className="aspect-[16/10] overflow-hidden rounded-3xl bg-slate-100">
                       <img
                         src={item.cover}
                         alt={item.coverAlt || item.title}
