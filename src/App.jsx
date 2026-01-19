@@ -1,12 +1,11 @@
 // src/App.jsx
 import React, { useEffect, Suspense, lazy } from "react";
-import { Routes, Route, useLocation, Navigate, useParams } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 // Layout
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { toolRoutes, comparisonRoutes } from "./pages/tools/generatedRoutes.jsx";
 
 /* -------------------------
    Lazy page imports (exact paths/casing)
@@ -29,11 +28,7 @@ const AmazonAdsChecklist              = lazy(() => import("./pages/digital-produ
 const Ga4AnalyticsChecklist           = lazy(() => import("./pages/digital-products/Ga4AnalyticsChecklist.jsx"));
 const GoogleAdsChecklist              = lazy(() => import("./pages/digital-products/GoogleAdsChecklist.jsx"));
 const GtmImplementationChecklist      = lazy(() => import("./pages/digital-products/GtmImplementationChecklist.jsx"));
-const ToolsHub                        = lazy(() => import("./pages/tools/ToolsHub.jsx"));
-const ToolDetail                      = lazy(() => import("./pages/tools/ToolDetail.jsx"));
-const ToolTag                         = lazy(() => import("./pages/tools/ToolTag.jsx"));
-const ToolParamRouter                 = lazy(() => import("./pages/tools/ToolParamRouter.jsx"));
-const ToolComparison                  = lazy(() => import("./pages/tools/ToolComparison.jsx"));
+const ToolsRoutes                     = lazy(() => import("./pages/tools/ToolsRoutes.jsx"));
 
 const PrivacyPolicy                   = lazy(() => import("./pages/PrivacyPolicy.jsx"));
 const AppOverview                     = lazy(() => import("./pages/app/AppOverview.jsx"));
@@ -117,12 +112,6 @@ function LoadingFallback() {
   );
 }
 
-function TagLegacyRedirect() {
-  const { tag } = useParams();
-  const target = `/tools/${encodeURIComponent(tag || "")}`;
-  return <Navigate to={target} replace />;
-}
-
 export default function App() {
   const location = useLocation();
   const isAppRoute =
@@ -159,16 +148,7 @@ export default function App() {
             <Route path="/digital-products/ga4-analytics-master-checklist" element={<Ga4AnalyticsChecklist />} />
             <Route path="/digital-products/google-ads-launch-optimization-checklist" element={<GoogleAdsChecklist />} />
             <Route path="/digital-products/gtm-implementation-tracking-checklist" element={<GtmImplementationChecklist />} />
-            <Route path="/tools" element={<ToolsHub />} />
-            <Route path="/tools/tag/:tag" element={<TagLegacyRedirect />} />
-            <Route path="/tools/compare/:slug" element={<ToolComparison />} />
-            <Route path="/tools/:param" element={<ToolParamRouter />} />
-            {toolRoutes.map((route) => (
-              <Route key={route.path} path={route.path} element={route.element} />
-            ))}
-            {comparisonRoutes.map((route) => (
-              <Route key={route.path} path={route.path} element={route.element} />
-            ))}
+            <Route path="/tools/*" element={<ToolsRoutes />} />
 
             {/* About */}
             <Route path="/about_us" element={<AboutUs />} />
