@@ -344,7 +344,16 @@ const ReadableHero = ({ tool, options = {} }) => {
               </div>
               <div className="relative flex items-center gap-3 drop-shadow-sm">
                 <div className="h-14 w-14 overflow-hidden rounded-xl bg-white/15 ring-2 ring-white/30">
-                  {logoUrl ? <img src={logoUrl} alt={`${tool.name} logo`} className="h-full w-full object-cover" /> : null}
+                  {logoUrl ? (
+                    <img
+                      src={logoUrl}
+                      alt={`${tool.name} logo`}
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      className="h-full w-full object-cover"
+                    />
+                  ) : null}
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-white/80">{badgeLabel}</p>
