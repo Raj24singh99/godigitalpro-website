@@ -92,8 +92,9 @@ function LogoImg({ slug, label, color, size }) {
       alt={label}
       width={size}
       height={size}
-      loading="eager"
+      loading="lazy"
       decoding="async"
+      fetchpriority="low"
       className="block"
       referrerPolicy="no-referrer"
       onError={() => setVisible(false)}
@@ -227,14 +228,9 @@ export default function Hero() {
         </div>
 
         {/* Heading */}
-        <motion.h1
-          className="mt-5 font-serif text-[2.6rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-dark tracking-tight"
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
+        <h1 className="mt-5 font-serif text-[2.6rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-dark tracking-tight">
           A Digital Marketing Agency that stitches strategy, media, and product growth together
-        </motion.h1>
+        </h1>
 
         {/* Description */}
         <p className="mt-4 text-base md:text-lg text-slate-800 max-w-3xl mx-auto">

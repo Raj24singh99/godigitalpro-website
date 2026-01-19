@@ -141,7 +141,14 @@ export default function ToolComparison({ slugOverride }) {
                     <div className="flex items-center gap-3">
                       <div className={`h-10 w-10 overflow-hidden rounded-full bg-gradient-to-br ${gradientForIndex(idx)} ring-2 ring-white`}>
                         {logoFor(tool) ? (
-                          <img src={logoFor(tool)} alt={`${tool.name} logo`} className="h-full w-full object-cover" />
+                          <img
+                            src={logoFor(tool)}
+                            alt={`${tool.name} logo`}
+                            loading="lazy"
+                            decoding="async"
+                            fetchpriority="low"
+                            className="h-full w-full object-cover"
+                          />
                         ) : (
                           <div className="flex h-full w-full items-center justify-center text-sm font-semibold text-white">{tool.name.slice(0, 2).toUpperCase()}</div>
                         )}

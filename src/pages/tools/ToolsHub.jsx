@@ -381,6 +381,10 @@ export default function ToolsHub() {
                               src={getLogoSrc(tool)}
                               alt={`${tool.name} logo`}
                               loading="lazy"
+                              decoding="async"
+                              fetchpriority="low"
+                              width="48"
+                              height="48"
                               className="relative h-full w-full object-contain bg-white/60"
                               onError={(e) => {
                                 e.currentTarget.remove();

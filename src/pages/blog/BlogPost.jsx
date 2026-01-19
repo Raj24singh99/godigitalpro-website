@@ -123,6 +123,8 @@ export default function BlogPost() {
                         src={item.cover}
                         alt={item.coverAlt || item.title}
                         loading="lazy"
+                        decoding="async"
+                        fetchpriority="low"
                         className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                       />
                     </div>

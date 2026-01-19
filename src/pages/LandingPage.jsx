@@ -1,15 +1,15 @@
 // app/frontend/src/pages/LandingPage.jsx
-import React, { useMemo } from "react";
+import React, { Suspense, lazy, useMemo } from "react";
 
 import Hero from "../components/Hero";
-import TrustPillars from "../components/TrustPillars";
-import GrowthEngine from "../components/GrowthEngine";
-import Services from "../components/Services";
-import GrowthJourney from "../components/GrowthJourney";
-import BusinessTypes from "../components/BusinessTypes";
-import Plans from "../components/PlansSection";
-import Testimonials from "../components/Testimonials";
-import FinalCTA from "../components/FinalCTA";
+const TrustPillars = lazy(() => import("../components/TrustPillars"));
+const GrowthEngine = lazy(() => import("../components/GrowthEngine"));
+const Services = lazy(() => import("../components/Services"));
+const GrowthJourney = lazy(() => import("../components/GrowthJourney"));
+const BusinessTypes = lazy(() => import("../components/BusinessTypes"));
+const Plans = lazy(() => import("../components/PlansSection"));
+const Testimonials = lazy(() => import("../components/Testimonials"));
+const FinalCTA = lazy(() => import("../components/FinalCTA"));
 import SeoHelmet from "../components/SeoHelmet";
 import {
   buildCanonical,
@@ -64,14 +64,16 @@ export default function LandingPage() {
 
       <main>
         <Hero />
-        <TrustPillars />
-        <GrowthEngine />
-        <Services />
-        <GrowthJourney />
-        <BusinessTypes />
-        <Plans />
-        <Testimonials />
-        <FinalCTA />
+        <Suspense fallback={null}>
+          <TrustPillars />
+          <GrowthEngine />
+          <Services />
+          <GrowthJourney />
+          <BusinessTypes />
+          <Plans />
+          <Testimonials />
+          <FinalCTA />
+        </Suspense>
       </main>
     </>
   );

@@ -181,6 +181,8 @@ export default function Blogs() {
                       src={cover.src}
                       alt={cover.alt}
                       loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
                       className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                       onError={(event) => {
                         if (cover.fallbackSrc && event.currentTarget.src !== cover.fallbackSrc) {

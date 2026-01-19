@@ -120,7 +120,16 @@ function RichToolPage({ config }) {
                   </div>
                   <div className="relative flex items-center gap-3">
                     <div className="h-14 w-14 overflow-hidden rounded-xl bg-white/20 ring-2 ring-white/30">
-                      <img src={brandMeta.logo} alt={`${toolName} logo`} className="h-full w-full object-cover" />
+                      <img
+                        src={brandMeta.logo}
+                        alt={`${toolName} logo`}
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="low"
+                        width="56"
+                        height="56"
+                        className="h-full w-full object-cover"
+                      />
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.18em] text-white/80">Featured Tool</p>

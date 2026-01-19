@@ -5,10 +5,23 @@ import { Helmet } from "react-helmet-async";
 import { SITE } from "../config/siteMeta";
 import { DEFAULT_ROBOTS, breadcrumbsJsonLd } from "../utils/seo";
 
+function normalizeHreflang(value) {
+  if (!value) return value;
+  const normalized = value.replace(/_/g, "-");
+  const [language, region] = normalized.split("-");
+  if (!region) return language.toLowerCase();
+  return `${language.toLowerCase()}-${region.toUpperCase()}`;
+}
+
 function buildAlternates(canonical, hrefLangs = []) {
-  if (hrefLangs.length) return hrefLangs;
+  if (hrefLangs.length) {
+    return hrefLangs.map(({ lang, href }) => ({
+      lang: normalizeHreflang(lang),
+      href,
+    }));
+  }
   return [
-    { lang: SITE.locale, href: canonical },
+    { lang: normalizeHreflang(SITE.locale), href: canonical },
     { lang: "en", href: canonical },
     { lang: "x-default", href: canonical },
   ];

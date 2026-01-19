@@ -50,6 +50,8 @@ function SectionBlock({ section, index }) {
             src={section.image.src}
             alt={section.image.alt}
             loading="lazy"
+            decoding="async"
+            fetchpriority="low"
             className="h-72 w-full object-cover sm:h-80"
           />
           {section.image.caption ? (
@@ -151,6 +153,8 @@ function SectionBlock({ section, index }) {
                       src={ref.image}
                       alt={ref.imageAlt || ref.label || "Tool logo"}
                       loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
                       referrerPolicy="no-referrer"
                       onError={(event) => {
                         event.currentTarget.style.display = "none";

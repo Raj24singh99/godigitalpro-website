@@ -166,6 +166,8 @@ export default function BlogCategory() {
                     alt={cover.alt}
                     className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                     loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
                     onError={(event) => {
                       if (cover.fallbackSrc && event.currentTarget.src !== cover.fallbackSrc) {
                         event.currentTarget.src = cover.fallbackSrc;
