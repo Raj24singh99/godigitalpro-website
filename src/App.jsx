@@ -90,6 +90,9 @@ const PatnaDigitalMarketingAgency     = lazy(() => import("./pages/locations/pat
 const BhubaneswarDigitalMarketingAgency = lazy(() => import("./pages/locations/bhubaneswar-digital-marketing-agency.jsx"));
 const GoaDigitalMarketingAgency       = lazy(() => import("./pages/locations/goa-digital-marketing-agency.jsx"));
 
+const ADSENSE_SRC =
+  "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4476024557138765";
+
 /* Smooth scroll to top on route change */
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -100,6 +103,30 @@ function ScrollToTop() {
       window.scrollTo(0, 0);
     }
   }, [pathname]);
+  return null;
+}
+
+function AdSenseLoader() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const shouldLoad = pathname.startsWith("/blog") || pathname.startsWith("/tools");
+    const existing = document.querySelector('script[data-adsense="true"]');
+
+    if (shouldLoad) {
+      if (!existing) {
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = ADSENSE_SRC;
+        script.crossOrigin = "anonymous";
+        script.dataset.adsense = "true";
+        document.head.appendChild(script);
+      }
+    } else if (existing) {
+      existing.remove();
+    }
+  }, [pathname]);
+
   return null;
 }
 
@@ -121,6 +148,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      <AdSenseLoader />
       <div>
         {!isAppRoute && <Header />}
 
