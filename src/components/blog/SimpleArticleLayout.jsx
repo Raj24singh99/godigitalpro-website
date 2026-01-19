@@ -11,6 +11,14 @@ function formatDate(value) {
   });
 }
 
+function extractText(value) {
+  if (value === null || value === undefined) return "";
+  if (typeof value === "string" || typeof value === "number") return String(value);
+  if (Array.isArray(value)) return value.map(extractText).join(" ");
+  if (React.isValidElement(value)) return extractText(value.props?.children);
+  return "";
+}
+
 function SectionBlock({ section, index }) {
   return (
     <section id={section.id} className="scroll-mt-24">
@@ -60,8 +68,8 @@ function SectionBlock({ section, index }) {
         </figure>
       ) : null}
 
-      {section.paragraphs?.map((para) => (
-        <p key={para} className="text-base text-slate-700">
+      {section.paragraphs?.map((para, paraIndex) => (
+        <p key={`${section.id}-paragraph-${paraIndex}`} className="text-base text-slate-700">
           {para}
         </p>
       ))}
@@ -183,13 +191,13 @@ export default function SimpleArticleLayout({ meta, sections }) {
       Math.round(
         sections
           .flatMap((section) => [
-            section.summary,
-            section.lede,
-            ...(section.paragraphs || []),
-            ...(section.perspectives || []).map((p) => p.body),
-            ...(section.plays || []).map((p) => p.detail),
-            ...(section.checklist?.items || []),
-            ...(section.references || []).map((r) => r.label)
+            extractText(section.summary),
+            extractText(section.lede),
+            ...(section.paragraphs || []).map(extractText),
+            ...(section.perspectives || []).map((p) => extractText(p.body)),
+            ...(section.plays || []).map((p) => extractText(p.detail)),
+            ...(section.checklist?.items || []).map(extractText),
+            ...(section.references || []).map((r) => extractText(r.label))
           ])
           .filter(Boolean)
           .join(" ")
