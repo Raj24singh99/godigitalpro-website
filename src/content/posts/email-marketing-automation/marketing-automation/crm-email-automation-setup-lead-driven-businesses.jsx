@@ -292,28 +292,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "Continue building your automation system with these internal guides and hubs.",
-    references: [
-      {
-        label: "Email marketing automation hub",
-        href: "/blog/category/email-marketing-automation"
-      },
-      {
-        label: "Automation workflows subcategory",
-        href: "/blog/category/email-marketing-automation/sub/marketing-automation"
-      },
-      {
-        label: "CRM + email automation setup checklist (PDF)",
-        href: "/checklists/crm-email-automation-setup-checklist.pdf"
-      },
-      {
-        label: "Learn hub for growth operators",
-        href: "/learn"
-      },
-      {
-        label: "Marketing tools directory",
-        href: "/tools"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/category/email-marketing-automation">Email marketing automation hub</a>, <a className="text-indigo-700 underline" href="/blog/category/email-marketing-automation/sub/marketing-automation">Automation workflows subcategory</a>, <a className="text-indigo-700 underline" href="/checklists/crm-email-automation-setup-checklist.pdf">CRM + email automation setup checklist (PDF)</a>, <a className="text-indigo-700 underline" href="/learn">Learn hub for growth operators</a>, and <a className="text-indigo-700 underline" href="/tools">Marketing tools directory</a>.</>,
+    ],
   },
   {
     id: "faq-crm-email-automation",

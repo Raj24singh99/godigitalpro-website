@@ -253,24 +253,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "More resources to support your new website SEO launch.",
-    references: [
-      {
-        label: "Technical SEO foundations playbook",
-        href: "/blog/technical-seo-foundations"
-      },
-      {
-        label: "On-page SEO playbook",
-        href: "/blog/on-page-seo-playbook"
-      },
-      {
-        label: "SEO category hub",
-        href: "/blog/category/search-engine-optimisation"
-      },
-      {
-        label: "SEO content services",
-        href: "/services/seo-content"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/technical-seo-foundations">Technical SEO foundations playbook</a>, <a className="text-indigo-700 underline" href="/blog/on-page-seo-playbook">On-page SEO playbook</a>, <a className="text-indigo-700 underline" href="/blog/category/search-engine-optimisation">SEO category hub</a>, and <a className="text-indigo-700 underline" href="/services/seo-content">SEO content services</a>.</>,
+    ],
   },
   {
     id: "faq",

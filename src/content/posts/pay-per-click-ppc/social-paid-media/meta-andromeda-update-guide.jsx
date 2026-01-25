@@ -80,10 +80,7 @@ const sections = [
       "Retrieval decides which ads enter the auction for a person. Andromeda swapped older, lighter models for larger neural networks running on custom hardware, so it can test more creative-user matches in milliseconds.",
       "Signals that matter most now: how your creative looks and reads, how people behave after seeing it (scroll, watch, click, convert), and whether those signals stay fresh.",
       "If an ad never clears retrieval, it never bids. That’s why creative volume and post-click quality are suddenly make-or-break.",
-    ],
-    references: [
-      { label: "Meta engineering overview", href: "https://engineering.fb.com" },
-      { label: "Meta Ads volatility: what changed in 2025", href: "https://www.facebook.com/business/news" },
+      <>For more, see <a className="text-indigo-700 underline" href="https://engineering.fb.com">Meta engineering overview</a> and <a className="text-indigo-700 underline" href="https://www.facebook.com/business/news">Meta Ads volatility: what changed in 2025</a>.</>,
     ],
   },
   {
@@ -176,15 +173,8 @@ const sections = [
           "Monitor CPR/CPA/ROAS, frequency, CTR trends, and funnel drop-offs. Pre-agree cut/keep rules (e.g., 7-day CPA > target by 30% with X conversions = rotate creative).",
       },
     ],
-    references: [
-      {
-        label: "Fix measurement: GA4 + sGTM + Meta CAPI walkthrough",
-        href: "/blog/web-analytics-data-reporting/ga4-setup-sgtm-capi",
-      },
-      {
-        label: "Meta Ads launch & optimization checklist",
-        href: "/digital-products/meta-ads-launch-optimization-checklist",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/web-analytics-data-reporting/ga4-setup-sgtm-capi">Fix measurement: GA4 + sGTM + Meta CAPI walkthrough</a> and <a className="text-indigo-700 underline" href="/digital-products/meta-ads-launch-optimization-checklist">Meta Ads launch & optimization checklist</a>.</>,
     ],
   },
   {
@@ -238,16 +228,7 @@ const sections = [
       "Consolidated structures: default to fewer, stronger campaigns with Advantage+ where it makes sense; add promo-only campaigns sparingly.",
       "Testing vs scaling split: isolate experiments so scaling campaigns stay stable, then rotate in winners on a schedule.",
       "Dashboards and rules: report weekly on CPR/CPA/ROAS, fatigue markers, and funnel health with pre-agreed decision thresholds.",
-    ],
-    references: [
-      {
-        label: "Performance optimization playbook",
-        href: "/blog/pay-per-click-ppc/performance-analytics-playbook",
-      },
-      {
-        label: "Social media blueprint for paid boosts",
-        href: "/blog/social-media-marketing-content/social-media-blueprint-reels-strategy",
-      },
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/pay-per-click-ppc/performance-analytics-playbook">Performance optimization playbook</a> and <a className="text-indigo-700 underline" href="/blog/social-media-marketing-content/social-media-blueprint-reels-strategy">Social media blueprint for paid boosts</a>.</>,
     ],
   },
   {
@@ -270,19 +251,8 @@ const sections = [
         "Set a weekly creative rotation cadence tied to fatigue metrics.",
       ],
     },
-    references: [
-      {
-        label: "GA4 + sGTM + Meta CAPI setup guide",
-        href: "/blog/web-analytics-data-reporting/ga4-setup-sgtm-capi",
-      },
-      {
-        label: "Meta Ads launch & optimization checklist",
-        href: "/digital-products/meta-ads-launch-optimization-checklist",
-      },
-      {
-        label: "Advantage+ and structure guardrails for PPC",
-        href: "/blog/pay-per-click-ppc/performance-analytics-playbook",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/web-analytics-data-reporting/ga4-setup-sgtm-capi">GA4 + sGTM + Meta CAPI setup guide</a>, <a className="text-indigo-700 underline" href="/digital-products/meta-ads-launch-optimization-checklist">Meta Ads launch & optimization checklist</a>, and <a className="text-indigo-700 underline" href="/blog/pay-per-click-ppc/performance-analytics-playbook">Advantage+ and structure guardrails for PPC</a>.</>,
     ],
   },
 ];

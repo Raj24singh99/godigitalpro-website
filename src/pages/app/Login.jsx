@@ -4,7 +4,7 @@ import { useAuth } from "../../context/AuthProvider";
 import { Sparkles, LogIn } from "lucide-react";
 
 export default function Login() {
-  const { login, loginWithGoogle, user } = useAuth();
+  const { login, user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState("");
@@ -12,11 +12,20 @@ export default function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const getRedirectTarget = () => {
+    const from = location.state?.from;
+    if (!from) return "/dashboard";
+    if (typeof from === "string") return from;
+    const pathname = from.pathname || "/dashboard";
+    const search = from.search || "";
+    return `${pathname}${search}`;
+  };
+
   useEffect(() => {
     if (user) {
-      navigate("/dashboard", { replace: true });
+      navigate(getRedirectTarget(), { replace: true });
     }
-  }, [user, navigate]);
+  }, [location.state, navigate, user]);
 
   useEffect(() => {
     if (window.location.hash?.includes("access_token")) {
@@ -34,24 +43,9 @@ export default function Login() {
     try {
       setLoading(true);
       await login(email, password);
-      const target = location.state?.from?.pathname || "/dashboard";
-      navigate(target, { replace: true });
+      navigate(getRedirectTarget(), { replace: true });
     } catch (err) {
       setError(err?.message || "Login failed. Try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleGoogle = async () => {
-    setError("");
-    try {
-      setLoading(true);
-      await loginWithGoogle();
-      const target = location.state?.from?.pathname || "/dashboard";
-      navigate(target, { replace: true });
-    } catch (err) {
-      setError(err?.message || "Google login failed.");
     } finally {
       setLoading(false);
     }
@@ -68,7 +62,7 @@ export default function Login() {
             <Sparkles className="h-6 w-6 text-amber-500" /> Login
           </h1>
           <p className="mt-2 text-sm text-slate-600">
-            Securely access the Performance Budget Automation Engine.
+            Access your apps and learning workspace in one place.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
@@ -115,14 +109,6 @@ export default function Login() {
                 {loading ? "Signing in..." : "Enter workspace"}
               </span>
             </button>
-            <button
-              type="button"
-              onClick={handleGoogle}
-              disabled={loading}
-              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 disabled:opacity-60"
-            >
-              Continue with Google
-            </button>
           </form>
 
           <div className="mt-4 flex items-center justify-between text-xs text-slate-500">
@@ -135,7 +121,7 @@ export default function Login() {
           </div>
         </div>
         <p className="mt-6 text-center text-xs text-slate-500">
-          Secure auth powered by Firebase.
+          Secure auth powered by Supabase.
         </p>
       </div>
     </div>

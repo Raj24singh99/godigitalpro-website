@@ -32,7 +32,7 @@ export default function Footer() {
       <div className="h-px w-full bg-gradient-to-r from-transparent via-black/10 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-12">
-        <div className="grid gap-10 md:grid-cols-[1.2fr,1fr,1fr,1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.2fr,1fr,1fr,1fr,1fr]">
           {/* Brand + blurb */}
           <div>
             <Logo />
@@ -221,6 +221,38 @@ export default function Footer() {
             >
               Get a Free Audit <ArrowUpRight size={16} />
             </Link>
+          </nav>
+
+          {/* Column: Learn */}
+          <nav aria-label="Learn" className="text-sm">
+            <h4 className="font-semibold text-slate-900">Learn</h4>
+            <ul className="mt-3 space-y-2 text-slate-700">
+              <li>
+                <Link className="hover:text-slate-900" to="/learn">
+                  Learn Hub
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-slate-900" to="/learn/master-course">
+                  Master Course
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-slate-900" to="/learn/digital-products">
+                  Digital Products
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-slate-900" to="/learn/masterclasses">
+                  Masterclasses
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-slate-900" to="/learn/internship">
+                  Internship
+                </Link>
+              </li>
+            </ul>
           </nav>
 
           {/* Column: Industries */}

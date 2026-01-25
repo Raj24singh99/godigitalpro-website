@@ -310,24 +310,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "Explore deeper SEO resources across content and technical tracks.",
-    references: [
-      {
-        label: "SEO category hub",
-        href: "/blog/category/search-engine-optimisation"
-      },
-      {
-        label: "Technical SEO subcategory",
-        href: "/blog/category/search-engine-optimisation/sub/technical-seo"
-      },
-      {
-        label: "On-page SEO subcategory",
-        href: "/blog/category/search-engine-optimisation/sub/on-page-seo"
-      },
-      {
-        label: "SEO & content services",
-        href: "/services/seo-content"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/category/search-engine-optimisation">SEO category hub</a>, <a className="text-indigo-700 underline" href="/blog/category/search-engine-optimisation/sub/technical-seo">Technical SEO subcategory</a>, <a className="text-indigo-700 underline" href="/blog/category/search-engine-optimisation/sub/on-page-seo">On-page SEO subcategory</a>, and <a className="text-indigo-700 underline" href="/services/seo-content">SEO & content services</a>.</>,
+    ],
   },
   {
     id: "faq-content-technical",

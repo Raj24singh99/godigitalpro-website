@@ -257,24 +257,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "More analytics resources to strengthen conversion optimization.",
-    references: [
-      {
-        label: "GA4 setup guide",
-        href: "/blog/ga4-setup-guide-for-beginners"
-      },
-      {
-        label: "Dashboards and reporting playbook",
-        href: "/blog/dashboards-reporting-playbook"
-      },
-      {
-        label: "User behavior analytics playbook",
-        href: "/blog/user-behaviour-analytics-playbook"
-      },
-      {
-        label: "Analytics category hub",
-        href: "/blog/category/web-analytics-data-reporting"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/ga4-setup-guide-for-beginners">GA4 setup guide</a>, <a className="text-indigo-700 underline" href="/blog/dashboards-reporting-playbook">Dashboards and reporting playbook</a>, <a className="text-indigo-700 underline" href="/blog/user-behaviour-analytics-playbook">User behavior analytics playbook</a>, and <a className="text-indigo-700 underline" href="/blog/category/web-analytics-data-reporting">Analytics category hub</a>.</>,
+    ],
   },
   {
     id: "faq",

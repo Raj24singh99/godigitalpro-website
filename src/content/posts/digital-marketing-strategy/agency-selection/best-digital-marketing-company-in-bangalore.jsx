@@ -347,35 +347,8 @@ const sections = [
   {
     id: "related-reading-best-company",
     title: "Related reading",
-    references: [
-      {
-        label: "Digital marketing agency in Bangalore: selection guide",
-        href: "/blog/digital-marketing-strategy/digital-marketing-agency-in-bangalore",
-      },
-      {
-        label: "Best digital marketing agency in India: selection guide",
-        href: "/blog/digital-marketing-strategy/best-digital-marketing-agency-in-india",
-      },
-      {
-        label: "Google Ads agency in Bangalore: how to choose",
-        href: "/blog/digital-marketing-strategy/google-ads-agency-in-bangalore",
-      },
-      {
-        label: "What does a digital marketing agency do?",
-        href: "/blog/agency-growth-operations/what-does-a-digital-marketing-agency-do",
-      },
-      {
-        label: "Digital marketing agency vs in-house: decision guide",
-        href: "/blog/agency-growth-operations/digital-marketing-agency-vs-inhouse",
-      },
-      {
-        label: "Agency business models playbook",
-        href: "/blog/agency-growth-operations/agency-business-models-playbook",
-      },
-      {
-        label: "Client acquisition playbook for agencies",
-        href: "/blog/agency-growth-operations/client-acquisition-playbook",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/digital-marketing-agency-in-bangalore">Digital marketing agency in Bangalore: selection guide</a>, <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/best-digital-marketing-agency-in-india">Best digital marketing agency in India: selection guide</a>, <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/google-ads-agency-in-bangalore">Google Ads agency in Bangalore: how to choose</a>, <a className="text-indigo-700 underline" href="/blog/agency-growth-operations/what-does-a-digital-marketing-agency-do">What does a digital marketing agency do?</a>, <a className="text-indigo-700 underline" href="/blog/agency-growth-operations/digital-marketing-agency-vs-inhouse">Digital marketing agency vs in-house: decision guide</a>, <a className="text-indigo-700 underline" href="/blog/agency-growth-operations/agency-business-models-playbook">Agency business models playbook</a>, and <a className="text-indigo-700 underline" href="/blog/agency-growth-operations/client-acquisition-playbook">Client acquisition playbook for agencies</a>.</>,
     ],
   },
   {

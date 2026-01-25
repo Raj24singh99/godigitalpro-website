@@ -168,17 +168,7 @@ const sections = [
       "Reduce friction by keeping forms short, especially for first-touch campaigns. Move qualification questions to the follow-up step.",
       "Use social proof elements like construction updates, completion certificates, and resident testimonials without exaggeration.",
       "Highlight location advantages, connectivity, and amenities, but anchor the page with pricing clarity or booking steps to avoid vague interest.",
-    ],
-    referencesTitle: "Related conversion playbooks",
-    references: [
-      {
-        label: "Landing page conversion heuristics",
-        href: "/blog/conversion-rate-optimisation-ux/landing-page-heuristics-conversion-boosters",
-      },
-      {
-        label: "Funnel optimization playbook",
-        href: "/blog/conversion-rate-optimisation-ux/funnel-optimisation-playbook",
-      },
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/conversion-rate-optimisation-ux/landing-page-heuristics-conversion-boosters">Landing page conversion heuristics</a> and <a className="text-indigo-700 underline" href="/blog/conversion-rate-optimisation-ux/funnel-optimisation-playbook">Funnel optimization playbook</a>.</>,
     ],
   },
   {
@@ -225,16 +215,8 @@ const sections = [
           "A direct indicator of operational discipline and lead decay risk.",
       },
     ],
-    referencesTitle: "Measurement and pipeline references",
-    references: [
-      {
-        label: "Lead marketing strategy for qualified pipeline",
-        href: "/blog/digital-marketing-strategy/lead-marketing-strategy",
-      },
-      {
-        label: "Real estate marketing playbook",
-        href: "/blog/industry-verticals-use-cases/real-estate-playbook",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/lead-marketing-strategy">Lead marketing strategy for qualified pipeline</a> and <a className="text-indigo-700 underline" href="/blog/industry-verticals-use-cases/real-estate-playbook">Real estate marketing playbook</a>.</>,
     ],
   },
   {

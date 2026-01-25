@@ -176,17 +176,7 @@ const sections = [
       "Build a review workflow after every successful appointment. A simple follow-up message with a direct link improves volume and freshness.",
       "Respond to reviews professionally and promptly. This signals care and protects reputation during negative feedback.",
       "Prioritize reviews for high-margin service lines and flagship doctors. These influence conversion for broader offerings.",
-    ],
-    referencesTitle: "Local visibility resources",
-    references: [
-      {
-        label: "Local SEO playbook",
-        href: "/blog/search-engine-optimisation/local-seo-playbook",
-      },
-      {
-        label: "Healthcare marketing playbook",
-        href: "/blog/industry-verticals-use-cases/healthcare-playbook",
-      },
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/search-engine-optimisation/local-seo-playbook">Local SEO playbook</a> and <a className="text-indigo-700 underline" href="/blog/industry-verticals-use-cases/healthcare-playbook">Healthcare marketing playbook</a>.</>,
     ],
   },
   {
@@ -198,13 +188,7 @@ const sections = [
       "Create symptom-based guides, treatment comparisons, and recovery timelines that answer real patient questions. Keep the tone calm and instructional.",
       "Use doctor-led content to explain when to seek care and what to expect. This builds trust and sets appointment expectations.",
       "Avoid content that promises outcomes. Focus on process, care experience, and practical next steps.",
-    ],
-    referencesTitle: "Content planning support",
-    references: [
-      {
-        label: "Content strategy playbook",
-        href: "/blog/content-marketing/content-strategy/content-strategy-playbook",
-      },
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/content-marketing/content-strategy/content-strategy-playbook">Content strategy playbook</a>.</>,
     ],
   },
   {
@@ -216,13 +200,7 @@ const sections = [
       "Avoid making absolute claims about outcomes, recovery, or guarantees. Focus on documented processes and standard care protocols.",
       "Secure patient consent before using testimonials or case stories. Keep private data protected across forms, chat tools, and analytics.",
       "Ensure tracking scripts and forms follow data hygiene practices. Over-collection can create compliance and trust risks.",
-    ],
-    referencesTitle: "Data governance guidance",
-    references: [
-      {
-        label: "Data governance playbook",
-        href: "/blog/web-analytics-data-reporting/data-governance-playbook",
-      },
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/web-analytics-data-reporting/data-governance-playbook">Data governance playbook</a>.</>,
     ],
   },
   {

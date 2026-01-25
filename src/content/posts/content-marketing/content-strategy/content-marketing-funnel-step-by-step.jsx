@@ -256,24 +256,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "More content marketing resources to support your funnel build.",
-    references: [
-      {
-        label: "Content strategy playbook",
-        href: "/blog/content-strategy-playbook"
-      },
-      {
-        label: "Content creation playbook",
-        href: "/blog/content-creation-playbook"
-      },
-      {
-        label: "Content distribution playbook",
-        href: "/blog/content-distribution-playbook"
-      },
-      {
-        label: "Content marketing category hub",
-        href: "/blog/category/content-marketing"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/content-strategy-playbook">Content strategy playbook</a>, <a className="text-indigo-700 underline" href="/blog/content-creation-playbook">Content creation playbook</a>, <a className="text-indigo-700 underline" href="/blog/content-distribution-playbook">Content distribution playbook</a>, and <a className="text-indigo-700 underline" href="/blog/category/content-marketing">Content marketing category hub</a>.</>,
+    ],
   },
   {
     id: "faq",

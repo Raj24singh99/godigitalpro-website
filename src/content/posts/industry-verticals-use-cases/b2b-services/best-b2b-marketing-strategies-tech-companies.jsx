@@ -242,24 +242,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "More resources to support B2B tech marketing execution.",
-    references: [
-      {
-        label: "B2B services playbook",
-        href: "/blog/b2b-services-playbook"
-      },
-      {
-        label: "SaaS tech playbook",
-        href: "/blog/saas-tech-playbook"
-      },
-      {
-        label: "Funnel optimization playbook",
-        href: "/blog/funnel-optimisation-playbook"
-      },
-      {
-        label: "Content strategy playbook",
-        href: "/blog/content-strategy-playbook"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/b2b-services-playbook">B2B services playbook</a>, <a className="text-indigo-700 underline" href="/blog/saas-tech-playbook">SaaS tech playbook</a>, <a className="text-indigo-700 underline" href="/blog/funnel-optimisation-playbook">Funnel optimization playbook</a>, and <a className="text-indigo-700 underline" href="/blog/content-strategy-playbook">Content strategy playbook</a>.</>,
+    ],
   },
   {
     id: "faq",

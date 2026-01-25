@@ -150,16 +150,8 @@ const sections = [
           "Integrations can drive high-quality leads when onboarding is smooth and benefits are clear.",
       },
     ],
-    referencesTitle: "Related playbooks",
-    references: [
-      {
-        label: "Content strategy and planning playbook",
-        href: "/blog/content-marketing/content-strategy/content-strategy-playbook",
-      },
-      {
-        label: "SEO for SaaS and B2B playbook",
-        href: "/blog/search-engine-optimisation/seo-saas-b2b-playbook",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/content-marketing/content-strategy/content-strategy-playbook">Content strategy and planning playbook</a> and <a className="text-indigo-700 underline" href="/blog/search-engine-optimisation/seo-saas-b2b-playbook">SEO for SaaS and B2B playbook</a>.</>,
     ],
   },
   {
@@ -205,17 +197,7 @@ const sections = [
       "Define lead stages together: inquiry, qualified, meeting, proposal, and closed-won. Marketing should optimize for the stage that sales values most.",
       "Use a weekly feedback loop on lead quality and reasons for loss. This is the fastest optimization channel you have.",
       "Set response SLAs. In competitive categories, response time can be the difference between pipeline wins and drop-offs.",
-    ],
-    referencesTitle: "Pipeline alignment support",
-    references: [
-      {
-        label: "Lead marketing strategy for qualified pipeline",
-        href: "/blog/digital-marketing-strategy/lead-marketing-strategy",
-      },
-      {
-        label: "Funnel strategy playbook",
-        href: "/blog/digital-marketing-strategy/funnel-strategy-playbook",
-      },
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/lead-marketing-strategy">Lead marketing strategy for qualified pipeline</a> and <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/funnel-strategy-playbook">Funnel strategy playbook</a>.</>,
     ],
   },
   {

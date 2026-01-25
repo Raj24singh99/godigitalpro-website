@@ -335,23 +335,8 @@ const sections = [
   {
     id: "related-reading-performance",
     title: "Related reading",
-    references: [
-      {
-        label: "Digital marketing agency in Bangalore: selection guide",
-        href: "/blog/digital-marketing-strategy/digital-marketing-agency-in-bangalore",
-      },
-      {
-        label: "Best digital marketing company in Bangalore: selection guide",
-        href: "/blog/digital-marketing-strategy/best-digital-marketing-company-in-bangalore",
-      },
-      {
-        label: "Performance analytics playbook",
-        href: "/blog/pay-per-click-ppc/performance-analytics-playbook",
-      },
-      {
-        label: "Search ads playbook",
-        href: "/blog/pay-per-click-ppc/search-ads-playbook",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/digital-marketing-agency-in-bangalore">Digital marketing agency in Bangalore: selection guide</a>, <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/best-digital-marketing-company-in-bangalore">Best digital marketing company in Bangalore: selection guide</a>, <a className="text-indigo-700 underline" href="/blog/pay-per-click-ppc/performance-analytics-playbook">Performance analytics playbook</a>, and <a className="text-indigo-700 underline" href="/blog/pay-per-click-ppc/search-ads-playbook">Search ads playbook</a>.</>,
     ],
   },
   {

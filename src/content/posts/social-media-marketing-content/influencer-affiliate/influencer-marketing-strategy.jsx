@@ -256,24 +256,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "More guidance to help you build and scale creator-led growth.",
-    references: [
-      {
-        label: "Social media marketing category hub",
-        href: "/blog/category/social-media-marketing-content"
-      },
-      {
-        label: "Influencer and affiliate subcategory",
-        href: "/blog/category/social-media-marketing-content/sub/influencer-affiliate"
-      },
-      {
-        label: "Social media marketing services",
-        href: "/services/social-media-marketing"
-      },
-      {
-        label: "Marketing tools directory",
-        href: "/tools"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/category/social-media-marketing-content">Social media marketing category hub</a>, <a className="text-indigo-700 underline" href="/blog/category/social-media-marketing-content/sub/influencer-affiliate">Influencer and affiliate subcategory</a>, <a className="text-indigo-700 underline" href="/services/social-media-marketing">Social media marketing services</a>, and <a className="text-indigo-700 underline" href="/tools">Marketing tools directory</a>.</>,
+    ],
   },
   {
     id: "faq-influencer-marketing-strategy",

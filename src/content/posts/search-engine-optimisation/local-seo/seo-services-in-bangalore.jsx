@@ -288,23 +288,8 @@ const sections = [
   {
     id: "related-reading-seo-services",
     title: "Related reading",
-    references: [
-      {
-        label: "Local SEO playbook",
-        href: "/blog/search-engine-optimisation/local-seo-playbook",
-      },
-      {
-        label: "Technical SEO foundations",
-        href: "/blog/search-engine-optimisation/technical-seo-foundations",
-      },
-      {
-        label: "On-page SEO playbook",
-        href: "/blog/search-engine-optimisation/on-page-seo-playbook",
-      },
-      {
-        label: "Digital marketing agency in Bangalore: selection guide",
-        href: "/blog/digital-marketing-strategy/digital-marketing-agency-in-bangalore",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/search-engine-optimisation/local-seo-playbook">Local SEO playbook</a>, <a className="text-indigo-700 underline" href="/blog/search-engine-optimisation/technical-seo-foundations">Technical SEO foundations</a>, <a className="text-indigo-700 underline" href="/blog/search-engine-optimisation/on-page-seo-playbook">On-page SEO playbook</a>, and <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/digital-marketing-agency-in-bangalore">Digital marketing agency in Bangalore: selection guide</a>.</>,
     ],
   },
   {

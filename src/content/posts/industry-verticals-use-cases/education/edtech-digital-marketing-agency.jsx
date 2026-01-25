@@ -259,11 +259,8 @@ const sections = [
     title: "Conclusion",
     summary:
       "An edtech digital marketing agency should help you build a predictable enrollment pipeline, not just generate inquiries. If you align offers to intent, respond fast, and track admissions outcomes, performance becomes scalable. If you want help diagnosing your funnel or building a tighter enrollment system, Godigitalpro can guide the onboarding and validation process without long commitments.",
-    references: [
-      {
-        label: "Onboarding form",
-        href: "/onboarding",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/onboarding">Onboarding form</a>.</>,
     ],
   },
 ];

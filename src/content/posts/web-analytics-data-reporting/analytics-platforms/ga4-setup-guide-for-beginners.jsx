@@ -117,17 +117,7 @@ const sections = [
       "Use Google Tag Manager to install GA4 if possible. It lets you manage tags without code deployments.",
       "Install the GA4 configuration tag first, then add event tags for key actions.",
       "Avoid installing GA4 twice (for example, once in the code and once via tag manager). Double-tagging is a common beginner mistake.",
-    ],
-    referencesTitle: "Related setup resources",
-    references: [
-      {
-        label: "GA4 setup with sGTM and CAPI",
-        href: "/blog/web-analytics-data-reporting/ga4-setup-sgtm-capi",
-      },
-      {
-        label: "Data governance playbook",
-        href: "/blog/web-analytics-data-reporting/data-governance-playbook",
-      },
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/web-analytics-data-reporting/ga4-setup-sgtm-capi">GA4 setup with sGTM and CAPI</a> and <a className="text-indigo-700 underline" href="/blog/web-analytics-data-reporting/data-governance-playbook">Data governance playbook</a>.</>,
     ],
   },
   {
@@ -162,17 +152,7 @@ const sections = [
       "Focus on traffic sources, key conversion paths, and top-performing pages. These are the quickest to interpret.",
       "Avoid creating too many custom reports early. Build trust in the core data first.",
       "If your team is new to analytics, document how each report should be used.",
-    ],
-    referencesTitle: "Reporting support",
-    references: [
-      {
-        label: "Dashboard and reporting playbook",
-        href: "/blog/web-analytics-data-reporting/dashboards-reporting-playbook",
-      },
-      {
-        label: "Data visualization playbook",
-        href: "/blog/web-analytics-data-reporting/data-visualisation-playbook",
-      },
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/web-analytics-data-reporting/dashboards-reporting-playbook">Dashboard and reporting playbook</a> and <a className="text-indigo-700 underline" href="/blog/web-analytics-data-reporting/data-visualisation-playbook">Data visualization playbook</a>.</>,
     ],
   },
   {
