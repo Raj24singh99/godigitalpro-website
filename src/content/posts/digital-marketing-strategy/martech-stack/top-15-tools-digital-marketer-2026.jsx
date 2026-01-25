@@ -302,24 +302,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "More resources to help you build a resilient marketing stack.",
-    references: [
-      {
-        label: "Marketing technology stack playbook",
-        href: "/blog/category/digital-marketing-strategy/sub/martech-stack"
-      },
-      {
-        label: "Content strategy playbook",
-        href: "/blog/content-strategy-playbook"
-      },
-      {
-        label: "Marketing automation playbook",
-        href: "/blog/marketing-automation-playbook"
-      },
-      {
-        label: "Marketing tools directory",
-        href: "/tools"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/category/digital-marketing-strategy/sub/martech-stack">Marketing technology stack playbook</a>, <a className="text-indigo-700 underline" href="/blog/content-strategy-playbook">Content strategy playbook</a>, <a className="text-indigo-700 underline" href="/blog/marketing-automation-playbook">Marketing automation playbook</a>, and <a className="text-indigo-700 underline" href="/tools">Marketing tools directory</a>.</>,
+    ],
   },
   {
     id: "faq-tools-2026",

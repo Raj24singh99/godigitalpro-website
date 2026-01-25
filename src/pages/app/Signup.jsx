@@ -5,7 +5,7 @@ import { createUserProfile } from "../../utils/supabaseProfiles";
 import { Sparkles, UserPlus } from "lucide-react";
 
 export default function Signup() {
-  const { signup, loginWithGoogle } = useAuth();
+  const { signup } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
@@ -36,19 +36,6 @@ export default function Signup() {
       }
     } catch (err) {
       setError(err?.message || "Signup failed. Try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleGoogle = async () => {
-    setError("");
-    try {
-      setLoading(true);
-      await loginWithGoogle();
-      navigate("/dashboard", { replace: true });
-    } catch (err) {
-      setError(err?.message || "Google signup failed.");
     } finally {
       setLoading(false);
     }
@@ -130,14 +117,6 @@ export default function Signup() {
                 {loading ? "Creating..." : "Create workspace"}
               </span>
             </button>
-            <button
-              type="button"
-              onClick={handleGoogle}
-              disabled={loading}
-              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 disabled:opacity-60"
-            >
-              Continue with Google
-            </button>
           </form>
 
           <div className="mt-4 text-xs text-slate-500">
@@ -148,7 +127,7 @@ export default function Signup() {
           </div>
         </div>
         <p className="mt-6 text-center text-xs text-slate-500">
-          Secure auth powered by Firebase.
+          Secure auth powered by Supabase.
         </p>
       </div>
     </div>

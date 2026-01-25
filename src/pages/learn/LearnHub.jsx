@@ -1,18 +1,13 @@
 import React from "react";
-import { Sparkles, GraduationCap, ShoppingBag, Video, Users, ArrowRight, Clock, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, GraduationCap, Layers, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import SeoHelmet from "../../components/SeoHelmet.jsx";
 import { buildCanonical } from "../../utils/seo.js";
 import { learnCatalog, learnFAQs } from "../../data/learnCatalog.js";
+import { masterCourse } from "../../data/masterCourse.js";
+import { useAuth } from "../../context/AuthProvider.jsx";
 
-const sections = [
-  { title: "Digital products", icon: <ShoppingBag className="h-5 w-5 text-amber-600" />, href: "/learn/digital-products", type: "digital" },
-  { title: "Masterclasses", icon: <Video className="h-5 w-5 text-rose-600" />, href: "/learn/masterclasses", type: "masterclass" },
-  { title: "Courses", icon: <GraduationCap className="h-5 w-5 text-indigo-600" />, href: "/learn/courses", type: "course" },
-  { title: "Internship", icon: <Users className="h-5 w-5 text-emerald-600" />, href: "/learn/internship", type: "internship" },
-];
-
-const featured = learnCatalog.slice(0, 6);
+const featured = learnCatalog.slice(0, 4);
 
 function formatStatus(item) {
   if (item.status === "enrolling") return "Enrolling";
@@ -23,12 +18,13 @@ function formatStatus(item) {
 
 export default function LearnHub() {
   const canonical = buildCanonical("/learn");
+  const { user } = useAuth();
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
       <SeoHelmet
-        title="Learn with GoDigitalPro | Courses, Masterclasses, Digital Products"
-        description="Explore GoDigitalPro learning hub: digital products, masterclasses, courses, and internships on performance marketing, content ops, and CRO."
+        title="Learn with GoDigitalPro | Marketing Courses and Training"
+        description="Browse GoDigitalPro learning courses, track micro-completion progress, and resume lessons anytime."
         canonical={canonical}
         breadcrumbs={[
           { name: "Home", url: buildCanonical("/") },
@@ -36,57 +32,28 @@ export default function LearnHub() {
         ]}
       />
 
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-white">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-emerald-50" />
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-6 py-14 lg:flex-row lg:items-center">
-          <div className="lg:w-3/5">
+        <div className="relative mx-auto max-w-6xl px-6 py-12">
+          <div className="flex flex-col gap-4">
             <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-700 shadow-sm ring-1 ring-slate-200">
               <Sparkles className="h-4 w-4 text-amber-500" />
               Learn with GoDigitalPro
             </div>
-            <h1 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">
-              Courses, masterclasses, and digital products built for marketers.
+            <h1 className="text-3xl font-bold leading-tight md:text-4xl">
+              Learning paths built for performance-focused marketers.
             </h1>
-            <p className="mt-3 text-lg text-slate-700">
-              Ship campaigns faster with ready-to-use templates, live masterclasses, structured courses, and an internship track to apply everything in real
-              projects.
+            <p className="max-w-3xl text-lg text-slate-700">
+              Choose the master course, complete each sub-section, and resume exactly where you left off.
+              Progress tracking and certificates unlock once you are logged in.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {sections.map((item) => (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-slate-200 hover:bg-slate-100"
-                >
-                  {item.icon}
-                  {item.title}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              ))}
-            </div>
+            <p className="max-w-3xl text-sm font-semibold text-slate-600">
+              All courses below are modules inside the Digital Marketing Master Course. Log in to
+              view full details, track progress, and complete the path.
+            </p>
           </div>
-          <div className="lg:w-2/5">
-            <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
-              <h3 className="text-lg font-semibold text-slate-900">What you get</h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  Ready-to-use downloads for audits, calendars, and proposals.
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  Live and on-demand masterclasses with replays.
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  Cohort and self-paced courses with templates and feedback.
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  Internship option with weekly milestones and certification.
-                </li>
-              </ul>
-            </div>
+          <div className="mt-8">
+            <MasterCourseCard masterCourse={masterCourse} user={user} />
           </div>
         </div>
       </section>
@@ -104,7 +71,7 @@ export default function LearnHub() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
             {featured.map((item) => (
               <LearnCard key={item.slug} item={item} />
             ))}
@@ -116,29 +83,23 @@ export default function LearnHub() {
         <div className="mx-auto max-w-6xl px-6 py-12">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-600">Paths</p>
-              <h2 className="text-2xl font-bold text-slate-900">Pick your next step</h2>
-              <p className="mt-2 text-slate-700">Move from downloads to live sessions to full courses and internships.</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-600">What you get</p>
+              <h2 className="text-2xl font-bold text-slate-900">Structured learning with real outcomes</h2>
+              <p className="mt-2 text-slate-700">Micro-completion tracking keeps progress visible and measurable.</p>
             </div>
           </div>
-          <div className="mt-6 grid gap-4 md:grid-cols-4">
-            {sections.map((item) => (
-              <Link
-                key={item.title}
-                to={item.href}
-                className="flex flex-col gap-2 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200 hover:ring-slate-300"
-              >
-                <div className="flex items-center justify-between">
-                  <p className="text-base font-semibold text-slate-900">{item.title}</p>
-                  {item.icon}
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {[
+              "Track every sub-section to avoid losing momentum.",
+              "Resume instantly from your last completed step.",
+              "Future-ready certificates after full completion.",
+            ].map((value) => (
+              <div key={value} className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
+                <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                  {value}
                 </div>
-                <p className="text-sm text-slate-700">
-                  {item.title === "Digital products" && "Templates and kits you can download now."}
-                  {item.title === "Masterclasses" && "Live and replay sessions with action steps."}
-                  {item.title === "Courses" && "Structured modules, Q&A, and projects."}
-                  {item.title === "Internship" && "Apply skills on real campaigns with mentors."}
-                </p>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -167,6 +128,70 @@ export default function LearnHub() {
         </div>
       </section>
     </main>
+  );
+}
+
+function MasterCourseCard({ masterCourse, user }) {
+  const courseUrl = "/learn/master-course";
+  const loginTarget = "/learn/master-course";
+  return (
+    <div className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
+          Master Course
+        </p>
+        <h2 className="mt-2 text-2xl font-semibold text-slate-900">
+          {masterCourse.title}
+        </h2>
+        <p className="mt-3 text-sm text-slate-700">{masterCourse.shortDescription}</p>
+        <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-slate-700">
+          <span className="inline-flex items-center gap-1 rounded-full bg-slate-50 px-2 py-1">
+            <GraduationCap className="h-3.5 w-3.5" />
+            {masterCourse.level}
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-full bg-slate-50 px-2 py-1">
+            <Layers className="h-3.5 w-3.5" />
+            {masterCourse.subCourses.length} sub-courses
+          </span>
+        </div>
+      </div>
+      <div className="mt-5 flex items-center justify-between">
+        {user ? (
+          <Link
+            to={courseUrl}
+            className="text-sm font-semibold text-slate-700 hover:text-slate-900"
+          >
+            View details
+          </Link>
+        ) : (
+          <Link
+            to="/login"
+            state={{ from: { pathname: loginTarget } }}
+            className="text-sm font-semibold text-slate-700 hover:text-slate-900"
+          >
+            Login to view details
+          </Link>
+        )}
+        {user ? (
+          <Link
+            to={courseUrl}
+            className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
+          >
+            Enter master course
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        ) : (
+          <Link
+            to="/login"
+            state={{ from: { pathname: loginTarget } }}
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50"
+          >
+            Login to start
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        )}
+      </div>
+    </div>
   );
 }
 

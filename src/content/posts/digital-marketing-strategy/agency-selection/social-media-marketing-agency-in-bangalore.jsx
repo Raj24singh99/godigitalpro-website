@@ -356,23 +356,8 @@ const sections = [
   {
     id: "related-reading-social",
     title: "Related reading",
-    references: [
-      {
-        label: "Digital marketing agency in Bangalore: selection guide",
-        href: "/blog/digital-marketing-strategy/digital-marketing-agency-in-bangalore",
-      },
-      {
-        label: "Organic social playbook",
-        href: "/blog/social-media-marketing-content/organic-social-playbook",
-      },
-      {
-        label: "Social analytics playbook",
-        href: "/blog/social-media-marketing-content/social-analytics-playbook",
-      },
-      {
-        label: "Social paid media playbook",
-        href: "/blog/pay-per-click-ppc/social-paid-media-playbook",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/digital-marketing-agency-in-bangalore">Digital marketing agency in Bangalore: selection guide</a>, <a className="text-indigo-700 underline" href="/blog/social-media-marketing-content/organic-social-playbook">Organic social playbook</a>, <a className="text-indigo-700 underline" href="/blog/social-media-marketing-content/social-analytics-playbook">Social analytics playbook</a>, and <a className="text-indigo-700 underline" href="/blog/pay-per-click-ppc/social-paid-media-playbook">Social paid media playbook</a>.</>,
     ],
   },
   {

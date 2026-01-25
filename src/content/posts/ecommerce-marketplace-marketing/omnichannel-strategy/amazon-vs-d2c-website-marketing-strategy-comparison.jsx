@@ -161,12 +161,8 @@ const sections = [
           "Reviews act as the primary trust asset. Create post-purchase follow-ups that stay compliant.",
       },
     ],
-    referencesTitle: "Marketplace support",
-    references: [
-      {
-        label: "Marketplace optimization playbook",
-        href: "/blog/ecommerce-marketplace-marketing/marketplace-optimization-playbook",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/ecommerce-marketplace-marketing/marketplace-optimization-playbook">Marketplace optimization playbook</a>.</>,
     ],
   },
   {
@@ -191,16 +187,8 @@ const sections = [
           "Post-purchase email, referrals, and subscriptions are the compounding levers that make D2C sustainable.",
       },
     ],
-    referencesTitle: "D2C support",
-    references: [
-      {
-        label: "CRO tips for Indian e-commerce stores",
-        href: "/blog/conversion-rate-optimisation-ux/cro-tips-for-indian-ecommerce-stores",
-      },
-      {
-        label: "Omnichannel strategy playbook",
-        href: "/blog/ecommerce-marketplace-marketing/omnichannel-strategy-playbook",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/conversion-rate-optimisation-ux/cro-tips-for-indian-ecommerce-stores">CRO tips for Indian e-commerce stores</a> and <a className="text-indigo-700 underline" href="/blog/ecommerce-marketplace-marketing/omnichannel-strategy-playbook">Omnichannel strategy playbook</a>.</>,
     ],
   },
   {

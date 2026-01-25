@@ -20,6 +20,9 @@ const LearnDigitalProducts            = lazy(() => import("./pages/learn/Digital
 const LearnMasterclasses              = lazy(() => import("./pages/learn/Masterclasses.jsx"));
 const LearnCourses                    = lazy(() => import("./pages/learn/Courses.jsx"));
 const LearnInternship                 = lazy(() => import("./pages/learn/Internship.jsx"));
+const LearnMasterCourse               = lazy(() => import("./pages/learn/MasterCourse.jsx"));
+const LearnCourseDetail               = lazy(() => import("./pages/learn/CourseDetail.jsx"));
+const LearnCoursePlayer               = lazy(() => import("./pages/learn/CoursePlayer.jsx"));
 const LookerStudioChecklist           = lazy(() => import("./pages/digital-products/LookerStudioChecklist.jsx"));
 const LinkedinAdsChecklist            = lazy(() => import("./pages/digital-products/LinkedinAdsChecklist.jsx"));
 const MetaAdsChecklist                = lazy(() => import("./pages/digital-products/MetaAdsChecklist.jsx"));
@@ -168,6 +171,30 @@ export default function App() {
             <Route path="/learn/masterclasses" element={<LearnMasterclasses />} />
             <Route path="/learn/courses" element={<LearnCourses />} />
             <Route path="/learn/internship" element={<LearnInternship />} />
+            <Route
+              path="/learn/master-course"
+              element={
+                <ProtectedRoute>
+                  <LearnMasterCourse />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/learn/course/:slug"
+              element={
+                <ProtectedRoute>
+                  <LearnCourseDetail />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/learn/course/:slug/lesson/:lessonId"
+              element={
+                <ProtectedRoute>
+                  <LearnCoursePlayer />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/digital-products/looker-studio-reporting-dashboard-checklist" element={<LookerStudioChecklist />} />
             <Route path="/digital-products/linkedin-ads-launch-optimization-checklist" element={<LinkedinAdsChecklist />} />
             <Route path="/digital-products/meta-ads-launch-optimization-checklist" element={<MetaAdsChecklist />} />

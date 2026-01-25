@@ -176,16 +176,8 @@ const sections = [
           "Reference the exact product, size, or color left behind to reduce cognitive load.",
       },
     ],
-    referencesTitle: "Related conversion playbooks",
-    references: [
-      {
-        label: "Funnel optimization playbook",
-        href: "/blog/conversion-rate-optimisation-ux/funnel-optimisation-playbook",
-      },
-      {
-        label: "CRO for D2C brands playbook",
-        href: "/blog/conversion-rate-optimisation-ux/cro-for-d2c-conversion-rate-optimization",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/conversion-rate-optimisation-ux/funnel-optimisation-playbook">Funnel optimization playbook</a> and <a className="text-indigo-700 underline" href="/blog/conversion-rate-optimisation-ux/cro-for-d2c-conversion-rate-optimization">CRO for D2C brands playbook</a>.</>,
     ],
   },
   {
@@ -210,16 +202,8 @@ const sections = [
           "Run small, high-confidence tests weekly instead of waiting for one large redesign.",
       },
     ],
-    referencesTitle: "Measurement resources",
-    references: [
-      {
-        label: "User behavior analytics playbook",
-        href: "/blog/conversion-rate-optimisation-ux/user-behaviour-analytics-playbook",
-      },
-      {
-        label: "Testing playbook",
-        href: "/blog/conversion-rate-optimisation-ux/testing-playbook",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/conversion-rate-optimisation-ux/user-behaviour-analytics-playbook">User behavior analytics playbook</a> and <a className="text-indigo-700 underline" href="/blog/conversion-rate-optimisation-ux/testing-playbook">Testing playbook</a>.</>,
     ],
   },
   {

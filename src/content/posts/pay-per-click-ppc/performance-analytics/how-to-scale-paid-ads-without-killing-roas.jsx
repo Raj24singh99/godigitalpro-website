@@ -304,24 +304,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "Explore more PPC strategy and optimization resources.",
-    references: [
-      {
-        label: "PPC category hub",
-        href: "/blog/category/pay-per-click-ppc"
-      },
-      {
-        label: "Performance optimization subcategory",
-        href: "/blog/category/pay-per-click-ppc/sub/performance-analytics"
-      },
-      {
-        label: "Paid marketing services",
-        href: "/services/paid-marketing"
-      },
-      {
-        label: "Marketing tools directory",
-        href: "/tools"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/category/pay-per-click-ppc">PPC category hub</a>, <a className="text-indigo-700 underline" href="/blog/category/pay-per-click-ppc/sub/performance-analytics">Performance optimization subcategory</a>, <a className="text-indigo-700 underline" href="/services/paid-marketing">Paid marketing services</a>, and <a className="text-indigo-700 underline" href="/tools">Marketing tools directory</a>.</>,
+    ],
   },
   {
     id: "faq-scale-paid-ads",

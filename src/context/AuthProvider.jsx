@@ -63,19 +63,6 @@ export function AuthProvider({ children }) {
     return data.user;
   };
 
-  const loginWithGoogle = async () => {
-    setInitializing(true);
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}/login`,
-      },
-    });
-    if (error) throw error;
-    setInitializing(false);
-    return data;
-  };
-
   const logout = async () => {
     await supabase.auth.signOut();
     setUser(null);
@@ -88,7 +75,6 @@ export function AuthProvider({ children }) {
       initializing,
       login,
       signup,
-      loginWithGoogle,
       logout,
     }),
     [user, initializing]

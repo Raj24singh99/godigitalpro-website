@@ -234,24 +234,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "More SEO resources for building local visibility and consistent leads.",
-    references: [
-      {
-        label: "Local SEO playbook",
-        href: "/blog/local-seo-playbook"
-      },
-      {
-        label: "SEO category hub",
-        href: "/blog/category/search-engine-optimisation"
-      },
-      {
-        label: "Local SEO subcategory",
-        href: "/blog/category/search-engine-optimisation/sub/local-seo"
-      },
-      {
-        label: "SEO content services",
-        href: "/services/seo-content"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/local-seo-playbook">Local SEO playbook</a>, <a className="text-indigo-700 underline" href="/blog/category/search-engine-optimisation">SEO category hub</a>, <a className="text-indigo-700 underline" href="/blog/category/search-engine-optimisation/sub/local-seo">Local SEO subcategory</a>, and <a className="text-indigo-700 underline" href="/services/seo-content">SEO content services</a>.</>,
+    ],
   },
   {
     id: "faq",

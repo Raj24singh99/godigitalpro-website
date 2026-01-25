@@ -200,16 +200,8 @@ const sections = [
           "Increase spend during research peaks and reduce during low-intent windows. Use off-peak months for brand and nurture rather than aggressive conversions.",
       },
     ],
-    referencesTitle: "Related playbooks",
-    references: [
-      {
-        label: "Lead marketing strategy for qualified pipeline",
-        href: "/blog/digital-marketing-strategy/lead-marketing-strategy",
-      },
-      {
-        label: "Budgeting and ROI planning playbook",
-        href: "/blog/digital-marketing-strategy/budgeting-roi-playbook",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/lead-marketing-strategy">Lead marketing strategy for qualified pipeline</a> and <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/budgeting-roi-playbook">Budgeting and ROI planning playbook</a>.</>,
     ],
   },
   {
@@ -221,17 +213,7 @@ const sections = [
       "Create city and regional pages for major intake hubs, but avoid thin pages. Each location page should include program relevance, local proof, and tailored admissions info.",
       "Use multilingual content where demand exists. Even partial regional-language FAQs can lift conversion and build trust in tier-2 markets.",
       "Optimize Google Business Profiles for offline campuses or partner centers. These listings influence local decisions as much as paid ads.",
-    ],
-    referencesTitle: "SEO support",
-    references: [
-      {
-        label: "Local SEO playbook for service visibility",
-        href: "/blog/search-engine-optimisation/local-seo-playbook",
-      },
-      {
-        label: "Content strategy planning playbook",
-        href: "/blog/content-marketing/content-strategy/content-strategy-playbook",
-      },
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/search-engine-optimisation/local-seo-playbook">Local SEO playbook for service visibility</a> and <a className="text-indigo-700 underline" href="/blog/content-marketing/content-strategy/content-strategy-playbook">Content strategy planning playbook</a>.</>,
     ],
   },
   {

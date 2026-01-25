@@ -338,23 +338,8 @@ const sections = [
   {
     id: "related-reading-startups",
     title: "Related reading",
-    references: [
-      {
-        label: "SaaS marketing playbook",
-        href: "/blog/industry-verticals-use-cases/saas-tech-playbook",
-      },
-      {
-        label: "Digital marketing agency in Bangalore: selection guide",
-        href: "/blog/digital-marketing-strategy/digital-marketing-agency-in-bangalore",
-      },
-      {
-        label: "Performance marketing agency in Bangalore",
-        href: "/blog/digital-marketing-strategy/performance-marketing-agency-in-bangalore",
-      },
-      {
-        label: "SEO services in Bangalore",
-        href: "/blog/search-engine-optimisation/seo-services-in-bangalore",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/industry-verticals-use-cases/saas-tech-playbook">SaaS marketing playbook</a>, <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/digital-marketing-agency-in-bangalore">Digital marketing agency in Bangalore: selection guide</a>, <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/performance-marketing-agency-in-bangalore">Performance marketing agency in Bangalore</a>, and <a className="text-indigo-700 underline" href="/blog/search-engine-optimisation/seo-services-in-bangalore">SEO services in Bangalore</a>.</>,
     ],
   },
   {

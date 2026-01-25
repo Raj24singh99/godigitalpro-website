@@ -252,24 +252,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "More resources to support B2B SaaS social growth.",
-    references: [
-      {
-        label: "Organic social playbook",
-        href: "/blog/organic-social-playbook"
-      },
-      {
-        label: "Social media marketing category hub",
-        href: "/blog/category/social-media-marketing-content"
-      },
-      {
-        label: "SaaS marketing playbook",
-        href: "/blog/saas-tech-playbook"
-      },
-      {
-        label: "Social media marketing services",
-        href: "/services/social-media-marketing"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/organic-social-playbook">Organic social playbook</a>, <a className="text-indigo-700 underline" href="/blog/category/social-media-marketing-content">Social media marketing category hub</a>, <a className="text-indigo-700 underline" href="/blog/saas-tech-playbook">SaaS marketing playbook</a>, and <a className="text-indigo-700 underline" href="/services/social-media-marketing">Social media marketing services</a>.</>,
+    ],
   },
   {
     id: "faq",

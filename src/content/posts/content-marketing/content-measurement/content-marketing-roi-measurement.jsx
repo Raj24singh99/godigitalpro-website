@@ -251,24 +251,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "More resources to strengthen content performance measurement.",
-    references: [
-      {
-        label: "Content measurement playbook",
-        href: "/blog/content-measurement-playbook"
-      },
-      {
-        label: "Content strategy playbook",
-        href: "/blog/content-strategy-playbook"
-      },
-      {
-        label: "Analytics and reporting playbook",
-        href: "/blog/dashboards-reporting-playbook"
-      },
-      {
-        label: "Content marketing category hub",
-        href: "/blog/category/content-marketing"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/content-measurement-playbook">Content measurement playbook</a>, <a className="text-indigo-700 underline" href="/blog/content-strategy-playbook">Content strategy playbook</a>, <a className="text-indigo-700 underline" href="/blog/dashboards-reporting-playbook">Analytics and reporting playbook</a>, and <a className="text-indigo-700 underline" href="/blog/category/content-marketing">Content marketing category hub</a>.</>,
+    ],
   },
   {
     id: "faq",

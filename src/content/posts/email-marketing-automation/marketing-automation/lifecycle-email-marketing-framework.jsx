@@ -307,24 +307,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "If you want to explore related learning and tools within the GoDigitalPro ecosystem, start here.",
-    references: [
-      {
-        label: "Email Marketing & Automation category hub",
-        href: "/blog/category/email-marketing-automation"
-      },
-      {
-        label: "Marketing Automation subcategory",
-        href: "/blog/category/email-marketing-automation/sub/marketing-automation"
-      },
-      {
-        label: "GoDigitalPro Learn hub",
-        href: "/learn"
-      },
-      {
-        label: "GoDigitalPro Tools hub",
-        href: "/tools"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/category/email-marketing-automation">Email Marketing & Automation category hub</a>, <a className="text-indigo-700 underline" href="/blog/category/email-marketing-automation/sub/marketing-automation">Marketing Automation subcategory</a>, <a className="text-indigo-700 underline" href="/learn">GoDigitalPro Learn hub</a>, and <a className="text-indigo-700 underline" href="/tools">GoDigitalPro Tools hub</a>.</>,
+    ],
   },
   {
     id: "faq-lifecycle-email-framework",

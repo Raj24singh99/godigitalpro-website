@@ -255,24 +255,9 @@ const sections = [
     title: "Related internal resources",
     summary:
       "More resources to support startup growth on a budget.",
-    references: [
-      {
-        label: "Budgeting and ROI playbook",
-        href: "/blog/category/digital-marketing-strategy/sub/budgeting-roi"
-      },
-      {
-        label: "Funnel strategy playbook",
-        href: "/blog/funnel-optimisation-playbook"
-      },
-      {
-        label: "Content strategy playbook",
-        href: "/blog/content-strategy-playbook"
-      },
-      {
-        label: "Marketing tools directory",
-        href: "/tools"
-      }
-    ]
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/category/digital-marketing-strategy/sub/budgeting-roi">Budgeting and ROI playbook</a>, <a className="text-indigo-700 underline" href="/blog/funnel-optimisation-playbook">Funnel strategy playbook</a>, <a className="text-indigo-700 underline" href="/blog/content-strategy-playbook">Content strategy playbook</a>, and <a className="text-indigo-700 underline" href="/tools">Marketing tools directory</a>.</>,
+    ],
   },
   {
     id: "faq",

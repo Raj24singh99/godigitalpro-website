@@ -385,23 +385,8 @@ const sections = [
   {
     id: "related-reading-ai-tools",
     title: "Related reading",
-    references: [
-      {
-        label: "AI marketing playbook",
-        href: "/blog/emerging-trends-technologies/ai-marketing-playbook",
-      },
-      {
-        label: "How AI is changing digital marketing in India",
-        href: "/blog/emerging-trends-technologies/how-ai-is-changing-digital-marketing-in-india",
-      },
-      {
-        label: "Data-driven marketing playbook",
-        href: "/blog/digital-marketing-strategy/data-driven-marketing-playbook",
-      },
-      {
-        label: "SEO services in Bangalore",
-        href: "/blog/search-engine-optimisation/seo-services-in-bangalore",
-      },
+    paragraphs: [
+      <>For more, see <a className="text-indigo-700 underline" href="/blog/emerging-trends-technologies/ai-marketing-playbook">AI marketing playbook</a>, <a className="text-indigo-700 underline" href="/blog/emerging-trends-technologies/how-ai-is-changing-digital-marketing-in-india">How AI is changing digital marketing in India</a>, <a className="text-indigo-700 underline" href="/blog/digital-marketing-strategy/data-driven-marketing-playbook">Data-driven marketing playbook</a>, and <a className="text-indigo-700 underline" href="/blog/search-engine-optimisation/seo-services-in-bangalore">SEO services in Bangalore</a>.</>,
     ],
   },
   {
