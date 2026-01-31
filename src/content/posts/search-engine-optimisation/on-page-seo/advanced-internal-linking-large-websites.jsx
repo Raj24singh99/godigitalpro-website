@@ -4,19 +4,19 @@ import SimpleArticleLayout from "../../../../components/blog/SimpleArticleLayout
 
 export const meta = {
   title: "Advanced Internal Linking Strategies for Large Websites",
-  seoTitle: "Advanced Internal Linking for Large Websites",
+  seoTitle: "Advanced Internal Linking Strategies for Large Websites",
   metaDescription:
-    "Advanced internal linking strategies for large websites, with architecture patterns, governance, and measurement playbooks.",
+    "Advanced internal linking strategies for large websites, with architecture, governance, automation, and measurement playbooks.",
   slug: "advanced-internal-linking-large-websites",
   date: "2026-01-27",
-  updated: "2026-01-27",
+  updated: "2026-01-31",
   category: "search-engine-optimisation",
   subCategory: "on-page-seo",
-  tags: ["Internal Linking", "Technical SEO", "Site Architecture", "On-Page SEO"],
+  tags: ["Internal Linking", "Site Architecture", "On-Page SEO", "Content Strategy"],
   draft: false,
   cover: blogCover,
   coverAlt: "Internal linking architecture map for large websites",
-  readingTime: "13 min read",
+  readingTime: "12 min read",
   author: {
     name: "Editorial Team",
   },
@@ -27,7 +27,7 @@ const sections = [
     id: "executive-summary",
     title: "Executive Summary",
     summary:
-      "Internal linking is the control system that decides which pages matter and how authority flows across large websites. This guide covers advanced internal linking strategies designed for complex site structures, including hub-and-spoke architecture, dynamic modules, and governance rules that prevent link decay. You will learn how to prioritize link targets, standardize anchor text, and measure link impact beyond simple crawl counts. The goal is to build a scalable internal linking system that improves rankings, crawl efficiency, and user discovery at scale.",
+      "Internal linking is the system that decides which pages earn authority, how quickly new content is discovered, and where users go next on large websites. This guide lays out advanced internal linking strategies for complex sites, including architecture models, link rules, automation modules, and governance that prevents link decay. You will learn how to prioritize link targets, standardize anchors without over-optimization, and measure impact at the cluster level rather than page-by-page. The focus is on building a scalable internal linking engine that improves rankings, crawl efficiency, and conversion paths across thousands of URLs.",
   },
   {
     id: "key-takeaways",
@@ -35,12 +35,12 @@ const sections = [
     checklist: {
       title: "What advanced internal linking requires",
       items: [
-        "A clear hierarchy of hubs, sub-hubs, and supporting pages.",
-        "Link rules that balance relevance, authority flow, and user intent.",
-        "Automated modules with human governance for large-scale updates.",
-        "Consistent anchor text and entity framing across clusters.",
-        "Audits that catch orphaned pages and link decay early.",
-        "Measurement tied to rankings, crawl depth, and engagement.",
+        "A clear hub and sub-hub architecture before you place a single link.",
+        "Priority rules that concentrate authority on the pages that drive revenue.",
+        "Reusable link modules that scale without introducing irrelevant links.",
+        "Anchor text standards that reinforce entities while staying natural.",
+        "Governance rituals that prevent orphan pages and link decay.",
+        "Measurement tied to clusters, engagement paths, and business outcomes.",
       ],
     },
   },
@@ -48,80 +48,97 @@ const sections = [
     id: "introduction",
     title: "Introduction: internal linking is the architecture of authority",
     summary:
-      "Large websites do not fail from lack of content; they fail from poor internal structure.",
+      "Large websites rarely fail because they lack content. They fail because the content is not connected in a way that search engines and users can understand.",
     paragraphs: [
-      "Internal links tell search engines which pages are important and how topics relate. On large sites, that signal can easily get diluted if links are inconsistent or random.",
-      "At Godigitalpro, internal linking is treated as an engineering and content collaboration problem. The best results come from clear hierarchy, deliberate link rules, and ongoing governance.",
-      "This guide is for growth teams managing large sites who need internal linking systems that scale without creating chaos.",
-      "When internal linking is done well, it reduces reliance on external links by concentrating authority where it matters most. That is a major advantage for sites competing in crowded SERPs.",
+      "Internal links signal importance, relationships, and next steps. On a 5,000-page site, that signal can become noise unless linking is intentional.",
+      "Godigitalpro treats internal linking as a system design problem, not a last-minute editorial task. The difference shows up in crawl depth, keyword coverage, and conversion paths.",
+      "This guide is built for teams managing large content libraries, marketplaces, or multi-category SaaS sites who need internal linking that scales without chaos.",
+      "When you combine architecture, link rules, and governance, internal linking becomes a compounding advantage rather than a maintenance headache.",
     ],
   },
   {
-    id: "define-architecture",
-    title: "Define the site architecture before you place links",
+    id: "map-architecture",
+    title: "Map the architecture before you place links",
     summary:
-      "Internal links only work when the underlying hierarchy is clear.",
+      "Internal linking only works when the site structure is explicit and consistent.",
     paragraphs: [
-      "Start by defining your primary hubs, sub-hubs, and supporting pages. Hubs should represent the core topics that drive business value and demand.",
-      "Map each hub to its sub-hubs and supporting pages. If a page does not fit a hub, decide whether it belongs to a new cluster or should be consolidated.",
-      "Large sites often develop competing hierarchies across teams. Resolve those conflicts before scaling internal links, or you will reinforce the wrong structure.",
-      "Document the architecture and align navigation, breadcrumbs, and internal links to it. This creates consistency across user experience and crawl behavior.",
-      "A simple rule is one primary hub per business line, with sub-hubs for core intents. This prevents the architecture from becoming a flat list of pages.",
-      "When architecture is unclear, internal linking becomes a patchwork. Invest in clarity first so every link reinforces the same structure.",
-    ],
-  },
-  {
-    id: "prioritize-link-targets",
-    title: "Prioritize link targets with an authority flow model",
-    summary:
-      "Not all pages should receive the same internal link equity.",
-    paragraphs: [
-      "Define which pages deserve the most internal links based on business value, search demand, and conversion role. These are your priority targets.",
-      "Use a tiered model: Tier 1 hubs, Tier 2 sub-hubs, Tier 3 supporting pages. The linking pattern should reinforce this hierarchy.",
-      "Avoid linking everything to everything. Excessive linking dilutes meaning and makes it harder for search engines to understand priority pages.",
-      "If you need a reference structure, the internal linking and blog architecture guide provides patterns that scale across large clusters.",
-      "Treat authority flow as a budget. Every link should support a specific target rather than spreading equity evenly across the site.",
+      "Start with a hub and sub-hub map. Hubs represent your highest-value topics or product categories. Sub-hubs represent core intents that should rank independently.",
+      "Every supporting page should clearly belong to a sub-hub. If a page does not fit, it becomes a drift risk and often turns into an orphan later.",
+      "Align navigation, breadcrumbs, and internal links with the same structure. Mixed hierarchies confuse crawlers and dilute topic clarity.",
+      "If you need a framework for cluster logic, use a topical authority map to document how each page supports or reinforces a hub.",
+      "Avoid creating multiple hubs for the same intent across teams. Consolidation is a prerequisite for scalable internal linking.",
       <>
-        For linking frameworks, see the{" "}
-        <a className="text-indigo-700 underline" href="/blog/optimizing-blog-architecture-topic-authority-internal-linking">
-          internal linking and blog architecture guide
+        See the{" "}
+        <a className="text-indigo-700 underline" href="/blog/build-topical-authority-content-clusters">
+          topical authority content cluster guide
         </a>
-        .
+        {" "}for a structured hub and sub-hub model.
       </>,
     ],
   },
   {
-    id: "anchor-text",
-    title: "Standardize anchor text without over-optimizing",
+    id: "prioritize-targets",
+    title: "Prioritize link targets using an authority flow model",
     summary:
-      "Anchor text is an entity signal, but it must remain natural.",
+      "Not every page deserves the same internal link equity.",
     paragraphs: [
-      "Use anchor text that reflects the destination page’s primary entity and intent. This strengthens semantic relevance and reinforces the cluster structure.",
-      "Create a short anchor text library for each hub. This prevents random variation and keeps links consistent across teams.",
-      "Avoid stuffing exact-match anchors. Mix descriptive anchors with natural phrasing so links remain user-friendly and contextually accurate.",
-      "If multiple teams publish content, enforce anchor rules via templates or editorial checklists. Consistency compounds authority over time.",
-      "Anchor text should reflect how users think about the topic, not just how SEO teams label it. This keeps links natural and improves click intent.",
-      "Avoid rotating anchors too aggressively. Small variation is healthy, but excessive variation can weaken clarity for both users and search engines.",
+      "Define priority tiers based on business value, search demand, and conversion role. Tier 1 hubs should receive the most internal links, followed by Tier 2 sub-hubs, then Tier 3 supporting pages.",
+      "Use a link budget mindset. Every link should reinforce a priority target rather than spreading equity across low-value pages.",
+      "Avoid linking everything to everything. Excessive cross-linking reduces topical clarity and makes it harder for search engines to understand which pages are primary.",
+      "For long-tail content, link upward to the sub-hub and laterally to the most relevant supporting pages. This creates a clear path to the hub without turning the cluster into a mesh.",
+      "When priorities change, update the tier list first, then revise link patterns. The model should drive the links, not the other way around.",
     ],
   },
   {
-    id: "link-modules",
-    title: "Use dynamic link modules to scale internal linking",
+    id: "link-placements",
+    title: "Engineer link placement for discovery and engagement",
     summary:
-      "Manual linking does not scale on large websites.",
+      "Where a link appears affects both crawl behavior and user intent.",
     paragraphs: [
-      "Build dynamic modules such as related content blocks, category lists, and topic navigation. These allow links to update automatically when new pages are added.",
-      "Use rules for module placement: top-of-page for discovery, mid-page for context, and end-of-page for next-step navigation. Placement affects both user behavior and link equity.",
-      "Govern your modules. If a module pulls irrelevant pages, it can harm topical focus and reduce engagement. Human oversight is still required.",
-      "For teams that use tools to manage linking, the marketing tools hub can help track and organize SEO workflows.",
-      "Create guardrails for dynamic modules, such as minimum relevance thresholds or content type filters. This prevents unrelated pages from appearing at scale.",
-      "Log module changes and review impact monthly. Small tweaks to module logic can shift traffic significantly on large sites.",
+      "Use three placement zones: discovery links near the top, contextual links within the body, and decision links near the end. Each zone serves a different purpose.",
+      "Discovery links surface hubs and sub-hubs early. Contextual links pass relevance signals and improve engagement. Decision links move users toward conversion pages.",
+      "Keep each section focused. Too many links in one paragraph reduces clarity and lowers click-through on the links that matter.",
+      "Create a consistent placement rule in your content templates so contributors do not improvise every time.",
+      "If your site runs programmatic pages, standardize link modules to prevent inconsistent depth across thousands of URLs.",
       <>
-        Explore the{" "}
+        For scalable templates, the{" "}
+        <a className="text-indigo-700 underline" href="/blog/programmatic-seo-strategy-scaling-content-pages">
+          programmatic SEO strategy playbook
+        </a>
+        {" "}offers link placement patterns.
+      </>,
+    ],
+  },
+  {
+    id: "anchor-standards",
+    title: "Standardize anchor text without over-optimizing",
+    summary:
+      "Anchor text is a semantic signal, but it must remain natural and user-first.",
+    paragraphs: [
+      "Use anchors that reflect the primary entity and intent of the destination page. This reinforces topical alignment across the cluster.",
+      "Create an anchor library for each hub with 5 to 10 approved variants. This keeps wording consistent while avoiding exact-match repetition.",
+      "Avoid forcing anchors into awkward sentences. If the link does not fit naturally, the connection is probably weak.",
+      "If multiple teams publish content, add anchor guidance to editorial checklists. Consistency compounds authority over time.",
+      "Rotate anchor variants intentionally, not randomly. Controlled variation keeps semantic clarity without over-optimization.",
+    ],
+  },
+  {
+    id: "automation-modules",
+    title: "Scale internal linking with governed automation",
+    summary:
+      "Manual linking does not scale for large websites, but automation needs guardrails.",
+    paragraphs: [
+      "Use dynamic modules such as related guides, popular resources, or category lists to expand link coverage without manual edits.",
+      "Define relevance rules for modules: shared entity, shared intent, or shared conversion path. Without rules, modules become noise.",
+      "Set maximum link counts per module and avoid stacking multiple modules above the fold. This protects usability and link equity.",
+      "Audit module outputs monthly. A single taxonomy change can cause irrelevant links to appear across thousands of pages.",
+      "If your CMS supports it, log module changes so you can correlate link adjustments with traffic shifts.",
+      <>
+        Use the{" "}
         <a className="text-indigo-700 underline" href="/tools">
           marketing tools hub
         </a>
-        {" "}for internal workflow support.
+        {" "}to coordinate link module QA workflows.
       </>,
     ],
   },
@@ -129,50 +146,45 @@ const sections = [
     id: "orphan-control",
     title: "Eliminate orphan pages and dead-end paths",
     summary:
-      "Orphan pages waste crawl budget and dilute authority.",
+      "Orphan pages dilute authority and waste crawl budget.",
     paragraphs: [
-      "Run regular audits to identify pages with no inbound internal links or only one isolated path. These pages rarely perform well.",
-      "Create a minimum-link rule: every page must be linked from at least one hub and one supporting page where relevant.",
-      "If a page cannot be linked naturally, it may not belong in the cluster. Either consolidate it or keep it noindex until it gains a clear role.",
-      "Use crawl tools or internal link reports to track orphaned pages monthly and fix them in batches.",
-      "Prioritize orphan fixes by business value. Fix high-value pages first so authority flows to pages that impact revenue.",
-      "When you resolve orphans, add context links rather than just navigation links. Context links carry more relevance and drive better engagement.",
+      "Run recurring audits to identify pages with zero or minimal inbound links. These pages rarely rank or convert.",
+      "Set a minimum-link rule: every page should be linked from at least one hub or sub-hub and one supporting page when relevant.",
+      "If a page cannot be linked naturally, it might not belong in the cluster. Consolidate it or de-index it until it has a defined role.",
+      "Fix high-value orphans first to maximize authority flow where it matters.",
+      "Use contextual links rather than just navigation links. Context links carry stronger relevance signals and drive higher engagement.",
     ],
   },
   {
-    id: "internal-link-governance",
-    title: "Internal link governance for large teams",
+    id: "governance",
+    title: "Build governance so links do not decay",
     summary:
-      "Governance prevents link chaos as teams and content scale.",
+      "Internal linking quality erodes without ownership and cadence.",
     paragraphs: [
-      "Create a linking playbook with rules for hub linking, anchor text, and module placement. This keeps every team aligned.",
-      "Assign ownership for each cluster. Cluster owners are responsible for link integrity and refresh cadence.",
-      "Use QA checklists before publishing new pages to ensure they are linked into the cluster correctly.",
-      "If you publish frequently, schedule monthly link audits to catch drift early. Small inconsistencies become major SEO problems at scale.",
-      "Document link rules in the CMS or editorial checklist so contributors cannot skip them. Governance only works when it is embedded in workflow.",
-      "If multiple teams edit the same cluster, assign a single owner to approve structural changes. This prevents conflicting link logic.",
-      "A lightweight governance workflow beats a heavy process. The goal is to keep links consistent without slowing publishing velocity.",
+      "Create a linking playbook that defines hub linking rules, anchor standards, and module placement. Make it part of your publishing workflow.",
+      "Assign ownership for each cluster. Cluster owners approve structural changes and monitor link health.",
+      "Use pre-publish QA checklists to ensure new pages are linked into their cluster correctly.",
+      "Schedule monthly link audits and quarterly structural reviews. Small inconsistencies become major SEO issues at scale.",
+      "If multiple teams edit the same cluster, a single owner must resolve conflicts to keep the architecture stable.",
     ],
   },
   {
-    id: "measure-impact",
-    title: "Measure internal link impact beyond crawl counts",
+    id: "measurement",
+    title: "Measure impact at the cluster level",
     summary:
-      "Advanced linking is measurable, but you need the right signals.",
+      "Advanced internal linking is measurable, but only if you track the right signals.",
     paragraphs: [
-      "Track rankings and impressions at the cluster level, not just page-by-page. Strong internal linking should lift multiple pages in a cluster.",
-      "Measure click paths and internal link CTR to see whether users follow links. If a module is ignored, revise its placement or relevance.",
-      "Use crawl stats to monitor depth and indexing. A drop in crawl depth often signals broken linking patterns.",
-      "Tie internal linking changes to conversion outcomes when possible. The best internal links not only rank but also guide users to high-value pages.",
-      "Compare performance before and after link changes. If rankings lift across multiple pages, the cluster-level links are working.",
-      "Measure time-on-page and multi-page sessions for linked content. Strong internal links increase both if relevance is high.",
-      "Track internal link clicks to conversion pages specifically. This confirms that links are not only improving rankings but also driving business outcomes.",
+      "Monitor rankings and impressions across hubs and sub-hubs, not just single pages. Linking improvements should lift multiple pages in a cluster.",
+      "Track internal link click-through and navigation paths. If users do not click, the link is not doing its job.",
+      "Use crawl depth and index coverage to spot structural issues early. A sudden drop in crawl depth often signals broken internal link paths.",
+      "Tie internal link changes to conversions where possible. Strong linking should guide users to high-value actions, not just pages.",
+      "Measure engagement lifts such as pages per session and time on site for linked clusters.",
       <>
-        For measurement workflows, the{" "}
+        The{" "}
         <a className="text-indigo-700 underline" href="/blog/google-search-console-insights-tactical-seo-opportunities">
           Search Console insights guide
         </a>
-        {" "}helps validate improvements.
+        {" "}explains how to validate cluster impact.
       </>,
     ],
   },
@@ -180,45 +192,45 @@ const sections = [
     id: "operator-scenarios",
     title: "Operator scenarios: internal linking decisions at scale",
     summary:
-      "Real-world scenarios show how linking strategy changes outcomes.",
+      "Real-world cases show how advanced linking choices change outcomes.",
     paragraphs: [
-      "Scenario 1: A new hub launches but rankings stall. The team increases inbound links from top-performing pages and adds a related content module to reinforce authority.",
-      "Scenario 2: Supporting pages compete with the hub. The team adjusts anchor text and consolidates links so the hub regains priority.",
-      "Scenario 3: A large category has high traffic but low engagement. The team adds contextual links to guides and tools, improving time on site and conversion flow.",
-      "Scenario 4: A long-tail cluster is under-indexed. The team adds internal links from high-crawl sections and improves sitemap coverage.",
-      "Scenario 5: A site migration changes URL paths. The team updates internal links in bulk and monitors crawl depth to prevent authority loss.",
+      "Scenario 1: A new hub launches but rankings stall. The team adds inbound links from top-performing pages and deploys a related-content module to reinforce authority.",
+      "Scenario 2: Supporting pages outrank the hub and split demand. The team consolidates anchor text and reduces lateral links so the hub regains priority.",
+      "Scenario 3: A high-traffic category has low engagement. The team inserts contextual links to guides and tools, improving session depth and lead flow.",
+      "Scenario 4: A long-tail cluster is under-indexed. The team links to it from high-crawl sections and surfaces it in category navigation.",
+      "Scenario 5: A migration changes URL paths. The team updates internal links in bulk and tracks crawl depth to prevent authority loss.",
     ],
   },
   {
     id: "trade-offs",
     title: "Trade-offs and edge cases to plan for",
     summary:
-      "Internal linking is powerful, but every large site faces trade-offs.",
+      "Every large site faces linking trade-offs. Plan for them early.",
     perspectives: [
       {
         title: "Automation vs relevance",
         body:
-          "Automated modules scale linking but can introduce irrelevant links. Combine automation with human oversight.",
+          "Automated modules scale linking, but they can introduce irrelevant links. Combine automation with human QA.",
       },
       {
         title: "Depth vs breadth",
         body:
-          "Too many cross-links can dilute focus. Keep hub depth strong before expanding breadth.",
+          "Too many cross-links dilute topical focus. Strengthen hub depth before expanding breadth.",
       },
       {
         title: "Legacy content",
         body:
-          "Older pages often have outdated links. Audit legacy content to avoid reinforcing stale clusters.",
+          "Older pages may carry outdated links. Audit legacy content so it does not reinforce stale clusters.",
       },
       {
         title: "Template constraints",
         body:
-          "CMS templates can limit link placement. Work with development teams to add flexible modules where needed.",
+          "Rigid CMS templates can limit link placement. Work with dev teams to add flexible modules.",
       },
       {
         title: "User overload",
         body:
-          "Too many links can reduce usability. Balance SEO goals with clear user paths and scannable content.",
+          "Too many links can reduce usability. Prioritize clarity and intent over raw link counts.",
       },
     ],
   },
@@ -230,12 +242,12 @@ const sections = [
     checklist: {
       title: "Internal linking rollout",
       items: [
-        "Weeks 1 to 2: audit architecture and define hubs and sub-hubs.",
-        "Weeks 3 to 4: build link rules, anchor libraries, and governance playbook.",
-        "Weeks 5 to 6: deploy dynamic modules and fix orphan pages.",
-        "Weeks 7 to 9: expand internal links across priority clusters.",
-        "Weeks 10 to 12: measure cluster uplift and refine link placement.",
-        "Week 13: document the internal linking system and train teams.",
+        "Weeks 1 to 2: audit architecture, define hubs and sub-hubs, and fix duplicates.",
+        "Weeks 3 to 4: build link rules, anchor libraries, and governance playbooks.",
+        "Weeks 5 to 6: deploy dynamic modules and fix the highest-value orphan pages.",
+        "Weeks 7 to 9: expand internal links across priority clusters and core templates.",
+        "Weeks 10 to 12: measure cluster uplift and refine link placement based on data.",
+        "Week 13: document the system and train content and SEO teams.",
       ],
     },
   },
@@ -246,32 +258,37 @@ const sections = [
       {
         title: "How many internal links should a page have?",
         body:
-          "There is no fixed number. Aim for links that improve navigation and relevance, not a numeric target.",
+          "There is no fixed number. Use the number of links needed to guide users and reinforce relevance, not a numeric target.",
       },
       {
-        title: "Should every page link back to the hub?",
+        title: "Should every page link back to its hub?",
         body:
-          "Most supporting pages should link to the hub, but avoid forced links if the connection is weak.",
-      },
-      {
-        title: "Can internal linking fix thin content?",
-        body:
-          "No. Linking can surface pages, but weak content still underperforms. Fix content quality first.",
-      },
-      {
-        title: "How often should internal linking be audited?",
-        body:
-          "Large sites should review internal links monthly and run deeper audits quarterly.",
+          "Most supporting pages should link to the hub, but avoid forced links where the connection is weak.",
       },
       {
         title: "Do internal links help new pages rank faster?",
         body:
-          "Yes. Strong internal links help discovery and pass authority to new pages faster than waiting for external links.",
+          "Yes. Strong internal links speed discovery and pass authority to new pages faster than waiting for external links.",
+      },
+      {
+        title: "Can internal linking fix thin content?",
+        body:
+          "No. Linking can surface pages, but thin content still underperforms. Improve the content first.",
+      },
+      {
+        title: "How often should internal linking be audited?",
+        body:
+          "Large sites should review links monthly and run deeper architecture audits quarterly.",
       },
       {
         title: "What is the biggest internal linking mistake?",
         body:
           "Random linking without a hierarchy. It spreads authority too thin and confuses both users and search engines.",
+      },
+      {
+        title: "What if multiple teams edit the same cluster?",
+        body:
+          "Assign a single cluster owner to approve structural changes so conflicting link rules do not creep in.",
       },
     ],
   },
@@ -279,17 +296,17 @@ const sections = [
     id: "conclusion",
     title: "Conclusion: internal linking is a compounding advantage",
     summary:
-      "A strong internal linking system turns scale into an SEO advantage.",
+      "The biggest sites win by turning internal linking into a system, not a shortcut.",
     paragraphs: [
-      "When you structure internal links with clear hierarchy, consistent anchors, and governance, large websites gain authority faster and with less volatility.",
-      "If you want to build an internal linking system that scales with your site, Godigitalpro can help design the architecture, rules, and measurement plan.",
+      "When you align architecture, link rules, and governance, internal links become a compounding advantage that lifts rankings and guides users to high-value paths.",
+      "If you want help designing a scalable internal linking system, Godigitalpro can map the architecture, define the rules, and build the measurement plan without slowing your publishing velocity.",
     ],
   },
   {
-    id: "about-godigitalpro",
-    title: "About Godigitalpro",
+    id: "about-agency",
+    title: "About the agency",
     summary:
-      "Godigitalpro is a digital marketing agency and marketing tools platform that helps growth teams build durable organic visibility through strategy, content, and analytics. We translate SEO systems into measurable growth outcomes.",
+      "We are a digital marketing agency and marketing tools platform that helps growth teams build durable organic visibility through strategy, content, and analytics. Our approach focuses on repeatable SEO systems that scale as your site grows.",
   },
 ];
 
