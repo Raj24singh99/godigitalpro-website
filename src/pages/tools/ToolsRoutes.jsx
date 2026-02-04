@@ -13,17 +13,23 @@ function TagLegacyRedirect() {
 }
 
 export default function ToolsRoutes() {
+  const normalizePath = (path = "") => {
+    if (path === "/tools") return "";
+    if (path.startsWith("/tools/")) return path.replace("/tools/", "");
+    return path;
+  };
+
   return (
     <Routes>
-      <Route path="/tools" element={<ToolsHub />} />
-      <Route path="/tools/tag/:tag" element={<TagLegacyRedirect />} />
-      <Route path="/tools/compare/:slug" element={<ToolComparison />} />
-      <Route path="/tools/:param" element={<ToolParamRouter />} />
+      <Route index element={<ToolsHub />} />
+      <Route path="tag/:tag" element={<TagLegacyRedirect />} />
+      <Route path="compare/:slug" element={<ToolComparison />} />
+      <Route path=":param" element={<ToolParamRouter />} />
       {toolRoutes.map((route) => (
-        <Route key={route.path} path={route.path} element={route.element} />
+        <Route key={route.path} path={normalizePath(route.path)} element={route.element} />
       ))}
       {comparisonRoutes.map((route) => (
-        <Route key={route.path} path={route.path} element={route.element} />
+        <Route key={route.path} path={normalizePath(route.path)} element={route.element} />
       ))}
       <Route path="*" element={<Navigate to="/tools" replace />} />
     </Routes>

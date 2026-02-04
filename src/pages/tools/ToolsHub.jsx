@@ -119,7 +119,7 @@ export default function ToolsHub() {
 
   const handleCompare = () => {
     if (!selectedComparisonSlug) return;
-    navigate(`/tools/compare/${selectedComparisonSlug}`);
+    navigate(`compare/${selectedComparisonSlug}`);
   };
 
   const comparisonChoices = useMemo(() => {
@@ -151,7 +151,7 @@ export default function ToolsHub() {
 
   const handleTagNavigate = (tag) => {
     if (!tag) return;
-    navigate(`/tools/${encodeURIComponent(tag)}`);
+    navigate(`${encodeURIComponent(tag)}`);
   };
 
   return (
@@ -421,7 +421,7 @@ export default function ToolsHub() {
                           </div>
                           <div className="flex flex-wrap gap-2 text-xs text-slate-600">
                             <Link
-                              to={`/tools/${tool.slug}`}
+                              to={tool.slug}
                               className="inline-flex items-center gap-1 font-medium text-emerald-700 hover:underline"
                             >
                               View details <ArrowRight className="h-3.5 w-3.5" />
@@ -463,7 +463,7 @@ export default function ToolsHub() {
                   {item.tags.map((tag) => (
                     <Link
                       key={tag}
-                      to={`/tools/${encodeURIComponent(tag)}`}
+                      to={`${encodeURIComponent(tag)}`}
                       className="rounded-full bg-white px-3 py-1 text-[11px] font-medium text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100"
                     >
                       {tag}
@@ -472,7 +472,7 @@ export default function ToolsHub() {
                 </div>
                 <div className="mt-4 flex items-center gap-3">
                   <Link
-                    to={`/tools/compare/${item.slug}`}
+                    to={`compare/${item.slug}`}
                     className="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 hover:underline"
                   >
                     Open comparison <ArrowRight className="h-4 w-4" />
