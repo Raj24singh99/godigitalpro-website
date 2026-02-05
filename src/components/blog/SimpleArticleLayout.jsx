@@ -19,6 +19,33 @@ function extractText(value) {
   return "";
 }
 
+function normalizeParagraphs(paragraphs = []) {
+  const normalized = [];
+  let buffer = [];
+
+  const flush = () => {
+    if (!buffer.length) return;
+    normalized.push(buffer.join(" "));
+    buffer = [];
+  };
+
+  paragraphs.forEach((item) => {
+    if (typeof item === "string" || typeof item === "number") {
+      buffer.push(String(item));
+      return;
+    }
+    if (React.isValidElement(item)) {
+      flush();
+      normalized.push(item);
+      return;
+    }
+    flush();
+  });
+
+  flush();
+  return normalized;
+}
+
 function SectionBlock({ section, index }) {
   return (
     <section id={section.id} className="scroll-mt-24">
@@ -68,7 +95,7 @@ function SectionBlock({ section, index }) {
         </figure>
       ) : null}
 
-      {section.paragraphs?.map((para, paraIndex) => (
+      {normalizeParagraphs(section.paragraphs).map((para, paraIndex) => (
         <p key={`${section.id}-paragraph-${paraIndex}`} className="text-base text-slate-700">
           {para}
         </p>
