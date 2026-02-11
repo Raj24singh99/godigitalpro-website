@@ -3,3 +3,7 @@ dist
 .env
 .DS_Store
 firebase-debug.log
+
+# Firebase local artifacts
+.firebase/logs/
+.firebase/hosting*.cache
