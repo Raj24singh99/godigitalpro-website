@@ -54,11 +54,11 @@ export default function SaaSStartupsPage() {
   const path = "/industries/saas-startups";
   const pageUrl = buildCanonical(path);
 
-  const title = "SaaS & Tech Startups Marketing | Demand Gen & Activation";
+  const title = "Best Digital Marketing Agency for Startups | SaaS Demand Gen & Activation";
   const desc =
-    "SaaS growth with product-led content, SEM, LinkedIn, and analytics. Acquire qualified trials, drive activation with in-product nudges, and prove ROI with clear attribution.";
+    "Startup-focused digital marketing for SaaS and tech brands: demand gen, product-led content, paid acquisition, activation flows, and attribution clarity from trial to revenue.";
   const keywords =
-    "SaaS marketing, PLG, demand generation, ICP messaging, LinkedIn ads, B2B SaaS SEO, product-led growth, PQL, SQL, activation, payback, GoDigitalPro";
+    "best digital marketing agency for startups, startup marketing agency, saas marketing agency, startup demand generation, startup growth marketing, pql sql activation";
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">

@@ -17,7 +17,7 @@ export default function ThankYou() {
     desc:
       "Thanks for submitting your details. Book a free discovery call with GoDigitalPro, a full-funnel digital marketing agency helping brands scale with Paid Ads, SEO, and Web.",
     url: buildCanonical("/thank-you"),
-    image: "https://www.godigitalpro.in/public/assets/logo.jpg",
+    image: "https://www.godigitalpro.in/assets/godigitalpro-logo.jpg",
   };
 
   // Structured data: WebPage + potential ScheduleAction (Calendly)

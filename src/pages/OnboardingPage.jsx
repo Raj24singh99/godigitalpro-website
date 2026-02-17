@@ -34,8 +34,8 @@ export default function OnboardingPage() {
       "Get Your Tailored Growth Plan | Onboarding | GoDigitalPro — Digital Marketing Agency",
     description:
       "Tell us your goals (increase sales, better ROAS, more qualified leads). Get a tailored plan and action steps from GoDigitalPro within 24 hours.",
-    url: buildCanonical("/onboarding/"),
-    image: "https://www.godigitalpro.in/public/assets/logo.jpg",
+    url: buildCanonical("/onboarding"),
+    image: "https://www.godigitalpro.in/assets/godigitalpro-logo.jpg",
   };
 
   const schemaBlocks = [

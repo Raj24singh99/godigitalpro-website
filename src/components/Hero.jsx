@@ -229,12 +229,12 @@ export default function Hero() {
 
         {/* Heading */}
         <h1 className="mt-5 font-serif text-[2.6rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-dark tracking-tight">
-          A Digital Marketing Agency that stitches strategy, media, and product growth together
+          A digital marketing agency for startups, local businesses, and growth-stage brands
         </h1>
 
         {/* Description */}
         <p className="mt-4 text-base md:text-lg text-slate-800 max-w-3xl mx-auto">
-          Growth leaders plug us in when they need one accountable digital marketing team across brand, SEO, paid media, lifecycle, CRO, and analytics—without hiring six agencies or juggling five dashboards.
+          Growth leaders plug us in when they need one accountable team across SEO, Google Ads, paid social, CRO, and analytics without hiring six agencies or juggling five dashboards.
         </p>
 
         {/* CTAs */}

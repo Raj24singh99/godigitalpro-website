@@ -64,6 +64,35 @@ export function websiteJsonLd(overrides = {}) {
   };
 }
 
+export function webpageJsonLd({
+  title,
+  description,
+  url,
+  type = "WebPage",
+  breadcrumbs,
+} = {}) {
+  const resolvedUrl = url || SITE.url;
+  const data = {
+    "@context": "https://schema.org",
+    "@type": type,
+    name: title,
+    description,
+    url: resolvedUrl,
+    inLanguage: SITE.locale.replace("_", "-"),
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE.name,
+      url: SITE.url,
+    },
+  };
+
+  if (breadcrumbs?.length) {
+    data.breadcrumb = breadcrumbsJsonLd(breadcrumbs);
+  }
+
+  return data;
+}
+
 export function siteNavigationJsonLd(items = []) {
   if (!items.length) return null;
   return {
@@ -98,6 +127,37 @@ export function serviceJsonLd({ name, description, url = SITE.url, areaServed = 
       category: "MarketingService",
       availability: "https://schema.org/InStock",
     },
+  };
+}
+
+export function localBusinessJsonLd(overrides = {}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["ProfessionalService", "AdvertisingAgency"],
+    name: SITE.name,
+    url: SITE.url,
+    image: SITE.defaultOgImage,
+    logo: SITE.logo,
+    email: SITE.contactEmail,
+    telephone: SITE.contactPhone,
+    priceRange: "$$",
+    areaServed: overrides.areaServed || "IN",
+    address: {
+      "@type": "PostalAddress",
+      ...SITE.address,
+    },
+    sameAs: Object.values(SITE.socialProfiles),
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: SITE.contactPhone,
+        email: SITE.contactEmail,
+        contactType: "customer support",
+        areaServed: "IN",
+        availableLanguage: ["en", "hi"],
+      },
+    ],
+    ...overrides,
   };
 }
 

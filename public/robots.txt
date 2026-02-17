@@ -1,7 +1,11 @@
 User-agent: *
 Allow: /
-Disallow:
-Crawl-delay: 2
+Disallow: /dashboard/
+Disallow: /app/
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+Disallow: /thank-you
 
 User-agent: AdsBot-Google
 User-agent: Googlebot-Image
@@ -12,4 +16,5 @@ User-agent: Twitterbot
 User-agent: FacebookExternalHit
 Allow: /
 
+Host: https://www.godigitalpro.in
 Sitemap: https://www.godigitalpro.in/sitemap.xml

@@ -64,11 +64,11 @@ export default function PaidMarketingPage() {
   const path = "/services/paid-marketing";
   const pageUrl = buildCanonical(path);
 
-  const title = "Paid Marketing | Google, Meta, LinkedIn, YouTube & Programmatic";
+  const title = "Best Google Ads Agency for Full-Funnel Paid Marketing | GoDigitalPro";
   const desc =
-    "Full-funnel performance marketing: creative systems, clean account structures, budget/bid guardrails, and end-to-end measurement with GA4, CAPI & offline conversions.";
+    "ROI-first Google Ads and paid media management across Search, PMax, YouTube, Meta, and LinkedIn with strict tracking, budget controls, and full-funnel optimization.";
   const keywords =
-    "performance marketing, Google Ads, Meta Ads, LinkedIn Ads, YouTube Ads, Programmatic, PMax, CAPI, GA4, offline conversions, PPC agency, GoDigitalPro";
+    "best google ads agency, google ads agency, ppc agency, performance marketing agency, google ads management, pmax agency, paid media agency";
 
   const schemaBlocks = useMemo(
     () =>

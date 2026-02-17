@@ -13,7 +13,13 @@ import {
   Gauge,
 } from "lucide-react";
 import SeoHelmet from "../../components/SeoHelmet";
-import { buildCanonical, faqJsonLd, serviceJsonLd } from "../../utils/seo";
+import {
+  buildCanonical,
+  faqJsonLd,
+  localBusinessJsonLd,
+  serviceJsonLd,
+  webpageJsonLd,
+} from "../../utils/seo";
 
 export default function LocationPageTemplate({
   city,
@@ -112,10 +118,14 @@ export default function LocationPageTemplate({
   ];
 
   const canonical = buildCanonical(location.pathname);
-  const metaTitle = `Digital Marketing Agency in ${city} | GoDigitalPro`;
-  const metaDescription = `GoDigitalPro helps ${city} brands grow with ROI-first SEO, Google Ads, social media, and conversion-focused landing pages. Transparent reporting and fast experimentation.`;
+  const currentYear = new Date().getFullYear();
+  const metaTitle = `Best Digital Marketing Agency in ${city} | SEO, Google Ads & Growth`;
+  const metaDescription = `Looking for the best digital marketing agency in ${city}? GoDigitalPro helps ${city} brands grow with ROI-first SEO, Google Ads, social media, and conversion-focused landing pages.`;
   const keywords = [
     `digital marketing agency ${city}`,
+    `digital marketing agency near me ${city}`,
+    `best digital marketing agency ${city}`,
+    `best google ads agency ${city}`,
     `seo ${city}`,
     `google ads ${city}`,
     `ppc ${city}`,
@@ -123,6 +133,14 @@ export default function LocationPageTemplate({
     `performance marketing ${city}`,
   ].join(", ");
   const schema = [
+    webpageJsonLd({
+      title: metaTitle,
+      description: metaDescription,
+      url: canonical,
+    }),
+    localBusinessJsonLd({
+      areaServed: city,
+    }),
     serviceJsonLd({
       name: `Digital Marketing Services in ${city}`,
       description: metaDescription,
@@ -278,7 +296,7 @@ export default function LocationPageTemplate({
       {/* Local insights */}
       <section className="border-b border-black/5 bg-slate-50">
         <div className="mx-auto max-w-5xl px-4 py-12 space-y-3">
-          <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">Digital marketing trends in {city} (2025)</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">Digital marketing trends in {city} ({currentYear})</h2>
           <div className="space-y-2 text-sm leading-relaxed text-slate-700">
             {insights.map((line) => (
               <p key={line}>{line}</p>
@@ -304,22 +322,6 @@ export default function LocationPageTemplate({
           </div>
         </div>
       </section>
-
-      {/* Breadcrumb JSON-LD placeholder */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://godigitalpro.in/" },
-              { "@type": "ListItem", position: 2, name: "Locations", item: "https://godigitalpro.in/locations" },
-              { "@type": "ListItem", position: 3, name: `Digital Marketing Agency in ${city}`, item: `https://godigitalpro.in/locations/${city.toLowerCase().replace(/\\s+/g, "-")}-digital-marketing-agency` },
-            ],
-          }),
-        }}
-      />
     </main>
   );
 }

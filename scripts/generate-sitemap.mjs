@@ -15,7 +15,6 @@ const TODAY_ISO = new Date().toISOString();
 const STATIC_ROUTES = [
   "/",
   "/onboarding",
-  "/thank-you",
   "/about_us",
   "/privacy-policy",
   "/blog",
@@ -36,6 +35,10 @@ const STATIC_ROUTES = [
   "/industries/local-services",
   "/industries/edtech",
   "/industries/b2b-services",
+  "/digital-marketing-agency-near-me",
+  "/best-digital-marketing-agency",
+  "/best-google-ads-agency",
+  "/best-digital-marketing-agency-for-startups",
 ];
 
 const DIGITAL_PRODUCT_ROUTES = [

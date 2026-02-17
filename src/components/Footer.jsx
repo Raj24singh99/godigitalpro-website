@@ -156,6 +156,29 @@ export default function Footer() {
                   Contact Us
                 </Link>
               </li>
+              <li>
+                <Link className="hover:text-slate-900" to="/digital-marketing-agency-near-me">
+                  Digital Marketing Agency Near Me
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-slate-900" to="/best-digital-marketing-agency">
+                  Best Digital Marketing Agency
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-slate-900" to="/best-google-ads-agency">
+                  Best Google Ads Agency
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:text-slate-900"
+                  to="/best-digital-marketing-agency-for-startups"
+                >
+                  Best Agency for Startups
+                </Link>
+              </li>
             </ul>
           </nav>
 

@@ -65,6 +65,10 @@ const HealthcarePage                  = lazy(() => import("./pages/industries/He
 const LocalServicesPage               = lazy(() => import("./pages/industries/LocalServicesPage.jsx"));
 const EdTechPage                      = lazy(() => import("./pages/industries/EdTechPage.jsx"));
 const B2BServicesPage                 = lazy(() => import("./pages/industries/B2BServicesPage.jsx"));
+const DigitalMarketingAgencyNearMePage = lazy(() => import("./pages/seo/DigitalMarketingAgencyNearMePage.jsx"));
+const BestDigitalMarketingAgencyPage = lazy(() => import("./pages/seo/BestDigitalMarketingAgencyPage.jsx"));
+const BestGoogleAdsAgencyPage = lazy(() => import("./pages/seo/BestGoogleAdsAgencyPage.jsx"));
+const BestDigitalMarketingAgencyForStartupsPage = lazy(() => import("./pages/seo/BestDigitalMarketingAgencyForStartupsPage.jsx"));
 
 /** Locations */
 const DelhiDigitalMarketingAgency     = lazy(() => import("./pages/locations/delhi-digital-marketing-agency.jsx"));
@@ -275,6 +279,12 @@ export default function App() {
             <Route path="/industries/local-services" element={<LocalServicesPage />} />
             <Route path="/industries/edtech" element={<EdTechPage />} />
             <Route path="/industries/b2b-services" element={<B2BServicesPage />} />
+
+            {/* SEO intent pages */}
+            <Route path="/digital-marketing-agency-near-me" element={<DigitalMarketingAgencyNearMePage />} />
+            <Route path="/best-digital-marketing-agency" element={<BestDigitalMarketingAgencyPage />} />
+            <Route path="/best-google-ads-agency" element={<BestGoogleAdsAgencyPage />} />
+            <Route path="/best-digital-marketing-agency-for-startups" element={<BestDigitalMarketingAgencyForStartupsPage />} />
 
             {/* Locations */}
             <Route path="/locations/delhi-digital-marketing-agency" element={<DelhiDigitalMarketingAgency />} />
