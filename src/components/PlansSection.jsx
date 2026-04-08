@@ -10,66 +10,66 @@ import { Rocket, Lightbulb, Crown, ArrowRight, CheckCircle2 } from "lucide-react
 
 const tiers = [
   {
-    id: "starter",
+    id: "audit",
     tone: "bg-emerald-50",
     iconBg: "bg-emerald-600",
     badgeBg: "bg-emerald-600",
     icon: Rocket,
-    title: "Starter",
-    tagline: "Launch your online presence with confidence.",
+    title: "Audit Sprint",
+    tagline: "Diagnose the fastest path to better pipeline quality.",
     who: [
-      "New or small businesses getting online",
-      "Owners validating an offer or market",
-      "Teams needing a clear, simple start",
+      "EdTech teams with rising CPL or weak lead quality",
+      "Operators who need clarity before changing agencies or hiring in-house",
+      "Leaders who want a concrete 30-60-90 day plan",
     ],
     includes: [
-      "Brand & message alignment",
-      "Conversion-ready landing site recommendations",
-      "Starter SEO & local discoverability setup",
-      "Social presence foundation & content guide",
-      "Analytics & tracking essentials",
+      "Full-funnel audit across paid, SEO, social, site, and CRM",
+      "Admissions and counselor leak diagnosis",
+      "Geo/program prioritization recommendations",
+      "Creative and landing-page improvement roadmap",
+      "Executive-ready action plan",
     ],
   },
   {
-    id: "growth",
+    id: "advisory",
     tone: "bg-amber-50",
     iconBg: "bg-amber-600",
     badgeBg: "bg-amber-600",
     icon: Lightbulb,
-    title: "Growth Consultancy",
-    tagline: "External strategy for in-house execution.",
+    title: "Growth Advisory",
+    tagline: "Senior strategy input for teams already executing in-house.",
     who: [
-      "Businesses with a small marketing team",
-      "Brands that need direction & priorities",
-      "Leaders who want clarity, not chaos",
+      "Marketing teams that need stronger decision quality",
+      "Leaders who want category depth without a full external pod",
+      "Brands that need AI-led analysis, prioritization, and reviews",
     ],
     includes: [
-      "Deep-dive audits & opportunity mapping",
-      "SEO, PPC, and content strategy roadmaps",
-      "Channel frameworks & playbooks",
-      "Campaign planning & measurement models",
-      "Quarterly growth themes & priorities",
+      "Monthly strategy reviews and performance diagnosis",
+      "Channel and creative prioritization frameworks",
+      "Measurement, dashboard, and funnel recommendations",
+      "Leadership-level planning support",
+      "Ongoing advisory on experiments and growth themes",
     ],
   },
   {
-    id: "full",
+    id: "execution",
     tone: "bg-rose-50",
     iconBg: "bg-rose-600",
     badgeBg: "bg-rose-600",
     icon: Crown,
-    title: "Full Hands-On",
-    tagline: "Hands-on execution across channels.",
+    title: "Execution Pod",
+    tagline: "Hands-on delivery across the growth system.",
     who: [
-      "Established brands ready to scale",
-      "Teams outsourcing SEO, PPC, or Social",
-      "Leaders who want one accountable partner",
+      "EdTech brands ready to scale applications and revenue",
+      "Teams outsourcing paid media, SEO, social, website, or creative work",
+      "Leaders who want one accountable external growth partner",
     ],
     includes: [
       "End-to-end execution across agreed channels",
-      "Always-on optimization & experiments",
-      "Creative production & content operations",
-      "Performance reporting & insights",
-      "Roadmaps, governance & stakeholder updates",
+      "Video and ad production workflows",
+      "Continuous experimentation and optimization",
+      "Weekly reporting, insights, and priorities",
+      "Roadmaps, governance, and stakeholder communication",
     ],
   },
 ];
@@ -88,9 +88,9 @@ export default function PlansSection() {
     <section className="section">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-8 text-center">
-          <h2 className="h2">Choose a plan that matches your stage</h2>
+          <h2 className="h2">Choose the engagement model that fits your stage</h2>
           <p className="mt-2 text-slate-600">
-            Start simple, add strategy, or hand us the keys. We’ll guide you to the right fit during onboarding.
+            Start with a diagnostic, keep us as an advisory layer, or plug in a full execution pod. We’ll guide you to the right fit during onboarding.
           </p>
         </div>
 
@@ -159,7 +159,7 @@ export default function PlansSection() {
         </div>
 
         <p className="mt-6 text-center text-sm text-slate-500">
-          Not sure which plan fits best? Pick any to begin — we’ll fine-tune it during onboarding.
+          Not sure which model fits best? Pick any to begin and we’ll calibrate scope during onboarding.
         </p>
       </div>
     </section>

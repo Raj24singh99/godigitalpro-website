@@ -24,20 +24,20 @@ const Container = ({ className = "", children }) => (
 
 /** Rotating phrases for hero (only the colored part changes) */
 const WORDS = [
-  { text: "Content Calendars", color: "text-emerald-600" },
+  { text: "Admissions Storytelling", color: "text-emerald-600" },
   { text: "Reels & Shorts", color: "text-rose-600" },
-  { text: "Carousels", color: "text-indigo-600" },
-  { text: "Creator Collabs", color: "text-amber-600" },
-  { text: "Community Building", color: "text-fuchsia-600" },
-  { text: "Social SEO", color: "text-sky-600" },
+  { text: "Parent Trust Content", color: "text-indigo-600" },
+  { text: "Founder & Faculty Videos", color: "text-amber-600" },
+  { text: "Community Replies", color: "text-fuchsia-600" },
+  { text: "Social Search Visibility", color: "text-sky-600" },
 ];
 
 const SOCIAL_FAQ = [
-  { question: "Do you create all content?", answer: "Yes—scripts, designs, edits, and captions. We can also work with your team or creators." },
-  { question: "Will you manage comments and DMs?", answer: "Yes. We use response playbooks and escalate when needed." },
-  { question: "How soon can we see results?", answer: "Expect baseline improvements in 2–4 weeks; compounding reach as formats and hooks iterate." },
-  { question: "Do you handle paid boosts?", answer: "We can boost key posts and integrate with your paid strategy for reach and testing." },
-  { question: "What reports do we get?", answer: "Weekly scorecard: posts, reach, saves/CTR, best hooks, action items." },
+  { question: "Do you create all content?", answer: "Yes. We can handle scripts, briefs, edits, captions, and design, or plug into your internal content and production teams." },
+  { question: "Will you manage comments and DMs?", answer: "Yes. We use response playbooks and escalation rules, especially when comments reveal lead intent, objections, or counselor follow-up opportunities." },
+  { question: "How soon can we see traction?", answer: "You can improve consistency quickly, but stronger reach, saves, and trust usually come from a few cycles of testing formats, hooks, and posting rhythms." },
+  { question: "Do you connect social with paid and admissions?", answer: "Yes. We use organic learnings to improve ad creative and can connect responses, proof themes, and FAQs back into landing pages and admissions teams." },
+  { question: "What reports do we get?", answer: "A weekly scorecard covering content output, reach, saves, watch time, top hooks, community signals, and the next execution actions." },
 ];
 
 export default function SocialMediaMarketingPage() {
@@ -49,7 +49,7 @@ export default function SocialMediaMarketingPage() {
 
   const seoIntro = useMemo(
     () =>
-      "GoDigitalPro runs a consistent social content engine: strategy, content calendars, reels/shorts, carousels, creator collaborations, community management, and analytics—built for reach, saves, and conversations.",
+      "GoDigitalPro runs social and community systems for EdTech brands: content strategy, reels and shorts, founder and faculty storytelling, community management, and analytics built to increase trust, reach, and qualified attention.",
     []
   );
 
@@ -57,11 +57,11 @@ export default function SocialMediaMarketingPage() {
   const path = "/services/social-media-marketing";
   const pageUrl = buildCanonical(path);
 
-  const title = "Social Media Marketing | Calendars, Reels, Carousels & Community";
+  const title = "Social Media & Community for EdTech | Reels, Trust Content & Growth";
   const desc =
-    "Strategy, monthly content calendars, reels/shorts, carousels, creator collabs, community management, and weekly analytics. Built for reach, saves, and conversations.";
+    "Social media and community systems for EdTech: strategy, reels and shorts, founder and faculty storytelling, community management, and analytics built for trust, reach, and response.";
   const keywords =
-    "social media marketing, SMM agency, content calendar, reels, shorts, carousels, community management, creator collaborations, social SEO";
+    "edtech social media agency, education social media marketing, reels for education brands, community management, founder content, student trust content";
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
@@ -72,7 +72,7 @@ export default function SocialMediaMarketingPage() {
         keywords={keywords}
         schema={[
           serviceJsonLd({
-            name: "Social Media Marketing",
+            name: "Social Media & Community for EdTech",
             description: desc,
             url: pageUrl,
           }),
@@ -81,7 +81,7 @@ export default function SocialMediaMarketingPage() {
         breadcrumbs={[
           { name: "Home", url: buildCanonical("/") },
           { name: "Services", url: `${buildCanonical("/")}#services` },
-          { name: "Social Media Marketing", url: pageUrl },
+          { name: "Social Media & Community", url: pageUrl },
         ]}
       />
 
@@ -107,7 +107,7 @@ export default function SocialMediaMarketingPage() {
             className="font-semibold leading-tight tracking-tight"
             style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
-            Social Media Marketing that builds reach and trust.
+            Social and community systems that turn attention into trust.
           </h1>
 
           {/* Animated line — only colored text changes */}
@@ -145,38 +145,38 @@ export default function SocialMediaMarketingPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "Strategy & Voice",
-                desc: "Clear POV, content pillars, and hooks that fit your brand.",
+                title: "Strategy & voice",
+                desc: "Clear POV, content pillars, and themes built around student demand, parent trust, and proof.",
                 icon: Megaphone,
                 grad: "from-indigo-500 to-sky-400",
               },
               {
-                title: "Content Engine",
-                desc: "Monthly calendars across reels, carousels, and stories.",
+                title: "Content engine",
+                desc: "Monthly calendars across reels, shorts, stories, and carousels with a repeatable publishing rhythm.",
                 icon: Calendar,
                 grad: "from-emerald-500 to-teal-400",
               },
               {
                 title: "Production",
-                desc: "Script, design, shoot—clean templates and fast edits.",
+                desc: "Scripts, edits, templates, and shoot direction for founder, faculty, student, and campus content.",
                 icon: Camera,
                 grad: "from-rose-500 to-orange-400",
               },
               {
-                title: "Creators & UGC",
-                desc: "Briefs, collabs, and approvals with usage rights.",
+                title: "Proof formats",
+                desc: "Student stories, testimonials, FAQs, and learning moments adapted into formats that keep compounding.",
                 icon: HeartHandshake,
                 grad: "from-amber-500 to-yellow-400",
               },
               {
                 title: "Community",
-                desc: "Comments, DMs, and prompts that spark replies.",
+                desc: "Comments, DMs, replies, and prompts that convert passive attention into useful conversations.",
                 icon: MessageCircle,
                 grad: "from-fuchsia-500 to-pink-400",
               },
               {
                 title: "Analytics",
-                desc: "Reach, saves, CTR, and next actions every week.",
+                desc: "Watch time, saves, reach, response patterns, and weekly next-step decisions.",
                 icon: BarChart3,
                 grad: "from-slate-500 to-slate-400",
               },
@@ -211,14 +211,14 @@ export default function SocialMediaMarketingPage() {
                 <span className="inline-flex rounded-xl bg-rose-500/90 p-2 text-white">
                   <Video className="size-5" />
                 </span>
-                <h3 className="font-semibold">Content System</h3>
+                <h3 className="font-semibold">Content system</h3>
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 {[
-                  "Monthly themes with weekly hooks and formats.",
-                  "Reels/shorts first; carousels & stories support.",
-                  "Template library for fast, on-brand iterations.",
-                  "Social SEO with captions, keywords, and tags.",
+                  "Monthly themes built around outcomes, trust, and real student questions.",
+                  "Reels and shorts first, with carousels, stories, and static proof formats supporting them.",
+                  "Template libraries for founder content, admissions FAQs, student proof, and announcements.",
+                  "Social search optimization with caption structure, keywords, and recognizable series formats.",
                 ].map((p) => (
                   <li key={p} className="flex items-start gap-2">
                     <span className="mt-1 size-1.5 rounded-full bg-rose-500" />
@@ -234,14 +234,14 @@ export default function SocialMediaMarketingPage() {
                 <span className="inline-flex rounded-xl bg-emerald-500/90 p-2 text-white">
                   <Users className="size-5" />
                 </span>
-                <h3 className="font-semibold">Community Ops</h3>
+                <h3 className="font-semibold">Community ops</h3>
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 {[
-                  "Daily comment & DM cycles with response playbooks.",
-                  "Prompts and polls to spark replies and saves.",
-                  "Crisis guardrails and approval workflows.",
-                  "Monthly learnings → next month’s plan.",
+                  "Daily comment and DM cycles with response playbooks and escalation rules.",
+                  "Prompts, polls, and story interactions that surface interest and objections.",
+                  "Review, moderation, and crisis guardrails for high-visibility moments.",
+                  "Monthly learnings fed back into paid creative, landing pages, and next month’s plan.",
                 ].map((p) => (
                   <li key={p} className="flex items-start gap-2">
                     <span className="mt-1 size-1.5 rounded-full bg-emerald-500" />
@@ -266,9 +266,9 @@ export default function SocialMediaMarketingPage() {
                 color: "bg-pink-600",
                 icon: Camera,
                 points: [
-                  "Reels + carousels with save-worthy hooks.",
-                  "Highlights, story polls, and link stickers.",
-                  "Creator collabs and UGC reposts.",
+                  "Reels and carousels with save-worthy hooks, proof, and admissions clarity.",
+                  "Highlights, story polls, campus glimpses, and link stickers that move users forward.",
+                  "Student proof, creator collaborations, and repurposed paid-ad winners.",
                 ],
               },
               {
@@ -276,9 +276,9 @@ export default function SocialMediaMarketingPage() {
                 color: "bg-sky-700",
                 icon: Megaphone,
                 points: [
-                  "Narrative posts with 1–3 takeaways.",
-                  "Carousel explainers and native docs.",
-                  "Leadership POV and consistent comments.",
+                  "Founder and leadership posts with category takes and real growth lessons.",
+                  "Carousel explainers, reports, and institutional proof for trust and authority.",
+                  "Consistent comments and thought leadership around the education space.",
                 ],
               },
               {
@@ -286,19 +286,19 @@ export default function SocialMediaMarketingPage() {
                 color: "bg-red-600",
                 icon: Video,
                 points: [
-                  "Shorts for discovery, long-form for depth.",
-                  "Titles, thumbnails, and chapters.",
-                  "Community tab posts and polls.",
+                  "Shorts for discovery and long-form videos for depth, proof, and FAQ handling.",
+                  "Titles, thumbnails, chapters, and playlists aligned to search and trust-building.",
+                  "Repurposed founder videos, campus walkthroughs, and student stories.",
                 ],
               },
               {
-                title: "X (Twitter)",
+                title: "Community & reviews",
                 color: "bg-black",
                 icon: ThumbsUp,
                 points: [
-                  "Threads with clear structure and hooks.",
-                  "Replies to surface in relevant timelines.",
-                  "Lists and saved searches for engagement.",
+                  "Review harvesting, testimonial reuse, and proof formats adapted for social.",
+                  "Comment and DM learnings turned into fresh posts, FAQs, and campaign hooks.",
+                  "Social listening around concerns, objections, and category conversations.",
                 ],
               },
             ].map((b) => (
@@ -335,10 +335,10 @@ export default function SocialMediaMarketingPage() {
         <Container>
           <div className="text-center rounded-3xl border border-black/10 bg-white p-8 md:p-10 shadow-sm">
             <h2 className="font-semibold" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Ready to build a consistent social presence?
+              Ready to turn social into a stronger trust and demand channel?
             </h2>
             <p className="mt-2 text-slate-700">
-              We’ll audit your content, voice, and engagement—then ship a 30-day action plan.
+              We’ll audit your content system, posting rhythm, and proof gaps, then map the next 30 days of execution.
             </p>
             <div className="mt-6">
               <Link
@@ -380,12 +380,12 @@ export default function SocialMediaMarketingPage() {
    ========================= */
 function ProcessStepper() {
   const steps = [
-    { label: "Discover", desc: "Audience, voice, pillars, and goals." },
-    { label: "Plan", desc: "Monthly calendar with formats and hooks." },
-    { label: "Produce", desc: "Scripts, designs, shoots, and edits." },
-    { label: "Publish", desc: "Post, respond, and prompt engagement." },
-    { label: "Amplify", desc: "Creator collabs and smart boosts." },
-    { label: "Measure", desc: "Scorecard, insights, next month plan." },
+    { label: "Audit", desc: "Audience, voice, current formats, and gaps." },
+    { label: "Plan", desc: "Monthly calendar with themes, hooks, and series." },
+    { label: "Produce", desc: "Scripts, edits, templates, and shoot direction." },
+    { label: "Publish", desc: "Consistent posting with community responses." },
+    { label: "Learn", desc: "Watch time, saves, replies, and hook learnings." },
+    { label: "Scale", desc: "Double down on repeatable winners across channels." },
   ];
 
   const [active, setActive] = useState(0);

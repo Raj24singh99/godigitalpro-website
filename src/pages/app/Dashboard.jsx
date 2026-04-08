@@ -131,10 +131,10 @@ export default function Dashboard() {
               </div>
             </div>
             <Link
-              to="/learn/master-course"
+              to="/onboarding"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
             >
-              Explore courses
+              Request a walkthrough
               <Sparkles className="h-4 w-4" />
             </Link>
           </div>

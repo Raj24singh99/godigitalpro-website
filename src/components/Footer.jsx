@@ -32,13 +32,13 @@ export default function Footer() {
       <div className="h-px w-full bg-gradient-to-r from-transparent via-black/10 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-12">
-        <div className="grid gap-10 md:grid-cols-[1.2fr,1fr,1fr,1fr,1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.4fr,1fr,1fr,1fr]">
           {/* Brand + blurb */}
           <div>
             <Logo />
             <p className="mt-3 text-sm text-slate-600">
-              Clear plans, transparent reporting, and accountable execution
-              across Websites, SEO, Google &amp; Meta Ads.
+              AI-led growth systems for EdTech brands across paid media, SEO,
+              social, analytics, and enrollment-focused performance marketing.
             </p>
 
             {/* Contact chips */}
@@ -141,42 +141,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-slate-900" to="/tools">
-                  Tools Hub
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-slate-900" to="/privacy-policy">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                {/* ✅ Open onboarding form */}
                 <Link className="hover:text-slate-900" to="/onboarding">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-slate-900" to="/digital-marketing-agency-near-me">
-                  Digital Marketing Agency Near Me
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-slate-900" to="/best-digital-marketing-agency">
-                  Best Digital Marketing Agency
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-slate-900" to="/best-google-ads-agency">
-                  Best Google Ads Agency
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-slate-900"
-                  to="/best-digital-marketing-agency-for-startups"
-                >
-                  Best Agency for Startups
+                <Link className="hover:text-slate-900" to="/privacy-policy">
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
@@ -191,7 +162,7 @@ export default function Footer() {
                   className="hover:text-slate-900"
                   to="/services/website-development"
                 >
-                  Website Development
+                  Website & Funnel Development
                 </Link>
               </li>
               <li>
@@ -199,7 +170,7 @@ export default function Footer() {
                   className="hover:text-slate-900"
                   to="/services/paid-marketing"
                 >
-                  Paid Marketing
+                  Paid Media
                 </Link>
               </li>
               <li>
@@ -215,7 +186,7 @@ export default function Footer() {
                   className="hover:text-slate-900"
                   to="/services/social-media-marketing"
                 >
-                  Social Media Marketing
+                  Social Media &amp; Community
                 </Link>
               </li>
               <li>
@@ -223,16 +194,12 @@ export default function Footer() {
                   className="hover:text-slate-900"
                   to="/services/brand-building"
                 >
-                  Brand Building
+                  Brand Positioning
                 </Link>
               </li>
               <li>
-                {/* match App.jsx route */}
-                <Link
-                  className="hover:text-slate-900"
-                  to="/services/marketplaces"
-                >
-                  Marketplaces &amp; Quick Commerce
+                <Link className="hover:text-slate-900" to="/services/video-ad-production">
+                  Video &amp; Ad Production
                 </Link>
               </li>
             </ul>
@@ -246,130 +213,42 @@ export default function Footer() {
             </Link>
           </nav>
 
-          {/* Column: Learn */}
-          <nav aria-label="Learn" className="text-sm">
-            <h4 className="font-semibold text-slate-900">Learn</h4>
+          {/* Column: Focus */}
+          <nav aria-label="Focus" className="text-sm">
+            <h4 className="font-semibold text-slate-900">Focus</h4>
             <ul className="mt-3 space-y-2 text-slate-700">
-              <li>
-                <Link className="hover:text-slate-900" to="/learn">
-                  Learn Hub
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-slate-900" to="/learn/master-course">
-                  Master Course
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-slate-900" to="/learn/digital-products">
-                  Digital Products
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-slate-900" to="/learn/masterclasses">
-                  Masterclasses
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-slate-900" to="/learn/internship">
-                  Internship
-                </Link>
-              </li>
-            </ul>
-          </nav>
-
-          {/* Column: Industries */}
-          <nav aria-label="Industries" className="text-sm">
-            <h4 className="font-semibold text-slate-900">Industries</h4>
-            <ul className="mt-3 space-y-2 text-slate-700">
-              <li>
-                <Link
-                  className="hover:text-slate-900"
-                  to="/industries/b2b-services"
-                >
-                  B2B Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-slate-900"
-                  to="/industries/d2c-ecommerce"
-                >
-                  D2C E-commerce
-                </Link>
-              </li>
               <li>
                 <Link className="hover:text-slate-900" to="/industries/edtech">
-                  EdTech
+                  EdTech Marketing
                 </Link>
               </li>
               <li>
-                <Link
-                  className="hover:text-slate-900"
-                  to="/industries/healthcare"
-                >
-                  Healthcare
+                <Link className="hover:text-slate-900" to="/services/paid-marketing">
+                  Paid Media
                 </Link>
               </li>
               <li>
-                <Link
-                  className="hover:text-slate-900"
-                  to="/industries/local-services"
-                >
-                  Local Services
+                <Link className="hover:text-slate-900" to="/services/seo-content">
+                  SEO &amp; Content
                 </Link>
               </li>
               <li>
-                <Link
-                  className="hover:text-slate-900"
-                  to="/industries/saas-startups"
-                >
-                  SaaS Startups
+                <Link className="hover:text-slate-900" to="/services/social-media-marketing">
+                  Social &amp; Community
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-slate-900" to="/services/video-ad-production">
+                  Video &amp; Ad Production
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-slate-900" to="/services/website-development">
+                  Funnel Design
                 </Link>
               </li>
             </ul>
           </nav>
-        </div>
-
-        {/* Wide locations strip */}
-        <div className="mt-8 border-t border-slate-200 pt-5 text-sm text-slate-700">
-          <h4 className="font-semibold text-slate-900">Locations</h4>
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            {[
-              { name: "Delhi", to: "/locations/delhi-digital-marketing-agency" },
-              { name: "Mumbai", to: "/locations/mumbai-digital-marketing-agency" },
-              { name: "Bangalore", to: "/locations/bangalore-digital-marketing-agency" },
-              { name: "Hyderabad", to: "/locations/hyderabad-digital-marketing-agency" },
-              { name: "Chennai", to: "/locations/chennai-digital-marketing-agency" },
-              { name: "Kolkata", to: "/locations/kolkata-digital-marketing-agency" },
-              { name: "Pune", to: "/locations/pune-digital-marketing-agency" },
-              { name: "Ahmedabad", to: "/locations/ahmedabad-digital-marketing-agency" },
-              { name: "Jaipur", to: "/locations/jaipur-digital-marketing-agency" },
-              { name: "Surat", to: "/locations/surat-digital-marketing-agency" },
-              { name: "Noida", to: "/locations/noida-digital-marketing-agency" },
-              { name: "Gurgaon", to: "/locations/gurgaon-digital-marketing-agency" },
-              { name: "Indore", to: "/locations/indore-digital-marketing-agency" },
-              { name: "Coimbatore", to: "/locations/coimbatore-digital-marketing-agency" },
-              { name: "Kochi", to: "/locations/kochi-digital-marketing-agency" },
-              { name: "Lucknow", to: "/locations/lucknow-digital-marketing-agency" },
-              { name: "Chandigarh", to: "/locations/chandigarh-digital-marketing-agency" },
-              { name: "Nagpur", to: "/locations/nagpur-digital-marketing-agency" },
-              { name: "Bhopal", to: "/locations/bhopal-digital-marketing-agency" },
-              { name: "Visakhapatnam", to: "/locations/visakhapatnam-digital-marketing-agency" },
-              { name: "Vadodara", to: "/locations/vadodara-digital-marketing-agency" },
-              { name: "Kanpur", to: "/locations/kanpur-digital-marketing-agency" },
-              { name: "Patna", to: "/locations/patna-digital-marketing-agency" },
-              { name: "Bhubaneswar", to: "/locations/bhubaneswar-digital-marketing-agency" },
-              { name: "Goa", to: "/locations/goa-digital-marketing-agency" },
-            ].map((loc, idx, arr) => (
-              <React.Fragment key={loc.to}>
-                <Link className="hover:text-slate-900 whitespace-nowrap" to={loc.to}>
-                  {loc.name}
-                </Link>
-                {idx < arr.length - 1 && <span className="text-slate-300">|</span>}
-              </React.Fragment>
-            ))}
-          </div>
         </div>
       </div>
 
@@ -382,10 +261,6 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link className="hover:text-slate-900" to="/privacy-policy">
               Privacy Policy
-            </Link>
-            <span className="text-slate-400">•</span>
-            <Link className="hover:text-slate-900" to="/terms">
-              Terms
             </Link>
             <span className="text-slate-400">•</span>
             <a className="hover:text-slate-900" href={`mailto:${EXTERNAL.email}`}>

@@ -5,12 +5,23 @@ import { ExternalLink, Linkedin } from "lucide-react";
 /* ---------- Testimonial Data ---------- */
 const ITEMS = [
   {
+    featured: true,
+    company: "Orchids International School",
+    site: "https://www.orchidsinternationalschool.com/",
+    person: "Arvind Kumar",
+    role: "Business Head",
+    linkedin: "https://www.linkedin.com/in/arvind-kumar-2237335",
+    tags: ["EdTech", "Google Ads", "Meta Ads", "Reporting"],
+    quote:
+      "For 100+ schools, data discipline matters. We spent ~₹25cr across Google & Meta with strong ROI. GDP’s dynamic dashboards, geo-wise budgeting and clean execution helped us scale with confidence.",
+  },
+  {
     company: "Aashirs",
     site: "https://aashirs.com/",
     person: "Ashirbani Roy",
     role: "Founder",
     linkedin: "https://www.linkedin.com/in/ashirbaniroy/",
-    tags: ["Google Ads", "Meta Ads", "D2C Strategy"],
+    tags: ["Google Ads", "Meta Ads", "Performance Creative"],
     quote:
       "Working with GoDigitalPro has been one of the most impactful partnerships for us. The team didn’t just manage campaigns—they understood our products, seasonality and margins. In six months we grew 5× and improved ROAS by ~50%. Their bi-channel plan across Google & Meta, product-level data checks, and location-wise optimisation made decisions simple and repeatable. Clear weekly updates and total transparency.",
   },
@@ -53,16 +64,6 @@ const ITEMS = [
     tags: ["SEO", "Google Ads", "Funnel Strategy"],
     quote:
       "GDP improved our lead quality and lowered CPL. Their weekly dashboards made it easy to prioritise work across marketing and sales. The team is committed, hands-on, and very clear about next steps.",
-  },
-  {
-    company: "Orchids International School",
-    site: "https://www.orchidsinternationalschool.com/",
-    person: "Arvind Kumar",
-    role: "Business Head",
-    linkedin: "https://www.linkedin.com/in/arvind-kumar-2237335",
-    tags: ["Google Ads", "Meta Ads", "Reporting"],
-    quote:
-      "For 100+ schools, data discipline matters. We spent ~₹25cr across Google & Meta with strong ROI. GDP’s dynamic dashboards, geo-wise budgeting and clean execution helped us scale with confidence.",
   },
 ];
 
@@ -130,22 +131,24 @@ function TCard({ t }) {
 
 /* ---------- Section ---------- */
 export default function Testimonials() {
+  const sortedItems = [...ITEMS].sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
+
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <header className="mb-6 md:mb-8">
           <h2 className="text-center font-serif text-4xl md:text-5xl font-bold text-gray-900">
-            Success Stories
+            Proof from operators and growth leaders
           </h2>
           <p className="mt-3 text-center text-slate-700">
-            Real founders. Real results. Clear strategy, transparent reporting, and accountable execution.
+            Founder-led execution, clear reporting, and revenue-focused growth systems, with EdTech scale at the center of how we operate.
           </p>
         </header>
 
         {/* Scrollable testimonials */}
         <div className="overflow-x-auto [-webkit-overflow-scrolling:touch]">
           <div className="flex gap-6 md:gap-8 px-1 py-2">
-            {ITEMS.map((t) => (
+            {sortedItems.map((t) => (
               <TCard key={t.company} t={t} />
             ))}
           </div>

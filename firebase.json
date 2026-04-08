@@ -63,7 +63,25 @@
     ],
 
     "redirects": [
-      { "source": "/about", "destination": "/about_us", "type": 301 }
+      { "source": "/about", "destination": "/about_us", "type": 301 },
+      { "source": "/blogs", "destination": "/blog", "type": 301 },
+      { "source": "/app", "destination": "/", "type": 301 },
+      { "source": "/learn", "destination": "/", "type": 301 },
+      { "source": "/learn/**", "destination": "/", "type": 301 },
+      { "source": "/digital-products/**", "destination": "/", "type": 301 },
+      { "source": "/tools", "destination": "/", "type": 301 },
+      { "source": "/tools/**", "destination": "/", "type": 301 },
+      { "source": "/locations/**", "destination": "/", "type": 301 },
+      { "source": "/services/marketplaces", "destination": "/services/video-ad-production", "type": 301 },
+      { "source": "/industries/d2c-ecommerce", "destination": "/", "type": 301 },
+      { "source": "/industries/saas-startups", "destination": "/", "type": 301 },
+      { "source": "/industries/healthcare", "destination": "/", "type": 301 },
+      { "source": "/industries/local-services", "destination": "/", "type": 301 },
+      { "source": "/industries/b2b-services", "destination": "/", "type": 301 },
+      { "source": "/digital-marketing-agency-near-me", "destination": "/", "type": 301 },
+      { "source": "/best-digital-marketing-agency", "destination": "/", "type": 301 },
+      { "source": "/best-google-ads-agency", "destination": "/", "type": 301 },
+      { "source": "/best-digital-marketing-agency-for-startups", "destination": "/", "type": 301 }
     ],
 
     "rewrites": [

@@ -5,46 +5,46 @@ import {
   Share2,
   Users2,
   Megaphone,
-  Store,
   FileText,
+  Video,
   ArrowRight,
 } from "lucide-react";
 
 const cards = [
   {
     id: "web",
-    title: "Website Development",
-    desc: "CRO-grade experience design, performance engineering, and storytelling that convert any channel’s traffic.",
+    title: "Website & Funnel Development",
+    desc: "Program pages, landing funnels, tracking, and conversion architecture built for applications, demos, and counselor handoffs.",
     icon: Globe2,
     link: "/services/website-development",
   },
   {
     id: "smm",
-    title: "Social Media Marketing",
-    desc: "Narratives and campaigns that compound across organic, influencer, community, and performance remixes.",
+    title: "Social Media & Community",
+    desc: "Organic social systems that build trust with students, parents, faculty, and decision-makers across every buying stage.",
     icon: Share2,
     link: "/services/social-media-marketing",
   },
   {
     id: "brand",
-    title: "Brand Building",
-    desc: "Positioning, messaging, and identity systems that inform every ad, landing page, and nurture track.",
+    title: "Brand Positioning",
+    desc: "Sharper category positioning, offer clarity, and messaging systems that make every campaign easier to scale.",
     icon: Users2,
     link: "/services/brand-building",
   },
   {
     id: "paid",
-    title: "Paid Marketing",
-    desc: "Search, social, video, and marketplace media managed by squads obsessed with efficiency and scale.",
+    title: "Paid Media",
+    desc: "Google, Meta, YouTube, and performance funnels managed around qualified lead quality, application intent, and revenue.",
     icon: Megaphone,
     link: "/services/paid-marketing",
   },
   {
-    id: "marketplaces",
-    title: "Marketplaces & Quick Commerce",
-    desc: "Retail media, listings, merchandising, and ops support for Amazon, Flipkart, Instacart, Blinkit, and beyond.",
-    icon: Store,
-    link: "/services/marketplaces",
+    id: "video",
+    title: "Video & Ad Production",
+    desc: "High-velocity video, ad edits, hooks, and creative testing systems built to keep paid and organic channels fresh.",
+    icon: Video,
+    link: "/services/video-ad-production",
   },
   {
     id: "seo",
@@ -61,9 +61,9 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Centered heading & intro */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="h2 text-dark">One Digital Marketing Agency, Every Critical Pod</h2>
+          <h2 className="h2 text-dark">One EdTech Growth Partner, Every Critical Capability</h2>
           <p className="mt-3 text-slate-700 text-base md:text-lg">
-            We plug strategy, creative, media, SEO, product, and analytics leaders into a single pod so your growth plan, execution, and reporting stay aligned no matter the market you serve.
+            Strategy, creative, media, SEO, funnel design, and analytics work better when they are run as one system. That is how we structure execution for EdTech brands.
           </p>
         </div>
 

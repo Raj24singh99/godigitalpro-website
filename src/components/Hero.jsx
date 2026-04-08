@@ -25,63 +25,20 @@ function LinkedinInline({ size = 22, color = "#0A66C2" }) {
   );
 }
 
-/* Amazon smile inline (no CDN) */
-function AmazonSmile({ size = 22, color = "#FF9900" }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 64 64"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="Amazon"
-      role="img"
-    >
-      <path
-        d="M8 38 C 22 52, 42 52, 56 38"
-        fill="none"
-        stroke={color}
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M50 36 L58 38 L50 40"
-        fill="none"
-        stroke={color}
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M12 42 C 24 48, 40 48, 52 42"
-        fill="none"
-        stroke={color}
-        strokeOpacity="0.35"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-/* Curated ad/performance ecosystem */
+/* Curated platform ecosystem */
 const LOGOS = [
   { label: "Google Ads", slug: "googleads", color: "34A853" },
   { label: "Meta", slug: "meta", color: "0866FF" },
   { label: "Instagram", slug: "instagram", color: "E4405F" },
-  { label: "LinkedIn", slug: "linkedin", color: "0A66C2" }, // inline
+  { label: "LinkedIn", slug: "linkedin", color: "0A66C2" },
   { label: "YouTube", slug: "youtube", color: "FF0000" },
-  { label: "Snapchat", slug: "snapchat", color: "FFFC00" },
-  { label: "Amazon", slug: "amazon", color: "FF9900" }, // inline
-  { label: "Flipkart", slug: "flipkart", color: "2874F0" },
-  { label: "TikTok", slug: "tiktok", color: "000000" },
+  { label: "WhatsApp", slug: "whatsapp", color: "25D366" },
 ];
 
-/* Image with safe fallbacks; LinkedIn + Amazon are always inline */
+/* Image with safe fallbacks; LinkedIn is inline */
 function LogoImg({ slug, label, color, size }) {
   const [visible, setVisible] = useState(true);
 
-  if (slug === "amazon") return <AmazonSmile size={size} color={`#${(color || "").replace("#", "") || "FF9900"}`} />;
   if (slug === "linkedin") return <LinkedinInline size={size} color={`#${(color || "").replace("#", "") || "0A66C2"}`} />;
 
   if (!visible) return null;
@@ -224,28 +181,28 @@ export default function Hero() {
         {/* Tagline */}
         <div className="inline-flex items-center gap-2 bg-primary/15 text-dark px-4 py-2 rounded-full text-sm font-medium ring-1 ring-black/5 mx-auto">
           <Sparkles size={16} className="text-yellow-500" />
-          <span>Global Digital Marketing Partner on Speed Dial</span>
+          <span>EdTech Growth Partner • AI-Led Analysis • Founder-Led Execution</span>
         </div>
 
         {/* Heading */}
         <h1 className="mt-5 font-serif text-[2.6rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-dark tracking-tight">
-          A digital marketing agency for startups, local businesses, and growth-stage brands
+          The EdTech marketing agency built to scale applications, enrollments, and revenue
         </h1>
 
         {/* Description */}
         <p className="mt-4 text-base md:text-lg text-slate-800 max-w-3xl mx-auto">
-          Growth leaders plug us in when they need one accountable team across SEO, Google Ads, paid social, CRO, and analytics without hiring six agencies or juggling five dashboards.
+          GoDigitalPro helps education brands grow with AI-led analysis, paid media, SEO, social, websites, creative production, and counselor-ready funnel systems without stitching together five different vendors.
         </p>
 
         {/* CTAs */}
         <div className="mt-6 flex flex-wrap gap-4 justify-center">
           <Link to="/onboarding" className="btn-primary inline-flex items-center gap-2 text-base">
-            Start Your Journey <ArrowRight size={18} />
+            Book an EdTech Growth Audit <ArrowRight size={18} />
           </Link>
         </div>
 
         <p className="mt-2 text-sm text-slate-600">
-          A clear plan from day one, grounded in research and battle-tested playbooks.
+          7 years of experience. 250 crore+ in ad spend managed. 1000+ crore in revenue delivered.
         </p>
 
         {/* Single marquee band */}
@@ -258,25 +215,25 @@ export default function Hero() {
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-dark text-center">
             <li>
               <div className="text-2xl font-extrabold">
-                <CountUp end={12} suffix="+ Years " />
+                <CountUp end={7} suffix="+ Years " />
               </div>
-              <div className="text-sm text-slate-700">Digital Experience</div>
+              <div className="text-sm text-slate-700">Experience</div>
             </li>
             <li>
               <div className="text-2xl font-extrabold">
-                <CountUp end={342} suffix="+ " />
+                <CountUp end={250} suffix=" Cr+ " />
               </div>
-              <div className="text-sm text-slate-700">Clients</div>
+              <div className="text-sm text-slate-700">Ad Spend Managed</div>
             </li>
             <li>
               <div className="text-2xl font-extrabold">
-                <CountUp end={1265} suffix=" Cr+" />
+                <CountUp end={1000} suffix=" Cr+" />
               </div>
-              <div className="text-sm text-slate-700">Revenue Generated</div>
+              <div className="text-sm text-slate-700">Revenue Delivered</div>
             </li>
           </ul>
           <p className="mt-4 text-sm text-slate-700">
-            Trusted by SaaS, D2C, marketplaces, and B2B teams worldwide as their always-on digital marketing pod.
+            Built for EdTech operators, founders, and admissions teams that care about pipeline quality, not just lead volume.
           </p>
         </div>
       </div>

@@ -2,7 +2,7 @@
 export const SITE = {
   name: "GoDigitalPro",
   domain: "godigitalpro.in",
-  url: "https://www.godigitalpro.in",
+  url: "https://godigitalpro.in",
   locale: "en_IN",
   twitter: "@GoDigitalProIn",
   contactEmail: "raj@godigitalpro.in",
@@ -14,8 +14,8 @@ export const SITE = {
     postalCode: "560064",
     addressCountry: "IN",
   },
-  logo: "https://www.godigitalpro.in/apple-touch-icon.png",
-  defaultOgImage: "https://www.godigitalpro.in/og-default.jpg",
+  logo: "https://godigitalpro.in/apple-touch-icon.png",
+  defaultOgImage: "https://godigitalpro.in/og-default.jpg",
   socialProfiles: {
     linkedin: "https://www.linkedin.com/company/godigitalpro",
     instagram: "https://www.instagram.com/godigitalpro.in/",

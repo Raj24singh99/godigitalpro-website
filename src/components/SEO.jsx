@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 export default function SEO({
   title = "GoDigitalPro",
   description = "We tailor growth plans to your business model.",
-  url = "https://www.godigitalpro.in/",
+  url = "https://godigitalpro.in/",
   image = "/og-image.jpg",
 }) {
   return (

@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
     "GoDigitalPro, a full-funnel digital marketing agency, values your privacy. Learn how we collect, use, and protect your data across campaigns, analytics, and web platforms.";
 
   const url = buildCanonical("/privacy-policy");
-  const image = "https://www.godigitalpro.in/public/assets/logo.jpg";
+  const image = buildCanonical("/apple-touch-icon.png");
 
   const webpageJsonLd = useMemo(
     () => ({

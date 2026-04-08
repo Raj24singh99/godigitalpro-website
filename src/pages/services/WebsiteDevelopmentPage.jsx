@@ -26,50 +26,50 @@ const Container = ({ className = "", children }) => (
 
 /** Rotating offerings for hero (only the colored part changes) */
 const WORDS = [
-  { text: "Landing Pages", color: "text-emerald-600" },
-  { text: "Complete Websites", color: "text-indigo-600" },
-  { text: "E-commerce Sites", color: "text-rose-600" },
-  { text: "Lead-Gen Sites", color: "text-amber-600" },
-  { text: "Web Apps", color: "text-fuchsia-600" },
-  { text: "Blog/Content Hubs", color: "text-sky-600" },
+  { text: "Program Pages", color: "text-emerald-600" },
+  { text: "Admissions Funnels", color: "text-indigo-600" },
+  { text: "Campus Microsites", color: "text-rose-600" },
+  { text: "Application Landing Pages", color: "text-amber-600" },
+  { text: "CRM-Connected Forms", color: "text-fuchsia-600" },
+  { text: "Content Hubs", color: "text-sky-600" },
 ];
 
 /** Tech chips shown under hero */
 const TECH = [
-  { label: "React", color: "#61DAFB" },
-  { label: "Vite", color: "#646CFF" },
-  { label: "Tailwind CSS", color: "#38BDF8" },
-  { label: "TypeScript", color: "#3178C6" },
-  { label: "Node.js", color: "#3C873A" },
-  { label: "Express", color: "#111827" },
-  { label: "Firebase", color: "#FFCA28" },
-  { label: "Headless WordPress", color: "#21759B" },
-  { label: "Netlify", color: "#00AD9F" },
-  { label: "Vercel", color: "#000000" },
-  { label: "Cloudflare", color: "#F38020" },
-  { label: "GA4 & Pixels", color: "#FBBC05" },
+  { label: "Application Funnels", color: "#61DAFB" },
+  { label: "Landing Page CRO", color: "#646CFF" },
+  { label: "CRM Integrations", color: "#38BDF8" },
+  { label: "WhatsApp & Call Tracking", color: "#3178C6" },
+  { label: "GA4 & Pixels", color: "#3C873A" },
+  { label: "SEO-Ready Architecture", color: "#111827" },
+  { label: "Fast Mobile UX", color: "#FFCA28" },
+  { label: "Content Publishing Workflows", color: "#21759B" },
+  { label: "A/B Testing Ready", color: "#00AD9F" },
+  { label: "Reliable Hosting", color: "#000000" },
+  { label: "Schema & Metadata", color: "#F38020" },
+  { label: "Counselor Handoffs", color: "#FBBC05" },
 ];
 
 const WEBSITE_FAQ = [
   {
     question: "How fast can we go live?",
-    answer: "Simple landing pages ship in days. Full sites usually take 3–6 weeks depending on pages and integrations.",
+    answer: "Simple landing pages can ship quickly. Larger websites and admissions funnel builds typically take a few weeks depending on pages, integrations, and approvals.",
   },
   {
-    question: "Can you work with our content or CMS?",
-    answer: "Yes. We can connect to headless WordPress, Firebase, or your existing APIs for content and forms.",
+    question: "Can you work with our CMS or internal tools?",
+    answer: "Yes. We can connect to existing CMS, CRMs, form systems, call workflows, and analytics tools instead of forcing a rebuild from scratch.",
   },
   {
     question: "Will it be SEO-ready?",
-    answer: "Yes. We set titles, meta, schema, sitemaps, robots, clean URLs, and fast loading for Core Web Vitals.",
+    answer: "Yes. We set route-level metadata, schema, canonicals, sitemaps, robots, and performance foundations so the site is crawlable and fast.",
   },
   {
-    question: "Do you handle analytics and pixels?",
-    answer: "Yes. GA4, Meta, LinkedIn, Google Ads, and event tracking—mapped to your funnel and goals.",
+    question: "Do you handle analytics and conversion tracking?",
+    answer: "Yes. We map GA4, ad pixels, call tracking, and funnel events to the actions that matter across the student journey.",
   },
   {
-    question: "What about maintenance?",
-    answer: "We document deploy steps, keep dependencies healthy, and can support updates and new pages.",
+    question: "Can you support testing and optimization after launch?",
+    answer: "Yes. We can support new pages, CRO testing, tracking refinement, and launch support after the first version goes live.",
   },
 ];
 
@@ -82,22 +82,22 @@ export default function WebsiteDevelopmentPage() {
 
   const seoIntro = useMemo(
     () =>
-      "GoDigitalPro builds fast, SEO-ready websites and web apps: information architecture, UX/UI, React/Vite frontends, API-driven backends, headless CMS, schema, analytics, and CI/CD with secure hosting.",
+      "GoDigitalPro builds fast, SEO-ready websites and funnel systems for EdTech brands, with clearer information architecture, landing pages, analytics, CRM handoffs, and conversion-focused user journeys.",
     []
   );
 
-  const title = "Website Development | Fast, SEO-Ready & Scalable";
+  const title = "Websites & Funnels for EdTech | SEO-Ready, Fast & Conversion-Focused";
   const desc =
-    "We design and build fast, SEO-ready websites & web apps with React/Vite, clean UX, secure APIs, headless CMS, schema, analytics, and reliable hosting.";
+    "We design and build fast, SEO-ready websites and funnel systems for EdTech, with clear information architecture, conversion tracking, CRM handoffs, and reliable hosting.";
   const keywords =
-    "website development, landing pages, web apps, headless CMS, React agency, Vite, CRO websites, GoDigitalPro";
+    "edtech website development, education landing pages, admissions funnels, conversion-focused websites, crm-connected forms, GoDigitalPro";
   const canonical = buildCanonical("/services/website-development");
 
   const schemaBlocks = useMemo(
     () =>
       [
         serviceJsonLd({
-          name: "Website Development",
+          name: "Website & Funnel Development",
           description: desc,
           url: canonical,
         }),
@@ -117,7 +117,7 @@ export default function WebsiteDevelopmentPage() {
         breadcrumbs={[
           { name: "Home", url: buildCanonical("/") },
           { name: "Services", url: `${buildCanonical("/")}#services` },
-          { name: "Website Development", url: canonical },
+          { name: "Website & Funnel Development", url: canonical },
         ]}
       />
 
@@ -143,7 +143,7 @@ export default function WebsiteDevelopmentPage() {
             className="font-semibold leading-tight tracking-tight"
             style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
-            Website Development that’s fast, clear, and built to scale.
+            Websites and funnel systems that turn inquiries into applications.
           </h1>
 
           {/* Animated line — only colored text changes */}
@@ -190,7 +190,7 @@ export default function WebsiteDevelopmentPage() {
               to="/onboarding"
               className="inline-flex items-center justify-center rounded-2xl bg-black px-6 py-3.5 text-white hover:opacity-90"
             >
-              Let’s Build Your Website
+              Audit My Funnel
             </Link>
           </div>
         </Container>
@@ -203,38 +203,38 @@ export default function WebsiteDevelopmentPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "Structure & UX",
-                desc: "Sitemap, flows, and wireframes that make navigation obvious.",
+                title: "Journey architecture",
+                desc: "Sitemaps, page flows, and conversion paths built around the real admissions journey.",
                 icon: LayoutDashboard,
                 grad: "from-indigo-500 to-sky-400",
               },
               {
-                title: "Design System",
-                desc: "Clean UI, components, and spacing rules for consistent pages.",
+                title: "Landing page design",
+                desc: "Pages that balance speed, clarity, proof, and next-step CTAs without creating friction.",
                 icon: Palette,
                 grad: "from-rose-500 to-orange-400",
               },
               {
-                title: "Frontend (React/Vite)",
-                desc: "Fast, modern UI with Tailwind—optimized for Core Web Vitals.",
+                title: "Fast mobile UX",
+                desc: "Responsive interfaces that load quickly, read cleanly, and hold up across low-friction mobile journeys.",
                 icon: MonitorSmartphone,
                 grad: "from-emerald-500 to-teal-400",
               },
               {
-                title: "Backend & APIs",
-                desc: "Node/Firebase/Headless WP with secure auth and clean endpoints.",
+                title: "Tracking & integrations",
+                desc: "Forms, CRM, call workflows, pixels, and event tracking connected to the actions that matter.",
                 icon: ServerCog,
                 grad: "from-violet-500 to-fuchsia-400",
               },
               {
-                title: "SEO & Schema",
-                desc: "Meta, OpenGraph, sitemap, robots, JSON-LD, and clean HTML.",
+                title: "SEO & schema",
+                desc: "Metadata, schema, canonicals, sitemap, robots, and crawlable route structures from day one.",
                 icon: Search,
                 grad: "from-amber-500 to-yellow-400",
               },
               {
                 title: "Analytics & CRO",
-                desc: "GA4, pixels, events, funnels, and A/B tests for better CVR.",
+                desc: "GA4, funnel instrumentation, thank-you logic, and testing readiness for better conversion rates.",
                 icon: BarChart3,
                 grad: "from-slate-500 to-slate-400",
               },
@@ -260,7 +260,7 @@ export default function WebsiteDevelopmentPage() {
       {/* ---------- FRONTEND & BACKEND (plain-English) ---------- */}
       <Section id="how-it-works" className="bg-primary/5">
         <Container>
-          <h2 className="text-2xl md:text-3xl font-semibold">How the build works</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">How the funnel works</h2>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {/* Frontend */}
@@ -269,14 +269,14 @@ export default function WebsiteDevelopmentPage() {
                 <span className="inline-flex rounded-xl bg-emerald-500/90 p-2 text-white">
                   <Layers className="size-5" />
                 </span>
-                <h3 className="font-semibold">Frontend (what users see)</h3>
+                <h3 className="font-semibold">Experience layer</h3>
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 {[
-                  "React + Vite + Tailwind for speed and clean UI.",
-                  "Responsive components that look great on phone and desktop.",
-                  "Lazy-loading images, prefetching routes, and accessible markup.",
-                  "Core Web Vitals: fast first paint, stable layout, quick interaction.",
+                  "Pages built to make the next action obvious without overwhelming the user.",
+                  "Responsive layouts that hold up across mobile-first discovery and inquiry flows.",
+                  "Proof blocks, FAQs, forms, and CTA placement tuned to reduce hesitation.",
+                  "Core Web Vitals and accessibility work so the experience stays fast and usable.",
                 ].map((p) => (
                   <li key={p} className="flex items-start gap-2">
                     <span className="mt-1 size-1.5 rounded-full bg-emerald-500" />
@@ -292,14 +292,14 @@ export default function WebsiteDevelopmentPage() {
                 <span className="inline-flex rounded-xl bg-indigo-500/90 p-2 text-white">
                   <TerminalSquare className="size-5" />
                 </span>
-                <h3 className="font-semibold">Backend (how it runs)</h3>
+                <h3 className="font-semibold">Operations layer</h3>
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 {[
-                  "API-driven content with Node/Firebase or Headless WordPress.",
-                  "Auth, roles, and form submissions with spam protection.",
-                  "Integrations: CRM, email, payment, search, and storage.",
-                  "Caching and CDNs for quick global delivery.",
+                  "Form routing, CRM sync, and event tracking that match the business workflow.",
+                  "Spam protection, attribution fields, and clean data handoff into downstream tools.",
+                  "Integrations with email, WhatsApp, call workflows, and other operational systems.",
+                  "Reliable hosting, caching, and deployment workflows that reduce site risk.",
                 ].map((p) => (
                   <li key={p} className="flex items-start gap-2">
                     <span className="mt-1 size-1.5 rounded-full bg-indigo-500" />
@@ -315,26 +315,26 @@ export default function WebsiteDevelopmentPage() {
       {/* ---------- HOSTING & DEVOPS ---------- */}
       <Section id="devops" className="bg-white">
         <Container>
-          <h2 className="text-2xl md:text-3xl font-semibold">Hosting & DevOps</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">What ships with every build</h2>
         </Container>
         <Container>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "Deployment",
-                desc: "Netlify/Vercel/Firebase with preview links for every change.",
+                title: "Launch workflow",
+                desc: "Structured deployment, review links, and rollback-safe processes so launches do not become operational chaos.",
                 icon: Rocket,
                 grad: "from-emerald-500 to-teal-400",
               },
               {
-                title: "Security",
-                desc: "HTTPS/SSL, headers, backups, and least-privilege access.",
+                title: "Security & reliability",
+                desc: "HTTPS, backups, guardrails, and dependable hosting foundations that protect the site as it scales.",
                 icon: ShieldCheck,
                 grad: "from-violet-500 to-fuchsia-400",
               },
               {
-                title: "Monitoring",
-                desc: "Uptime checks, error logs, analytics, and alerting.",
+                title: "Measurement",
+                desc: "Monitoring, analytics, event validation, and post-launch visibility into what users are actually doing.",
                 icon: Gauge,
                 grad: "from-amber-500 to-yellow-400",
               },
@@ -364,17 +364,17 @@ export default function WebsiteDevelopmentPage() {
         <Container>
           <div className="text-center rounded-3xl border border-black/10 bg-white p-8 md:p-10 shadow-sm">
             <h2 className="font-semibold" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Launch a site that loads fast and converts.
+              Launch a site that is easier to rank, easier to trust, and easier to convert from.
             </h2>
             <p className="mt-2 text-slate-700">
-              We’ll blueprint the structure, design the UI, wire the backend, and ship with analytics.
+              We’ll map the funnel, redesign the key journeys, connect the tracking, and ship a build your team can actually use.
             </p>
             <div className="mt-6">
               <Link
                 to="/onboarding"
                 className="inline-flex items-center justify-center rounded-2xl bg-black px-6 py-3.5 text-white hover:opacity-90"
               >
-                Let’s Build Your Website
+                Audit My Funnel
               </Link>
             </div>
           </div>
@@ -409,12 +409,12 @@ export default function WebsiteDevelopmentPage() {
    ========================= */
 function ProcessStepper() {
   const steps = [
-    { label: "Discover", desc: "Goals, users, pages, and success metrics." },
-    { label: "Blueprint", desc: "Sitemap, flows, and wireframes." },
-    { label: "Design", desc: "UI kit, components, and layouts." },
-    { label: "Build", desc: "Frontend + APIs + CMS integration." },
-    { label: "Optimize", desc: "SEO, performance, and QA fixes." },
-    { label: "Launch", desc: "Deploy, monitor, iterate." },
+    { label: "Audit", desc: "Current journeys, leaks, and conversion blockers." },
+    { label: "Map", desc: "Page structure, flows, and proof hierarchy." },
+    { label: "Design", desc: "Layouts and components built around action." },
+    { label: "Build", desc: "Pages, forms, integrations, and content workflows." },
+    { label: "Validate", desc: "Tracking, SEO, QA, and mobile experience checks." },
+    { label: "Launch", desc: "Deploy, monitor, and refine the next wins." },
   ];
 
   const [active, setActive] = useState(0);

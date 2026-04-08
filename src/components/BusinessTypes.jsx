@@ -1,51 +1,51 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  ShoppingCart,
-  Rocket,
-  Stethoscope,
-  Building2,
   GraduationCap,
-  Briefcase,
+  Rocket,
+  FileText,
+  Globe2,
+  MessageCircle,
+  Video,
   ArrowRight,
 } from "lucide-react";
 
 const items = [
   {
-    title: "D2C & E-commerce",
-    sub: "Full-funnel growth from awareness to retention.",
-    link: "/industries/d2c-ecommerce",
-    icon: ShoppingCart,
-  },
-  {
-    title: "SaaS & Tech Startups",
-    sub: "ROI-driven acquisition and activation at scale.",
-    link: "/industries/saas-startups",
-    icon: Rocket,
-  },
-  {
-    title: "Healthcare",
-    sub: "Patient education, trust, and compliant growth.",
-    link: "/industries/healthcare",
-    icon: Stethoscope,
-  },
-  {
-    title: "Local Services",
-    sub: "Be found nearby—calls, bookings, reviews.",
-    link: "/industries/local-services",
-    icon: Building2,
-  },
-  {
-    title: "EdTech",
-    sub: "Reach students & parents, build authority.",
+    title: "EdTech Growth",
+    sub: "Scale student demand, admissions pipeline, and revenue with sharper category positioning.",
     link: "/industries/edtech",
     icon: GraduationCap,
   },
   {
-    title: "B2B Services",
-    sub: "Pipeline, not vanity—qualified lead engines.",
-    link: "/industries/b2b-services",
-    icon: Briefcase,
+    title: "Paid Media",
+    sub: "Google, Meta, and YouTube programs built for accountable CAC and pipeline quality.",
+    link: "/services/paid-marketing",
+    icon: Rocket,
+  },
+  {
+    title: "SEO & Content",
+    sub: "Build search visibility and topical authority around high-intent education journeys.",
+    link: "/services/seo-content",
+    icon: FileText,
+  },
+  {
+    title: "Website & CRO",
+    sub: "Landing pages and web experiences designed to convert qualified demand into action.",
+    link: "/services/website-development",
+    icon: Globe2,
+  },
+  {
+    title: "Social & Community",
+    sub: "Thoughtful social systems that build trust with students, parents, and decision-makers.",
+    link: "/services/social-media-marketing",
+    icon: MessageCircle,
+  },
+  {
+    title: "Video & Ad Production",
+    sub: "Creative systems for reels, ad variations, founder videos, and performance edits at scale.",
+    link: "/services/video-ad-production",
+    icon: Video,
   },
 ];
 
@@ -56,11 +56,11 @@ export default function BusinessTypes() {
         {/* Centered heading & intro */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-dark">
-            Industries We Specialize In
+            Where We Create the Most Leverage
           </h2>
           <p className="mt-3 text-slate-700 text-base md:text-lg">
-            Six broad categories that cover most business models. Don’t see an
-            exact match? We’ll tailor the plan to your needs.
+            The main-domain experience now focuses on the capabilities and
+            category depth that matter most for EdTech growth.
           </p>
         </div>
 

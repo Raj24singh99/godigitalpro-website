@@ -32,13 +32,13 @@ const Container = ({ className = "", children }) => (
 
 /* ---------- Hero rotating words (only colored part changes) ---------- */
 const WORDS = [
-  { text: "Online Visibility", color: "text-indigo-600" },
-  { text: "Higher Enrollments", color: "text-emerald-600" },
-  { text: "Local SEO", color: "text-rose-600" },
-  { text: "Paid Ads", color: "text-amber-600" },
-  { text: "SEO", color: "text-fuchsia-600" },
-  { text: "Website Development", color: "text-sky-600" },
-  { text: "Brand Alignment", color: "text-violet-600" },
+  { text: "Student Demand", color: "text-indigo-600" },
+  { text: "Applications", color: "text-emerald-600" },
+  { text: "Show-Up Rates", color: "text-rose-600" },
+  { text: "Paid Media", color: "text-amber-600" },
+  { text: "SEO & Content", color: "text-fuchsia-600" },
+  { text: "Video & Creative Production", color: "text-sky-600" },
+  { text: "CRM Feedback Loops", color: "text-violet-600" },
 ];
 
 export default function EdTechPage() {
@@ -50,7 +50,7 @@ export default function EdTechPage() {
 
   const seoIntro = useMemo(
     () =>
-      "GoDigitalPro helps EdTech brands win trusted visibility and increase enrollments with Local SEO, SEO, Paid Ads, and conversion-focused websites—aligned to your programs, locations, and brand narrative. We build funnels, proof, and counselor workflows that turn interest into admissions.",
+      "GoDigitalPro helps EdTech brands improve demand quality and enrollment outcomes with AI-led analysis, paid media, SEO, social, websites, video production, and counselor-aware funnel systems.",
     []
   );
 
@@ -58,11 +58,11 @@ export default function EdTechPage() {
   const path = "/industries/edtech";
   const pageUrl = buildCanonical(path);
 
-  const title = "EdTech Marketing | Local SEO, SEO, Paid Ads & Admissions Funnels";
+  const title = "EdTech Marketing Agency | Paid Media, SEO, Funnels & AI-Led Growth";
   const desc =
-    "Stronger online visibility and higher enrollments for EdTech. Local SEO, SEO, Paid Ads, conversion-focused websites, and counselor workflows—aligned to your brand.";
+    "AI-led growth systems for EdTech: paid media, SEO, social, websites, video production, and admissions funnel optimization tied to applications, enrollments, and revenue.";
   const keywords =
-    "EdTech marketing, education marketing agency, local SEO for institutes, admissions funnels, counselor SLAs, education paid ads, EdTech SEO, GoDigitalPro";
+    "edtech marketing agency, education marketing agency, student enrollment marketing, admissions funnels, education paid ads, edtech seo, edtech video ads, GoDigitalPro";
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
@@ -107,7 +107,7 @@ export default function EdTechPage() {
             className="font-semibold leading-tight tracking-tight"
             style={{ fontSize: "clamp(2.1rem, 4.2vw, 3.6rem)" }}
           >
-            EdTech growth that turns searchers into students.
+            EdTech growth systems that turn demand into applications, enrollments, and revenue.
           </h1>
 
           {/* animated line — only colored part changes */}
@@ -132,7 +132,7 @@ export default function EdTechPage() {
               to="/onboarding"
               className="inline-flex items-center justify-center rounded-2xl bg-black px-6 py-3.5 text-white hover:opacity-90"
             >
-              Get Free EdTech Audit
+              Book EdTech Growth Audit
             </Link>
           </div>
         </Container>
@@ -145,20 +145,20 @@ export default function EdTechPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "Low online discoverability",
-                desc: "Programs don’t show for city + course queries; GMB is weak.",
+                title: "Low demand quality",
+                desc: "Lead volume exists, but too much of it is unqualified, late-stage, or difficult for admissions teams to close.",
                 icon: Search,
                 grad: "from-indigo-500 to-sky-400",
               },
               {
                 title: "High CPL. Low show-ups",
-                desc: "Clicks don’t convert to demo/class bookings or counselor calls.",
+                desc: "Campaigns generate forms, but intent drops fast between inquiry, callback, and application.",
                 icon: Gauge,
                 grad: "from-amber-500 to-yellow-400",
               },
               {
-                title: "Thin proof",
-                desc: "Outcomes, faculty, and curriculum clarity are buried or missing.",
+                title: "Weak trust architecture",
+                desc: "Outcomes, alumni proof, faculty credibility, and course clarity are not visible enough across the journey.",
                 icon: ClipboardCheck,
                 grad: "from-emerald-500 to-teal-400",
               },
@@ -176,20 +176,20 @@ export default function EdTechPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "Weak Local SEO",
-                desc: "No city pages, NAP inconsistency, and unoptimized GMB.",
+                title: "Generic positioning",
+                desc: "Messaging sounds broad, the offer is unclear, and campaigns do not separate serious intent from low-quality curiosity.",
                 icon: MapPin,
                 grad: "from-rose-500 to-orange-400",
               },
               {
-                title: "Generic ad structure",
-                desc: "Broad keywords, no outcomes hooks, and poor remarketing.",
+                title: "Disconnected media and creative",
+                desc: "Campaign structure, landing pages, and video assets are not learning from each other fast enough.",
                 icon: Megaphone,
                 grad: "from-violet-500 to-fuchsia-400",
               },
               {
                 title: "Leaky funnel & ops",
-                desc: "Form friction, no WhatsApp/call routing, poor counselor SLAs.",
+                desc: "Form friction, weak routing, poor counselor SLAs, and missing CRM feedback block scale.",
                 icon: PhoneCall,
                 grad: "from-slate-500 to-slate-400",
               },
@@ -207,41 +207,41 @@ export default function EdTechPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {[
               {
-                title: "Local SEO for campuses",
+                title: "Paid media with AI-led analysis",
                 points: [
-                  "Program + city pages with FAQs and outcomes.",
-                  "GMB optimization: categories, Q&A, reviews, photos.",
-                  "Citations and NAP cleanup.",
+                  "Search, Meta, and YouTube plans mapped to programs, geos, and buying stages.",
+                  "Lead quality and application-stage feedback pushed into weekly decisions.",
+                  "Budget pacing and creative testing that keep scale controlled.",
                 ],
                 icon: MapPin,
                 color: "bg-emerald-500",
               },
               {
-                title: "Paid search & social by intent",
+                title: "SEO & content systems",
                 points: [
-                  "Search: program + city; placements and outcomes keywords.",
-                  "Meta/YouTube remarketing with proof-first creatives.",
-                  "PMax with brand protection where needed.",
+                  "Program, category, and comparison pages designed around real search demand.",
+                  "Answer-first blogs, FAQs, and proof assets that compound discoverability.",
+                  "Technical SEO, schema, internal linking, and AI-search readiness.",
                 ],
                 icon: Megaphone,
                 color: "bg-blue-600",
               },
               {
-                title: "SEO + Content engine",
+                title: "Website & funnel design",
                 points: [
-                  "Topic hubs: syllabus, fees, placements, comparisons.",
-                  "Entity/schema, internal links, and fast fixes (CWV).",
-                  "Editorial calendar with briefs and review flow.",
+                  "Fast landing pages with clearer proof, CTA structure, and mobile UX.",
+                  "WhatsApp, call, and CRM handoffs matched to the admissions workflow.",
+                  "Conversion tracking across inquiry, application, show-up, and revenue signals.",
                 ],
                 icon: FileText,
                 color: "bg-rose-500",
               },
               {
-                title: "Conversion-focused website",
+                title: "Video & creative production",
                 points: [
-                  "Fast pages with clear CTAs and frictionless forms.",
-                  "WhatsApp + call tracking + counselor routing.",
-                  "Thank-you → nurture: email/SMS/WhatsApp sequences.",
+                  "Founder videos, student stories, ad edits, reels, and proof-led asset systems.",
+                  "Formats built for both organic content and paid testing cycles.",
+                  "Creative learnings fed back into ads, landing pages, and sales narratives.",
                 ],
                 icon: LayoutDashboard,
                 color: "bg-amber-500",
@@ -261,19 +261,19 @@ export default function EdTechPage() {
             {[
               {
                 title: "Proof first",
-                desc: "Outcomes, alumni, faculty, and syllabus clarity on page 1.",
+                desc: "Outcomes, alumni, faculty, placements, and curriculum clarity surfaced early in every journey.",
                 icon: GraduationCap,
                 grad: "from-sky-500 to-cyan-400",
               },
               {
-                title: "TOFU → BOFU",
-                desc: "Blogs & video explainers → demos, trials, open classes.",
+                title: "Full-funnel content",
+                desc: "Discovery content, proof-driven videos, and high-intent landing experiences working together.",
                 icon: BookOpen,
                 grad: "from-emerald-500 to-teal-400",
               },
               {
                 title: "Nurture ops",
-                desc: "CRM + WhatsApp + email with counselor SLAs & scripts.",
+                desc: "CRM, WhatsApp, email, and counselor scripts aligned to speed-to-contact and conversion quality.",
                 icon: MessageCircle,
                 grad: "from-indigo-500 to-violet-400",
               },
@@ -287,16 +287,16 @@ export default function EdTechPage() {
       {/* ---------- FUNNEL DESIGN (plain English) ---------- */}
       <Section id="funnel" className="bg-white">
         <Container>
-          <h2 className="text-2xl md:text-3xl font-semibold">Admissions funnel, end-to-end</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">Admissions funnel, end to end</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             <PlainList
               icon={MousePointerClick}
               badge="Acquisition"
               color="bg-blue-600"
               items={[
-                "Search (program + city), YouTube, Meta, and remarketing.",
-                "Local intent capture from GMB and city pages.",
-                "Offer hooks tied to outcomes and deadlines.",
+                "Search, Meta, YouTube, social, and retargeting planned by intent stage.",
+                "Hooks tied to outcomes, proof, deadlines, and urgency windows.",
+                "Creative and landing pages adapted by program and geography.",
               ]}
             />
             <PlainList
@@ -304,9 +304,9 @@ export default function EdTechPage() {
               badge="Conversion & Nurture"
               color="bg-emerald-500"
               items={[
-                "Fast forms, OTP, and WhatsApp ‘save my spot’.",
-                "Routing to counselors; SLA + scripts for follow-ups.",
-                "Email/SMS cadence: demo reminders, syllabus, fees, FAQs.",
+                "Fast forms, WhatsApp callbacks, and low-friction next-step CTAs.",
+                "Routing to counselors with SLA expectations and follow-up scripts.",
+                "Email and message sequences for demos, applications, fees, and FAQs.",
               ]}
             />
           </div>
@@ -320,20 +320,20 @@ export default function EdTechPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "Offline Conversions",
-                desc: "Push CRM outcomes back to Ads to optimize for enrollments, not just leads.",
+                title: "AI-led analysis",
+                desc: "Weekly decisions shaped by lead quality, application-stage movement, creative learnings, and channel-level data.",
                 icon: BarChart3,
                 grad: "from-amber-500 to-yellow-400",
               },
               {
                 title: "Guardrails",
-                desc: "Brand safety, spend pacing, query filters, and disapproved asset monitors.",
+                desc: "Brand safety, spend pacing, route-level tracking, and escalation points that prevent silent leakage.",
                 icon: ShieldCheck,
                 grad: "from-slate-500 to-slate-400",
               },
               {
                 title: "Scorecard",
-                desc: "CPC/CPA, demo rate, show-ups, counselor SLAs, and payback by program.",
+                desc: "CPL, application rate, show-ups, counselor SLAs, revenue signals, and payback by program or geo.",
                 icon: Gauge,
                 grad: "from-violet-500 to-fuchsia-400",
               },
@@ -355,14 +355,14 @@ export default function EdTechPage() {
               Let’s enroll more students—sustainably.
             </h2>
             <p className="mt-2 text-slate-700">
-              We’ll audit visibility, funnels, and nurture ops—then share a 90-day plan.
+              We’ll audit demand quality, media, funnels, and nurture ops, then share a sharper 90-day growth plan.
             </p>
             <div className="mt-6">
               <Link
                 to="/onboarding"
                 className="inline-flex items-center justify-center rounded-2xl bg-black px-6 py-3.5 text-white hover:opacity-90"
               >
-                Get Free EdTech Audit
+                Book EdTech Growth Audit
               </Link>
             </div>
           </div>
@@ -381,7 +381,7 @@ export default function EdTechPage() {
             serviceType: "Industry Marketing",
             areaServed: "Global",
             description:
-              "GoDigitalPro helps EdTech brands improve online visibility and increase enrollments with Local SEO, SEO, Paid Ads, and conversion-focused websites aligned to program and city intent.",
+              "GoDigitalPro helps EdTech brands improve demand quality and enrollment outcomes with paid media, SEO, websites, creative production, and admissions-aware growth systems.",
             offers: { "@type": "Offer", category: "Service" },
             audience: { "@type": "EducationalOrganization" }
           }),
@@ -455,12 +455,12 @@ function PlainList({ icon: Icon, badge, color, items }) {
    ========================= */
 function ProcessStepper() {
   const steps = [
-    { label: "Diagnose", desc: "Baseline: search, GMB, site, ads, and CRM ops." },
-    { label: "Prove", desc: "Surface outcomes, alumni, faculty, syllabus clarity." },
-    { label: "Build", desc: "Local SEO, SEO hubs, ad structure, and fast pages." },
-    { label: "Launch", desc: "Full-funnel with guardrails and city intent." },
-    { label: "Nurture", desc: "WhatsApp/email + counselor SLAs and scripts." },
-    { label: "Scale", desc: "Budget pacing, offline conv., and new geos." },
+    { label: "Diagnose", desc: "Baseline demand quality, site, media, and CRM ops." },
+    { label: "Clarify", desc: "Tighten positioning, proof, and offer hierarchy." },
+    { label: "Build", desc: "Launch pages, SEO, creative systems, and tracking." },
+    { label: "Launch", desc: "Run full-funnel campaigns with clear guardrails." },
+    { label: "Nurture", desc: "Align WhatsApp, email, and counselor follow-up." },
+    { label: "Scale", desc: "Grow winning programs, geos, and creative loops." },
   ];
 
   const [active, setActive] = useState(0);

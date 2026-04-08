@@ -14,21 +14,21 @@ const Container = ({ className = "", children }) => (
 
 /** Rotating hero words (only the colored word changes) */
 const WORDS = [
-  { text: "Messaging", color: "text-emerald-600" },
-  { text: "Ideal Customer Profile", color: "text-indigo-600" },
-  { text: "Videos & Brand Films", color: "text-rose-600" },
-  { text: "Visual Identity", color: "text-amber-600" },
+  { text: "Category Positioning", color: "text-emerald-600" },
+  { text: "Program Messaging", color: "text-indigo-600" },
+  { text: "Parent & Student Trust", color: "text-rose-600" },
+  { text: "Creative Systems", color: "text-amber-600" },
 ];
 
 const BRAND_FAQ = [
-  { question: "What do you need from us to start?", answer: "A decision-maker, a short briefing call, and quick feedback on drafts." },
-  { question: "How long does this take?", answer: "Most projects finish in 4–8 weeks depending on scope and assets." },
-  { question: "Do you refresh existing brands?", answer: "Yes. If your logo works, we refine and document; if not, we propose simple options." },
-  { question: "Can you work with our internal team?", answer: "Yes. We create guidelines and templates they can adopt right away." },
-  { question: "Do you handle video?", answer: "We script, storyboard, and edit. For shoots, we can work with your crew or ours." },
-  { question: "How do we keep it consistent later?", answer: "You get a compact brand guide and reusable templates so every asset matches." },
-  { question: "What happens after handover?", answer: "We can support roll-out, review new assets, and add formats when needed." },
-  { question: "Do you work with global teams?", answer: "Yes. We consider markets, languages, and channels during guidelines." },
+  { question: "What do you need from us to start?", answer: "A founder or business lead, access to existing assets, and honest context on your programs, audience, and sales motion." },
+  { question: "How long does this take?", answer: "Most positioning and messaging sprints take 3-6 weeks. Broader identity and rollout systems take longer depending on asset count." },
+  { question: "Do you work with existing brands?", answer: "Yes. We often sharpen an existing identity instead of replacing it, especially when the visual system already has recognition." },
+  { question: "Can you align this with admissions and paid media?", answer: "Yes. Our brand work is built to improve campaign clarity, landing page conversion, counselor conversations, and creative performance." },
+  { question: "Do you handle video and creative direction?", answer: "Yes. We script founder videos, student proof formats, ad concepts, and rollout templates that can be used by your internal or external production team." },
+  { question: "How do we keep it consistent later?", answer: "You get a practical message house, design rules, reusable templates, and rollout guidance so new pages and ads do not drift." },
+  { question: "Can this help a new campus, course, or product launch?", answer: "Yes. We can shape launch messaging, landing page narratives, and creative systems for new offers or geographies." },
+  { question: "Do you work with internal teams?", answer: "Yes. We frequently build systems that founders, admissions leaders, designers, and media buyers can all use without confusion." },
 ];
 
 export default function BrandBuildingPage() {
@@ -40,18 +40,18 @@ export default function BrandBuildingPage() {
 
   const seoIntro = useMemo(
     () =>
-      "GoDigitalPro builds clear brands: positioning, messaging, identity, and reusable creative. We define ICP, write a simple story, design an identity system, and create templates and video formats you can use across channels.",
+      "GoDigitalPro helps EdTech brands clarify positioning, sharpen program messaging, and build creative systems that improve trust across websites, ads, social media, and admissions conversations.",
     []
   );
 
   // ---- SEO constants (absolute URLs) ----
-  const path = "/services/branding";
+  const path = "/services/brand-building";
   const pageUrl = buildCanonical(path);
-  const title = "Brand Building Services | Positioning, Messaging, Identity";
+  const title = "Brand Positioning for EdTech | Messaging, Identity & Creative Systems";
   const desc =
-    "Positioning, messaging, visual identity, and reusable templates. Define your ICP, align your story, and ship consistent creative across channels.";
+    "EdTech brand positioning, program messaging, identity systems, and rollout templates that make your offer easier to trust across ads, websites, and admissions journeys.";
   const keywords =
-    "brand building, brand strategy, positioning, messaging, identity system, brand guidelines, ICP, video formats, templates, GoDigitalPro";
+    "edtech brand positioning, education brand strategy, program messaging, visual identity, creative systems, admissions messaging, GoDigitalPro";
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
@@ -62,7 +62,7 @@ export default function BrandBuildingPage() {
         keywords={keywords}
         schema={[
           serviceJsonLd({
-            name: "Brand Building",
+            name: "Brand Positioning for EdTech",
             description: desc,
             url: pageUrl,
           }),
@@ -71,7 +71,7 @@ export default function BrandBuildingPage() {
         breadcrumbs={[
           { name: "Home", url: buildCanonical("/") },
           { name: "Services", url: `${buildCanonical("/")}#services` },
-          { name: "Brand Building", url: pageUrl },
+          { name: "Brand Positioning", url: pageUrl },
         ]}
       />
 
@@ -98,8 +98,7 @@ export default function BrandBuildingPage() {
             className="font-semibold leading-tight tracking-tight"
             style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
-            Brand Building that is{" "}
-            <span className="whitespace-nowrap">clear, consistent,</span> and easy to use.
+            Brand positioning that makes your EdTech offer easier to trust and easier to scale.
           </h1>
 
           {/* bigger animated keyword line — only color word changes */}
@@ -124,7 +123,7 @@ export default function BrandBuildingPage() {
               to="/onboarding"
               className="inline-flex items-center justify-center rounded-2xl bg-black px-6 py-3.5 text-white hover:opacity-90"
             >
-              Build Your Brand
+              Clarify Your Positioning
             </Link>
           </div>
         </Container>
@@ -138,23 +137,23 @@ export default function BrandBuildingPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "Brand Strategy",
+                title: "Category Positioning",
                 line:
-                  "Ownable position, ICP, and a simple message house your team can use.",
+                  "Clarify who you are for, what makes your offer believable, and why your category story should win.",
                 icon: Target,
                 grad: "from-indigo-500 to-sky-400",
               },
               {
-                title: "Identity System",
+                title: "Message House",
                 line:
-                  "Logo, colors, type, and layout rules that stay consistent everywhere.",
+                  "Program messaging, proof hierarchy, objections, and narrative blocks your team can reuse everywhere.",
                 icon: Palette,
                 grad: "from-rose-500 to-orange-400",
               },
               {
-                title: "Repeatable Creative",
+                title: "Creative Rollout System",
                 line:
-                  "Templates + video formats (6s/15s/30s) to ship fast across channels.",
+                  "Identity, templates, and video/ad formats that keep launch assets consistent across web, paid, and social.",
                 icon: Layers,
                 grad: "from-emerald-500 to-teal-400",
               },
@@ -188,20 +187,20 @@ export default function BrandBuildingPage() {
           <div className="grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "Plain language",
-                line: "No jargon. Clear docs and assets your team can use on day one.",
+                title: "Category fluency",
+                line: "We shape the story around student outcomes, trust signals, and admissions objections, not generic branding jargon.",
                 icon: Sparkles,
                 grad: "from-violet-500 to-fuchsia-400",
               },
               {
-                title: "Cross-channel first",
-                line: "One look and voice across web, ads, sales, and support.",
+                title: "Performance-aware branding",
+                line: "The positioning is designed to make landing pages, creatives, and paid media easier to scale, not just prettier.",
                 icon: Megaphone,
                 grad: "from-amber-500 to-yellow-400",
               },
               {
-                title: "Built to scale",
-                line: "Governance and templates so every new asset stays on-brand.",
+                title: "Built for operating teams",
+                line: "Founders, admissions teams, designers, and media buyers all get a system they can actually use in day-to-day execution.",
                 icon: ShieldCheck,
                 grad: "from-emerald-500 to-lime-400",
               },
@@ -231,17 +230,17 @@ export default function BrandBuildingPage() {
         <Container>
           <div className="text-center rounded-3xl border border-black/10 bg-white p-8 md:p-10 shadow-sm">
             <h2 className="font-semibold" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Make your brand simple to use.
+              Build a brand system your growth team can actually use.
             </h2>
             <p className="mt-2 text-slate-700">
-              One story. One look. Templates you can ship with today.
+              Sharper positioning, clearer proof, and rollout-ready assets for websites, ads, social, and admissions.
             </p>
             <div className="mt-6">
               <Link
                 to="/onboarding"
                 className="inline-flex items-center justify-center rounded-2xl bg-black px-6 py-3.5 text-white hover:opacity-90"
               >
-                Build Your Brand
+                Clarify Your Positioning
               </Link>
             </div>
           </div>
@@ -276,12 +275,12 @@ export default function BrandBuildingPage() {
    ========================= */
 function ProcessStepper() {
   const steps = [
-    { label: "Discover", desc: "90-min workshop." },
-    { label: "Research", desc: "Category and competitors." },
-    { label: "Strategy", desc: "Positioning and message." },
-    { label: "Design", desc: "Identity and rules." },
-    { label: "Make", desc: "Templates & video." },
-    { label: "Launch", desc: "Roll-out and handover." },
+    { label: "Discover", desc: "Audience, programs, proof, and current narrative." },
+    { label: "Research", desc: "Category language, competitors, and objections." },
+    { label: "Position", desc: "Ownable story, audience fit, and value promise." },
+    { label: "Systemize", desc: "Message house, proof hierarchy, and design rules." },
+    { label: "Produce", desc: "Templates, ad concepts, and video directions." },
+    { label: "Roll out", desc: "Launch guidance for site, social, ads, and sales." },
   ];
 
   const [active, setActive] = useState(0);

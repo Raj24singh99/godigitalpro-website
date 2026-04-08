@@ -5,21 +5,21 @@ import { HeartHandshake, Eye, MessageCircle } from "lucide-react";
 const items = [
   {
     icon: MessageCircle,
-    title: "Strategy Before Spend",
+    title: "EdTech Depth Before Tactics",
     desc:
-      "We pressure-test audiences, offers, and channels so every marketing rupee or dollar is attached to a documented hypothesis.",
+      "We start with category nuance: programs, locations, admissions cycles, proof gaps, parent objections, and lead-quality realities before budget recommendations.",
   },
   {
     icon: Eye,
-    title: "Transparent Operating System",
+    title: "AI-Led Analysis, Human Decisions",
     desc:
-      "Dashboards, rituals, and docs make it impossible to lose track of experiments, budgets, or owners—no matter how many channels we run.",
+      "AI helps us spot patterns across search terms, creative fatigue, landing-page leaks, and CRM signals faster. Strategy and prioritization still stay accountable and human.",
   },
   {
     icon: HeartHandshake,
-    title: "Compounding Partnerships",
+    title: "Marketing Connected to Admissions",
     desc:
-      "We plug into your team like an in-house pod, stay accountable to outcomes, and keep levelling up across markets as you scale.",
+      "We connect paid, SEO, social, creative, tracking, and counselor feedback loops so your funnel improves as one system instead of six disconnected teams.",
   },
 ];
 
@@ -29,9 +29,9 @@ export default function TrustPillars() {
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* heading so the section doesn't get lost */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-dark">Why teams trust GoDigitalPro as their digital marketing agency</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-dark">Why EdTech teams trust GoDigitalPro</h2>
           <p className="mt-3 text-slate-700">
-            Straight talk, measurable outcomes, and a team that knows how every channel ladders up to revenue.
+            Category depth, transparent execution, and growth systems built around real enrollment outcomes.
           </p>
         </div>
 

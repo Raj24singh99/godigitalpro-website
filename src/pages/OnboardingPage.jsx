@@ -9,12 +9,12 @@ import { buildCanonical, contactPageJsonLd, organizationJsonLd } from "../utils/
  * Outcome-first choices (kept same data shape: `services`)
  * ───────────────────────────────────────────────────────── */
 const GOALS = [
-  { id: "increase_sales", label: "Increase online sales", icon: ShoppingCart },
-  { id: "improve_roas", label: "Improve ROAS / reduce CAC", icon: TrendingUp },
-  { id: "qualified_leads", label: "Get more qualified leads", icon: Users2 },
-  { id: "scale_ads", label: "Scale ads profitably", icon: BarChart3 },
-  { id: "new_launch", label: "Launch a new product/campaign", icon: Rocket },
-  { id: "bookings", label: "Increase calls/appointments", icon: Target },
+  { id: "qualified_leads", label: "Increase qualified student leads", icon: Users2 },
+  { id: "improve_roas", label: "Lower cost per application", icon: TrendingUp },
+  { id: "scale_ads", label: "Scale paid media profitably", icon: BarChart3 },
+  { id: "bookings", label: "Improve show-up or counselor conversion", icon: Target },
+  { id: "increase_sales", label: "Increase revenue from current programs", icon: ShoppingCart },
+  { id: "new_launch", label: "Launch a new campus, course, or cohort", icon: Rocket },
   { id: "other", label: "Other", icon: MoreHorizontal }, // ✅ new
 ];
 
@@ -31,11 +31,11 @@ export default function OnboardingPage() {
   // ---------- SEO ONLY ----------
   const pageSEO = {
     title:
-      "Get Your Tailored Growth Plan | Onboarding | GoDigitalPro — Digital Marketing Agency",
+      "Book an EdTech Growth Audit | GoDigitalPro",
     description:
-      "Tell us your goals (increase sales, better ROAS, more qualified leads). Get a tailored plan and action steps from GoDigitalPro within 24 hours.",
+      "Tell us where your admissions funnel is leaking. We’ll review your paid media, SEO, social, website, creative, and conversion system and come back with practical next steps.",
     url: buildCanonical("/onboarding"),
-    image: "https://www.godigitalpro.in/assets/godigitalpro-logo.jpg",
+    image: buildCanonical("/apple-touch-icon.png"),
   };
 
   const schemaBlocks = [
@@ -43,7 +43,7 @@ export default function OnboardingPage() {
     contactPageJsonLd({
       url: pageSEO.url,
       description:
-        "Onboarding form for brands to start a growth plan with GoDigitalPro — a digital marketing agency.",
+        "Onboarding form for education brands that want a growth diagnosis and action plan from GoDigitalPro.",
     }),
   ];
   // ---------- /SEO ONLY ----------
@@ -160,12 +160,10 @@ export default function OnboardingPage() {
       <main className="max-w-3xl mx-auto px-5 py-10">
         {/* ✅ New headline & description */}
         <h1 className="font-serif text-3xl md:text-4xl font-bold text-dark">
-          Every Brand Deserves a Smarter Growth Plan
+          Tell us where your growth funnel is leaking
         </h1>
         <p className="text-slate-700 mt-2">
-          Tell us what drives your business — we’ll translate your vision into a
-          focused, insight-led marketing strategy that builds visibility, trust,
-          and long-term impact.
+          Share your program, target cities, current channels, and the main bottlenecks. We’ll use that to frame a sharper EdTech growth plan across paid, SEO, social, website, and creative.
         </p>
 
         <form className={`${card} mt-6`} onSubmit={handleSubmit}>
@@ -261,7 +259,7 @@ export default function OnboardingPage() {
               Anything else we should know?
               <textarea
                 className={`${input} min-h-[110px]`}
-                placeholder="Traffic sources, monthly budget range, target cities, deadlines, competitors, etc."
+                placeholder="Target programs, monthly spend, application goals, counselor process, target cities, creative bottlenecks, deadlines, competitors, etc."
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
               />
@@ -276,7 +274,7 @@ export default function OnboardingPage() {
                 className="btn-primary inline-flex items-center gap-2"
                 disabled={sending}
               >
-                {sending ? "Sending..." : "Get my plan"}
+                {sending ? "Sending..." : "Get my EdTech growth plan"}
               </button>
             </div>
           </div>

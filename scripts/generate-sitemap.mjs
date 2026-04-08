@@ -2,14 +2,12 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { BLOG_TAXONOMY } from "../src/data/blogTaxonomy.js";
-import { TOOLS, COMPARISONS, TAGS } from "../src/data/tools.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT, "src", "content", "posts");
-const LOCATIONS_DIR = path.join(ROOT, "src", "pages", "locations");
 const PUBLIC_DIR = path.join(ROOT, "public");
-const SITE_URL = (process.env.SITE_URL || "https://www.godigitalpro.in").replace(/\/+$/, "");
+const SITE_URL = (process.env.SITE_URL || "https://godigitalpro.in").replace(/\/+$/, "");
 const TODAY_ISO = new Date().toISOString();
 
 const STATIC_ROUTES = [
@@ -18,41 +16,14 @@ const STATIC_ROUTES = [
   "/about_us",
   "/privacy-policy",
   "/blog",
-  "/learn",
-  "/learn/digital-products",
-  "/learn/masterclasses",
-  "/learn/courses",
-  "/learn/internship",
   "/services/website-development",
   "/services/social-media-marketing",
   "/services/brand-building",
   "/services/paid-marketing",
-  "/services/marketplaces",
+  "/services/video-ad-production",
   "/services/seo-content",
-  "/industries/d2c-ecommerce",
-  "/industries/saas-startups",
-  "/industries/healthcare",
-  "/industries/local-services",
   "/industries/edtech",
-  "/industries/b2b-services",
-  "/digital-marketing-agency-near-me",
-  "/best-digital-marketing-agency",
-  "/best-google-ads-agency",
-  "/best-digital-marketing-agency-for-startups",
 ];
-
-const DIGITAL_PRODUCT_ROUTES = [
-  "/digital-products/looker-studio-reporting-dashboard-checklist",
-  "/digital-products/linkedin-ads-launch-optimization-checklist",
-  "/digital-products/meta-ads-launch-optimization-checklist",
-  "/digital-products/tiktok-ads-launch-optimization-checklist",
-  "/digital-products/amazon-ads-launch-optimization-checklist",
-  "/digital-products/ga4-analytics-master-checklist",
-  "/digital-products/google-ads-launch-optimization-checklist",
-  "/digital-products/gtm-implementation-tracking-checklist",
-];
-
-const TOOL_STATIC_ROUTES = ["/tools"];
 
 function normalizePath(route) {
   if (!route.startsWith("/")) return `/${route}`;
@@ -84,18 +55,6 @@ function extractField(content, field) {
   const regex = new RegExp(`${field}\\s*:\\s*"([^"]+)"`, "i");
   const match = content.match(regex);
   return match ? match[1] : null;
-}
-
-async function collectLocations() {
-  try {
-    const entries = await fs.readdir(LOCATIONS_DIR, { withFileTypes: true });
-    return entries
-      .filter((e) => e.isFile() && e.name.endsWith(".jsx"))
-      .map((e) => e.name.replace(/\.jsx$/, ""))
-      .map((slug) => `/locations/${slug}`);
-  } catch {
-    return [];
-  }
 }
 
 async function collectPostMeta() {
@@ -136,14 +95,6 @@ async function generate() {
   };
 
   STATIC_ROUTES.forEach((route) => addUrl(route, TODAY_ISO));
-  DIGITAL_PRODUCT_ROUTES.forEach((route) => addUrl(route, TODAY_ISO));
-  TOOL_STATIC_ROUTES.forEach((route) => addUrl(route, TODAY_ISO));
-  TOOLS.forEach((tool) => addUrl(`/tools/${tool.slug}`, TODAY_ISO));
-  TAGS.forEach((tag) => addUrl(`/tools/${encodeURIComponent(tag)}`, TODAY_ISO));
-  COMPARISONS.forEach((comp) => addUrl(`/tools/compare/${comp.slug}`, TODAY_ISO));
-
-  const locationRoutes = await collectLocations();
-  locationRoutes.forEach((route) => addUrl(route, TODAY_ISO));
 
   const posts = await collectPostMeta();
 

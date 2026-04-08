@@ -29,22 +29,21 @@ const Container = ({ className = "", children }) => (
 
 /** Platforms shown in hero (brand color only) */
 const PLATFORMS = [
-  { name: "Google Ads", color: "#4285F4" },
+  { name: "Google Search", color: "#4285F4" },
   { name: "Meta Ads", color: "#0866FF" },
-  { name: "LinkedIn Ads", color: "#0A66C2" },
-  { name: "Snapchat Ads", color: "#FFB800" },
-  { name: "X Ads", color: "#000000" },
   { name: "YouTube Ads", color: "#FF0000" },
-  { name: "Programmatic", color: "#22C55E" },
+  { name: "Remarketing", color: "#FFB800" },
+  { name: "Creative Testing", color: "#000000" },
+  { name: "Offline Conversion Loops", color: "#22C55E" },
 ];
 
 const FAQ_ITEMS = [
-  { question: "Do you take over existing ad accounts?", answer: "Yes. We start with a read-only audit, then propose a phased clean-up to avoid learning loss." },
-  { question: "Can you work with our creative team?", answer: "Absolutely. We hand over hooks, briefs, and winning patterns so they ship faster." },
-  { question: "How fast can results come?", answer: "Expect quick wins in week 1–2 from structure and tracking fixes; compounding gains with creative cycles." },
-  { question: "Do you support offline sales?", answer: "Yes. We push CRM outcomes back to platforms so bidding learns from revenue, not just leads." },
-  { question: "What does reporting look like?", answer: "One dashboard across platforms with weekly actions, tests, and pacing summary." },
-  { question: "Do you handle budgets across countries?", answer: "Yes. Multi-geo portfolios with currency normalization and regional guardrails." },
+  { question: "Do you take over existing ad accounts?", answer: "Yes. We usually start with a read-only audit, identify waste and broken tracking, then clean the account without losing useful historical learnings." },
+  { question: "Can you work with our creative or admissions team?", answer: "Yes. We translate campaign learnings into new hooks, landing page inputs, and follow-up guidance for your content and admissions teams." },
+  { question: "How fast can results come?", answer: "Tracking and structure fixes can improve efficiency quickly. Stronger lead quality and enrollment outcomes usually improve over several testing cycles." },
+  { question: "Do you optimize for enrollments and revenue, not just leads?", answer: "Yes. We use CRM feedback, offline conversions, counselor outcomes, and application-stage reporting wherever the stack allows it." },
+  { question: "What does reporting look like?", answer: "A weekly scorecard across spend, lead quality, applications, show-up rates, pacing, and the actions we are taking next." },
+  { question: "Can you handle multiple campuses, geos, or programs?", answer: "Yes. We build geo and program-level views so budgets and creative decisions can be made with more control." },
 ];
 
 export default function PaidMarketingPage() {
@@ -56,7 +55,7 @@ export default function PaidMarketingPage() {
 
   const seoIntro = useMemo(
     () =>
-      "GoDigitalPro runs ROI-first paid marketing across Google, Meta, LinkedIn, YouTube, X, Snapchat, and Programmatic: full-funnel strategy, creative testing, budget/bid automation, and end-to-end measurement with GA4, CAPI, and offline conversions from CRM.",
+      "GoDigitalPro runs paid media for EdTech brands across Google, Meta, and YouTube with AI-led analysis, creative testing, budget controls, and CRM-linked measurement built around lead quality, applications, and enrollments.",
     []
   );
 
@@ -64,17 +63,17 @@ export default function PaidMarketingPage() {
   const path = "/services/paid-marketing";
   const pageUrl = buildCanonical(path);
 
-  const title = "Best Google Ads Agency for Full-Funnel Paid Marketing | GoDigitalPro";
+  const title = "Paid Media for EdTech | Google, Meta, YouTube & Enrollment Growth";
   const desc =
-    "ROI-first Google Ads and paid media management across Search, PMax, YouTube, Meta, and LinkedIn with strict tracking, budget controls, and full-funnel optimization.";
+    "Paid media management for EdTech across Google, Meta, and YouTube with strong tracking, creative testing, budget controls, and CRM feedback loops tied to applications and enrollments.";
   const keywords =
-    "best google ads agency, google ads agency, ppc agency, performance marketing agency, google ads management, pmax agency, paid media agency";
+    "edtech paid media agency, education google ads agency, student enrollment ads, meta ads for education, youtube ads for edtech, paid media for institutes";
 
   const schemaBlocks = useMemo(
     () =>
       [
         serviceJsonLd({
-          name: "Paid Marketing Services",
+          name: "Paid Media for EdTech",
           description: desc,
           url: pageUrl,
         }),
@@ -94,7 +93,7 @@ export default function PaidMarketingPage() {
         breadcrumbs={[
           { name: "Home", url: buildCanonical("/") },
           { name: "Services", url: `${buildCanonical("/")}#services` },
-          { name: "Paid Marketing", url: pageUrl },
+          { name: "Paid Media", url: pageUrl },
         ]}
       />
 
@@ -120,7 +119,7 @@ export default function PaidMarketingPage() {
             className="font-semibold leading-tight tracking-tight"
             style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
-            Paid Marketing that compounds ROI.
+            Paid media for EdTech that improves lead quality, applications, and enrollments.
           </h1>
 
           {/* Animated platform line (only text changes color) */}
@@ -143,7 +142,7 @@ export default function PaidMarketingPage() {
               to="/onboarding"
               className="inline-flex items-center justify-center rounded-2xl bg-black px-6 py-3.5 text-white hover:opacity-90"
             >
-              Get Free Audit
+              Get Free Paid Media Audit
             </Link>
           </div>
         </Container>
@@ -158,38 +157,38 @@ export default function PaidMarketingPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "Full-funnel strategy",
-                desc: "From discovery to demand capture with clear stage KPIs.",
+                title: "Intent capture",
+                desc: "Program, city, and branded search campaigns built to turn active demand into qualified inquiries.",
                 icon: LayoutDashboard,
                 grad: "from-indigo-500 to-sky-400",
               },
               {
-                title: "Creative system",
-                desc: "Thumb-stopper hooks, angles, and systematic A/B testing.",
+                title: "Creative testing",
+                desc: "Hook libraries, ad variants, landing page angles, and weekly learnings that keep performance moving.",
                 icon: Megaphone,
                 grad: "from-rose-500 to-orange-400",
               },
               {
                 title: "Measurement & CRM",
-                desc: "GA4, CAPI, offline conversions, lead quality and LTV loops.",
+                desc: "GA4, CAPI, offline conversions, counselor feedback, and lead quality loops tied to actual outcomes.",
                 icon: ServerCog,
                 grad: "from-emerald-500 to-teal-400",
               },
               {
-                title: "Budget & bids",
-                desc: "Portfolio budgets, pacing guardrails, and bid automations.",
+                title: "Budget pacing",
+                desc: "Portfolio views, bid guardrails, and spend pacing across programs, campuses, and seasons.",
                 icon: Gauge,
                 grad: "from-violet-500 to-fuchsia-400",
               },
               {
                 title: "Experiment engine",
-                desc: "Rapid tests on audiences, creatives, placements, and offers.",
+                desc: "Rapid tests on audiences, offers, creatives, form journeys, and retargeting windows.",
                 icon: Zap,
                 grad: "from-amber-500 to-yellow-400",
               },
               {
-                title: "Brand safety",
-                desc: "Exclusions, inventory filters, and compliance workflows.",
+                title: "Admissions alignment",
+                desc: "Campaigns tied back to counselor workflows, application stages, and actual sales reality.",
                 icon: ShieldCheck,
                 grad: "from-slate-500 to-slate-400",
               },
@@ -216,7 +215,7 @@ export default function PaidMarketingPage() {
       <Section id="google" className="bg-primary/5">
         <Container>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <h2 className="text-2xl md:text-3xl font-semibold">Google Ads: Search · Shopping · PMax · YouTube</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">Google Ads: Search · Demand Capture · YouTube</h2>
             <span className="text-sm font-semibold rounded-md px-2 py-1" style={{ color: "#4285F4", backgroundColor: "#4285F422", border: "1px solid #4285F455" }}>
               Google Ads
             </span>
@@ -227,36 +226,36 @@ export default function PaidMarketingPage() {
               {
                 title: "Search structure",
                 points: [
-                  "Intent buckets by match type & theme",
-                  "RSA with 8–12 solid assets",
-                  "Negatives & query sculpting",
+                  "Program, city, and outcome-based keyword themes",
+                  "Brand protection and high-intent non-brand separation",
+                  "Query mining, negative lists, and landing page fit",
                 ],
                 icon: Search,
               },
               {
-                title: "Shopping & feeds",
+                title: "Lead capture journeys",
                 points: [
-                  "Feed rules: titles, GTIN/brand, custom labels",
-                  "Image policy hygiene",
-                  "Price & availability sync",
+                  "Fast forms, WhatsApp callbacks, and counselor routing",
+                  "Offer-level pages mapped to campaign intent",
+                  "Application, brochure, and call intent tracked separately",
                 ],
                 icon: ShoppingCart,
               },
               {
-                title: "Performance Max",
+                title: "Remarketing & nurture",
                 points: [
-                  "Asset-group by audience signal",
-                  "Brand keyword exclusions where needed",
-                  "Search term insights → negatives",
+                  "RLSA, display, and YouTube remarketing for warm audiences",
+                  "Stage-based messaging for inquiry, application, and open house pushes",
+                  "Audience exclusions to keep learning clean",
                 ],
                 icon: Rocket,
               },
               {
                 title: "YouTube for action",
                 points: [
-                  "Hook-Story-Offer 6s/15s/30s variants",
-                  "Topic/keyword layering with CPV/CPA goals",
-                  "View-through + engaged-view attribution",
+                  "6s, 15s, and 30s variants for awareness, proof, and response",
+                  "Remarketing, custom intent, and contextual placements",
+                  "View-through, engaged-view, and assisted conversion tracking",
                 ],
                 icon: PlayCircle,
               },
@@ -286,7 +285,7 @@ export default function PaidMarketingPage() {
       <Section id="meta" className="bg-white">
         <Container>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <h2 className="text-2xl md:text-3xl font-semibold">Meta Ads: Prospecting · Retargeting · Advantage+</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">Meta Ads: Prospecting · Retargeting · Lead Gen</h2>
             <span className="text-sm font-semibold rounded-md px-2 py-1" style={{ color: "#0866FF", backgroundColor: "#0866FF22", border: "1px solid #0866FF55" }}>
               Meta Ads
             </span>
@@ -297,36 +296,36 @@ export default function PaidMarketingPage() {
               {
                 title: "Account & audiences",
                 points: [
-                  "Simple structure (ABO/CBO by objective)",
-                  "Advantage+ where it wins; exclusions for clean tests",
-                  "1st-party lists, broad, and interest stacks",
+                  "Broad, lookalike, and first-party segments built around student and parent demand",
+                  "Clear exclusions so prospecting and retargeting do not compete",
+                  "Objective choices tied to form quality and downstream action",
                 ],
                 icon: Users,
               },
               {
                 title: "Creative & formats",
                 points: [
-                  "Hook first 1s; motion headline; CTA clarity",
-                  "Square/vertical variants; catalogs where relevant",
-                  "Iterate angles from comments & queries",
+                  "Founder videos, student proof, reels, statics, and testimonial edits",
+                  "Vertical and feed variants built from one creative system",
+                  "Weekly angle refreshes from call notes, comments, and query themes",
                 ],
                 icon: Megaphone,
               },
               {
                 title: "Measurement",
                 points: [
-                  "CAPI with deduplication",
-                  "Offline conversions & lead quality scoring",
-                  "Geo-lift / holdout when scale permits",
+                  "CAPI with deduplication and clean event mapping",
+                  "Offline conversions, lead quality scoring, and application-stage visibility",
+                  "Geo or program-level comparisons when scale allows",
                 ],
                 icon: BarChart3,
               },
               {
                 title: "Guardrails",
                 points: [
-                  "Frequency caps & creative fatigue alerts",
-                  "Brand safety & placement filters",
-                  "Daily pacing & spend deviation alerts",
+                  "Frequency caps and creative fatigue alerts",
+                  "Placement controls and spend guardrails",
+                  "Daily pacing alerts across programs and geographies",
                 ],
                 icon: ClipboardCheck,
               },
@@ -360,37 +359,37 @@ export default function PaidMarketingPage() {
             {[
               {
                 title: "Tracking & attribution",
-                desc: "GA4, CAPI, enhanced conversions; UTM hygiene and cross-device logic.",
+                desc: "GA4, CAPI, enhanced conversions, UTM hygiene, and cleaner attribution across the inquiry-to-enrollment journey.",
                 icon: ServerCog,
                 grad: "from-sky-500 to-cyan-400",
               },
               {
                 title: "Offline conversions",
-                desc: "CRM → Ads (GCLID/FBCLID) with lead outcomes to optimize for quality.",
+                desc: "CRM back into ad platforms so bidding can learn from applications, show-ups, and enrollments instead of raw leads.",
                 icon: ClipboardCheck,
                 grad: "from-emerald-500 to-teal-400",
               },
               {
                 title: "Budget pacing",
-                desc: "Portfolio rules; alerts for over/under; day-parting and seasonality.",
+                desc: "Portfolio rules, seasonality planning, and alerts for over-spend, under-spend, and missed opportunities.",
                 icon: Gauge,
                 grad: "from-amber-500 to-yellow-400",
               },
               {
-                title: "Audiences & LTV",
-                desc: "SQL/Sheets → segment sync for LTV tiers, churn risk, and win-backs.",
+                title: "Audience quality",
+                desc: "Segment syncs and quality layers that separate high-intent programs, geos, and audience bands.",
                 icon: Users,
                 grad: "from-violet-500 to-fuchsia-400",
               },
               {
                 title: "Dashboards",
-                desc: "Blended view by funnel stage: CPC, CTR, CVR, CPA, ROAS, and Payback.",
+                desc: "Blended views across spend, CPL, application rate, counselor conversion, and revenue signals.",
                 icon: LayoutDashboard,
                 grad: "from-indigo-500 to-blue-500",
               },
               {
                 title: "Safety & compliance",
-                desc: "Brand safety, exclusions, disapproved asset monitors, and fixes.",
+                desc: "Policy reviews, exclusions, disapproved asset monitoring, and escalation paths for critical issues.",
                 icon: ShieldCheck,
                 grad: "from-slate-500 to-slate-400",
               },
@@ -420,17 +419,17 @@ export default function PaidMarketingPage() {
         <Container>
           <div className="text-center rounded-3xl border border-black/10 bg-white p-8 md:p-10 shadow-sm">
             <h2 className="font-semibold" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Ready to scale efficient growth?
+              Ready to make paid media accountable to enrollments?
             </h2>
             <p className="mt-2 text-slate-700">
-              We’ll audit structure, creative, tracking, and pacing—then build a plan you can run this week.
+              We’ll audit structure, creative, tracking, and CRM visibility, then show you where scale is actually being lost.
             </p>
             <div className="mt-6">
               <Link
                 to="/onboarding"
                 className="inline-flex items-center justify-center rounded-2xl bg-black px-6 py-3.5 text-white hover:opacity-90"
               >
-                Get Free Audit
+                Get Free Paid Media Audit
               </Link>
             </div>
           </div>
@@ -465,12 +464,12 @@ export default function PaidMarketingPage() {
    ========================= */
 function ProcessStepper() {
   const steps = [
-    { label: "Audit", desc: "Structure, tracking, and creative gaps." },
-    { label: "Setup", desc: "Clean account + measurement foundation." },
-    { label: "Launch", desc: "Full-funnel with budget guardrails." },
-    { label: "Learn", desc: "Daily insights; weekly experiments." },
-    { label: "Scale", desc: "Winning audiences and creatives to more geos." },
-    { label: "Govern", desc: "Dashboards, pacing, and safety rules." },
+    { label: "Audit", desc: "Structure, intent coverage, and tracking gaps." },
+    { label: "Fix", desc: "Clean measurement, routing, and account hygiene." },
+    { label: "Launch", desc: "Search, Meta, and YouTube plans with guardrails." },
+    { label: "Learn", desc: "Creative, query, and audience insights every week." },
+    { label: "Scale", desc: "Double down by geo, program, and winning offer." },
+    { label: "Report", desc: "Dashboards tied back to quality and enrollment signals." },
   ];
 
   const [active, setActive] = useState(0);

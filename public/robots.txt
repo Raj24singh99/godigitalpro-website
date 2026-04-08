@@ -16,5 +16,5 @@ User-agent: Twitterbot
 User-agent: FacebookExternalHit
 Allow: /
 
-Host: https://www.godigitalpro.in
-Sitemap: https://www.godigitalpro.in/sitemap.xml
+Host: https://godigitalpro.in
+Sitemap: https://godigitalpro.in/sitemap.xml

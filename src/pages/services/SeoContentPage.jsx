@@ -24,20 +24,20 @@ const Container = ({ className = "", children }) => (
 
 /** Rotating topics in hero (only the colored part changes) */
 const WORDS = [
-  { text: "Technical SEO", color: "text-indigo-600" },
-  { text: "Keyword Research", color: "text-emerald-600" },
-  { text: "Blog Writing", color: "text-rose-600" },
-  { text: "Link Building", color: "text-amber-600" },
-  { text: "Entity / Schema SEO", color: "text-fuchsia-600" },
-  { text: "Local SEO", color: "text-sky-600" },
+  { text: "Program Pages", color: "text-indigo-600" },
+  { text: "High-Intent Course Keywords", color: "text-emerald-600" },
+  { text: "Student Question Content", color: "text-rose-600" },
+  { text: "Authority Building", color: "text-amber-600" },
+  { text: "AI Search Visibility", color: "text-fuchsia-600" },
+  { text: "Schema & Technical SEO", color: "text-sky-600" },
 ];
 
 const SEO_FAQ = [
-  { question: "How long does SEO take?", answer: "Early gains often show in 4–8 weeks; durable growth compounds over months as content and links build." },
-  { question: "Do you write content?", answer: "Yes. We create briefs and write pages/blogs with clear structure, schema, and internal links." },
-  { question: "Will you fix technical issues?", answer: "Yes. We audit, prioritize, and implement fixes for speed, crawling, indexing, and structured data." },
-  { question: "Do you support Local SEO?", answer: "Yes. GBP optimization, NAP consistency, local pages, and review strategy." },
-  { question: "How do you report progress?", answer: "Shared dashboards with keywords, pages, impressions, clicks, traffic, and next steps." },
+  { question: "How long does SEO take for EdTech?", answer: "Technical fixes and on-page updates can help early, but compounding gains usually come from sustained publishing, stronger proof, and authority over several months." },
+  { question: "Do you write the content?", answer: "Yes. We create briefs and write program pages, blogs, comparison pages, FAQs, and answer-first content mapped to search intent." },
+  { question: "Will you fix technical issues?", answer: "Yes. We audit and implement fixes for indexation, crawlability, performance, schema, canonicals, and route-level metadata." },
+  { question: "Can SEO support new campuses or course launches?", answer: "Yes. We can build launch pages, location intent content, and supporting authority assets around new programs or geographies." },
+  { question: "How do you report progress?", answer: "Shared dashboards across rankings, indexed pages, traffic, qualified leads, assisted conversions, and the actions planned next." },
 ];
 
 export default function SeoContentPage() {
@@ -49,7 +49,7 @@ export default function SeoContentPage() {
 
   const seoIntro = useMemo(
     () =>
-      "GoDigitalPro delivers full-stack SEO: technical audits and fixes, on-page structure, topic clusters, content creation, authority building, and measurement with GA4 & Search Console. We also optimize for AI-driven results with entity/schema and answer-first content.",
+      "GoDigitalPro delivers SEO and content systems for EdTech brands: technical fixes, program and category pages, topic clusters, authority building, and AI-search-ready content tied to qualified demand and applications.",
     []
   );
 
@@ -57,11 +57,11 @@ export default function SeoContentPage() {
   const path = "/services/seo-content";
   const pageUrl = buildCanonical(path);
 
-  const title = "SEO & Content | Technical SEO, Topic Clusters, Links & GEO";
+  const title = "SEO & Content for EdTech | Technical SEO, Authority & AI Search";
   const desc =
-    "Full-stack SEO: technical fixes, on-page structure, topic clusters, helpful content, digital PR, and GA4/GSC measurement. Includes Generative Search Optimization (GEO).";
+    "SEO and content systems for EdTech: technical fixes, program and category pages, authority-building content, digital PR, and AI-search optimization tied to demand and applications.";
   const keywords =
-    "SEO agency, technical SEO, topic clusters, schema, entity SEO, link building, content writing, GA4, Search Console, Local SEO, GEO, AI Overviews";
+    "edtech seo agency, education seo, program page seo, ai search optimization, technical seo for education websites, education content marketing, GoDigitalPro";
 
   return (
     <main className="bg-gradient-to-b from-white to-slate-50 text-slate-900">
@@ -72,7 +72,7 @@ export default function SeoContentPage() {
         keywords={keywords}
         schema={[
           serviceJsonLd({
-            name: "SEO & Content",
+            name: "SEO & Content for EdTech",
             description: desc,
             url: pageUrl,
           }),
@@ -107,7 +107,7 @@ export default function SeoContentPage() {
             className="font-semibold leading-tight tracking-tight"
             style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
-            SEO & Content that compounds organic growth.
+            SEO and content for EdTech that compounds discoverability, trust, and demand.
           </h1>
 
           {/* Animated line — only colored text changes */}
@@ -145,38 +145,38 @@ export default function SeoContentPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "Site Structure",
-                desc: "Logical IA, indexable routes, and clean internal links.",
+                title: "Search architecture",
+                desc: "Clear information architecture, indexable routes, and stronger internal linking around programs and buying journeys.",
                 icon: Network,
                 grad: "from-indigo-500 to-sky-400",
               },
               {
-                title: "Topic Clusters",
-                desc: "Research, briefs, and pillar-cluster mapping for depth.",
+                title: "Topic clusters",
+                desc: "Research-led clusters built around course queries, student questions, comparisons, and intent depth.",
                 icon: BookOpen,
                 grad: "from-emerald-500 to-teal-400",
               },
               {
-                title: "Content Writing",
-                desc: "Clear, helpful, answer-first blogs and pages.",
+                title: "Content writing",
+                desc: "Program pages, blogs, FAQs, and proof-led content written to answer real buying questions.",
                 icon: FileText,
                 grad: "from-rose-500 to-orange-400",
               },
               {
-                title: "Authority Building",
-                desc: "Digital PR, mentions, and quality links that stick.",
+                title: "Authority building",
+                desc: "Digital PR, citations, expert-led assets, and trust signals that strengthen category authority.",
                 icon: Link2,
                 grad: "from-amber-500 to-yellow-400",
               },
               {
-                title: "Technical Fixes",
-                desc: "CWV, crawl budget, redirects, canonicals, schema.",
+                title: "Technical fixes",
+                desc: "CWV, crawlability, indexation, redirects, canonicals, schema, and metadata that search engines can understand.",
                 icon: ServerCog,
                 grad: "from-violet-500 to-fuchsia-400",
               },
               {
                 title: "Measurement",
-                desc: "GA4 + GSC workflows for insights and next actions.",
+                desc: "GA4 and Search Console workflows tied to qualified visits, lead signals, and the next execution priorities.",
                 icon: BarChart3,
                 grad: "from-slate-500 to-slate-400",
               },
@@ -202,7 +202,7 @@ export default function SeoContentPage() {
       {/* ---------- THE THREE PILLARS ---------- */}
       <Section id="pillars" className="bg-primary/5">
         <Container>
-          <h2 className="text-2xl md:text-3xl font-semibold">The three parts of SEO</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">The three layers of EdTech SEO</h2>
 
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {/* On-Page */}
@@ -211,13 +211,13 @@ export default function SeoContentPage() {
                 <span className="inline-flex rounded-xl bg-emerald-500/90 p-2 text-white">
                   <Search className="size-5" />
                 </span>
-                <h3 className="font-semibold">On-Page SEO</h3>
+                <h3 className="font-semibold">Intent & content</h3>
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 {[
-                  "Titles, meta, headers, and readable HTML.",
-                  "Answer-first sections and clear CTAs.",
-                  "Internal links that pass context and equity.",
+                  "Program, city, and comparison pages that match how students search.",
+                  "Answer-first sections with proof, outcomes, and clear next steps.",
+                  "Internal links that connect category learning to conversion pages.",
                 ].map((p) => (
                   <li key={p} className="flex items-start gap-2">
                     <span className="mt-1 size-1.5 rounded-full bg-emerald-500" />
@@ -233,13 +233,13 @@ export default function SeoContentPage() {
                 <span className="inline-flex rounded-xl bg-amber-500/90 p-2 text-white">
                   <Link2 className="size-5" />
                 </span>
-                <h3 className="font-semibold">Off-Page SEO</h3>
+                <h3 className="font-semibold">Authority & proof</h3>
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 {[
-                  "Digital PR and editorial mentions.",
-                  "Topical backlinks and unlinked brand mentions.",
-                  "E-E-A-T signals and author profiles.",
+                  "Editorial mentions, partnerships, and citations that reinforce brand credibility.",
+                  "Topical backlinks and unlinked mentions around program categories.",
+                  "E-E-A-T signals, author context, and proof-rich source content.",
                 ].map((p) => (
                   <li key={p} className="flex items-start gap-2">
                     <span className="mt-1 size-1.5 rounded-full bg-amber-500" />
@@ -255,13 +255,13 @@ export default function SeoContentPage() {
                 <span className="inline-flex rounded-xl bg-indigo-500/90 p-2 text-white">
                   <ServerCog className="size-5" />
                 </span>
-                <h3 className="font-semibold">Technical SEO</h3>
+                <h3 className="font-semibold">Technical & AI visibility</h3>
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 {[
-                  "Core Web Vitals and image optimization.",
-                  "Sitemaps, robots, canonicals, and redirects.",
-                  "Schema (FAQ, HowTo, Product, Article, Local).",
+                  "Core Web Vitals, mobile UX, and image optimization.",
+                  "Sitemaps, robots, canonicals, redirects, and clean route rendering.",
+                  "Schema and entity clarity for classic search and AI-driven answer surfaces.",
                 ].map((p) => (
                   <li key={p} className="flex items-start gap-2">
                     <span className="mt-1 size-1.5 rounded-full bg-indigo-500" />
@@ -278,9 +278,9 @@ export default function SeoContentPage() {
       <Section id="ai-seo" className="bg-white">
         <Container>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <h2 className="text-2xl md:text-3xl font-semibold">Generative Search Optimization (GEO)</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">AI search visibility</h2>
             <span className="text-sm font-semibold rounded-md px-2 py-1 bg-slate-100 text-slate-700 border border-black/10">
-              AI Overviews · Bing · Other AI surfaces
+              AI Overviews · Bing · Answer engines
             </span>
           </div>
 
@@ -295,10 +295,10 @@ export default function SeoContentPage() {
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 {[
-                  "Answer-first summaries with citations and sources.",
-                  "Entity-rich content and schema to clarify context.",
-                  "FAQ/HowTo schemas for task-oriented queries.",
-                  "Freshness cadence: keep high-intent pages updated.",
+                  "Answer-first sections built around real student and parent questions.",
+                  "Entity-rich content and schema that clarify your category, programs, and proof.",
+                  "FAQ and explainer structures that are easy for search systems to extract.",
+                  "Freshness cycles that keep high-intent pages current and defensible.",
                 ].map((p) => (
                   <li key={p} className="flex items-start gap-2">
                     <span className="mt-1 size-1.5 rounded-full bg-fuchsia-500" />
@@ -317,9 +317,9 @@ export default function SeoContentPage() {
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 {[
-                  "Query spaces with AI summary boxes (navigational + informational).",
-                  "Local and comparison queries needing quick clarity.",
-                  "Complex ‘how-to’ and product choice content.",
+                  "Category, comparison, and eligibility queries where users want fast clarity.",
+                  "Research-heavy journeys where proof, fees, outcomes, and process matter.",
+                  "Complex course-selection and admissions queries with many sub-questions.",
                 ].map((p) => (
                   <li key={p} className="flex items-start gap-2">
                     <span className="mt-1 size-1.5 rounded-full bg-sky-500" />
@@ -340,10 +340,10 @@ export default function SeoContentPage() {
         <Container>
           <div className="text-center rounded-3xl border border-black/10 bg-white p-8 md:p-10 shadow-sm">
             <h2 className="font-semibold" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Want compounding organic traffic?
+              Want stronger organic demand from the right EdTech searches?
             </h2>
             <p className="mt-2 text-slate-700">
-              We’ll audit technical health, content, and authority—then share a 90-day plan.
+              We’ll audit technical health, search intent coverage, content depth, and authority, then map the fastest path to better visibility.
             </p>
             <div className="mt-6">
               <Link
@@ -385,12 +385,12 @@ export default function SeoContentPage() {
    ========================= */
 function ProcessStepper() {
   const steps = [
-    { label: "Discover", desc: "Goals, competitors, and current baseline." },
-    { label: "Audit", desc: "Technical health, content depth, and authority." },
-    { label: "Plan", desc: "Topic clusters, briefs, and fix roadmap." },
-    { label: "Build", desc: "Implement fixes; publish pages and hubs." },
-    { label: "Promote", desc: "Digital PR, mentions, and link earning." },
-    { label: "Measure", desc: "GSC/GA4 tracking, insights, and iteration." },
+    { label: "Research", desc: "Category intent, competitors, and baseline visibility." },
+    { label: "Audit", desc: "Technical health, content gaps, and authority signals." },
+    { label: "Map", desc: "Clusters, briefs, and high-intent page priorities." },
+    { label: "Build", desc: "Implement fixes and publish core pages and hubs." },
+    { label: "Strengthen", desc: "Mentions, links, updates, and proof assets." },
+    { label: "Measure", desc: "Traffic, qualified demand, and next actions." },
   ];
 
   const [active, setActive] = useState(0);

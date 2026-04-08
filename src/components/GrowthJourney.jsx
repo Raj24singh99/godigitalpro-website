@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 /* ---------- content ---------- */
 const STEPS = [
-  { title: "Discover",    sub: "Define target customers and offers people want.", Icon: Compass },
-  { title: "Foundations", sub: "Set up fast site, pixels, and a basic CRM.",      Icon: Wrench   },
-  { title: "Launch",      sub: "Start campaigns, go live, collect real results.", Icon: Rocket   },
-  { title: "Optimize",    sub: "Improve winners, cut waste, tune budgets.",       Icon: Repeat   },
-  { title: "Scale",       sub: "Increase spend and expand to new channels.",      Icon: TrendingUp },
+  { title: "Audit",       sub: "Understand ICP, proof gaps, geo demand, and funnel leaks.", Icon: Compass },
+  { title: "Foundations", sub: "Fix tracking, landing pages, CRM routing, and reporting.",  Icon: Wrench   },
+  { title: "Launch",      sub: "Go live with paid, SEO, social, and creative priorities.",  Icon: Rocket   },
+  { title: "Learn",       sub: "Read media, search, and admissions signals every sprint.",  Icon: Repeat   },
+  { title: "Scale",       sub: "Double down on the programs, creatives, and geos that win.", Icon: TrendingUp },
 ];
 
 const LOOP_SECONDS = 10; // full cycle duration
@@ -235,13 +235,13 @@ export default function GrowthJourney() {
   return (
     <section className="relative py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
-        <h2 className="text-center font-serif text-3xl md:text-5xl font-bold text-dark">
-          Growth in Action
-        </h2>
-        <p className="text-center text-slate-700 mt-3 max-w-3xl mx-auto">
-          A clear journey: <span className="font-medium">Discover → Foundations → Launch → Optimize → Scale</span>.
-          Continuous improvement, compounding results.
-        </p>
+          <h2 className="text-center font-serif text-3xl md:text-5xl font-bold text-dark">
+          What working with us looks like
+          </h2>
+          <p className="text-center text-slate-700 mt-3 max-w-3xl mx-auto">
+          A clear operating rhythm: <span className="font-medium">Audit → Foundations → Launch → Learn → Scale</span>.
+          Built for EdTech teams that need momentum with accountability.
+          </p>
 
         {isMobile ? <MobileVertical /> : <DesktopRail />}
       </div>

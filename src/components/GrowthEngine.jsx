@@ -58,14 +58,13 @@ function MobileDiagram() {
     <section className="relative py-12 bg-white">
       <div className="max-w-xl mx-auto px-5 text-center">
         <h2 className="font-serif text-3xl font-semibold text-dark">
-          Channels, signals, and buyer expectations keep shifting.
+          Student demand, parent trust, and channel economics shift constantly.
         </h2>
         <p className="text-2xl font-semibold text-blue-700 mt-1">
-          Does your digital marketing engine adapt fast enough?
+          Does your growth system learn fast enough?
         </p>
         <p className="mt-4 text-slate-800">
-          Our relationships with Google, Meta, Amazon, and product communities give us early
-          insights, so we can pre-plan changes across organic, paid, and lifecycle instead of reacting late.
+          We connect media signals, search demand, creative performance, landing-page behavior, and admissions feedback so scale decisions are driven by evidence instead of guesswork.
         </p>
       </div>
 
@@ -79,10 +78,10 @@ function MobileDiagram() {
               <div className="font-serif font-semibold text-dark">Strategy</div>
             </div>
             <p className="text-sm text-slate-700 mt-2">
-              Cross-channel plan, ICP, offers, budgets with SEO + SEM baked in.
+              ICP, program prioritization, offer design, geo strategy, and budget planning for EdTech growth.
             </p>
             <div className="mt-2">
-              <MicroChip>#MarketingStrategy</MicroChip>
+              <MicroChip>#CategoryClarity</MicroChip>
             </div>
           </div>
 
@@ -91,13 +90,13 @@ function MobileDiagram() {
               <div className="w-9 h-9 grid place-items-center rounded-xl bg-slate-900 text-primary">
                 <BarChart3 size={18} />
               </div>
-              <div className="font-serif font-semibold text-dark">Deep Analytics</div>
+              <div className="font-serif font-semibold text-dark">AI-Led Analysis</div>
             </div>
             <p className="text-sm text-slate-700 mt-2">
-              Attribution models, dashboards, payback for every Google Ads & organic rupee.
+              Search terms, landing-page behavior, lead quality, and payback patterns surfaced faster with AI-assisted analysis.
             </p>
             <div className="mt-2">
-              <MicroChip>#ROI</MicroChip>
+              <MicroChip>#SignalClarity</MicroChip>
             </div>
           </div>
 
@@ -106,13 +105,13 @@ function MobileDiagram() {
               <div className="w-9 h-9 grid place-items-center rounded-xl bg-slate-900 text-primary">
                 <Sparkles size={18} />
               </div>
-              <div className="font-serif font-semibold text-dark">Creatives</div>
+              <div className="font-serif font-semibold text-dark">Creative Scale</div>
             </div>
             <p className="text-sm text-slate-700 mt-2">
-              Video-led ads & landing copy that convert and improve Quality Scores + SEO engagement.
+              Hooks, reels, ad edits, landing copy, and proof-led narratives that improve conversion and media efficiency.
             </p>
             <div className="mt-2">
-              <MicroChip>#HyperGrowth</MicroChip>
+              <MicroChip>#CreativeOps</MicroChip>
             </div>
           </div>
 
@@ -121,13 +120,13 @@ function MobileDiagram() {
               <div className="w-9 h-9 grid place-items-center rounded-xl bg-slate-900 text-primary">
                 <Workflow size={18} />
               </div>
-              <div className="font-serif font-semibold text-dark">Data Flows</div>
+              <div className="font-serif font-semibold text-dark">CRM Feedback Loops</div>
             </div>
             <p className="text-sm text-slate-700 mt-2">
-              Pixels, CRM & offline conversions synced for search, social, and marketplace signals.
+              Pixels, offline conversions, counselor notes, and pipeline outcomes synced back into growth decisions.
             </p>
             <div className="mt-2">
-              <MicroChip>#GrowthMarketing</MicroChip>
+              <MicroChip>#RevenueOps</MicroChip>
             </div>
           </div>
         </div>
@@ -137,12 +136,12 @@ function MobileDiagram() {
             <div className="mx-auto mb-2 w-10 h-10 grid place-items-center rounded-xl bg-white shadow">
               <CheckCircle2 size={18} className="text-blue-600" />
             </div>
-            <div className="font-serif text-xl font-semibold text-dark">
-              Performance at the Core
-            </div>
-            <p className="text-sm text-slate-700 mt-1">
-              Plan → Launch → Learn → Scale across SEO, Google Ads, Meta, marketplaces. Keep what works. Cut what doesn’t.
-            </p>
+              <div className="font-serif text-xl font-semibold text-dark">
+              AI-Led Growth System
+              </div>
+              <p className="text-sm text-slate-700 mt-1">
+              Position → Launch → Learn → Scale across SEO, paid media, social, video, and admissions workflows. Keep what compounds. Cut what wastes time.
+              </p>
           </div>
         </div>
       </div>
@@ -214,26 +213,26 @@ function DesktopAnimated() {
       <div className="relative max-w-7xl mx-auto px-6 md:px-10">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-semibold text-dark">
-            Our Growth Engine
+            How our EdTech growth engine works
           </h2>
           <p className="mt-2 text-slate-700">
-            20+ years of marketing distilled into a simple system:
-            <span className="font-semibold"> Plan → Launch → Learn → Scale.</span>
+            One operating system for EdTech growth:
+            <span className="font-semibold"> position, launch, learn, and scale with creative + revenue feedback in the loop.</span>
           </p>
         </div>
 
         {/* proof chips */}
         <div className="mt-6 grid grid-cols-4 gap-3">
           <span className={`rounded-full border border-blue-200/80 bg-white px-3 py-1 text-xs text-slate-700 shadow-sm ${spark===0?'bg-blue-100':''}`}>#ICP & Offers</span>
-          <span className={`rounded-full border border-blue-200/80 bg-white px-3 py-1 text-xs text-slate-700 shadow-sm ${spark===1?'bg-blue-100':''}`}>#Attribution & Payback</span>
-          <span className={`rounded-full border border-blue-200/80 bg-white px-3 py-1 text-xs text-slate-700 shadow-sm ${spark===2?'bg-blue-100':''}`}>#Creative Testing</span>
-          <span className={`rounded-full border border-blue-200/80 bg-white px-3 py-1 text-xs text-slate-700 shadow-sm ${spark===3?'bg-blue-100':''}`}>#CRM & Offline Conversions</span>
+          <span className={`rounded-full border border-blue-200/80 bg-white px-3 py-1 text-xs text-slate-700 shadow-sm ${spark===1?'bg-blue-100':''}`}>#AI Analysis</span>
+          <span className={`rounded-full border border-blue-200/80 bg-white px-3 py-1 text-xs text-slate-700 shadow-sm ${spark===2?'bg-blue-100':''}`}>#Creative Systems</span>
+          <span className={`rounded-full border border-blue-200/80 bg-white px-3 py-1 text-xs text-slate-700 shadow-sm ${spark===3?'bg-blue-100':''}`}>#CRM Feedback</span>
         </div>
 
         <div className="relative mt-10 grid lg:grid-cols-12 gap-6 items-stretch">
           <div className="lg:col-span-4 space-y-6">
-            <PillarCard icon={Target} title="Strategy" desc="ICP, offers, channel mix, budgets." active={active===0} />
-            <PillarCard icon={Sparkles} title="Creatives" desc="Scroll-stopping ads & landing copy that converts." active={active===2} />
+            <PillarCard icon={Target} title="Positioning" desc="ICP, programs, offers, geo priorities, and channel mix." active={active===0} />
+            <PillarCard icon={Sparkles} title="Creative Scale" desc="Video ads, hooks, landing copy, and proof systems that keep improving." active={active===2} />
           </div>
 
           <div className="lg:col-span-4">
@@ -241,9 +240,9 @@ function DesktopAnimated() {
               <div className="inline-grid w-12 h-12 rounded-2xl bg-white shadow place-items-center mb-3">
                 <CheckCircle2 size={22} className="text-blue-600" />
               </div>
-              <div className="font-serif text-2xl md:text-[28px] font-semibold text-dark">Performance at the Core</div>
+              <div className="font-serif text-2xl md:text-[28px] font-semibold text-dark">AI-Led Growth at the Core</div>
               <p className="mt-2 text-slate-700 text-sm md:text-base max-w-md">
-                Every sprint ships learnings. We keep what works, cut what doesn’t.
+                Every sprint ships learnings from media, search, creative, funnel behavior, and revenue quality. We scale what compounds.
               </p>
               <div className="mt-4 grid grid-cols-4 gap-2 text-xs text-slate-700">
                 {["Plan","Launch","Learn","Scale"].map((s,i)=>(
@@ -269,8 +268,8 @@ function DesktopAnimated() {
           </div>
 
           <div className="lg:col-span-4 space-y-6">
-            <PillarCard icon={BarChart3} title="Deep Analytics" desc="Attribution, dashboards, payback clarity." active={active===1} />
-            <PillarCard icon={Workflow} title="Data Flows" desc="Pixels, CRM, offline conversions—synced." active={active===3} />
+            <PillarCard icon={BarChart3} title="AI Analysis" desc="Attribution, payback, signal clustering, and opportunity mapping." active={active===1} />
+            <PillarCard icon={Workflow} title="CRM Loops" desc="Pixels, offline conversions, counselor notes, and revenue synced back." active={active===3} />
           </div>
         </div>
       </div>

@@ -12,18 +12,18 @@ import { getPostCover } from "../../utils/blogCovers";
 const HERO_BADGES = [
   {
     icon: "Sparkles",
-    title: "Playbooks refreshed weekly",
-    body: "Captures shifts in privacy, AI, media efficiency so your roadmap stays sharp.",
+    title: "AI + performance intelligence",
+    body: "Research, analysis, and practical takeaways across paid media, SEO, analytics, and creative systems.",
   },
   {
     icon: "Layers",
-    title: "Strategy → execution ready",
-    body: "Articles link briefs, templates, calculators, and governance checklists.",
+    title: "Strategy that can actually be executed",
+    body: "Articles are written to help operators move from diagnosis to action without drowning in theory.",
   },
   {
     icon: "Globe",
-    title: "Grounded in India growth",
-    body: "Benchmarks, compliance notes, and regional nuance for SaaS, D2C, marketplaces, and more.",
+    title: "Built from high-accountability growth work",
+    body: "Includes EdTech thinking, India-market nuance, and lessons from running performance-led growth systems.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function Blogs() {
     return latestPosts.map((post, idx) => ({
       "@type": "ListItem",
       position: idx + 1,
-      url: `https://www.godigitalpro.in/blog/${post.slug}`,
+      url: `https://godigitalpro.in/blog/${post.slug}`,
       name: post.title,
     }));
   }, [latestPosts]);
@@ -54,24 +54,24 @@ export default function Blogs() {
   return (
     <main className="bg-white text-slate-900">
       <SeoHelmet
-        title="GoDigitalPro Blog — Digital Marketing Strategy, SEO, PPC, Social, Analytics"
-        description="A Bengaluru-built digital marketing blog structured for EEAT + AI overviews: 13 strategic pillars, 70+ sub-categories, templates, and playbooks spanning SEO, PPC, CRO, analytics, content, email, e-commerce, brand, and agency ops."
+        title="GoDigitalPro Blog | EdTech Growth, SEO, Paid Media & AI Marketing Systems"
+        description="GoDigitalPro’s blog covers EdTech growth, AI-led analysis, SEO, paid media, social, creative systems, CRO, analytics, and practical execution playbooks."
         canonical={canonical}
-        keywords="digital marketing blog, SEO blog, PPC blog, CRO, web analytics, India marketing strategy"
+        keywords="edtech marketing blog, AI marketing systems, SEO blog, paid media blog, analytics, CRO, growth strategy"
         schema={[blogOrgJsonLd(), { "@context": "https://schema.org", "@type": "ItemList", itemListElement: itemListJsonLd }]}
       />
 
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-6 md:px-10 py-12 md:py-16">
         <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-6 py-10 text-white shadow-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">GoDigitalPro Blog OS</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">GoDigitalPro Growth Library</p>
           <div className="mt-4 flex flex-col gap-10 lg:flex-row lg:items-start">
             <div className="flex-1">
               <h1 className="text-3xl font-black leading-tight text-white md:text-4xl">
-                Modern marketing intelligence for teams that need strategy and execution clarity fast.
+                Growth intelligence for EdTech and high-accountability marketing teams.
               </h1>
               <p className="mt-3 max-w-2xl text-sm text-white/80">
-                Every story clicks into a pillar—strategy, SEO, paid media, social, content, lifecycle, CRO, analytics, commerce, emerging tech, industry playbooks, and agency ops—so you can go from reading to doing without opening twenty tabs.
+                The archive is broad, but the lens is consistent: better positioning, clearer demand capture, stronger analytics, faster creative learning, and execution that actually helps teams make decisions.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
@@ -110,7 +110,7 @@ export default function Blogs() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Explore the taxonomy</p>
             <h2 className="mt-2 text-2xl font-bold text-slate-900">Categories at a glance</h2>
             <p className="text-sm text-slate-600">
-              Tap any category tile to open the sub-categories → sub-category pages house the focused playbooks.
+              Tap any category tile to open the deeper sub-categories. The archive is still broader than the main-domain positioning, but we are tightening it over time around high-signal growth topics.
             </p>
           </div>
           <p className="text-xs text-slate-500">
@@ -156,7 +156,7 @@ export default function Blogs() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Research, templates & case studies</p>
             <h2 className="mt-2 text-2xl font-bold text-slate-900">Latest published plays</h2>
             <p className="text-sm text-slate-600">
-              Hand-picked articles across SEO, CRO, analytics, content, social, and agency ops. Showing the latest {LATEST_POST_LIMIT} posts mapped to their sub-categories.
+              Hand-picked articles across SEO, CRO, analytics, content, social, paid media, and growth systems. Showing the latest {LATEST_POST_LIMIT} posts mapped to their sub-categories.
             </p>
           </div>
           <Link
@@ -218,7 +218,7 @@ export default function Blogs() {
         <div className="mt-8 flex flex-wrap items-center gap-3 rounded-3xl border border-dashed border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-600">
           <span className="font-semibold text-slate-900">Need a content calendar?</span>
           <span>
-            Week 1: SEO pillar → Week 2-4: technical, link-building, local SEO clusters → Week 5: PPC pillar, and so on.
+            Use the archive to shape weekly publishing around SEO, paid media, analytics, social, and creative themes that support your growth roadmap.
           </span>
         </div>
       </section>
