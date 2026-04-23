@@ -1,57 +1,57 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  Globe2,
-  Share2,
-  Users2,
   Megaphone,
   FileText,
+  MapPin,
+  ShoppingBag,
+  Share2,
   Video,
   ArrowRight,
 } from "lucide-react";
 
 const cards = [
   {
-    id: "web",
-    title: "Website & Funnel Development",
-    desc: "Program pages, landing funnels, tracking, and conversion architecture built for applications, demos, and counselor handoffs.",
-    icon: Globe2,
-    link: "/services/website-development",
-  },
-  {
-    id: "smm",
-    title: "Social Media & Community",
-    desc: "Organic social systems that build trust with students, parents, faculty, and decision-makers across every buying stage.",
-    icon: Share2,
-    link: "/services/social-media-marketing",
-  },
-  {
-    id: "brand",
-    title: "Brand Positioning",
-    desc: "Sharper category positioning, offer clarity, and messaging systems that make every campaign easier to scale.",
-    icon: Users2,
-    link: "/services/brand-building",
-  },
-  {
-    id: "paid",
-    title: "Paid Media",
-    desc: "Google, Meta, YouTube, and performance funnels managed around qualified lead quality, application intent, and revenue.",
+    id: "performance",
+    title: "Performance Marketing",
+    desc: "AI-driven paid media across Google, Meta, YouTube, and LinkedIn — optimized for lead quality, conversions, and revenue ROI, not just clicks.",
     icon: Megaphone,
     link: "/services/paid-marketing",
   },
   {
-    id: "video",
-    title: "Video & Ad Production",
-    desc: "High-velocity video, ad edits, hooks, and creative testing systems built to keep paid and organic channels fresh.",
-    icon: Video,
-    link: "/services/video-ad-production",
-  },
-  {
     id: "seo",
-    title: "SEO & Content",
-    desc: "Technical foundations, editorial systems, and authority plays that keep organic demand compounding.",
+    title: "SEO & Content Strategy",
+    desc: "Technical SEO, AI-powered keyword research, and content systems that compound organic demand month over month.",
     icon: FileText,
     link: "/services/seo-content",
+  },
+  {
+    id: "geo",
+    title: "Geo-Targeted Marketing",
+    desc: "Location-based campaigns with AI optimization built for local businesses, multi-location brands, and regional expansion.",
+    icon: MapPin,
+    link: "/services/geo-marketing",
+  },
+  {
+    id: "ecommerce",
+    title: "E-commerce Marketing",
+    desc: "Product feed optimization, conversion rate improvements, and AI-powered remarketing systems built to scale online stores.",
+    icon: ShoppingBag,
+    link: "/services/ecommerce-marketing",
+  },
+  {
+    id: "social",
+    title: "Social Media Marketing",
+    desc: "Organic and paid social across Instagram, TikTok, and LinkedIn — combining community building with conversion-focused campaigns.",
+    icon: Share2,
+    link: "/services/social-media-marketing",
+  },
+  {
+    id: "creative",
+    title: "Creative & Video Production",
+    desc: "High-velocity creative testing, video edits, and ad hooks optimized for platform algorithms and measurable performance outcomes.",
+    icon: Video,
+    link: "/services/video-ad-production",
   },
 ];
 
@@ -61,9 +61,9 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Centered heading & intro */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="h2 text-dark">One EdTech Growth Partner, Every Critical Capability</h2>
+          <h2 className="h2 text-dark">One AI-Powered Platform, Every Marketing Capability</h2>
           <p className="mt-3 text-slate-700 text-base md:text-lg">
-            Strategy, creative, media, SEO, funnel design, and analytics work better when they are run as one system. That is how we structure execution for EdTech brands.
+            Strategy, creative, media, SEO, and analytics work better when they run as one AI-driven system — not five different vendors pulling in different directions.
           </p>
         </div>
 

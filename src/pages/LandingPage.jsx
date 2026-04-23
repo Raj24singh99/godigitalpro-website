@@ -19,11 +19,11 @@ import {
 } from "../utils/seo";
 
 const META = {
-  title: "EdTech Marketing Agency for Paid Media, SEO & AI-Led Growth | GoDigitalPro",
+  title: "AI Marketing Agency | Performance Marketing, SEO, E-commerce & Growth | GoDigitalPro",
   description:
-    "GoDigitalPro is an EdTech marketing agency using AI-led analysis, paid media, SEO, social media, and analytics to help education brands scale qualified leads, admissions pipeline, and revenue.",
+    "GoDigitalPro is an AI-powered marketing agency specializing in performance marketing, SEO, geo-targeted campaigns, e-commerce growth, social media, and creative production — built to scale businesses and deliver real revenue outcomes.",
   keywords:
-    "edtech marketing agency, education marketing agency, edtech paid media agency, edtech seo agency, student enrollment marketing, ai marketing analysis",
+    "ai marketing agency, performance marketing agency, seo agency, ecommerce marketing, digital marketing agency, geo targeted marketing, social media marketing, ai growth agency",
 };
 
 export default function LandingPage() {
@@ -40,14 +40,14 @@ export default function LandingPage() {
         type: "WebPage",
       }),
       serviceJsonLd({
-        name: "EdTech Marketing & Growth Services",
+        name: "AI Marketing & Growth Services",
         description:
-          "Paid media, SEO, social media, analytics, and AI-led growth systems designed for EdTech brands that need stronger admissions and revenue outcomes.",
+          "Performance marketing, SEO, geo-targeted campaigns, e-commerce marketing, social media, and creative production powered by AI — built to scale businesses and deliver measurable revenue outcomes.",
         url: canonical,
       }),
       siteNavigationJsonLd([
         { name: "Services", url: `${canonical}#services` },
-        { name: "EdTech", url: buildCanonical("/industries/edtech") },
+        { name: "Agency Partner", url: buildCanonical("/agency-partner") },
         { name: "SEO", url: buildCanonical("/services/seo-content") },
         { name: "Paid Advertising", url: buildCanonical("/services/paid-marketing") },
         { name: "Video & Ad Production", url: buildCanonical("/services/video-ad-production") },

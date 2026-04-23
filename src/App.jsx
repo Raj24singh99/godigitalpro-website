@@ -38,6 +38,9 @@ const PaidMarketingPage               = lazy(() => import("./pages/services/Paid
 const VideoAdProductionPage           = lazy(() => import("./pages/services/VideoAdProductionPage.jsx"));
 const SeoContentPage                  = lazy(() => import("./pages/services/SeoContentPage.jsx"));
 
+/** Agency Partner */
+const AgencyPartnerPage               = lazy(() => import("./pages/AgencyPartnerPage.jsx"));
+
 /** Industries */
 const EdTechPage                      = lazy(() => import("./pages/industries/EdTechPage.jsx"));
 
@@ -181,6 +184,9 @@ export default function App() {
             <Route path="/services/video-ad-production" element={<VideoAdProductionPage />} />
             <Route path="/services/marketplaces" element={<Navigate to="/services/video-ad-production" replace />} />
             <Route path="/services/seo-content" element={<SeoContentPage />} />
+
+            {/* Agency Partner */}
+            <Route path="/agency-partner" element={<AgencyPartnerPage />} />
 
             {/* Industries */}
             <Route path="/industries/edtech" element={<EdTechPage />} />

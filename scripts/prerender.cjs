@@ -21,6 +21,7 @@ const FALLBACK_ROUTES = [
   "/services/video-ad-production",
   "/services/seo-content",
   "/industries/edtech",
+  "/agency-partner",
 ];
 
 function readRoutesFromSitemap() {

@@ -181,23 +181,23 @@ export default function Hero() {
         {/* Tagline */}
         <div className="inline-flex items-center gap-2 bg-primary/15 text-dark px-4 py-2 rounded-full text-sm font-medium ring-1 ring-black/5 mx-auto">
           <Sparkles size={16} className="text-yellow-500" />
-          <span>EdTech Growth Partner • AI-Led Analysis • Founder-Led Execution</span>
+          <span>AI Marketing Partner • Performance-Driven Growth • Founder-Led Execution</span>
         </div>
 
         {/* Heading */}
         <h1 className="mt-5 font-serif text-[2.6rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-dark tracking-tight">
-          The EdTech marketing agency built to scale applications, enrollments, and revenue
+          AI-Powered Marketing Agency Built to Scale Businesses
         </h1>
 
         {/* Description */}
         <p className="mt-4 text-base md:text-lg text-slate-800 max-w-3xl mx-auto">
-          GoDigitalPro helps education brands grow with AI-led analysis, paid media, SEO, social, websites, creative production, and counselor-ready funnel systems without stitching together five different vendors.
+          GoDigitalPro runs performance marketing, SEO, GEO, e-commerce growth, social media, and creative production as one AI-powered system — built for founders, operators, and growth teams that care about revenue, not vanity metrics.
         </p>
 
         {/* CTAs */}
         <div className="mt-6 flex flex-wrap gap-4 justify-center">
           <Link to="/onboarding" className="btn-primary inline-flex items-center gap-2 text-base">
-            Book an EdTech Growth Audit <ArrowRight size={18} />
+            Book a Growth Audit <ArrowRight size={18} />
           </Link>
         </div>
 
@@ -233,7 +233,7 @@ export default function Hero() {
             </li>
           </ul>
           <p className="mt-4 text-sm text-slate-700">
-            Built for EdTech operators, founders, and admissions teams that care about pipeline quality, not just lead volume.
+            Built for founders, operators, and growth teams that care about revenue impact, not just vanity metrics.
           </p>
         </div>
       </div>

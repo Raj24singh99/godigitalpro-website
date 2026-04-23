@@ -103,12 +103,12 @@ export default function Header() {
             </div>
 
             <NavLink
-              to="/industries/edtech"
+              to="/agency-partner"
               className={({ isActive }) =>
                 `${baseLink} ${isActive ? activeClass : ""}`
               }
             >
-              EdTech
+              Agency Partner
             </NavLink>
 
             {/* About */}
@@ -186,8 +186,8 @@ export default function Header() {
               </div>
             </details>
 
-            <Link to="/industries/edtech" className="block rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100">
-              EdTech
+            <Link to="/agency-partner" className="block rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100">
+              Agency Partner
             </Link>
 
             <Link to="/about" className="block rounded-lg px-3 py-2 text-slate-800 hover:bg-slate-100">
