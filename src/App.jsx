@@ -37,12 +37,11 @@ const BrandBuildingPage               = lazy(() => import("./pages/services/Bran
 const PaidMarketingPage               = lazy(() => import("./pages/services/PaidMarketingPage.jsx"));
 const VideoAdProductionPage           = lazy(() => import("./pages/services/VideoAdProductionPage.jsx"));
 const SeoContentPage                  = lazy(() => import("./pages/services/SeoContentPage.jsx"));
+const GeoMarketingPage                = lazy(() => import("./pages/services/GeoMarketingPage.jsx"));
+const EcommerceMarketingPage          = lazy(() => import("./pages/services/EcommerceMarketingPage.jsx"));
 
 /** Agency Partner */
 const AgencyPartnerPage               = lazy(() => import("./pages/AgencyPartnerPage.jsx"));
-
-/** Industries */
-const EdTechPage                      = lazy(() => import("./pages/industries/EdTechPage.jsx"));
 
 const ADSENSE_SRC =
   "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4476024557138765";
@@ -182,14 +181,14 @@ export default function App() {
             <Route path="/services/brand-building" element={<BrandBuildingPage />} />
             <Route path="/services/paid-marketing" element={<PaidMarketingPage />} />
             <Route path="/services/video-ad-production" element={<VideoAdProductionPage />} />
-            <Route path="/services/marketplaces" element={<Navigate to="/services/video-ad-production" replace />} />
             <Route path="/services/seo-content" element={<SeoContentPage />} />
+            <Route path="/services/geo-marketing" element={<GeoMarketingPage />} />
+            <Route path="/services/ecommerce-marketing" element={<EcommerceMarketingPage />} />
 
             {/* Agency Partner */}
             <Route path="/agency-partner" element={<AgencyPartnerPage />} />
 
             {/* Industries */}
-            <Route path="/industries/edtech" element={<EdTechPage />} />
             <Route path="/industries/:industry" element={<Navigate to="/" replace />} />
 
             {/* Redirected legacy routes */}

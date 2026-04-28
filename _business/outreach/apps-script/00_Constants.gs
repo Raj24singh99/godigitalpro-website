@@ -1,0 +1,61 @@
+var APP = {
+  SHEET_NAME: "Leads",
+  LOG_SHEET_NAME: "ActivityLog",
+  MENU_NAME: "GoDigitalPro",
+  TRIGGER_HANDLER: "runScheduledOutreach",
+  STATUS: {
+    NEW: "NEW",
+    PROCESSING: "PROCESSING",
+    DRAFTED: "DRAFTED",
+    SENT: "SENT",
+    ERROR: "ERROR"
+  },
+  PROPS: {
+    OPENAI_API_KEY: "OPENAI_API_KEY",
+    ANTHROPIC_API_KEY: "ANTHROPIC_API_KEY",
+    SENDER_EMAIL: "SENDER_EMAIL",
+    SENDER_NAME: "SENDER_NAME",
+    SEND_MODE: "SEND_MODE",
+    DAILY_SEND_LIMIT: "DAILY_SEND_LIMIT",
+    MAX_LEADS_PER_RUN: "MAX_LEADS_PER_RUN",
+    CALENDLY_LINK: "CALENDLY_LINK",
+    ATTACHMENT_DRIVE_FILE_ID: "ATTACHMENT_DRIVE_FILE_ID",
+    ATTACHMENT_FILE_NAME: "ATTACHMENT_FILE_NAME",
+    BRAND_WEBSITE: "BRAND_WEBSITE",
+    BRAND_LINKEDIN: "BRAND_LINKEDIN",
+    BRAND_LOGO_URL: "BRAND_LOGO_URL"
+  },
+  DEFAULTS: {
+    MAX_LEADS_PER_RUN: 5,
+    WEBSITE_TEXT_MAX: 12000,
+    MODEL: "gpt-4.1-mini",
+    CLAUDE_MODEL: "claude-haiku-4-5-20251001",
+    CALENDLY_CTA_PREFIX: "If useful, you can book a quick strategy call here: ",
+    CALENDLY_LINK: "https://calendly.com/raj-godigitalpro/30min",
+    ATTACHMENT_FILE_NAME: "GoDigitalPro_Overview.pdf",
+    BRAND_WEBSITE: "https://godigitalpro.in/",
+    BRAND_LINKEDIN: "https://www.linkedin.com/company/godigitalpro/",
+    BRAND_LOGO_URL: "https://godigitalpro.in/assets/godigitalpro-logo.jpg"
+  },
+  REQUIRED_HEADERS: [
+    "lead_id",
+    "company_name",
+    "website",
+    "contact_name",
+    "email",
+    "niche",
+    "location",
+    "notes",
+    "status",
+    "analysis_summary",
+    "framework_90_day",
+    "email_subject",
+    "email_body",
+    "draft_link",
+    "sent_at",
+    "reply_status",
+    "next_followup_date",
+    "followup_count",
+    "error_log"
+  ]
+};

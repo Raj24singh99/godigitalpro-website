@@ -1,0 +1,464 @@
+import React, { useState } from "react";
+import { Sparkles, ShieldCheck, Plug, ClipboardList, Rocket, Crown, ArrowLeft, ChevronDown, Palette } from "lucide-react";
+import { Link } from "react-router-dom";
+import SeoHelmet from "../../../components/SeoHelmet.jsx";
+import { buildCanonical } from "../../../utils/seo.js";
+
+const toolName = "Canva";
+const slug = "canva";
+const category = "Design & Video Suite";
+const shortPitch =
+  "Canva is a design and video platform that lets marketing teams create branded graphics, presentations, and short-form videos with templates, brand kits, and AI assists.";
+const pricingSummary =
+  "Free plan with core templates. Pro starts around $12.99/user/month adding brand kits, background remover, Magic Media, and more storage. Teams plan includes approvals and advanced collaboration.";
+const officialUrl = "https://www.canva.com";
+const ratingValue = 4.6;
+
+const brandMeta = {
+  name: toolName,
+  logo: "https://logo.clearbit.com/canva.com",
+  gradient: "from-sky-500 via-blue-500 to-indigo-600",
+  glow: "shadow-[0_20px_80px_rgba(59,130,246,0.22)]",
+};
+
+const alternatives = [
+  { name: "Kapwing", slug: "kapwing" },
+  { name: "InVideo", slug: "invideo" },
+  { name: "Pictory", slug: "pictory" },
+  { name: "Envato", slug: "envato" },
+  { name: "Icons8", slug: "icons8" },
+];
+
+const faqs = [
+  { q: "Is Canva free?", a: "Yes. The free plan includes templates, images, and basic video editing. Pro adds brand kits, background remover, Magic Media, and larger storage." },
+  { q: "Is Canva good for teams?", a: "Canva Teams supports shared brand kits, approvals, comments, and folders. It’s popular for marketing and social teams collaborating on campaigns." },
+  { q: "Can Canva edit video?", a: "Yes. Canva has a timeline editor for short-form videos with templates, captions, transitions, and AI assists like Magic Media and beat sync." },
+  { q: "Does Canva integrate with other tools?", a: "Canva connects to Google Drive, Dropbox, HubSpot, social platforms, and CMS tools. You can publish directly to social or export for ads." },
+  { q: "How is Canva for brand consistency?", a: "Brand kits, templates, locked elements, and approvals keep assets on-brand across teams. Teams can restrict fonts, colors, and logos." },
+  { q: "Is Canva good for presentations?", a: "Yes. Canva has presentation templates, AI slide generation, and collaboration. You can present live or export to PPT/PDF." },
+  { q: "Can you use Canva for print?", a: "You can design print assets and export press-ready files. Canva also offers printing services in some regions." },
+  { q: "Which plan should marketers choose?", a: "Pro is enough for most small teams; Canva Teams is better when you need approvals, multiple brand kits, and admin controls." },
+];
+
+function CanvaToolPage() {
+  const canonical = buildCanonical(`/tools/${slug}`);
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: toolName,
+    description: shortPitch,
+    brand: "Third-party tool",
+    url: canonical,
+    review: {
+      "@type": "Review",
+      author: { "@type": "Organization", name: "GoDigitalPro" },
+      reviewBody:
+        "Canva streamlines design and short-form video for marketing teams with templates, brand controls, and AI features. It’s an affordable way to keep assets on-brand without heavy design software.",
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue,
+        bestRating: "5",
+        worstRating: "1",
+      },
+    },
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
+  const featureBlocks = [
+    {
+      icon: <Palette className="h-5 w-5 text-sky-500" />,
+      title: "Templates for every format",
+      body: "Social posts, ads, decks, emails, print, and video templates speed up production while keeping layouts polished.",
+    },
+    {
+      icon: <Sparkles className="h-5 w-5 text-indigo-500" />,
+      title: "AI and Magic Media",
+      body: "Background remover, resizing, Magic Write, Magic Media for text-to-image/video, and beat sync accelerate creative iterations.",
+    },
+    {
+      icon: <ClipboardList className="h-5 w-5 text-emerald-500" />,
+      title: "Brand kits and approvals",
+      body: "Lock logos, fonts, and colors; manage templates; and use approvals/comments to keep assets on-brand across the org.",
+    },
+    {
+      icon: <Plug className="h-5 w-5 text-amber-500" />,
+      title: "Integrations and publishing",
+      body: "Publish to social, export for ads, or sync with storage apps. Embed designs or share review links to speed feedback.",
+    },
+    {
+      icon: <ShieldCheck className="h-5 w-5 text-emerald-600" />,
+      title: "Collaboration and roles",
+      body: "Comments, version history, and role-based access keep teams coordinated. Teams plan adds admin controls and activity logs.",
+    },
+    {
+      icon: <Rocket className="h-5 w-5 text-rose-500" />,
+      title: "Video and audio tools",
+      body: "Add captions, transitions, music, voiceovers, and stock media. Best suited to marketing and social videos, not long-form edits.",
+    },
+  ];
+
+  return (
+    <>
+      <SeoHelmet
+        title={`${toolName} Review 2025: Pricing, Features, Pros & Cons, Alternatives`}
+        description="In-depth Canva review for marketers: pricing, features, pros & cons, alternatives, and comparisons vs Kapwing, InVideo, and other design tools."
+        canonical={canonical}
+        image={`https://www.godigitalpro.in/og/tools/${slug}.png`}
+        type="article"
+        schema={[productSchema, faqSchema]}
+        breadcrumbs={[
+          { name: "Home", url: buildCanonical("/") },
+          { name: "Tools Hub", url: buildCanonical("/tools") },
+          { name: toolName, url: canonical },
+        ]}
+      />
+
+      <main className="tool-page bg-white text-slate-900">
+        <section className="section section--hero relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-sky-50 to-white" />
+          <div className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-sky-300/25 blur-3xl" />
+          <div className="absolute right-1/4 top-1/4 h-56 w-56 rounded-full bg-indigo-300/20 blur-3xl" />
+          <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 md:flex-row md:items-center md:py-16">
+            <div className="md:w-2/3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-700 shadow-sm ring-1 ring-slate-200">
+                <Crown className="h-4 w-4 text-amber-500" />
+                {category}
+              </div>
+              <h1 className="mt-4 text-3xl font-bold leading-tight text-slate-900 md:text-4xl">
+                {toolName} Review (2025): Features, Pricing, Pros & Cons
+              </h1>
+              <p className="mt-4 text-lg text-slate-600">{shortPitch}</p>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm text-slate-700">
+                <span className="rounded-full bg-white px-3 py-1 shadow ring-1 ring-slate-200">Our rating: {ratingValue}/5</span>
+                <span className="rounded-full bg-white px-3 py-1 shadow ring-1 ring-slate-200">Reviewed by GoDigitalPro • Updated May 2025</span>
+              </div>
+              <p className="mt-4 text-slate-700">{pricingSummary}</p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a className="btn btn-primary bg-slate-900 text-white ring-2 ring-slate-900 hover:bg-slate-700" href={officialUrl}>
+                  Visit official website
+                </a>
+              </div>
+            </div>
+            <div className="md:w-1/3">
+              <div
+                className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${brandMeta.gradient} p-6 text-white shadow-2xl ${brandMeta.glow}`}
+              >
+                <div className="absolute inset-0 opacity-20">
+                  <div className="absolute -left-8 top-10 h-20 w-20 rounded-full bg-white blur-3xl" />
+                  <div className="absolute right-0 bottom-0 h-24 w-24 rounded-full bg-sky-200 blur-3xl" />
+                </div>
+                <div className="relative flex items-center gap-3">
+                  <div className="h-14 w-14 overflow-hidden rounded-xl bg-white/20 ring-2 ring-white/30">
+                    <img src={brandMeta.logo} alt={`${toolName} logo`} className="h-full w-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/80">Featured Tool</p>
+                    <p className="text-xl font-bold">{toolName}</p>
+                  </div>
+                </div>
+                <p className="relative mt-4 text-sm leading-relaxed text-white/90">
+                  Canva keeps marketing teams fast with ready-to-use templates, AI assists, and brand controls that protect consistency across every asset.
+                </p>
+                <div className="relative mt-4 flex items-center gap-2 text-sm font-semibold">
+                  <Sparkles className="h-4 w-4 text-amber-200" />
+                  Recommended by GoDigitalPro
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--overview bg-white">
+          <div className="mx-auto max-w-5xl px-6 py-12">
+            <h2 className="text-2xl font-bold text-slate-900">What is {toolName}?</h2>
+            <p className="mt-4 text-slate-700">
+              {toolName} is a {category.toLowerCase()} built for speed and collaboration. Teams design social campaigns, decks, PDFs, and short videos with templates, stock assets, and AI tools that reduce production time.
+            </p>
+            <p className="mt-3 text-slate-700">
+              Brand kits, locked elements, and approvals keep assets consistent. Publishing and integration options help teams ship directly to social or export for ads.
+            </p>
+            <p className="mt-3 text-slate-700">
+              Canva is especially strong for social, lifecycle marketing, and sales enablement assets that need frequent updates without dedicated design resources.
+            </p>
+          </div>
+        </section>
+
+        <section className="section section--who bg-slate-50">
+          <div className="mx-auto max-w-5xl px-6 py-10">
+            <h2 className="text-2xl font-bold text-slate-900">Who should use {toolName}?</h2>
+            <p className="mt-3 text-slate-700">{toolName} works well for teams that need continuous on-brand creative without complex design tools.</p>
+            <div className="mt-6 grid gap-3 md:grid-cols-2">
+              {[
+                "Social and lifecycle marketers producing daily graphics and short videos.",
+                "Content teams building presentations, ebooks, and PDFs with brand controls.",
+                "Growth teams launching ads quickly with reusable templates.",
+                "Sales/CS teams needing one-pagers and enablement collateral fast.",
+                "Non-designers collaborating with design teams via comments and approvals.",
+                "Agencies delivering on-brand assets to clients with shared brand kits.",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2 rounded-2xl bg-white px-4 py-3 text-slate-800 shadow-sm ring-1 ring-slate-200/70">
+                  <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-sky-400" />
+                  <p className="text-sm">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--features bg-white">
+          <div className="mx-auto max-w-6xl px-6 py-12">
+            <h2 className="text-2xl font-bold text-slate-900">{toolName} key features</h2>
+            <p className="mt-3 text-slate-700">Canva focuses on speed-to-publish with brand safety and collaboration built in.</p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {featureBlocks.map((feature) => (
+                <div key={feature.title} className="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200">
+                  <div className="flex items-center gap-3 text-slate-900">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-slate-200">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold">{feature.title}</h3>
+                  </div>
+                  <p className="mt-2 text-sm text-slate-700">{feature.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--pricing bg-slate-50">
+          <div className="mx-auto max-w-6xl px-6 py-12">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900">{toolName} pricing (2025)</h2>
+                <p className="mt-2 text-slate-700">
+                  Pricing is per user with a robust free plan. Pro unlocks brand kits and AI tools; Teams adds governance, approvals, and multiple brand kits for larger orgs.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-white px-4 py-3 text-sm text-slate-800 shadow-sm ring-1 ring-slate-200">
+                <p className="font-semibold text-slate-900">Fast pick</p>
+                <p className="text-slate-700">Start free; move to Pro for brand kits and Magic Media; use Teams for approvals/admin controls.</p>
+              </div>
+            </div>
+            <div className="mt-6 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+              <table className="w-full text-left text-sm text-slate-800 md:text-base">
+                <thead className="bg-slate-50 text-slate-700">
+                  <tr>
+                    <th className="px-4 py-3">Plan</th>
+                    <th className="px-4 py-3">Best for</th>
+                    <th className="px-4 py-3">Key inclusions</th>
+                    <th className="px-4 py-3">Approx. price</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  <tr className="bg-white">
+                    <td className="px-4 py-3 font-semibold text-slate-900">Free</td>
+                    <td className="px-4 py-3">Testing and small projects</td>
+                    <td className="px-4 py-3">Core templates, basic video tools, limited storage</td>
+                    <td className="px-4 py-3">$0</td>
+                  </tr>
+                  <tr className="bg-slate-50/60">
+                    <td className="px-4 py-3 font-semibold text-slate-900">Pro</td>
+                    <td className="px-4 py-3">Small teams and creators</td>
+                    <td className="px-4 py-3">Brand kits, Magic Media, background remover, more storage</td>
+                    <td className="px-4 py-3">~$12.99/user/month</td>
+                  </tr>
+                  <tr className="bg-white">
+                    <td className="px-4 py-3 font-semibold text-slate-900">Teams</td>
+                    <td className="px-4 py-3">Organizations needing governance</td>
+                    <td className="px-4 py-3">Approvals, multiple brand kits, admin controls, SSO options</td>
+                    <td className="px-4 py-3">Varies by seats/region</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-slate-700">
+              Evaluate based on brand control needs, seat count, and how heavily you’ll use AI and storage. Teams plan is best when multiple departments collaborate in Canva daily.
+            </p>
+          </div>
+        </section>
+
+        <section className="section section--pros-cons bg-white">
+          <div className="mx-auto max-w-6xl px-6 py-12">
+            <h2 className="text-2xl font-bold text-slate-900">{toolName} pros &amp; cons</h2>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl bg-emerald-50 p-5 shadow-sm ring-1 ring-emerald-100">
+                <div className="flex items-center gap-2 text-emerald-700">
+                  <Sparkles className="h-5 w-5" />
+                  <h3 className="text-lg font-semibold text-slate-900">Pros</h3>
+                </div>
+                <ul className="mt-3 space-y-2 text-sm text-slate-800">
+                  <li>Huge template and asset library speeds production.</li>
+                  <li>Brand kits and locked elements protect consistency.</li>
+                  <li>AI assists (Magic Media, Resize, BG remover) save time.</li>
+                  <li>Good collaboration: comments, approvals, shared folders.</li>
+                  <li>Video tools solid for social and marketing cuts.</li>
+                  <li>Publish/export options that fit most marketing stacks.</li>
+                </ul>
+              </div>
+              <div className="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200">
+                <div className="flex items-center gap-2 text-rose-600">
+                  <ShieldCheck className="h-5 w-5 rotate-180" />
+                  <h3 className="text-lg font-semibold text-slate-900">Cons</h3>
+                </div>
+                <ul className="mt-3 space-y-2 text-sm text-slate-800">
+                  <li>Timeline video editing is basic vs dedicated NLEs.</li>
+                  <li>Advanced illustration or page layout requires other tools.</li>
+                  <li>Asset governance needs Teams for fullest controls.</li>
+                  <li>Heavy brand libraries can feel slower on low-end devices.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--alternatives bg-slate-50">
+          <div className="mx-auto max-w-6xl px-6 py-12">
+            <h2 className="text-2xl font-bold text-slate-900">{toolName} alternatives and competitors</h2>
+            <p className="mt-3 text-slate-700">
+              Canva competes with online video editors, presentation tools, and graphic design platforms. Choose based on animation needs, collaboration style, and asset depth.
+            </p>
+            <p className="mt-2 text-slate-700">All support templates and exports; they differ on editing depth, AI features, and brand controls.</p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {alternatives.map((alt) => (
+                <div key={alt.slug} className="flex items-center justify-between rounded-2xl bg-white px-4 py-3 text-slate-800 shadow-sm ring-1 ring-slate-200">
+                  <div>
+                    <p className="font-semibold text-slate-900">{alt.name}</p>
+                    <p className="text-sm text-slate-600">{alt.isComparison ? "Direct comparison page available." : "Popular alternative in the same space."}</p>
+                  </div>
+                  <a className="text-sm font-semibold text-sky-700 hover:text-sky-600" href={`/tools/${alt.slug}`}>
+                    View
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--vs bg-white">
+          <div className="mx-auto max-w-5xl px-6 py-12 space-y-6">
+            <h2 className="text-2xl font-bold text-slate-900">{toolName} vs other tools</h2>
+            <p className="text-slate-700">Here’s how Canva compares to two popular creation platforms.</p>
+
+            <div className="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-xl font-semibold text-slate-900">{toolName} vs InVideo</h3>
+                <a className="text-sm font-semibold text-sky-700 hover:text-sky-600" href="/tools/compare/veed-vs-invideo-vs-canva">
+                  Open comparison
+                </a>
+              </div>
+              <p className="mt-2 text-slate-700">
+                InVideo is template-first for ads and social videos; Canva balances design and video with strong brand controls. Canva’s broader asset library suits teams already using it for graphics.
+              </p>
+              <p className="mt-2 text-slate-700">
+                Choose Canva for unified brand kits and multi-format design; choose InVideo if you focus heavily on video ads with scene-based editing.
+              </p>
+              <p className="mt-2 text-slate-900">Both are easy for marketers—pick based on brand governance vs video depth.</p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-xl font-semibold text-slate-900">{toolName} vs Kapwing</h3>
+                <a className="text-sm font-semibold text-sky-700 hover:text-sky-600" href="/tools/compare/kapwing-vs-canva-vs-invideo">
+                  Open comparison
+                </a>
+              </div>
+              <p className="mt-2 text-slate-700">
+                Kapwing offers deeper timeline editing and collaboration for video. Canva shines for templates, AI design, and brand consistency across all asset types.
+              </p>
+              <p className="mt-2 text-slate-700">
+                Choose Canva for template-driven, brand-safe design; choose Kapwing if you need more granular video editing inside the browser.
+              </p>
+              <p className="mt-2 text-slate-900">Both support teams; decide based on design breadth vs video-centric workflows.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--worth-it bg-slate-50">
+          <div className="mx-auto max-w-5xl px-6 py-12">
+            <h2 className="text-2xl font-bold text-slate-900">Is {toolName} worth it?</h2>
+            <p className="mt-3 text-slate-700">
+              For marketing and content teams, Canva is worth it because it compresses design, video, and brand control into one tool with a generous free plan and affordable Pro seats.
+            </p>
+            <p className="mt-3 text-slate-700">
+              If you need advanced video or illustration, pair Canva with specialist tools. Otherwise, Canva covers most daily creative needs with strong collaboration.
+            </p>
+            <p className="mt-3 text-slate-900 font-semibold">
+              <strong>Verdict:</strong> Canva is a top pick for fast, on-brand creative production across social, presentations, and marketing collateral.
+            </p>
+          </div>
+        </section>
+
+        <section className="section section--faq bg-white">
+          <div className="mx-auto max-w-5xl px-6 py-12">
+            <h2 className="text-2xl font-bold text-slate-900">{toolName} FAQs</h2>
+            <p className="mt-2 text-slate-700">Tap a question to expand the answer.</p>
+            <div className="mt-6 space-y-3">
+              {faqs.map((item, idx) => (
+                <AccordionItem key={item.q} question={item.q} answer={item.a} defaultOpen={idx === 0} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--final bg-slate-50">
+          <div className="mx-auto max-w-5xl px-6 py-12 space-y-4 text-slate-800">
+            <h2 className="text-2xl font-bold text-slate-900">Final verdict on {toolName}</h2>
+            <p>
+              Choose Canva if you want a single platform for design and marketing video with strong templates and brand governance. It’s ideal for teams that ship assets daily.
+            </p>
+            <p>
+              Consider Kapwing or InVideo if you prioritize deeper video timelines, or specialist design tools for complex illustration. Canva remains the most balanced option for most marketers.
+            </p>
+            <p>Canva integrates into common stacks, publishing to social or exporting for ads, keeping production fast and on-brand.</p>
+            <p className="font-semibold text-slate-900">
+              If {toolName} sounds like the right fit for your stack, you can try it here:{" "}
+              <a className="text-sky-700 hover:text-sky-600" href={officialUrl}>
+                Visit {toolName}
+              </a>
+              .
+            </p>
+            <div className="pt-2">
+              <Link
+                to="/tools"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-sm font-semibold text-sky-700 shadow-sm ring-1 ring-slate-200 hover:bg-slate-50"
+              >
+                <ArrowLeft className="h-4 w-4" /> Back to Tools Hub
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}
+
+function AccordionItem({ question, answer, defaultOpen = false }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between px-4 py-3 text-left text-slate-900"
+      >
+        <span className="text-sm font-semibold md:text-base">{question}</span>
+        <ChevronDown className={`h-5 w-5 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="border-t border-slate-100 px-4 py-3 text-sm text-slate-700">
+          {answer}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default CanvaToolPage;

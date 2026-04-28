@@ -11,9 +11,9 @@ export default function AboutUs() {
   const CANONICAL_URL = buildCanonical("/about_us");
 
   const pageSEO = {
-    title: "About GoDigitalPro | EdTech Growth Marketing Partner",
+    title: "About GoDigitalPro | AI-Led Growth Marketing Agency",
     description:
-      "GoDigitalPro is an EdTech growth marketing agency led by Raj Singh, an IIT Kanpur alumnus with 7 years of experience, 250 crore+ in EdTech ad spend managed, and 1000+ crore in revenue delivered.",
+      "GoDigitalPro is an AI-led growth marketing agency led by Raj Singh, an IIT Kanpur alumnus with 7 years of experience, 250 crore+ in ad spend managed, and 1000+ crore in revenue delivered.",
     url: CANONICAL_URL,
     image: buildCanonical("/apple-touch-icon.png"),
   };
@@ -74,13 +74,13 @@ export default function AboutUs() {
             <h1 id="about-hero-heading" className="text-3xl font-extrabold leading-tight sm:text-4xl">
               Building{" "}
               <span className="bg-gradient-to-r from-amber-500 to-yellow-400 bg-clip-text text-transparent">
-                EdTech growth systems
+                AI-led growth systems
               </span>{" "}
               for teams that need measurable
               <br className="hidden sm:block" /> revenue impact
             </h1>
             <p className="mt-4 max-w-prose text-base text-gray-700">
-              We’re an EdTech-focused growth partner for brands that want sharper positioning, cleaner analytics, stronger creative, and more accountable pipeline performance.
+              We’re an AI-powered growth partner for ambitious brands that want sharper positioning, cleaner analytics, stronger creative, and more accountable pipeline performance.
               Founded by{" "}
               <a
                 href={linkedInUrl}
@@ -91,7 +91,7 @@ export default function AboutUs() {
               >
                 Raj Singh
               </a>{" "}
-              (<span className="font-medium">IIT Kanpur alumnus</span>), we combine category depth, AI-led analysis, and founder-level execution to help education brands scale applications, enrollments, and revenue.
+              (<span className="font-medium">IIT Kanpur alumnus</span>), we combine category depth, AI-led analysis, and founder-level execution to help brands scale leads, conversions, and revenue.
             </p>
           </div>
 
@@ -112,8 +112,8 @@ export default function AboutUs() {
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                title: "EdTech Category Depth",
-                body: "We understand program discovery, parent trust, application friction, counselor workflows, and the difference between lead volume and lead quality.",
+                title: "Category Depth Before Tactics",
+                body: "We understand buyer discovery, audience trust, conversion friction, sales workflows, and the difference between lead volume and lead quality.",
               },
               {
                 title: "AI-Led Analysis",
@@ -125,7 +125,7 @@ export default function AboutUs() {
               },
               {
                 title: "Revenue-First Accountability",
-                body: "We care about qualified inquiries, show-ups, applications, enrollments, and payback, not vanity metrics dressed up as growth.",
+                body: "We care about qualified inquiries, pipeline quality, conversions, and payback, not vanity metrics dressed up as growth.",
               },
             ].map((item) => (
               <div
@@ -151,24 +151,24 @@ export default function AboutUs() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              title: "Paid Media for EdTech",
+              title: "Paid Media",
               body:
-                "Google, Meta, and YouTube systems designed around qualified pipeline quality, geo strategy, and counselor-ready conversion tracking.",
+                "Google, Meta, and YouTube systems designed around qualified pipeline quality, geo strategy, and revenue-ready conversion tracking.",
             },
             {
               title: "SEO & Content Systems",
               body:
-                "Program pages, city intent, topical authority, and answer-first editorial systems that compound student demand over time.",
+                "Product and category pages, city intent, topical authority, and answer-first editorial systems that compound organic demand over time.",
             },
             {
               title: "Website & Funnel Design",
               body:
-                "Landing pages, websites, and conversion architecture built to turn paid and organic demand into demos, applications, and counselor conversations.",
+                "Landing pages, websites, and conversion architecture built to turn paid and organic demand into demos, leads, and sales.",
             },
             {
               title: "Social & Community",
               body:
-                "Platform-native storytelling for students, parents, founders, and faculty with systems that keep social trust-building consistent.",
+                "Platform-native storytelling for buyers, founders, and teams with systems that keep social trust-building consistent.",
             },
             {
               title: "Video & Ad Production",
@@ -178,7 +178,7 @@ export default function AboutUs() {
             {
               title: "Analytics & CRM Loops",
               body:
-                "GA4, pixels, offline conversions, dashboards, and counselor feedback loops that help growth decisions get better every sprint.",
+                "GA4, pixels, offline conversions, dashboards, and CRM feedback loops that help growth decisions get better every sprint.",
             },
           ].map((item) => (
             <article
@@ -204,8 +204,8 @@ export default function AboutUs() {
             </h2>
             <p className="mt-3 text-sm leading-6 text-gray-700">
               <span className="font-semibold">Raj Singh</span> — Founder & CEO of GoDigitalPro — is a performance marketing strategist and{" "}
-              <span className="font-medium">IIT Kanpur alumnus</span> with deep EdTech operating experience.
-              Over <strong>7 years</strong>, he has helped education brands manage <strong>250 crore+ in ad spend</strong>, influence
+              <span className="font-medium">IIT Kanpur alumnus</span> with deep cross-category growth experience.
+              Over <strong>7 years</strong>, he has helped brands manage <strong>250 crore+ in ad spend</strong>, influence
               <strong> 1000+ crore in revenue</strong>, and build more accountable acquisition systems across paid media, SEO, analytics, and CRM.
             </p>
 
@@ -240,7 +240,7 @@ export default function AboutUs() {
           <article className="rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
             <h3 className="text-base font-semibold">Our Philosophy</h3>
             <p className="mt-2 text-sm text-gray-700">
-              Growth is not a channel problem. It is a systems problem. We build operating rhythms where positioning, media, creative, analytics, and admissions feedback reinforce each other.
+              Growth is not a channel problem. It is a systems problem. We build operating rhythms where positioning, media, creative, analytics, and CRM feedback reinforce each other.
             </p>
             <ul className="mt-4 grid grid-cols-1 gap-3 text-sm text-gray-700 sm:grid-cols-2">
               <li className="rounded-xl bg-gray-50 p-3">Category depth before channel tactics</li>
@@ -261,7 +261,7 @@ export default function AboutUs() {
           <div className="grid gap-6 sm:grid-cols-[1.3fr_1fr] sm:items-center">
             <div>
               <h2 id="cta-heading" className="text-xl font-extrabold sm:text-2xl">
-                Let’s build your EdTech growth engine
+                Let’s build your growth engine
               </h2>
               <p className="mt-2 max-w-prose text-sm text-gray-700">
                 Tell us where the funnel is leaking. We’ll bring the diagnosis, priorities, and execution blueprint.
@@ -271,9 +271,9 @@ export default function AboutUs() {
               <Link
                 to="/onboarding"
                 className="inline-flex items-center justify-center rounded-2xl bg-amber-500 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                aria-label="Go to onboarding to book an EdTech strategy call"
+                aria-label="Go to onboarding to book a free growth strategy call"
               >
-                Book an EdTech Strategy Call
+                Book a Free Strategy Call
                 <svg
                   className="ml-2 h-4 w-4"
                   viewBox="0 0 24 24"

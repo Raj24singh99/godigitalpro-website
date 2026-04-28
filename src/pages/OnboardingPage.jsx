@@ -9,13 +9,13 @@ import { buildCanonical, contactPageJsonLd, organizationJsonLd } from "../utils/
  * Outcome-first choices (kept same data shape: `services`)
  * ───────────────────────────────────────────────────────── */
 const GOALS = [
-  { id: "qualified_leads", label: "Increase qualified student leads", icon: Users2 },
-  { id: "improve_roas", label: "Lower cost per application", icon: TrendingUp },
+  { id: "qualified_leads", label: "Increase qualified leads", icon: Users2 },
+  { id: "improve_roas", label: "Lower cost per acquisition", icon: TrendingUp },
   { id: "scale_ads", label: "Scale paid media profitably", icon: BarChart3 },
-  { id: "bookings", label: "Improve show-up or counselor conversion", icon: Target },
-  { id: "increase_sales", label: "Increase revenue from current programs", icon: ShoppingCart },
-  { id: "new_launch", label: "Launch a new campus, course, or cohort", icon: Rocket },
-  { id: "other", label: "Other", icon: MoreHorizontal }, // ✅ new
+  { id: "bookings", label: "Improve conversion rate", icon: Target },
+  { id: "increase_sales", label: "Increase revenue", icon: ShoppingCart },
+  { id: "new_launch", label: "Launch a new product or market", icon: Rocket },
+  { id: "other", label: "Other", icon: MoreHorizontal },
 ];
 
 const pill =
@@ -31,9 +31,9 @@ export default function OnboardingPage() {
   // ---------- SEO ONLY ----------
   const pageSEO = {
     title:
-      "Book an EdTech Growth Audit | GoDigitalPro",
+      "Book a Free Marketing Audit | GoDigitalPro",
     description:
-      "Tell us where your admissions funnel is leaking. We’ll review your paid media, SEO, social, website, creative, and conversion system and come back with practical next steps.",
+      "Tell us where your marketing funnel is leaking. We’ll review your paid media, SEO, social, website, creative, and conversion system and come back with practical next steps.",
     url: buildCanonical("/onboarding"),
     image: buildCanonical("/apple-touch-icon.png"),
   };
@@ -163,7 +163,7 @@ export default function OnboardingPage() {
           Tell us where your growth funnel is leaking
         </h1>
         <p className="text-slate-700 mt-2">
-          Share your program, target cities, current channels, and the main bottlenecks. We’ll use that to frame a sharper EdTech growth plan across paid, SEO, social, website, and creative.
+          Share your business, target markets, current channels, and the main bottlenecks. We’ll use that to frame a sharper growth plan across paid, SEO, social, website, and creative.
         </p>
 
         <form className={`${card} mt-6`} onSubmit={handleSubmit}>
@@ -259,7 +259,7 @@ export default function OnboardingPage() {
               Anything else we should know?
               <textarea
                 className={`${input} min-h-[110px]`}
-                placeholder="Target programs, monthly spend, application goals, counselor process, target cities, creative bottlenecks, deadlines, competitors, etc."
+                placeholder="Target markets, monthly spend, revenue goals, current channels, target cities, creative bottlenecks, deadlines, competitors, etc."
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
               />
@@ -274,7 +274,7 @@ export default function OnboardingPage() {
                 className="btn-primary inline-flex items-center gap-2"
                 disabled={sending}
               >
-                {sending ? "Sending..." : "Get my EdTech growth plan"}
+                {sending ? "Sending..." : "Get my growth plan"}
               </button>
             </div>
           </div>

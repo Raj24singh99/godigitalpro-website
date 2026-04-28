@@ -23,7 +23,7 @@ const HERO_BADGES = [
   {
     icon: "Globe",
     title: "Built from high-accountability growth work",
-    body: "Includes EdTech thinking, India-market nuance, and lessons from running performance-led growth systems.",
+    body: "India-market nuance and lessons from running high-accountability performance-led growth systems.",
   },
 ];
 
@@ -54,10 +54,10 @@ export default function Blogs() {
   return (
     <main className="bg-white text-slate-900">
       <SeoHelmet
-        title="GoDigitalPro Blog | EdTech Growth, SEO, Paid Media & AI Marketing Systems"
-        description="GoDigitalPro’s blog covers EdTech growth, AI-led analysis, SEO, paid media, social, creative systems, CRO, analytics, and practical execution playbooks."
+        title="GoDigitalPro Blog | Growth Marketing, SEO, Paid Media & AI Marketing Systems"
+        description="GoDigitalPro’s blog covers AI-led growth marketing, SEO, paid media, social, creative systems, CRO, analytics, and practical execution playbooks for ambitious brands."
         canonical={canonical}
-        keywords="edtech marketing blog, AI marketing systems, SEO blog, paid media blog, analytics, CRO, growth strategy"
+        keywords="growth marketing blog, AI marketing systems, SEO blog, paid media blog, analytics, CRO, digital marketing strategy india"
         schema={[blogOrgJsonLd(), { "@context": "https://schema.org", "@type": "ItemList", itemListElement: itemListJsonLd }]}
       />
 
@@ -68,7 +68,7 @@ export default function Blogs() {
           <div className="mt-4 flex flex-col gap-10 lg:flex-row lg:items-start">
             <div className="flex-1">
               <h1 className="text-3xl font-black leading-tight text-white md:text-4xl">
-                Growth intelligence for EdTech and high-accountability marketing teams.
+                Growth intelligence for ambitious brands and high-accountability marketing teams.
               </h1>
               <p className="mt-3 max-w-2xl text-sm text-white/80">
                 The archive is broad, but the lens is consistent: better positioning, clearer demand capture, stronger analytics, faster creative learning, and execution that actually helps teams make decisions.
